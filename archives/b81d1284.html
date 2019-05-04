@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://qvchuang.top">
-  <title>Archives | My blog</title>
+  <title>Web测试到底是在测什么 | My blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Do want you want to do !">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My blog">
-<meta property="og:url" content="http://qvchuang.top/archives/index.html">
+  <meta name="description" content="开始主题之前先来看一张图">
+<meta name="keywords" content="Web测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web测试到底是在测什么">
+<meta property="og:url" content="http://qvchuang.top/archives/b81d1284.html">
 <meta property="og:site_name" content="My blog">
-<meta property="og:description" content="Do want you want to do !">
+<meta property="og:description" content="开始主题之前先来看一张图">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://moetu.fastmirror.org/images/2018/11/19/webbe6a50cf62ec6d36.png">
+<meta property="og:updated_time" content="2018-11-19T13:30:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My blog">
-<meta name="twitter:description" content="Do want you want to do !">
+<meta name="twitter:title" content="Web测试到底是在测什么">
+<meta name="twitter:description" content="开始主题之前先来看一张图">
+<meta name="twitter:image" content="https://moetu.fastmirror.org/images/2018/11/19/webbe6a50cf62ec6d36.png">
   
     <link rel="alternative" href="/atom.xml" title="My blog" type="application/atom+xml">
   
@@ -188,416 +192,505 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Web测试到底是在测什么" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Web测试到底是在测什么
+    </h1>
+  
+
+        
+        <a href="/archives/b81d1284.html" class="archive-article-date">
+  	<time datetime="2018-06-10T05:40:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">7.2k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">25分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>开始主题之前先来看一张图</p>
+</blockquote>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/webbe6a50cf62ec6d36.png" alt></p>
+<a id="more"></a>
+<p>Web测试</p>
+<p>进行抽离拆分，基本上就如上一些内容。</p>
+<p>不管是测什么系统，什么功能，基本都差不多。</p>
+<p>唯一区别是，一些特性 &amp; 细节 </p>
+<hr>
+<blockquote>
+<p>OK ，正式开始今日的主题 ：</p>
+<p>如下，是摘自网络的Web通用测试点；</p>
+<p>这类内容，网上随处一搜大把。</p>
+</blockquote>
+<h2 id="一、输入框"><a href="#一、输入框" class="headerlink" title="一、输入框"></a>一、输入框</h2><p>1、字符型输入框：</p>
+<p>（1）字符型输入框：英文全角、英文半角、数字、空或者空格、特殊字符“~！@#￥%……&amp;*？[]{}”特别要注意单引号和&amp;符号。禁止直接输入特殊字符时，使用“粘贴、拷贝”功能尝试输入。</p>
+<p>（2）长度检查：最小长度、最大长度、最小长度-1、最大长度+1、输入超工字符比如把整个文章拷贝过去。</p>
+<p>（3）空格检查：输入的字符间有空格、字符前有空格、字符后有空格、字符前后有空格</p>
+<p>（4）多行文本框输入：允许回车换行、保存后再显示能够保存输入的格式、仅输入回车换行，检查能否正确保存（若能，检查保存结果，若不能，查看是否有正常提示）</p>
+<p>（5）安全性检查：输入特殊字符串（null,NULL,javascript……）、输入脚本函数(<script>alert(“abc”)</script>)、doucment.write(“abc”)、<b>hello</b>）</p>
+<p>2、数值型输入框：</p>
+<p>（1）边界值：最大值、最小值、最大值+1、最小值-1 </p>
+<p>（2）位数：最小位数、最大位数、最小位数-1最大位数+1、输入超长值、输入整数 </p>
+<p>（3）异常值、特殊字符：输入空白（NULL）、空格或”~!@#$%^&amp;*()_+{}|[]\:”&lt;&gt;?;’,./?;:’-=等可能导致系统错误的字符、禁止直接输入特殊字符时，尝试使用粘贴拷贝查看是否能正常提交、word中的特殊功能，通过剪贴板拷贝到输入框，分页符，分节符类似公式的上下标等、数值的特殊符号如∑，㏒，㏑，∏，+，-等、<br>输入负整数、负小数、分数、输入字母或汉字、小数（小数前0点舍去的情况，多个小数点的情况）、首位为0的数字如01、02、科学计数法是否支持1.0E2、全角数字与半角数字、数字与字母混合、16进制，8进制数值、货币型输入（允许小数点后面几位）</p>
+<p>（4）安全性检查：不能直接输入就copy</p>
+<p>3、日期型输入框：</p>
+<p>（1）合法性检查：(输入0日、1日、32日)、月输入[1、3、5、7、8、10、12]、日输入[31]、月输入[4、6、9、11]、日输入[30][31]、输入非闰年，月输入[2]，日期输入[28、29]、输入闰年，月输入[2]、日期输入[29、30]、月输入[0、1、12、13]</p>
+<p> (2)异常值、特殊字符：输入空白或NULL、输入~！@#￥%……&amp;*（）{}[]等可能导致系统错误的字符</p>
+<p>（3）安全性检查：不能直接输入，就copy，是否数据检验出错？</p>
+<p>4、信息重复:在一些需要命名,且名字应该唯一的信息输入重复的名字或ID,看系统有没有处理,会否报错,重名包括是否区分大小写,以及在输入内容的前后输入空格,系统是否作出正确处理.</p>
+<h2 id="二、搜索功能"><a href="#二、搜索功能" class="headerlink" title="二、搜索功能"></a>二、搜索功能</h2><p>若查询条件为输入框，则参考输入框对应类型的测试方法</p>
+<p>1、功能实现：</p>
+<p>（1）如果支持模糊查询，搜索名称中任意一个字符是否能搜索到</p>
+<p>（2）比较长的名称是否能查到</p>
+<p>（3）输入系统中不存在的与之匹配的条件</p>
+<p>（4）用户进行查询操作时，一般情况是不进行查询条件的清空，除非需求特殊说明。</p>
+<p>2、组合测试：</p>
+<p>（1）不同查询条件之间来回选择，是否出现页面错误（单选框和多选框最容易出错）</p>
+<p>（2）测试多个查询条件时，要注意查询条件的组合测试，可能不同组合的测试会报错。</p>
+<h2 id="三、添加、修改功能"><a href="#三、添加、修改功能" class="headerlink" title="三、添加、修改功能"></a>三、添加、修改功能</h2><p>1、特殊键：</p>
+<p>（1）是否支持Tab键 </p>
+<p>（2）是否支持回车键</p>
+<p>2、提示信息：</p>
+<p>（1）不符合要求的地方是否有错误提示</p>
+<p>3、唯一性：<br>字段唯一的，是否可以重复添加，添加后是否能修改为已存在的字段（字段包括区分大小写以及在输入的内容前后输入空格，保存后，数据是否真的插入到数据库中，注意保存后数据的正确性）</p>
+<p>4、数据 正确性：</p>
+<p>（1）对编辑页的每个编辑项进行修改，点击保存，是否可以保存成功，检查想关联的数据是否得到更新。</p>
+<p>（2）进行必填项检查（即是否给出提示以及提示后是否依然把数据存到数据库中；是否提示后出现页码错乱等）</p>
+<p>（3）是否能够连续添加（针对特殊情况）</p>
+<p>（4）在编辑的时候，注意编辑项的长度限制，有时在添加的时候有，在编辑的时候却没有（注意要添加和修改规则是否一致）</p>
+<p>（5）对于有图片上传功能的编辑框，若不上传图片，查看编辑页面时是否显示有默认的图片，若上传图片，查看是否显示为上传图片</p>
+<p>（6）修改后增加数据后，特别要注意查询页面的数据是否及时更新，特别是在首页时要注意数据的更新。</p>
+<p>（7）提交数据时，连续多次点击，查看系统会不会连续增加几条相同的数据或报错。</p>
+<p>（8）若结果列表中没有记录或者没选择某条记录，点击修改按钮，系统会抛异常。</p>
+<h2 id="四、删除功能"><a href="#四、删除功能" class="headerlink" title="四、删除功能"></a>四、删除功能</h2><p>1、特殊键：</p>
+<p>（1）是否支持Tab键 </p>
+<p>（2）是否支持回车键</p>
+<p>2、提示信息：</p>
+<p>（1）不选择任何信息，直接点击删除按钮，是否有提示</p>
+<p>（2）删除某条信息时，应该有确认提示</p>
+<p>3、数据 实现：</p>
+<p>（1）是否能连续删除多个产品</p>
+<p>（2）当只有一条数据时，是否可以删除成功 </p>
+<p>（3）删除一条数据后，是否可以添加相同的数据</p>
+<p>（4）如系统支持批量删除，注意删除的信息是否正确 </p>
+<p>（5）如有全选，注意是否把所有的数据删除</p>
+<p>（6）删除数据时，要注意相应查询页面的数据是否及时更新 </p>
+<p>（7）如删除的数据与其他业务数据关联，要注意其关联性（如删除部门信息时，部门下游员工，则应该给出提示）</p>
+<p>（8）如果结果列表中没有记录或没有选择任何一条记录，点击删除按钮系统会报错。</p>
+<h2 id="五、注册、登陆模块"><a href="#五、注册、登陆模块" class="headerlink" title="五、注册、登陆模块"></a>五、注册、登陆模块</h2><p>1、注册功能：</p>
+<p>（1）注册时，设置密码为特殊版本号，检查登录时是否会报错</p>
+<p>（2）注册成功后，页面应该以登陆状态跳转到首页或指定页面</p>
+<p>（3）在注册信息中删除已输入的信息，检查是否可以注册成功。</p>
+<p>2、登陆 功能：</p>
+<p>（1）输入正确的用户名和正确的密码</p>
+<p>（2）输入正确的用户名和错误的密码</p>
+<p>（3）输入错误的用户名和正确的密码</p>
+<p>（4）输入错误的用户名和错误的密码</p>
+<p>（5）不输入用户名和密码（均为空格）</p>
+<p>（6）只输入用户名，密码为空</p>
+<p>（7）用户名为空，只输入密码</p>
+<p>（8）输入正确的用户名和密码，但是不区分大小写</p>
+<p>（9）用户名和密码包括特殊字符</p>
+<p>（10）用户名和密码输入超长值</p>
+<p>（11）已删除的用户名和密码</p>
+<p>（12）登录时，当页面刷新或重新输入数据时，验证码是否更新</p>
+<h2 id="六、上传功能"><a href="#六、上传功能" class="headerlink" title="六、上传功能"></a>六、上传功能</h2><p>1、功能 实现：</p>
+<p>（1）文件类型正确、大小合适</p>
+<p>（2）文件类型正确，大小不合适</p>
+<p>（3）文件类型错误，大小合适</p>
+<p>（4）文件类型和大小都合适，上传一个正在使用中的图片</p>
+<p>（5）文件类型大小都合适，手动输入存在的图片地址来上传</p>
+<p>（6）文件类型和大小都合适，输入不存在的图片地址来上传</p>
+<p>（7）文件类型和大小都合适，输入图片名称来上传</p>
+<p>（8）不选择文件直接点击上传，查看是否给出提示</p>
+<p>（9）连续多次选择不同的文件，查看是否上传最后一次选择的文件</p>
+<h2 id="七、查询结果列表"><a href="#七、查询结果列表" class="headerlink" title="七、查询结果列表"></a>七、查询结果列表</h2><p>1、功能 实现：</p>
+<p>（1）列表、列宽是否合理</p>
+<p>（2）列表数据太宽有没有提供横向滚动</p>
+<p>（3）列表的列名有没有与内容对应</p>
+<p>（4）列表的每列的列名是否描述的清晰</p>
+<p>（5）列表是否把不必要的列都显示出来</p>
+<p>（6）点击某列进行排序，是否会报错（点击查看每一页的排序是否正确）</p>
+<p>（7）双击或单击某列信息，是否会报错</p>
+<h2 id="八、返回键检查"><a href="#八、返回键检查" class="headerlink" title="八、返回键检查"></a>八、返回键检查</h2><p>1、一条已经成功提交的记录，返回后再提交，是否做了处理</p>
+<p>2、检查多次使用返回键的情况，在有返回键的地方，返回到原来的页面多次，查看是否会出错</p>
+<h2 id="九、回车键检查"><a href="#九、回车键检查" class="headerlink" title="九、回车键检查"></a>九、回车键检查</h2><p>在输入结果后，直接按回车键，看系统如何处理，是否会报错</p>
+<h2 id="十、刷新键检查"><a href="#十、刷新键检查" class="headerlink" title="十、刷新键检查"></a>十、刷新键检查</h2><p>在Web系统中，使用刷新键，看系统如何处理，是否会报错</p>
+<h2 id="十一、直接URL链接检查"><a href="#十一、直接URL链接检查" class="headerlink" title="十一、直接URL链接检查"></a>十一、直接URL链接检查</h2><p>在Web系统中，在地址栏直接输入各个功能页面的URL地址，看系统如何处理，是否能够直接链接查看（匿名查看），是否有权限控制，是否直接执行，并返回相应结果页；</p>
+<h2 id="十二、界面和易用性测试"><a href="#十二、界面和易用性测试" class="headerlink" title="十二、界面和易用性测试"></a>十二、界面和易用性测试</h2><p>1、风格、样式、颜色是否协调</p>
+<p>2、界面布局是否整齐、协调（保证全部显示出来的，尽量不要使用滚动条</p>
+<p>3、界面操作、标题描述是否恰当（描述有歧义、注意是否有错别字）</p>
+<p>4、操作是否符合人们的常规习惯（有没有把相似的功能的控件放在一起，方便操作）</p>
+<p>5、提示界面是否符合规范（不应该显示英文的cancel、ok，应该显示中文的确定等）</p>
+<p>6、界面中各个控件是否对齐</p>
+<p>7、日期控件是否可编辑</p>
+<p>8、日期控件的长度是否合理，以修改时可以把时间全部显示出来为准</p>
+<p>9、查询结果列表列宽是否合理、标签描述是否合理</p>
+<p>10、查询结果列表太宽没有横向滚动提示</p>
+<p>11、对于信息比较长的文本，文本框有没有提供自动竖直滚动条</p>
+<p>12、数据录入控件是否方便</p>
+<p>13、有没有支持Tab键，键的顺序要有条理，不乱跳</p>
+<p>14、有没有提供相关的热键</p>
+<p>15、控件的提示语描述是否正确</p>
+<p>16、模块调用是否统一，相同的模块是否调用同一个界面</p>
+<p>17、用滚动条移动页面时，页面的控件是否显示正常</p>
+<p>18、日期的正确格式应该是XXXX-XX-XX或XXXX-XX-XX XX:XX:XX</p>
+<p>19、页面是否有多余按钮或标签</p>
+<p>20、窗口标题或图标是否与菜单栏的统一</p>
+<p>21、窗口的最大化、最小化是否能正确切换</p>
+<p>22、对于正常的功能，用户可以不必阅读用户手册就能使用</p>
+<p>23、执行风险操作时，有确认、删除等提示吗</p>
+<p>24、操作顺序是否合理</p>
+<p>25、正确性检查：检查页面上的form, button, table, header, footer,提示信息，还有其他文字拼写，句子的语法等是否正确。</p>
+<p>26、系统应该在用户执行错误的操作之前提出警告，提示信息.</p>
+<p>27、页面分辨率检查，在各种分辨率浏览系统检查系统界面友好性。</p>
+<p>28、合理性检查：做delete, update, add, cancel, back等操作后，查看信息回到的页面是否合理。</p>
+<p>29、检查本地化是否通过：英文版不应该有中文信息，英文翻译准确，专业。</p>
+<h2 id="十三、兼容性测试"><a href="#十三、兼容性测试" class="headerlink" title="十三、兼容性测试"></a>十三、兼容性测试</h2><p>兼容性测试不只是指界面在不同操作系统或浏览器下的兼容，有些功能方面的测试，也要考虑到兼容性，<br>包括操作系统兼容和应用软件兼容，可能还包括硬件兼容<br>比如涉及到ajax、jquery、javascript等技术的，都要考虑到不同浏览器下的兼容性问题。</p>
+<h2 id="十四、链接测试"><a href="#十四、链接测试" class="headerlink" title="十四、链接测试"></a>十四、链接测试</h2><p>主要是保证链接的可用性和正确性，它也是网站测试中比较重要的一个方面。<br>可以使用特定的工具如XENU来进行链接测试。</p>
+<p>1 导航测试<br>导航描述了用户在一个页面内操作的方式，在不同的用户接口控制之间，例如按钮、对话框、列表和窗口等；或在不同的连接页面之间。通过考虑下列问题，可以决定一个Web应用系统是否易于导航：导航是否直观？Web系统的主要部分是否可通过主页存取？Web系统是否需要站点地图、搜索引擎或其他的导航帮助？<br>在一个页面上放太多的信息往往起到与预期相反的效果。Web应用系统的用户趋向于目的驱动，很快地扫描一个Web应用系统，看是否有满足自己需要的信息，如果没有，就会很快地离开。很少有用户愿意花时间去熟悉Web应用系统的结构，因此，Web应用系统导航帮助要尽可能地准确。<br>导航的另一个重要方面是Web应用系统的页面结构、导航、菜单、连接的风格是否一致。确保用户凭直觉就知道Web应用系统里面是否还有内容，内容在什么地方。<br>Web应用系统的层次一旦决定，就要着手测试用户导航功能，让最终用户参与这种测试，效果将更加明显。</p>
+<p>2 图形测试<br>在Web应用系统中，适当的图片和动画既能起到广告宣传的作用，又能起到美化页面的功能。一个Web应用系统的图形可以包括图片、动画、边框、颜色、字体、背景、按钮等。图形测试的内容有：</p>
+<p>（1）要确保图形有明确的用途，图片或动画不要胡乱地堆在一起，以免浪费传输时间。Web应用系统的图片尺寸要尽量地小，并且要能清楚地说明某件事情，一般都链接到某个具体的页面。</p>
+<p>（2）验证所有页面字体的风格是否一致。</p>
+<p>（3）背景颜色应该与字体颜色和前景颜色相搭配。</p>
+<p>（4）图片的大小和质量也是一个很重要的因素，一般采用JPG或GIF压缩，最好能使图片的大小减小到30k以下</p>
+<p>（5）最后，需要验证的是文字回绕是否正确。如果说明文字指向右边的图片，应该确保该图片出现在右边。不要因为使用图片而使窗口和段落排列古怪或者出现孤行。</p>
+<p>通常来说，使用少许或尽量不使用背景是个不错的选择。如果您想用背景，那么最好使用单色的，和导航条一起放在页面的左边。另外，图案和图片可能会转移用户的注意力。</p>
+<h2 id="十五、业务流程测试（主要功能测试）"><a href="#十五、业务流程测试（主要功能测试）" class="headerlink" title="十五、业务流程测试（主要功能测试）"></a>十五、业务流程测试（主要功能测试）</h2><p>业务流程，一般会涉及到多个模块的数据，所以在对业务流程测试时，首先要保证单个模块功能的正确性，其次就要对各个模块间传递的数据进行测试，这往往是容易出现问题的地方，测试时一定要设计不同的数据进行测试。</p>
+<h2 id="十六、安全性测试"><a href="#十六、安全性测试" class="headerlink" title="十六、安全性测试"></a>十六、安全性测试</h2><p>（1）SQL注入（比如登陆页面）</p>
+<p>（2）XSS跨网站脚本攻击：程序或数据库没有对一些特殊字符进行过滤或处理，导致用户所输入的一些破坏性的脚本语句能够直接写进数据库中，浏览器会直接执行这些脚本语句，破坏网站的正常显示，或网站用户的信息被盗,构造脚本语句时，要保证脚本的完整性。<br>　　document.write(“abc”)<br>　　<script>alter(“abc”)</script></p>
+<p>（3）URL地址后面随便输入一些符号，并尽量是动态参数靠后</p>
+<p>（4）验证码更新问题</p>
+<p>（5）现在的Web应用系统基本采用先注册，后登陆的方式。因此，必须测试有效和无效的用户名和密码，要注意到是否大小写敏感，可以试多少次的限制，是否可以不登陆而直接浏览某个页面等。</p>
+<p>（6）Web应用系统是否有超时的限制，也就是说，用户登陆后在一定时间内（例如15分钟）没有点击任何页面，是否需要重新登陆才能正常使用。</p>
+<p>（7）为了保证Web应用系统的安全性，日志文件是至关重要的。需要测试相关信息是否写进了日志文件、是否可追踪。</p>
+<p>（8）当使用了安全套接字时，还要测试加密是否正确，检查信息的完整性。</p>
+<p>（9）服务器端的脚本常常构成安全漏洞，这些漏洞又常常被黑客利用。所以，还要测试没有经过授权，就不能在服务器端放置和编辑脚本的问题。</p>
+<h2 id="十七、性能测试"><a href="#十七、性能测试" class="headerlink" title="十七、性能测试"></a>十七、性能测试</h2><p>1 连接速度测试<br>用户连接到Web应用系统的速度根据上网方式的变化而变化，他们或许是电话拨号，或是宽带上网。当下载一个程序时，用户可以等较长的时间，但如果仅仅访问一个页面就不会这样。如果Web系统响应时间太长（例如超过5秒钟），用户就会因没有耐心等待而离开。<br>另外，有些页面有超时的限制，如果响应速度太慢，用户可能还没来得及浏览内容，就需要重新登陆了。而且，连接速度太慢，还可能引起数据丢失，使用户得不到真实的页面。</p>
+<p>2 负载测试<br>负载测试是为了测量Web系统在某一负载级别上的性能，以保证Web系统在需求范围内能正常工作。负载级别可以是某个时刻同时访问Web系统的用户数量，也可以是在线数据处理的数量。例如：Web应用系统能允许多少个用户同时在线？如果超过了这个数量，会出现什么现象？Web应用系统能否处理大量用户对同一个页面的请求？</p>
+<p>3 压力测试<br>负载测试应该安排在Web系统发布以后，在实际的网络环境中进行测试。因为一个企业内部员工，特别是项目组人员总是有限的，而一个Web系统能同时处理的请求数量将远远超出这个限度，所以，只有放在Internet上，接受负载测试，其结果才是正确可信的。<br>进行压力测试是指实际破坏一个Web应用系统，测试系统的反映。压力测试是测试系统的限制和故障恢复能力，也就是测试Web应用系统会不会崩溃，在什么情况下会崩溃。黑客常常提供错误的数据负载，直到Web应用系统崩溃，接着当系统重新启动时获得存取权。<br>压力测试的区域包括表单、登陆和其他信息传输页面等。</p>
+<p>备注：</p>
+<p>1、负载/压力测试应该关注什么<br>测试需要验证系统能否在同一时间响应大量的用户，在用户传送大量数据的时候能否响应，系统能否长时间运行。可访问性对用户来说是极其重要的。如果用户得到“系统忙”的信息，他们可能放弃，并转向竞争对手。系统检测不仅要使用户能够正常访问站点，在很多情况下，可能会有黑客试图通过发送大量数据包来攻击服务器。出于安全的原因，测试人员应该知道当系统过载时，需要采取哪些措施，而不是简单地提升系统性能。</p>
+<p>1）瞬间访问高峰<br>如果您的站点用于公布彩票的抽奖结果，最好使系统在中奖号码公布后的一段时间内能够响应上百万的请求。负载测试工具能够模拟X个用户同时访问测试站点。</p>
+<p>2）每个用户传送大量数据<br>网上书店的多数用户可能只订购1-5书，但是大学书店可能会订购5000本有关心理学介绍的课本?或者一个祖母为她的50个儿孙购买圣诞礼物(当然每个孩子都有自己的邮件地址)系统能处理单个用户的大量数据吗?</p>
+<p>3）长时间的使用<br>如果站点用于处理鲜花订单，那么至少希望它在母亲节前的一周内能持续运行。如果站点提供基于web的email服务，那么点最好能持续运行几个月，甚至几年。可能需要使用自动测试工具来完成这种类型的测试，因为很难通过手工完成这些测试。你可以想象组织100个人同时点击某个站点。但是同时组织100000个人呢。通常，测试工具在第二次使用的时候，它创造的效益，就足以支付成本。而且，测试工具安装完成之后，再次使用的时候，只要点击几下。</p>
+<p>采取措施：采用性能测试工具WAS、ACT，LR等协助进行测试</p>
+<h2 id="十八、测试中应该注意的其他情况"><a href="#十八、测试中应该注意的其他情况" class="headerlink" title="十八、测试中应该注意的其他情况"></a>十八、测试中应该注意的其他情况</h2><p>1、在测试时，与网络有关的步骤或者模块必须考虑到断网的情况</p>
+<p>2、每个页面都有相应的Title，不能为空，或者显示“无标题页”</p>
+<p>3、在测试的时候要考虑到页面出现滚动条时，滚动条上下滚动时，页面是否正常</p>
+<p>4、URL不区分大小写，大小写不敏感</p>
+<p>5、对于电子商务网站，当用户并发购买数量大于库存的数量时，系统如何处理</p>
+<p>6、测试数据避免单纯输入“123”、“abc“之类的，让测试数据尽量接近实际</p>
+<p>7、进行测试时，尽量不要用超级管理员进行测试，用新建的用户进行测试。测试人员尽量不要使用同一个用户进行测试</p>
+<p>8、提示信息：提示信息是否完整、正确、详细</p>
+<p>9、帮助信息：是否提供帮助信息，帮助信息的表现形式（页面文字、提示信息、帮助文件），帮助信息是否正确、详细</p>
+<p>10、可扩展性：是否由升级的余地，是否保留了接口</p>
+<p>11、稳定性：运行所需的软硬件配置，占用资源情况，出现问题时的容错性，对数据的保护</p>
+<p>12、运行速度：运行的快慢，带宽占用情况</p>
+<blockquote>
+<p>补充几点：<br>针对上面的摘录，补充如下几个点。</p>
+</blockquote>
+<ol>
+<li><p>分页功能<br>通用测试点：未满一页，多页，页面跳转，首页，尾页，上一页/下一页，每页显示页数，等等。</p>
+</li>
+<li><p>导出功能<br>通用测试点：文件格式，数据量，表头，数据正确性 等。</p>
+</li>
+<li><p>第三方登录<br>通用测试点：绑定已有账号，识别唯一标识等。</p>
+</li>
+</ol>
+<blockquote>
+<p>继续，补充：</p>
+</blockquote>
+<p>web测试需要了解的知识</p>
+<ol>
+<li>HTTP/HTTPS协议<br>你应该去了解什么是http协议<br>什么是GET, POST, session, cookie等<br>Get与Post的区别是什么?<br>session与cookie的区别是什么?<br>什么是无状态？<br>注：http这块，之前分享过资料，回复“http”获取
+　　</li>
+<li>浏览器机制<br>理解浏览器在处理javascript及渲染CSS的机制<br>了解IE与其他浏览器的差异<br>同一浏览器，各版本的区别。<br>浏览器在加载javascript，CSS有时在前面有时在后面，为什么？<br>加载顺序会对视觉和使用上有什么影响呢？<br>各种浏览器使用的内核分别是什么？
+　　</li>
+<li>web架构<br>也许你会说这是架构师的事儿，没错，基本是他们的活儿，但是理解了web架构能让我们测试的更深入。你要知道：<br>软件出错时怎么个报警法？是否有详尽的log记录？<br>服务器缓存机制如何？<br>数据库如何主从同步，如何备份的？<br>集群如何处理session的？
+　　</li>
+<li>安全<br>因为web应用的特殊性，你需要掌握的安全技能：<br>如何进行SQL注入测试？如何防止SQL注入？<br>什么是跨站脚本攻击(XSS)？如何开展此类测试，应该如何防范XSS？<br>什么是DOS，DDOS？开发人员如何coding来避免？<br>传输哪些重要数据时需要加密<br>哪些页面需要使用SSL/https来加密传输<br>什么是跨站伪造请求攻击 cross site request forgeries (XSRF)，如何避免？<br>安全证书的意义，浏览器在证书失效时提示是怎样的？
+　　</li>
+<li>web性能<br>你应该知道的web性能知识：<br>web前端的性能极大影响了用户，如何观察这些数据？CSS和图片的合并压缩的意义<br>了解浏览器cache及服务端cache<br>对于图片请求过多的网站，为何要把图片放置在不同的域名下，最好使用CDN？<br>确认你的网站有一个 favicon.ico 文件放在网站的根下，如 /favicon.ico.每当有用户收藏网站/网页时，浏览器会自动请求这个文件，就算这个图标文件没有在你的网页中明显说明，浏览器也会请求。如果你没有这个文件，就会出大量的404错误，这会消耗你的服务器带宽，服务器返回404页面会比这个ico文件可能还大<br>知道单个页面的http请求数越少越好<br>顺序加载和异步加载的优劣，何时需要使用AJAX？懒加载的意义，用于何处？<br>如何使用性能测试工具Jmeter/LR等开展性能测试？
+　　</li>
+<li>用户体验<br>网站的功能只是说实现了什么，而用户体验则诠释了做的有多好，用户使用起来是否有难度，是否会爱上这个网站（当然12306除外，咯咯）<br>访问网站的用户操作行为是怎么样的？页面的访问频率占比如何？因为测试的精力和侧重点也要根据这个数据而定<br>网站部署时是否会影响到用户使用，如何避免？<br>不要直接显示不友好的错误提示，是否有友好的提示信息？<br>web应用不能泄漏用户的隐私信息<br>页面是在当前页打开还是另开一个tab？<br>页面元素的布局如何影响到用户体验的？
+　　</li>
+<li><p>使用工具<br>HttpWatch，基于IE的网络数据分析工具，包括网页摘要，Cookies管理，缓存管理，消息头发送/接受，字符查询，POST 数据和目录管理功能等<br>FireBug，用途同上，基于firefox的<br>Yslow，前端网站性能工具，显示测试结果的分析,分为等级、组件、统计信息<br>Fiddler，强大的web前端调试工具，它能记录/拦截所有客户端和服务器的http和https请求，允许你监视，设置断点，甚至修改输入输出数据，也可用于安全测试<br>Chrome扩展程序：浏览器兼容性检测工具，分析网站的兼容性情况</p>
+</li>
+<li><p>轻量级压力测试工具<br>性能测试工具，不只是LoadRunner \ Jmeter<br>还有很多优秀的小工具，而且学习成本非常低，随时上手～</p>
+</li>
+</ol>
+<p>今天推荐几款web轻量级压力测试小工具，人人可以做压力测试，而且瞬间上手，无学习成本～</p>
+<p>推荐一：webbench</p>
+<p>推荐二：ab</p>
+<p>推荐三：http_load</p>
+<p>推荐四：siege</p>
+
+      
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/d1ad8916.html" class="archive-article-date">
-  	<time datetime="2019-01-10T08:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/d1ad8916.html">12306智能刷票、订票</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
+        <div class="declare">
+          <strong>本文作者：</strong>
           
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
+            qvchuang
           
-
+          <br>
+          <strong>本文链接：</strong>
+          http://qvchuang.top/archives/b81d1284.html
+          <br>
+          <strong>版权声明：</strong>
+          本作品采用
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          进行许可。转载请注明出处！
+          
+            <br>
+            <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+          
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/74c76214.html" class="archive-article-date">
-  	<time datetime="2018-12-31T08:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/74c76214.html">APP测试流程梳理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">APP测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Web测试</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/archives/b81d1284.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/12b541cb.html" class="archive-article-date">
-  	<time datetime="2018-12-22T07:21:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/archives/9c44ad68.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          所谓安逸。。。。。。
+        
+      </div>
+    </a>
+  
+  
+    <a href="/archives/8722731a.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Jmeter</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/12b541cb.html">如果这五件事都做不了，那你的生活早已偏离了航向</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、输入框"><span class="toc-number">1.</span> <span class="toc-text">一、输入框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、搜索功能"><span class="toc-number">2.</span> <span class="toc-text">二、搜索功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、添加、修改功能"><span class="toc-number">3.</span> <span class="toc-text">三、添加、修改功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、删除功能"><span class="toc-number">4.</span> <span class="toc-text">四、删除功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、注册、登陆模块"><span class="toc-number">5.</span> <span class="toc-text">五、注册、登陆模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、上传功能"><span class="toc-number">6.</span> <span class="toc-text">六、上传功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、查询结果列表"><span class="toc-number">7.</span> <span class="toc-text">七、查询结果列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、返回键检查"><span class="toc-number">8.</span> <span class="toc-text">八、返回键检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、回车键检查"><span class="toc-number">9.</span> <span class="toc-text">九、回车键检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十、刷新键检查"><span class="toc-number">10.</span> <span class="toc-text">十、刷新键检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十一、直接URL链接检查"><span class="toc-number">11.</span> <span class="toc-text">十一、直接URL链接检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十二、界面和易用性测试"><span class="toc-number">12.</span> <span class="toc-text">十二、界面和易用性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十三、兼容性测试"><span class="toc-number">13.</span> <span class="toc-text">十三、兼容性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十四、链接测试"><span class="toc-number">14.</span> <span class="toc-text">十四、链接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十五、业务流程测试（主要功能测试）"><span class="toc-number">15.</span> <span class="toc-text">十五、业务流程测试（主要功能测试）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十六、安全性测试"><span class="toc-number">16.</span> <span class="toc-text">十六、安全性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十七、性能测试"><span class="toc-number">17.</span> <span class="toc-text">十七、性能测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十八、测试中应该注意的其他情况"><span class="toc-number">18.</span> <span class="toc-text">十八、测试中应该注意的其他情况</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/b2fd9b25.html" class="archive-article-date">
-  	<time datetime="2018-12-16T06:10:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/b2fd9b25.html">Python3-内置函数和匿名函数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/7c18a91b.html" class="archive-article-date">
-  	<time datetime="2018-12-08T12:43:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/7c18a91b.html">Python3-迭代器与生成器</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/7af05b52.html" class="archive-article-date">
-  	<time datetime="2018-12-02T13:09:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/7af05b52.html">Python3-装饰器函数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/d4e5ce76.html" class="archive-article-date">
-  	<time datetime="2018-12-01T05:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/d4e5ce76.html">Python3-函数进阶</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/e03bb111.html" class="archive-article-date">
-  	<time datetime="2018-11-25T05:46:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/e03bb111.html">Python3-初识函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/74c6600f.html" class="archive-article-date">
-  	<time datetime="2018-11-24T05:44:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/74c6600f.html">Python3之文件操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/archives/48f2972.html" class="archive-article-date">
-  	<time datetime="2018-11-23T13:52:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/archives/48f2972.html">Python3之深浅copy</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
   
   
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
 
 
           </div>
@@ -642,8 +735,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
