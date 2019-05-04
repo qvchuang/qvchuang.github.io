@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F05%2F04%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[12306智能刷票、订票]]></title>
     <url>%2F2019%2F01%2F10%2F12306%E6%99%BA%E8%83%BD%E5%88%B7%E7%A5%A8%E3%80%81%E8%AE%A2%E7%A5%A8%2F</url>
     <content type="text"><![CDATA[一年一度的春运又开启了，相信还有很多小伙伴没有抢到一张回家的车票。没抢到票怎么办？自己动手丰衣足食，这个项目也许能帮到你。 ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票没抢到 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于是便找到了大神的开源项目购票小助手折腾一番 下面是博主的折腾过程以及踩过的坑 12306购票小助手 python 版本支持2.7.10 - 2.7.15 依赖库 依赖若快 (若快注册地址：http://www.ruokuai.com/login) 项目依赖包 requirements.txt 安装方法 pip install -r requirements.txt 项目使用说明 可以配置邮箱，可以配置可以不配置，配置邮箱的格式在yaml里面可以看到 可以配置server酱提醒（推荐）， [配置教程] (https://www.jianshu.com/p/8d10b5b9c4e3) 提交订单验证码哪里依赖打码兔，所以如果是订票遇到验证码的时候，没有打码兔是过不了的，不推荐手动，手动太慢 配置yaml文件的时候，需注意空格和遵循yaml语法格式 项目开始 修改 config/ticket_config.yaml 文件，按照提示更改自己想要的信息 windows 打开 ide 或者 cmd 请用管理员身份执行 python run.py 目录对应说明123456agency - cdn代理config - 项目配置damatuCode - 打码兔接口init - 项目主运行目录myException - 异常myUrllib - urllib库 思路图 过程中遇到的坑 1.无法安装依赖包requirements.txt 解决方法： 将项目clone下来，进到根目录，直接 pip install -r requirements.txt 2.python版本过高或过低 解决方法：安装 2.7.10 - 2.7.15 版本的python 注意Win10下python3和python2同时安装并解决pip共存问题 3.运行提示扫码平台错误：快豆不足，请充值 解决方法：登录若快充值快豆，用于自动识别扫码 不用充值太多，1元就可以用很久 运行项目python run.py 好了，接下来就坐等抢到票了 收到抢票通知后记得在30分钟内登录12306网站进行支付哦！]]></content>
