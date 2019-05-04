@@ -190,7 +190,392 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-一个bug的生命周期" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      一个bug的生命周期
+    </h1>
+  
+
+        
+        <a href="/2018/06/21/一个bug的生命周期/" class="archive-article-date">
+  	<time datetime="2018-06-21T13:52:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-21</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">3k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">10分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://moetu.org/image/1UYnH" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/19/bug3a7eda5fc40b3e2a.md.jpg" alt="bug3a7eda5fc40b3e2a.md.jpg"></a></p>
+<a id="more"></a>
+<hr>
+<h1 id="Bug的属性"><a href="#Bug的属性" class="headerlink" title="Bug的属性"></a>Bug的属性</h1><p><strong>Bug重现环境</strong></p>
+<p>这个应该是我们重现bug的一个前提，如果没有这个前提，我们可能会无法重现问题，或者跟本就无从下手。</p>
+<ul>
+<li>操作系统</li>
+</ul>
+<p>这个是一般软件运行的一大前提，基本上所有的软件都依赖于操作系统之上的，对于一个软件来说，要想在某个操作系统上运行，必须要对这个操作系统支持，这就需要有真对性的设计与开发。对于不同的操作系统，其可能存在差异（如：win xp 与 win 7）或本质的区别（如 win 7 与 CentOS linux ），所以，操作系统环境是重现问题的一个重要前提。</p>
+<ul>
+<li>浏览器</li>
+</ul>
+<p>对于B/S系统，或面向大众的互联网产品（网站，邮箱等），浏览器的兼容性也是必须测试的一个重点，对于现在的浏览器市场，各式的浏览器都有其用户群，要想使产品大众化，必须考虑这些产品的兼容性问题。</p>
+<p>不同的浏览器之间（IE、 firefox、chrome、opera 等），甚至同一系列不同版本（ie6/ie7/ie8/ie9等）都可能存在兼容性问题，所以，对于这类应用，浏览器环境重现bug前提条件之一。</p>
+<ul>
+<li>其它（这个“其它”非常重要）</li>
+</ul>
+<p>对于不同的系统发现重现问题，都会有其特定的前提，拿我测试的邮箱来说，必须要描述其是在测试线还是现网环境，而且还要附带一重现问题的帐号等。</p>
+<p>对于c/s软件，可能还要考虑与其它常用软的兼容等，例如，是在安装的某款软件后，对本软件的安装和使用造成影响。这些都是重现问题的必须描述的环境。</p>
+<p><strong>问题类型</strong></p>
+<p>根据JIRA的管理系统的划分，bug 只是问题的一种，它可以用于跟踪多种不同类型的问题（其实，他只是将bug做为一子类而已）。</p>
+<p>JIRA系统缺省提供的问题类型（大部分的系统都可以自定义类型的，这样就增加了灵活性。）</p>
+<ul>
+<li><p>Bug : 测试过程、维护过程发现影响系统运行的缺陷。（这就是一般测试人员所提交的bug）</p>
+</li>
+<li><p>New Feature : 对系统提出的新功能。（单个的小需求可以，如果大的话，就相当于一个需求，放到这里是不合理的。）</p>
+</li>
+<li><p>Task : 需要完成的一任务。（开发或测试任务指派。）</p>
+</li>
+<li><p>Improvement : 对现有系统功能的改进。（一般产品经理或产品体验师做的事）</p>
+</li>
+</ul>
+<p>当然，不同的公司，他们的人员定位与职责是不太相同的，按照上面的分类，JIRA就不是简单的缺陷管理系统了，它涵盖一项目（或产品）所需要处理的任务、需求与缺陷。</p>
+<p><strong>Bug 类型</strong></p>
+<p>这里缩小范围，单指我们测试人员在测试过程中发现的缺陷，发现产品缺陷其实就是测试人员工作的主要目的。当然，你要确定一个问题的类型，也需要对项目（或产品）有比较深的理解。是代码缺陷还是设计缺陷有时候就不太容易区分，当然，这个划分，对于开发定位问题影响很小，但对于问题类型的统计就比较重要了。</p>
+<p>下面看一些常见的分类：</p>
+<p>划分方式一：</p>
+<pre><code>* 代码错误
+* 设计缺陷
+* 界面优化
+* 配置相关
+* 安装部署
+* 性能问题
+* 标准规范
+* 测试代码
+* 其它
+</code></pre><p>划分方式二：</p>
+<pre><code>* 功能类（function）
+* 性能类（performance）
+* 界面类（UI）
+* 易用性类（usability）
+* 兼容性类（compatibility）
+* 其它（else）
+</code></pre><p>这个分类当然是可以自定义的，具我接触的缺陷管理都是可以自定义的，既然是对问题的管理，那么你当然可以拿来做特定环境下的系统来使用，或我就想用这个系统来指派任务，那么我的自定义类型为前端任务、后端任务、测试任务、配置部署…</p>
+<p><strong>缺陷等级</strong></p>
+<p>缺陷等级，这个划分也比较灵活，有分三级或四级，也有分五级的。</p>
+<ul>
+<li>致命</li>
+</ul>
+<p>一招毙命的缺陷，使你的系统无法运行，有造成数据泄漏的安全性问题。</p>
+<ul>
+<li>严重</li>
+</ul>
+<p>可以引起易于纠正的异常情况、可能引起易于修复的故障或对产品外观难以接受的缺陷。</p>
+<ul>
+<li>一般</li>
+</ul>
+<p>指不影响产品的运转和运行、不会成为故障起因，但对产品外观和下道工序影响较大的缺陷</p>
+<ul>
+<li>轻微</li>
+</ul>
+<p>轻微缺陷是指对产品外观和下道工序可能会有轻微影响的缺陷</p>
+<ul>
+<li>建议</li>
+</ul>
+<p>增加用户使用体验的建议性问题。（一般情况下，建议也为做为缺陷的一种。这个跟系统的类型与需求有关）</p>
+<p><strong>缺陷优先级（priority）</strong></p>
+<p>当问题处理人员在面对许多问题需要处理进，就需要问题进行优先级排序。我们做事情的安排，操作系统有处理进程等都在使用着优先级。</p>
+<p>优先级的划分：</p>
+<pre><code>低——&gt;中——&gt;高——&gt;紧急
+
+延迟处理——&gt;正常排队——&gt;优先处理——&gt;紧急处理
+</code></pre><p>Bug的严重程度和优先级是含义不同但相互联系密切的两个概念，它们从不同的侧面描述了软件缺陷对软件质量和最终用户的影响程序和处理方式。</p>
+<p>一般地，严重程序高的软件缺陷具有较高的优先级。严重程度高说明缺陷对软件造成的危害性大，需要优先处理，而来严重程序低的缺陷可能只是软件不太尽善尽美，可以稍后处理。</p>
+<ul>
+<li>严重程度高优先级不一定高：</li>
+</ul>
+<p>如果某个严重的软件缺陷只在非常极端的条件下产生，则没有必要马上处理。</p>
+<p>如果某一个软件缺陷，需要重新修改软件的整体架构，可能会产生更多的潜在缺陷，而且软件由于市场的压力必须尽快发布，此时即使缺陷的严重性很高，是否需要修正，需要全盘考虑。</p>
+<ul>
+<li>严重程度优先级不一定低</li>
+</ul>
+<p>如果是软件名称或公司名称的拼写错误，虽然说其属于界面错误，严重程度不高，但其关系到软件和公司的市场开解，必须尽快修正。</p>
+<p><strong>缺陷状态</strong></p>
+<p>对于一个问题，其处理过程是一个周期，周期的不同阶段，其所处的状态也是不一样的。不同状态所对应的处理人也是不一样的。</p>
+<ul>
+<li>打开： 表示问题被提交等待有人处理。</li>
+<li>重新指派 ： 问题被重新指派给某人处理。</li>
+<li>处理 ： 问题在处理中，尚未完成。</li>
+<li>固定 ： 确认此问题存在，但暂时不进行处理。</li>
+<li>回归 ： 对已经修复的问题进行回归确认。</li>
+<li>关闭 ： 问题的最后一个状态。</li>
+</ul>
+<h1 id="一个bug的生命周期"><a href="#一个bug的生命周期" class="headerlink" title="一个bug的生命周期"></a>一个bug的生命周期</h1><hr>
+<p>下面通过一个比较完整的bug的处理流程图，更深刻的理解bug的状态以一个bug的生命周期。</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/bugbc572d7d79e01181.jpg" alt></p>
+<p><strong>提交（打开）缺陷</strong></p>
+<p>在提交一个缺陷的缺陷，首先尽量描述这个缺陷的属性。Bug重现环境，bug类型，bug等级，bug的优先级以及详细的重现步骤，结果与期望等。</p>
+<p>当然，我们在提交一个问题之前首先应该保证，这个缺陷是没有被提过的，以免造成重复缺陷单。</p>
+<p>如果是回归不通过的缺陷，其状态又会变为打开状态。</p>
+<p><strong>分配（转交）缺陷</strong></p>
+<p>这一步不是必须的，跟项目模式有关，有些公司测试部门与开发部门独立，那么测试人员就不确定自己测试的模块是由哪位开发人员负责的，在这种情况下，测试人员统一把问题指派给项目组长或经理，由项目组长（或经理）对问题进行确认后再次分配给相应的开发人员。</p>
+<p>有些测试人员是穿插到不同研发团队中的，所以对不同的开人发员负责的开发模块非常清楚，这个时候就可以将问题直接指派给相应的开发人员。</p>
+<p>也有一种情况，本来此问题应该由A开发人员负责，但由于A开发人员的调离或辞职，些问题为转交给其它人员处理。“分配”强调是上级对下级；“转交”强调的是平级之间。</p>
+<p><strong>确认缺陷</strong></p>
+<p>当开发人员接到一个缺陷时，首先是对其进行分析与重现，如果对其进行分析发现不是缺陷（可能由于测试人员不了解需求）或无法对此问题进行重现，那么就需要将此问题反回给测试人员，并注明原因。如果确认为缺陷则需要对其进行处理。</p>
+<p><strong>推迟处理</strong></p>
+<p>在处理问题之后，还需要进行一次判断，是否需要推迟处理，有些需求已经确认了是问题，由于其可能在极端情况下才会出现，或需要对系统架构进行改动，或其优先级非常低，所以暂时不需要对此问题进行处理（或到下个版本进再进行修复）。</p>
+<p><strong>固定</strong></p>
+<p>对于推迟处理的问题可以暂时进行固定（“固定”为QC中的叫法。）一般固定的问题需要经过项目经理与测试经理协商后才能固定。</p>
+<p><strong>处理缺陷</strong></p>
+<p>开发人员在确认完一个问题需要处理时，那么就对其进行处理工作。（例如，redmine 是支持处理人时时更新问题处理进度的，如 已处理30% ，已处理80% 等，当然，对于短时间内可以修复的问题就没必要时时的去更新处理进度。）</p>
+<p><strong>回归缺陷</strong></p>
+<p>回归缺陷对于测试人员来说是非常重要的工作，其有三个入口两个出口。</p>
+<p>确认非缺陷问题：对于提交的一个缺陷，开人员处理为非问题或无法重现，然后直接转交给测试人员回归。测试人员再次确认，如果真如开发人员所说，则将问题关闭。如果非开发人员所说，是由于问题描述模糊或其它原因喂重现问题，则再次注明原因转给开发人员。</p>
+<p>确认修复问题：对开发人员修复的问题再次进行确认，确认能过，则关闭问题。确认不通过，将问题再次打开并转给开发人员。</p>
+<p>确认固定问题：有计划的对固定问题进行确认，有些固定问题随着时间的推移，版本的更新或已经不存在了，对这类问题应该及时关闭。有些固定问题依然存在且变得紧急，对于这类问题应该及时打开交给开发人员处理。</p>
+<p><strong>关闭缺陷</strong></p>
+<p>对于已经修复的缺陷进行关闭，这也是一个缺陷的最后一个状态。</p>
+<font color="red">最后，“状态”和“指派人”的对应关系如果更加细化，对项目而言是有益的：</font>
+
+<pre><code>已关闭---&gt;指派给修复这个bug的开发工程师。
+无需解决，不是bug---&gt;指派给提交这个bug的测试人员。
+无需解决，迭代待解决---&gt;指派给项目的产品经理。
+</code></pre><hr>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/bug1ae7dd8d12fa7577c.jpg" alt></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/2018/06/21/一个bug的生命周期/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/07/01/从用户登录测试谈起/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          从用户登录测试谈起
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/15/测试用例这件事儿/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">测试用例这件事儿</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bug的属性"><span class="toc-number">1.</span> <span class="toc-text">Bug的属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一个bug的生命周期"><span class="toc-number">2.</span> <span class="toc-text">一个bug的生命周期</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
+  
+  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
+
           </div>
         </div>
       </div>

@@ -204,7 +204,322 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-GitHub-Pages自定义域名开启HTTPS" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      GitHub Pages自定义域名开启HTTPS
+    </h1>
+  
+
+        
+        <a href="/2018/10/25/GitHub-Pages自定义域名开启HTTPS/" class="archive-article-date">
+  	<time datetime="2018-10-24T16:00:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">636字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">2分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://moetu.org/image/1yEdI" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/25/https7d20126c47cc848a.md.jpg" alt="https7d20126c47cc848a.md.jpg"></a></p>
+<a id="more"></a>
+<p>GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多coder搭建博客的首选方案。</p>
+<p>同时，GitHub Pages还支持自定义域名访问，这就让更多人有兴趣实用了。</p>
+<p>但，一旦你开启了自定义域名，通过自定义域名访问，不再是HTTPS了。</p>
+<p>这篇博客就是帮你实现自定义域名的HTTPS支持。</p>
+<blockquote>
+<p>2018年05月18日 更新</p>
+<p>据最新了解只要你域名CNAME到你的GitHub Page页面，github会自动给你申请一张你域名的Let’s Encrypt证书,而且你还可以在设置里开启强制HTTPS选项。</p>
+</blockquote>
+<p>我们这里主要借助的是<font face="宋体" color="#FF8000">Cloudflare</font>免费的CDN服务，让你的GitHub博客支持HTTPS。</p>
+<p>我们可以先看一下最后<a href="https://myssl.com/qvchuang.top?status=q" target="_blank" rel="noopener">成果</a>。</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/00f05023a39d3678033d68ede054af36c379c863540e9b01.png" alt></p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a><div style="background:#f9e9cd; color:#000">准备</div></h3><p>在开始之前，你需要先注册一个<a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">Cloudflare账号</a>。</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/b76b354b4f254fb11d7a805e3f2bda18b5b91eb92fa95a10.jpg" alt></p>
+<h3 id="修改DNS服务器"><a href="#修改DNS服务器" class="headerlink" title="修改DNS服务器"></a><div style="background:#f9e9cd; color:#000">修改DNS服务器</div></h3><p>在你注册完成，登录后，Cloudflare会提示你添加自己的站点，比如我的自定义域名是 qvchuang.top，</p>
+<p>就填这个,如下图一样(如果没有，点击右上角 Add Site即可)</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/0ba23adbc423dd5ee89deb19617443408db1034592597e9f.png" alt></p>
+<p>填写后，Cloudfire会去查询你的DNS记录</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/110fe8b25b967d9b6.png" alt></p>
+<p>如果你的DNS解析服务没有设置成Cloudflare,Cloud会提示你改变你的DNS域名解析服务，如下所示</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/8eff0d5c91ca4414f62bd5d36331406b4a1de4f1ace187c2.png" alt></p>
+<p>接下来你只需要，将你的DNS解析服务换成Cloudflare给你的两个地址即可</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/90ce93aae8fbb00d1ca3908f16d230941d74f39559cff597.png" alt></p>
+<p>例如，我用的是阿里云，直接到阿里的域名管理，修改DNS即可</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/1d6741408b0396644.png" alt></p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/26d1f9f40b8d9b6cb.png" alt></p>
+<blockquote>
+<p>修改完DNS后，回到Cloudflare点击继续进入主界面。</p>
+<p>主界面应该显示 <code>Status: Website not active</code>，这时需要等待DNS生效，一般1个小时左右就能生效了，如果超过一天还未生效建议查看是否正确修改DNS，生效后再进入Cloudflare主界面，点击 <code>Recheck Nameservers</code> 重新检查DNS服务器，如果已生效，Status就会显示 <code>Active</code> 并显示为绿色，这样就修改成功了</p>
+</blockquote>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/6b97564b6a5acc8f34faf7b68060780fbf29d26cc59a5ee0.png" alt></p>
+<h3 id="添加DNS记录"><a href="#添加DNS记录" class="headerlink" title="添加DNS记录"></a><div style="background:#f9e9cd; color:#000">添加DNS记录</div></h3><ul>
+<li><p>CNAME： 将<a href="http://www.qvchuang.top" target="_blank" rel="noopener">www.qvchuang.top</a> ☞ qvchuang.top</p>
+</li>
+<li><p>A : 将 qvchuang.top ☞ github pages 的IP  192.30.252.153</p>
+</li>
+<li><p>A : 将 qvchuang.top ☞ github pages 的IP  192.30.252.154</p>
+</li>
+</ul>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/89410a329cb113270a9a5f06044ceb7f88adcf4ec38e4bd9.png" alt></p>
+<h3 id="开启SSL加密"><a href="#开启SSL加密" class="headerlink" title="开启SSL加密"></a><div style="background:#f9e9cd; color:#000">开启SSL加密</div></h3><p>点击Crypto按钮，并设置SSL为 <code>Full</code></p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/ssldbf38f49775c5dbc.png" alt></p>
+<p>下滑找到Always Use HTTPS 并开启</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/ssl1ca73cf3e05c54726.png" alt></p>
+<h3 id="设置页面规则"><a href="#设置页面规则" class="headerlink" title="设置页面规则"></a><div style="background:#f9e9cd; color:#000">设置页面规则</div></h3><p>同时，我们还需要设置一些页面规则，将所有该站点的资源全部走HTTPS</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/f7f353d0c3756bd54140b5061c7bd2fe9b7a85c9e6298129.png" alt></p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/139fbcf682eebeaee.png" alt></p>
+<p>到这里，你就全部配置好了。等待一段时间，当你的状态变成如下所示时说明你以成功设置</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/25/78c7dbb681f377ca0710165abe788b7802c9bde5729b912d.png" alt></p>
+<hr>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a><div style="background:#f9e9cd; color:#000">参考</div></h3><ol>
+<li><a href="https://blog.vinlic.com/p/50505/" target="_blank" rel="noopener">https://blog.vinlic.com/p/50505/</a></li>
+<li><a href="https://razeen.me/post/https-githubpages.html" target="_blank" rel="noopener">https://razeen.me/post/https-githubpages.html</a></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/2018/10/25/GitHub-Pages自定义域名开启HTTPS/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/11/12/Python3基础·一/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python3基础·一
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/10/加个Valine评论系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">加个Valine评论系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改DNS服务器"><span class="toc-number">2.</span> <span class="toc-text">修改DNS服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加DNS记录"><span class="toc-number">3.</span> <span class="toc-text">添加DNS记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启SSL加密"><span class="toc-number">4.</span> <span class="toc-text">开启SSL加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置页面规则"><span class="toc-number">5.</span> <span class="toc-text">设置页面规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
+  
+  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
+
           </div>
         </div>
       </div>

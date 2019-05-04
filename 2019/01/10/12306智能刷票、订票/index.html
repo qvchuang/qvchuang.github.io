@@ -190,7 +190,319 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-12306智能刷票、订票" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      12306智能刷票、订票
+    </h1>
+  
+
+        
+        <a href="/2019/01/10/12306智能刷票、订票/" class="archive-article-date">
+  	<time datetime="2019-01-10T08:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-10</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">558字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">2分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://moetu.org/image/LUTjm" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2019/01/19/fxhc4478ac9f7920ec2.md.jpg" alt="fxhc4478ac9f7920ec2.md.jpg"></a></p>
+<a id="more"></a>
+<hr>
+<blockquote>
+<p>一年一度的春运又开启了，相信还有很多小伙伴没有抢到一张回家的车票。没抢到票怎么办？自己动手丰衣足食，这个项目也许能帮到你。</p>
+</blockquote>
+<blockquote>
+<p>ps：博主用<a href="https://www.12306bypass.com/" target="_blank" rel="noopener">12306分流</a>抢票软件抢到了回家的票，但是开工的票没抢到</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于是便找到了大神的开源项目<a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">购票小助手</a>折腾一番</p>
+</blockquote>
+<p style="FONT-FAMILY:楷体;FONT-WEIGHT: BOLD">下面是博主的折腾过程以及踩过的坑</p>
+
+<font face="宋体" color="#FF8000">12306购票小助手</font>
+
+<h4 id="python-版本支持"><a href="#python-版本支持" class="headerlink" title="python 版本支持"></a><div style="background:#c6e6e8; color:#fff">python 版本支持</div></h4><pre><code>2.7.10 - 2.7.15
+</code></pre><h4 id="依赖库"><a href="#依赖库" class="headerlink" title="依赖库"></a><div style="background:#c6e6e8; color:#fff">依赖库</div></h4><blockquote>
+<p>依赖若快 (若快注册地址：<a href="http://www.ruokuai.com/login" target="_blank" rel="noopener">http://www.ruokuai.com/login</a>)</p>
+<p>项目依赖包 requirements.txt</p>
+<blockquote>
+<p>安装方法 pip install -r requirements.txt</p>
+</blockquote>
+</blockquote>
+<h4 id="项目使用说明"><a href="#项目使用说明" class="headerlink" title="项目使用说明"></a><div style="background:#c6e6e8; color:#fff">项目使用说明</div></h4><ul>
+<li>可以配置邮箱，可以配置可以不配置，配置邮箱的格式在yaml里面可以看到</li>
+<li>可以配置server酱提醒（推荐）， [配置教程] (<a href="https://www.jianshu.com/p/8d10b5b9c4e3" target="_blank" rel="noopener">https://www.jianshu.com/p/8d10b5b9c4e3</a>)</li>
+<li>提交订单验证码哪里依赖打码兔，所以如果是订票遇到验证码的时候，没有打码兔是过不了的，不推荐手动，手动太慢</li>
+<li>配置yaml文件的时候，需注意空格和遵循yaml语法格式</li>
+</ul>
+<h4 id="项目开始"><a href="#项目开始" class="headerlink" title="项目开始"></a><div style="background:#c6e6e8; color:#fff">项目开始</div></h4><ul>
+<li>修改 config/ticket_config.yaml 文件，按照提示更改自己想要的信息</li>
+<li>windows 打开 ide 或者 cmd 请用管理员身份执行 python run.py</li>
+</ul>
+<h4 id="目录对应说明"><a href="#目录对应说明" class="headerlink" title="目录对应说明"></a><div style="background:#c6e6e8; color:#fff">目录对应说明</div></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">agency - cdn代理</span><br><span class="line">config - 项目配置</span><br><span class="line">damatuCode - 打码兔接口</span><br><span class="line">init - 项目主运行目录</span><br><span class="line">myException - 异常</span><br><span class="line">myUrllib - urllib库</span><br></pre></td></tr></table></figure>
+<h4 id="思路图"><a href="#思路图" class="headerlink" title="思路图 "></a><div style="background:#c6e6e8; color:#fff">思路图 </div></h4><p><a href="https://moetu.org/image/LUtAe" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2019/01/19/uml98f6c347365add6b.md.png" alt="uml98f6c347365add6b.md.png" border="0"></a></p>
+<h4 id="过程中遇到的坑"><a href="#过程中遇到的坑" class="headerlink" title="过程中遇到的坑"></a><div style="background:#c6e6e8; color:#ff2">过程中遇到的坑</div></h4><blockquote>
+<p>1.无法安装依赖包requirements.txt</p>
+<blockquote>
+<p>解决方法： 将项目clone下来，进到根目录，直接 pip install -r requirements.txt</p>
+</blockquote>
+<p>2.python版本过高或过低</p>
+<blockquote>
+<p>解决方法：安装 2.7.10 - 2.7.15 版本的python</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>注意<a href="https://www.cnblogs.com/thunderLL/p/6643022.html" target="_blank" rel="noopener">Win10下python3和python2同时安装并解决pip共存问题</a></p>
+</blockquote>
+</blockquote>
+<p>3.运行提示扫码平台错误：快豆不足，请充值</p>
+<blockquote>
+<p>解决方法：登录<a href="http://www.ruokuai.com/login" target="_blank" rel="noopener">若快</a>充值快豆，用于自动识别扫码</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>不用充值太多，1元就可以用很久</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a><div style="background:#c6e6e8; color:#fff">运行项目</div></h4><pre><code>python run.py
+</code></pre><p>好了，接下来就坐等抢到票了</p>
+<p>收到抢票通知后记得在30分钟内登录12306网站进行支付哦！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/2019/01/10/12306智能刷票、订票/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/31/APP测试流程梳理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">APP测试流程梳理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#python-版本支持"><span class="toc-number">1.</span> <span class="toc-text">python 版本支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖库"><span class="toc-number">2.</span> <span class="toc-text">依赖库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目使用说明"><span class="toc-number">3.</span> <span class="toc-text">项目使用说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目开始"><span class="toc-number">4.</span> <span class="toc-text">项目开始</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目录对应说明"><span class="toc-number">5.</span> <span class="toc-text">目录对应说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#思路图"><span class="toc-number">6.</span> <span class="toc-text">思路图 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过程中遇到的坑"><span class="toc-number">7.</span> <span class="toc-text">过程中遇到的坑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#运行项目"><span class="toc-number">8.</span> <span class="toc-text">运行项目</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
+  
+  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
+
           </div>
         </div>
       </div>

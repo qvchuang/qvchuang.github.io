@@ -220,7 +220,348 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Hexo＋Github搭建博客" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo＋Github搭建博客
+    </h1>
+  
+
+        
+        <a href="/2018/06/01/Hexo＋Github搭建博客/" class="archive-article-date">
+  	<time datetime="2018-06-01T02:34:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.1k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">4分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/19/hexob666c4a422d9d2dc.md.jpg " border="0"></a></p>
+<a id="more"></a>
+<p>前言：电脑系统为window 10专业版，64位</p>
+<p><strong>相关步骤：</strong>  </p>
+<h2 id="1、安装Git和配置好Git环境"><a href="#1、安装Git和配置好Git环境" class="headerlink" title="1、安装Git和配置好Git环境"></a>1、安装Git和配置好Git环境</h2><p>安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/1c04535410eadc223.png" alt="Alt text"></p>
+<p>注意：一般出于安全考虑，只有在Git Bash Here中才能进行Git的相关操作。如果需要在cmd命令行里调用Git，那么就要配置电脑的环境变量Path，或者在安装的时候选择use Git from the Windows Command Prompt。这个可有可无，影响不大，成功配置的界面如图  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/249320c90973e888f.png" alt="Alt text">   </p>
+<h2 id="2、安装Node-js和配置好Node-js环境"><a href="#2、安装Node-js和配置好Node-js环境" class="headerlink" title="2、安装Node.js和配置好Node.js环境"></a>2、安装Node.js和配置好Node.js环境</h2><p>打开cmd命令行，成功界面如下  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/3358f5943a52fcb14.png" alt="Alt text"> </p>
+<h2 id="3、Github账户注册和新建项目"><a href="#3、Github账户注册和新建项目" class="headerlink" title="3、Github账户注册和新建项目"></a>3、Github账户注册和新建项目</h2><pre><code>项目必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。并且需要勾选Initialize this repository with a README  
+</code></pre><p><img src="https://moetu.fastmirror.org/images/2018/11/19/44c5d00043fa76ad2.png" alt="Alt text">   </p>
+<p>在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/5cd15dfb1be060636.png" alt="Alt text">   </p>
+<h2 id="4、安装Hexo"><a href="#4、安装Hexo" class="headerlink" title="4、安装Hexo"></a>4、安装Hexo</h2><p>在自己认为合适的地方创个文件夹，我是在D盘建了一个blog文件夹。然后通过命令行进入到该文件夹里面</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/6aee2ee5a940a0a42.png" alt="Alt text"> </p>
+<p>输入npm install hexo -g，开始安装Hexo  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/7011b2969deebeb6f.png" alt="Alt text"></p>
+<p>输入hexo -v，检查hexo是否安装成功  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/8020efd28f9204c5b.png" alt="Alt text"></p>
+<p>输入hexo init，初始化该文件夹（有点漫长的等待。。。）  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/91d8e74298dc5fabb.png" alt="Alt text">   </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/1051575e8a0c368d80.png" alt="Alt text"> </p>
+<p>看到后面的“Start blogging with Hexo！”，激动有木有！！！！！  </p>
+<p>输入npm install，安装所需要的组件  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/111a5e5c7916495bad.png" alt="Alt text">   </p>
+<p>输入hexo g，首次体验Hexo  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/122f760994827e2ae9.png" alt="Alt text">   </p>
+<p>输入hexo s，开启服务器，访问该网址，正式体验Hexo  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/13b94a8e467aea2fc5.png" alt="Alt text">   </p>
+<p>问题：假如页面一直无法跳转，那么可能端口被占用了。此时我们ctrl+c停止服务器，接着输入“hexo server -p 端口号”来改变端口号  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/148b84f2e89c0b6b0e.png" alt="Alt text">   </p>
+<p>那么出现如下图就成功了  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/152c49c1309f65e0cd.png" alt="Alt text">   </p>
+<h2 id="5、将Hexo与Github-page联系起来"><a href="#5、将Hexo与Github-page联系起来" class="headerlink" title="5、将Hexo与Github page联系起来"></a>5、将Hexo与Github page联系起来</h2><p>设置Git的user name和email（如果是第一次的话） </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/16e7e0a6c34befb5d9.png" alt="Alt text">   </p>
+<p>上图是在其文件夹里面鼠标右键，点击Git Base Here。这里“feng”可以替换成自己的用户名，邮箱可以替换成自己的邮箱</p>
+<p>输入cd ~/.ssh，检查是否由.ssh的文件夹  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/172779a84c5f26d1ec.png" alt="Alt text">   </p>
+<p>输入ls，列出该文件下的内容。下图说明存在  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/188b94e025c7c75a99.png" alt="Alt text">   </p>
+<p>输入ssh-keygen -t rsa -C “<a href="mailto:xxxxxxxxx@qq.com" target="_blank" rel="noopener">xxxxxxxxx@qq.com</a>”，连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/198344391f6c6dff60.png" alt="Alt text">   </p>
+<p>输入eval “$(ssh-agent -s)”，添加密钥到ssh-agent  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/20023c895ad33fc87e.png" alt="Alt text">   </p>
+<p> 再输入ssh-add ~/.ssh/id_rsa，添加生成的SSH key到ssh-agent  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/212625767c13b53639.png" alt="Alt text"> </p>
+<p> 登录Github，点击头像下的settings，添加ssh</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/22185712736b96518a.png" alt="Alt text">   </p>
+<p>新建一个new ssh key，将id_rsa.pub文件里的内容复制上去  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/232d43a3c7ece80055.png" alt="Alt text">   </p>
+<p>输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/24be18ba95b9add0e4.png" alt="Alt text">   </p>
+<p>问题：假如ssh-key配置失败，那么只要以下步骤就能完全解决</p>
+<p>首先，清除所有的key-pair<br>ssh-add -D<br>rm -r ~/.ssh<br>删除你在github中的public-key</p>
+<p>重新生成ssh密钥对<br>ssh-keygen -t rsa -C “<a href="mailto:xxx@xxx.com" target="_blank" rel="noopener">xxx@xxx.com</a>“</p>
+<p>接下来正常操作,在github上添加公钥public-key:</p>
+<p>1、首先在你的终端运行 xclip -sel c ~/.ssh/id_rsa.pub将公钥内容复制到剪切板</p>
+<p>2、在github上添加公钥时，直接复制即可</p>
+<p>3、保存</p>
+<p>测试：<br>在终端 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>  </p>
+<h2 id="6、配置Deployment"><a href="#6、配置Deployment" class="headerlink" title="6、配置Deployment"></a>6、配置Deployment</h2><p>在其文件夹中，找到_config.yml文件，修改repo值（在末尾）  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/25df0b020e50a97675.png" alt="Alt text">   </p>
+<p>repo值是你在github项目里的ssh（右下角）  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/260e130a1f97d1a653.png" alt="Alt text">   </p>
+<h2 id="7、生成以及部署文章"><a href="#7、生成以及部署文章" class="headerlink" title="7、生成以及部署文章"></a>7、生成以及部署文章</h2><p>在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git –save  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/2713ef95297b55f645.png" alt="Alt text"> </p>
+<p>新建一篇博客，在cmd执行命令：hexo new post “博客名”  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/285e4c5f32d05a5a37.png" alt="Alt text">   </p>
+<p>这时候在文件夹_posts目录下将会看到已经创建的文件  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/292d1b9da2571fd092.png" alt="Alt text">   </p>
+<p>使用编辑器编好文章，那么就可以使用命令：</p>
+<p><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="noopener">Markdown语法</a></p>
+<p>hexo g 生成网站静态文件</p>
+<p>hexo s 启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<p>hexo d 自动生成网站静态文件，并部署到设定的仓库。  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/30666b7dfc12e4c00e.png" alt="Alt text">   </p>
+<p>部署成功后访问你的地址：http://用户名.github.io。那么将看到生成的文章  </p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/31a0f9169d5b707cc1.png" alt="Alt text">   </p>
+<p> 好了，到此为止，最基本的也是最全面的hexo+github搭建博客完结。</p>
+<hr>
+<h2 id="借鉴"><a href="#借鉴" class="headerlink" title="借鉴"></a>借鉴</h2><ol>
+<li><a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">Hexo+GitHub搭建教程</a></li>
+<li><a href="http://shenzekun.cn/hexo的next主题个性化配置教程.html" target="_blank" rel="noopener">nexT主题个性化配置教程</a></li>
+<li><a href="http://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">Hexo博客搭建教程</a></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/2018/06/01/Hexo＋Github搭建博客/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/06/05/Jmeter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Jmeter
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、安装Git和配置好Git环境"><span class="toc-number">1.</span> <span class="toc-text">1、安装Git和配置好Git环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、安装Node-js和配置好Node-js环境"><span class="toc-number">2.</span> <span class="toc-text">2、安装Node.js和配置好Node.js环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、Github账户注册和新建项目"><span class="toc-number">3.</span> <span class="toc-text">3、Github账户注册和新建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、安装Hexo"><span class="toc-number">4.</span> <span class="toc-text">4、安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、将Hexo与Github-page联系起来"><span class="toc-number">5.</span> <span class="toc-text">5、将Hexo与Github page联系起来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、配置Deployment"><span class="toc-number">6.</span> <span class="toc-text">6、配置Deployment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、生成以及部署文章"><span class="toc-number">7.</span> <span class="toc-text">7、生成以及部署文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#借鉴"><span class="toc-number">8.</span> <span class="toc-text">借鉴</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
+  
+  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
+
           </div>
         </div>
       </div>

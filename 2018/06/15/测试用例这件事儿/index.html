@@ -190,7 +190,332 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-测试用例这件事儿" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      测试用例这件事儿
+    </h1>
+  
+
+        
+        <a href="/2018/06/15/测试用例这件事儿/" class="archive-article-date">
+  	<time datetime="2018-06-15T05:12:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.1k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">3分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://moetu.fastmirror.org/images/2018/11/19/8359c130af642e032838b5245e05e844888e3d5796dd744c.png" alt></p>
+<a id="more"></a>
+<blockquote>
+<p>1、测试用例的定义：</p>
+</blockquote>
+<p>百度百科的解释是这样的：测试用例是为某个特殊目标而编制的一组输入、执行条件以及预期结果，以便</p>
+<p>测试某个程序路径或者合适是否满足特定需求</p>
+<p>俗话理解：通过一组输入输出来验证某个需求的状态或者结果是否满足预定结果</p>
+<blockquote>
+<p>2、测试用例的好处：</p>
+</blockquote>
+<p>A、有效、快速的了解待测需求</p>
+<p>B、测试用例的编写、执行数量可以评估需求的覆盖度</p>
+<p>C、测试用例的细化程度、可以作为阶段性工作的排期的依据</p>
+<p>D、测试用例的输出可以将人为因素的影响减少，如a同学编写用例后，b同学可以依据用例进行执行功能</p>
+<p>总结：思路清晰、避免遗漏、跟进测试进度、历史数据参考、避免重复性劳动</p>
+<blockquote>
+<p>3、何时开始设计测试用例？</p>
+</blockquote>
+<p>需求文档定版后，即可开始陈列测试点和编写测试用例</p>
+<blockquote>
+<p>4、如何设计测试用例？</p>
+</blockquote>
+<p>A、首先将需求文档或者产品文档中的规则转述为每个用例的检查点</p>
+<p>B、单个用例最小化原则，即一条用例只做一件事</p>
+<p>C、先从单个模块或者功能点入手写用例</p>
+<p>D、借助常用的测试用例设计方法，如等价类、边界值、因果图等</p>
+<p>总结：</p>
+<p>n1：除了上诉的内容外，还需要考虑兼容性问题、浏览器兼容性、操作系统兼容性，如果是app侧的还要</p>
+<p>考虑中断测试、弱网测试等等</p>
+<p>n2：设计测试用例时也要注意涉及到的数据库中的字段值是否正确</p>
+<p>n3：需要注意关联模块的用例设计</p>
+<p>n4：注意新增接口、新增字段的用例的设计</p>
+<blockquote>
+<p>5、实际工作中如何设计用例？</p>
+</blockquote>
+<p>A、根据需求文档找到角色和功能模块的匹配关系，输出Usecase图</p>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/UseCase73d3755f69165978.png" alt></p>
+<p>B、输出流程图（如果产品有输出流程图那是最好的了，没有只能测试自己输出流程图，并发给产品进行</p>
+<p>查缺补漏）</p>
+<p>C、依据业务规则、UseCase、流程图输出测试用例</p>
+<blockquote>
+<p>6、测试用例的评审与更新？</p>
+</blockquote>
+<p>测试用例是一定要评审的，因为每个人都有自己的测试盲区，所以不要认为自己考虑的是全面的</p>
+<p>评审参与人员，相关产品、开发、测试参与即可</p>
+<p>评审的意义：将测试用例编写中遇到的疑问在此得到答案，并引导开发、产品功能进行思考补充现有用例（查缺补漏）</p>
+<p>测试用例更新：一是评审后需要更新，在者就是测试过程中需要更新，测试结束后根据线上反馈情况进行更新</p>
+<blockquote>
+<p>7、所有项目都需要写测试用例么？</p>
+</blockquote>
+<p>测试用例的编写需要根据待测试任务的大小、紧急程度、测试人员数量等多方面衡量</p>
+<p>对于大中型任务，个人建议还是要写详细的用例，因为写用例就是思考的过程</p>
+<p>对于紧急小型任务，可以写测试点</p>
+<p>对于新人负责的模块，一定要写测试用例（本人写或者老人写完，新人执行）</p>
+<blockquote>
+<p>8、测试用例的颗粒度？</p>
+</blockquote>
+<p>其实和问题7有一定的关联，在问题7的前提下，仅仅就测试人员来说是否写测试用例，写何种颗粒度的测试用例其实取</p>
+<p>决于测试人员本身的水平</p>
+<p>如何写用例、怎么写、写到何种粒度都需要依据当前公司的项目的情况决定。</p>
+<p>但是依旧建议无论测试人员本身水平如何，都需要输出基本的测试用例或者测试点。</p>
+<p>首先这是对自己的负责，其次随着时间的流逝，你能保证记录下曾经所有的用例么，</p>
+<p>这也就是为何建议输出用例或者测试点的原因，不要认为测试用例的设计没有任何的含量，</p>
+<p>恰恰相反，测试用例的设计反而是最核心的技能。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">测试用例</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/2018/06/15/测试用例这件事儿/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/06/21/一个bug的生命周期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一个bug的生命周期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/12/所谓安逸。。。。。。/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">所谓安逸。。。。。。</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
+  
+  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
+
           </div>
         </div>
       </div>

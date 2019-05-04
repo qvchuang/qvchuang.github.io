@@ -190,7 +190,409 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Python3-函数进阶" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python3-函数进阶
+    </h1>
+  
+
+        
+        <a href="/2018/12/01/Python3-函数进阶/" class="archive-article-date">
+  	<time datetime="2018-12-01T05:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.8k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">7分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://moetu.org/image/1yFmR" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/12/01/python8ea1736073a1a019.md.png" alt="python8ea1736073a1a019.md.png"></a></p>
+<a id="more"></a>
+<h2 id="阅读目录"><a href="#阅读目录" class="headerlink" title="阅读目录"></a><div style="background:greenyellow; color:#000">阅读目录</div></h2><ul>
+<li><p><a href="#01">命名空间和作用域</a></p>
+</li>
+<li><p><a href="#02">函数嵌套及作用域链</a></p>
+</li>
+<li><p><a href="#03">函数名的本质</a></p>
+</li>
+<li><p><a href="#04">闭包</a></p>
+</li>
+</ul>
+<h2 id="一、命名空间和作用域"><a href="#一、命名空间和作用域" class="headerlink" title="一、命名空间和作用域"></a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2><h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a><div style="background:pink; color:#000">命名空间</div></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python代码运行的时候遇到函数是怎么做的?</span><br><span class="line">从python解释器开始执行之后，就在内存中开辟了一个空间</span><br><span class="line">每当遇到一个变量的时候，就把变量名和值之间的对应关系记录下来。</span><br><span class="line">但是当遇到函数定义的时候解释器只是象征性的将函数名读入内存，表示知道这个函数的存在了，至于函数内部的变量和逻辑解释器根本不关心。</span><br><span class="line">等执行到函数调用的时候，python解释器会再开辟一块内存来存储这个函数里的内容，这个时候，才关注函数里面有哪些变量，而函数中的变量会存储在新开辟出来的内存中。函数中的变量只能在函数的内部使用，并且会随着函数执行完毕，这块内存中的所有内容也会被清空。</span><br></pre></td></tr></table></figure>
+<p>我们给这个“存放名字与值的关系”的空间起了一个名字——叫做命名空间</p>
+<p>代码在运行伊始，创建的存储“变量名与值的关系”的空间叫做全局命名空间</p>
+<p>在函数的运行中开辟的临时的空间叫做局部命名空间</p>
+<blockquote>
+<p>命名空间的本质：存放名字与值的绑定关系</p>
+<p>在python之禅中提到过：命名空间是一种绝妙的理念，让我们尽情的使用发挥吧！</p>
+</blockquote>
+<pre><code>命名空间一共分为三种：
+
+　　               全局命名空间 —— 我们写的代码但不是函数中的代码
+                  # 是在程序从上到下被执行的过程中依次加载进内存的
+                  # 放置了我们设置的所有变量名和函数名
+
+　　               局部命名空间 —— 函数
+                  # 就是函数内部定义的名字
+                  # 当调用函数的时候 才会产生这个名称空间 随着函数执行的结束 这个命名空间就又消失了
+
+　　               内置命名空间 —— python解释器
+                  # 就是函数内部定义的名字
+                  # 当调用函数的时候 才会产生这个名称空间 随着函数执行的结束 这个命名空间就又消失了
+</code></pre><p>注：<strong><code>内置命名空间</code></strong>中存放了python解释器为我们提供的名字：<code>input,print,str,list,tuple...</code>它们都是我们熟悉的，拿过来就可以用的方法。</p>
+<p><strong>三种命名空间之间的加载与取值顺序：</strong></p>
+<p>加载顺序：<code>内置命名空间(程序运行前加载)-&gt;全局命名空间(程序运行中：从上到下加载)-&gt;局部命名空间(程序运行中：调用时才加载)</code></p>
+<p><a href="https://moetu.org/image/Em7TY" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/12/01/be7926a39cdf743ac4bd4cd991d28656968f02de43133425.md.png" alt="be7926a39cdf743ac4bd4cd991d28656968f02de43133425.md.png"></a></p>
+<pre><code>取值顺序：
+
+　　    在局部调用：局部命名空间-----&gt;全局命名空间------&gt;内置命名空间
+
+　　    在全局调用：全局命名空间--------&gt;内置命名空间
+</code></pre><p>在局部:可以使用全局、内置命名空间中的名字</p>
+<p>在全局:可以使用内置命名空间中的名字，但是不能使用局部空间中的名字</p>
+<p>在内置:不能使用局部和全局的名字的</p>
+<font face="宋体" color="#FF8000">综上所述，在找寻变量时，从小范围，一层一层到大范围去找寻</font>
+
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a><div style="background:pink; color:#000">作用域</div></h3><blockquote>
+<p>作用域就是作用范围，按照生效范围可以分为全局作用域和局部作用域。</p>
+<p>全局作用域：包含内置名称空间、全局名称空间，在整个文件的任意位置都能被引用、全局有效</p>
+<p>局部作用域：局部名称空间，只能在局部范围内生效</p>
+</blockquote>
+<p><strong>globals和locals方法</strong></p>
+<blockquote>
+<p>全局作用域 —— 作用在全局 —— 内置和全局名字空间中的名字都属于全局作用域  ——globals()</p>
+<p>局部作用域 —— 作用在局部 —— 函数（局部名字空间中的名字属于局部作用域） ——locals()</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">12</span></span><br><span class="line">    b = <span class="number">20</span></span><br><span class="line">    print(locals())</span><br><span class="line">    print(globals())</span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
+<p>globals 永远打印全局的名字</p>
+<p>locals 输出什么 根据locals所在的位置</p>
+<p><strong>global关键字</strong></p>
+<blockquote>
+<p>1、声明一个全局变量。</p>
+<p>2、在局部作用域想要对全局作用域的全局变量进行修改时，需要用到 global(<font face="宋体" color="#red">限于字符串，数字</font>)。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">20</span></span><br><span class="line">print(a)</span><br><span class="line">func()</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<p>ps：对可变数据类型（list，dict，set）可以直接引用不用通过global</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l1 = [1,2,3]</span><br><span class="line">def func():</span><br><span class="line">    l1.append(444)</span><br><span class="line">func()</span><br><span class="line">print(l1)</span><br><span class="line"> #[1, 2, 3, 444]</span><br></pre></td></tr></table></figure>
+<p><strong>nonlocal关键字</strong></p>
+<blockquote>
+<p>1、nonlocal 只能用于局部变量 找上层中离当前函数最近一层的局部变量，不能修改全局变量。</p>
+<p>2、声明了nonlocal的内部函数的变量修改会影响到 离当前函数最近一层的局部变量</p>
+<p>3、对局部 也只是对 最近的 一层 有影响</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'wusir'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> name</span><br><span class="line">        name = <span class="string">'taibai'</span></span><br><span class="line">        print(name)</span><br><span class="line">    print(name)</span><br><span class="line">    inner()</span><br><span class="line">    print(name)</span><br><span class="line">func()</span><br><span class="line">wusir</span><br><span class="line">taibai</span><br><span class="line">taibai</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_b</span><span class="params">()</span>:</span></span><br><span class="line">    b = <span class="number">42</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_global</span><span class="params">()</span>:</span></span><br><span class="line">        b = <span class="number">10</span></span><br><span class="line">        print(b)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dd_nonlocal</span><span class="params">()</span>:</span></span><br><span class="line">            <span class="keyword">nonlocal</span> b</span><br><span class="line">            b = b + <span class="number">20</span></span><br><span class="line">            print(b)</span><br><span class="line">        dd_nonlocal()</span><br><span class="line">        print(b)</span><br><span class="line">    do_global()</span><br><span class="line">    print(b)</span><br><span class="line">add_b()</span><br><span class="line"><span class="number">310</span></span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">42</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、函数嵌套及作用域链"><a href="#二、函数嵌套及作用域链" class="headerlink" title="二、函数嵌套及作用域链"></a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2><font face="宋体" color="#FF8000">函数的嵌套调用</font>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max2</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    m  = x <span class="keyword">if</span> x&gt;y <span class="keyword">else</span> y</span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max4</span><span class="params">(a,b,c,d)</span>:</span></span><br><span class="line">    res1 = max2(a,b)</span><br><span class="line">    res2 = max2(res1,c)</span><br><span class="line">    res3 = max2(res2,d)</span><br><span class="line">    <span class="keyword">return</span> res3</span><br><span class="line"> <span class="comment"># max4(23,-7,31,11)</span></span><br></pre></td></tr></table></figure>
+<font face="宋体" color="#FF8000">函数的嵌套定义</font>
+
+<p><em>定义在内部的函数无法直接在全局被调用</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">    print(&quot;in f1&quot;)</span><br><span class="line">    def f2():</span><br><span class="line">        print(&quot;in f2&quot;)</span><br><span class="line">    f2()</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">            print(<span class="string">"in f3"</span>)</span><br><span class="line">        print(<span class="string">"in f2"</span>)</span><br><span class="line">        f3()</span><br><span class="line">    print(<span class="string">"in f1"</span>)</span><br><span class="line">    f2()    </span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<font face="宋体" color="#FF8000">函数的作用域链</font>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">    a = 1</span><br><span class="line">    def f2():</span><br><span class="line">        print(a)</span><br><span class="line">    f2()</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">            print(a)</span><br><span class="line">        f3()</span><br><span class="line">    f2()</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        a = <span class="number">2</span></span><br><span class="line">    f2()</span><br><span class="line">    print(<span class="string">'a in f1 : '</span>,a)</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<h2 id="三、函数名的本质"><a href="#三、函数名的本质" class="headerlink" title="三、函数名的本质"></a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2><font face="宋体" color="#red">函数名本质上就是一个变量，保存了函数所在的内存地址</font>
+
+<font face="宋体" color="#FF8000">1.可以被引用</font>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'in func'</span>)</span><br><span class="line">f = func</span><br><span class="line">print(f)</span><br></pre></td></tr></table></figure>
+<font face="宋体" color="#FF8000">2.可以被当作容器类型的元素</font>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'f1'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'f2'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'f3'</span>)</span><br><span class="line">l = [f1,f2,f3]</span><br><span class="line">d = &#123;<span class="string">'f1'</span>:f1,<span class="string">'f2'</span>:f2,<span class="string">'f3'</span>:f3&#125;</span><br><span class="line"> <span class="comment">#调用</span></span><br><span class="line">l[<span class="number">0</span>]()</span><br><span class="line">d[<span class="string">'f2'</span>]()</span><br></pre></td></tr></table></figure>
+<font face="宋体" color="#FF8000">3.可以当作函数的参数和返回值</font>
+
+<p>不明白？那就记住一句话，就当普通变量用</p>
+<blockquote>
+<p>第一类对象（first-class object）指</p>
+<p>1.可在运行期创建</p>
+<p>2.可用作函数参数或返回值</p>
+<p>3.可存入变量的实体。</p>
+</blockquote>
+<h2 id="四、闭包"><a href="#四、闭包" class="headerlink" title="四、闭包"></a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'eva'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(name)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>闭包函数：</p>
+<p>内部函数包含对外部作用域而非全剧作用域名字的引用，该内部函数称为闭包函数</p>
+<p>函数内部定义的函数称为内部函数</p>
+</blockquote>
+<font face="宋体" color="#FF8000">如何实现对内层函数的调用？</font>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'eva'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(name)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line">f = func()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<font face="宋体" color="#FF8000">判断闭包函数的方法<strong>closure</strong></font>
+
+<pre><code>#输出的__closure__有cell元素 ：是闭包函数
+def func():
+    name = &apos;eva&apos;
+    def inner():
+        print(name)
+    print(inner.__closure__)
+    return inner
+
+f = func()
+f()
+
+#输出的__closure__为None ：不是闭包函数
+name = &apos;egon&apos;
+def func2():
+    def inner():
+        print(name)
+    print(inner.__closure__)
+    return inner
+
+f2 = func2()
+f2()
+</code></pre><font face="宋体" color="#FF8000">闭包的嵌套</font>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></span><br><span class="line">    money = <span class="number">1000</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        name = <span class="string">'eva'</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">            print(name,money)</span><br><span class="line">        <span class="keyword">return</span> inner</span><br><span class="line">    <span class="keyword">return</span> func</span><br><span class="line">f = wrapper()</span><br><span class="line">i = f()</span><br><span class="line">i()</span><br></pre></td></tr></table></figure>
+<p><strong>闭包的好处：</strong><font face="宋体" color="#red">保护内存，闭包函数在内存中的局部命名空间不会随着函数的结束而结束</font></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">python3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/2018/12/01/Python3-函数进阶/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/12/02/Python3-装饰器函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python3-装饰器函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/25/Python3-初识函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python3-初识函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#阅读目录"><span class="toc-number">1.</span> <span class="toc-text">阅读目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、命名空间和作用域"><span class="toc-number">2.</span> <span class="toc-text">一、命名空间和作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名空间"><span class="toc-number">2.1.</span> <span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域"><span class="toc-number">2.2.</span> <span class="toc-text">作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、函数嵌套及作用域链"><span class="toc-number">3.</span> <span class="toc-text">二、函数嵌套及作用域链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、函数名的本质"><span class="toc-number">4.</span> <span class="toc-text">三、函数名的本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、闭包"><span class="toc-number">5.</span> <span class="toc-text">四、闭包</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
+  
+  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
+
           </div>
         </div>
       </div>

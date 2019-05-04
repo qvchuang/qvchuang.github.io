@@ -189,7 +189,326 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-mysql学习笔记-三" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mysql学习笔记(三)
+    </h1>
+  
+
+        
+        <a href="/2018/08/12/mysql学习笔记-三/" class="archive-article-date">
+  	<time datetime="2018-08-12T06:41:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-12</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">556字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">2分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://moetu.org/image/1ldHz" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/19/mysql0311a32b9cd926bc.md.jpg" alt="mysql0311a32b9cd926bc.md.jpg"></a></p>
+<a id="more"></a>
+<p><hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3"><br>此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结</p>
+<h1 id="4-操作数据表中的记录（增删改查）"><a href="#4-操作数据表中的记录（增删改查）" class="headerlink" title="4.操作数据表中的记录（增删改查）"></a>4.操作数据表中的记录（增删改查）</h1><h2 id="4-1-插入记录INSERT"><a href="#4-1-插入记录INSERT" class="headerlink" title="4-1 插入记录INSERT"></a>4-1 插入记录INSERT</h2><p>第一种方法：</p>
+<pre><code>插入单条记录：INSERT [ INFO ] tbl_name [ ( col_name ) ] VALUES（…）；
+
+插入多条记录：INSERT [ INFO ] tbl_name [ ( col_name ) ] VALUES（…）, （…）, （…）；
+</code></pre><p>列名称col_name如果省略掉的话就要为所有的字段依次要赋值</p>
+<p>如果为自动编号的字段赋值的话，我们可以采用NULL 或 DEFAULT 让其采用默认的递增的方式来实现</p>
+<p>第二种方法：</p>
+<pre><code>INSERT [INFO] tbl_name SET col_name=val，col_name=val；
+</code></pre><p>说明：与第一种方式的区别在于，此方法可以使用子查询（SubQuery），但是一次只能插入一条记录</p>
+<p>第三种方法：（将查找的记录插入到表中）</p>
+<pre><code>INSERT tbl_name(col_name) SELECT col_name FROM tbl_name [ WHERT 条件 ]；
+</code></pre><h2 id="4-2-单表更新记录UPDATE"><a href="#4-2-单表更新记录UPDATE" class="headerlink" title="4-2 单表更新记录UPDATE"></a>4-2 单表更新记录UPDATE</h2><blockquote>
+<p>UPDATE tbl_name SET col_name=(val)，col_name=(val)；</p>
+</blockquote>
+<blockquote>
+<p>UPDATE tbl_name SET col_name=(val) WHERR 条件；</p>
+</blockquote>
+<h2 id="4-3-单表删除记录DELETE"><a href="#4-3-单表删除记录DELETE" class="headerlink" title="4-3 单表删除记录DELETE"></a>4-3 单表删除记录DELETE</h2><blockquote>
+<p>DELETE FROM tbl_name [ WHERE 条件 ];</p>
+</blockquote>
+<p>如果省略WHERE则会删除数据表的所以数据</p>
+<h2 id="4-4-MySQL查询表达式解析"><a href="#4-4-MySQL查询表达式解析" class="headerlink" title="4-4 MySQL查询表达式解析"></a>4-4 MySQL查询表达式解析</h2><blockquote>
+<p>SELECT col_name FROM 表名；</p>
+<p>SELECT col_name AS 别名 FROM 表名；</p>
+</blockquote>
+<p>查询表达式：</p>
+<p>每一个表达式表示想要的一列，必须有至少一个。</p>
+<p>多个列之间以英文逗号分隔。</p>
+<p>星号（<em>）表示所有列，tbl_name.</em> 可以表示命名表的所有列。 </p>
+<p>查询表达式可以使用 [AS] alias_name 为其赋予别名。</p>
+<p>别名可用于 GROUP BY , ORDRE BY 或 HAVING 字句。</p>
+<blockquote>
+<p>字段出现的顺序将影响结果集出现的顺序</p>
+<p>字段的别名也将影响到以后的结果集</p>
+</blockquote>
+<h2 id="4-5-WHERE语句进行条件查询"><a href="#4-5-WHERE语句进行条件查询" class="headerlink" title="4-5 WHERE语句进行条件查询"></a>4-5 WHERE语句进行条件查询</h2><pre><code>SELECT col_name FROM tbl_name [FROM 条件];
+</code></pre><p>条件表达式：</p>
+<p>对记录进行过滤，如果没有指定WHERE字句，则显示所有记录。</p>
+<p>在WHERE表达式中，可以使用MySQL支持的函数或运算符。</p>
+<h2 id="4-6-GROUP-BY-语句对查询结果分组"><a href="#4-6-GROUP-BY-语句对查询结果分组" class="headerlink" title="4-6 GROUP BY 语句对查询结果分组"></a>4-6 GROUP BY 语句对查询结果分组</h2><pre><code>SELECT col_name FROM tbl_name GROUP BY col_name;
+</code></pre><h2 id="4-7-ORDER-BY语句对查询结果排序"><a href="#4-7-ORDER-BY语句对查询结果排序" class="headerlink" title="4-7 ORDER BY语句对查询结果排序"></a>4-7 ORDER BY语句对查询结果排序</h2><pre><code>SELECT col_name FROM tbl_name ORDER BY col_name [ ASC | DESC ];
+</code></pre><blockquote>
+<p>ASC 升序（默认的）</p>
+</blockquote>
+<p>DESC 降序</p>
+<h2 id="4-8-LIMIT语句限制查询数量"><a href="#4-8-LIMIT语句限制查询数量" class="headerlink" title="4-8 LIMIT语句限制查询数量"></a>4-8 LIMIT语句限制查询数量</h2><pre><code>SELECT col_name FROM tbl_name LIMIT val;
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table border="0" bgcolor="#f8c387"><tr><td>记录操作</td><td>语句</td></tr><tr><td>增</td><td>INSERT</td></tr><tr><td>删</td><td>DELETE</td></tr><tr><td>改</td><td>UPDATE</td></tr><tr><td>查</td><td>SELECT</td></tr></table>
+
+
+<hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
+
+<font size="10px" color="#00ff00">未完待续。。。</font>
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qvchuang.top/2018/08/12/mysql学习笔记-三/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/10/10/加个Valine评论系统/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          加个Valine评论系统
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/05/mysql学习笔记-二/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql学习笔记(二)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#4-操作数据表中的记录（增删改查）"><span class="toc-number">1.</span> <span class="toc-text">4.操作数据表中的记录（增删改查）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-插入记录INSERT"><span class="toc-number">1.1.</span> <span class="toc-text">4-1 插入记录INSERT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-单表更新记录UPDATE"><span class="toc-number">1.2.</span> <span class="toc-text">4-2 单表更新记录UPDATE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-单表删除记录DELETE"><span class="toc-number">1.3.</span> <span class="toc-text">4-3 单表删除记录DELETE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-MySQL查询表达式解析"><span class="toc-number">1.4.</span> <span class="toc-text">4-4 MySQL查询表达式解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-WHERE语句进行条件查询"><span class="toc-number">1.5.</span> <span class="toc-text">4-5 WHERE语句进行条件查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-GROUP-BY-语句对查询结果分组"><span class="toc-number">1.6.</span> <span class="toc-text">4-6 GROUP BY 语句对查询结果分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-ORDER-BY语句对查询结果排序"><span class="toc-number">1.7.</span> <span class="toc-text">4-7 ORDER BY语句对查询结果排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-LIMIT语句限制查询数量"><span class="toc-number">1.8.</span> <span class="toc-text">4-8 LIMIT语句限制查询数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",
+            app_key: "YRX2P1IpmmU9KyhgmvwEXm2Q",
+            placeholder: "瞎白话一下",
+            avatar: "robohash",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: 15
+    });
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+  </section>
+  
+  
+  <span id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+
+
           </div>
         </div>
       </div>
