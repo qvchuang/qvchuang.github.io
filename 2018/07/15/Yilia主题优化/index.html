@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://moetu.fastmirror.org/images/2018/11/24/yilia71b217411b1bd00e.md.png">
 <meta property="og:image" content="https://moetu.fastmirror.org/images/2018/11/24/5dd3ddf867b4b371cba2ea4e50b30bb56c041a94e27517b9.png">
 <meta property="og:image" content="https://moetu.fastmirror.org/images/2018/11/24/github6cf05650d71393b2.png">
-<meta property="og:updated_time" content="2019-01-03T14:07:16.000Z">
+<meta property="og:updated_time" content="2019-05-04T08:00:59.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yilia主题优化">
 <meta name="twitter:image" content="https://moetu.fastmirror.org/images/2018/11/24/yilia71b217411b1bd00e.md.png">
@@ -101,26 +101,7 @@
 			</div>
 		</nav>
 
-        <nav class="header-nav">
-        <div class="social">
-        
-            <a class="github" target="_blank" href="https://github.com/qvchuang/qvchuang.github.io" title="github"><i class="icon-github"></i></a>
-        
-            <a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu"><i class="icon-zhihu"></i></a>
-        
-            <a class="jianshu" target="_blank" href="https://www.jianshu.com" title="jianshu"><i class="icon-jianshu"></i></a>
-        
-            <a class="mail" target="_blank" href="mailto:qvchuang@126.com" title="mail"><i class="icon-mail"></i></a>
-        
-        </div>
-
-         <!--音乐播放插件-->
-        <div style="margin-top:30px;">
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=458639375&auto=0&height=32"></iframe>
-        </div>
-        </nav>
-
-     <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54l3jky0ur4&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54l3jky0ur4&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
 
 	</header>		
 </div>
@@ -276,15 +257,25 @@
 
 <p>配置hexo下的_config.yml的post_asset_folder: true 设置为true。</p>
 <p>把音乐插件代码直接添加到文章中你想添加的位置就ok了。</p>
-<h3 id="3-6、-给博客增加动态标签"><a href="#3-6、-给博客增加动态标签" class="headerlink" title="3.6、 给博客增加动态标签"></a><div style="background:#dfecd5; color:#000">3.6、 给博客增加动态标签</div></h3><p><em>实现方式</em></p>
+<h3 id="3-6、-很好玩的“小插件”"><a href="#3-6、-很好玩的“小插件”" class="headerlink" title="3.6、 很好玩的“小插件”"></a><div style="background:#dfecd5; color:#000">3.6、 很好玩的“小插件”</div></h3><p><a href="https://www.revolvermaps.com/" target="_blank" rel="noopener">官网</a></p>
+<blockquote>
+<p>这是一个能够实时统计访问你的站点或者博客的插件。</p>
+</blockquote>
+<p>地球仪上的label表示访问站点的人都位置。<br>点击那个xxx visits，就会跳转到你的访问记录详情页了。</p>
+<p><strong>用法</strong></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;script type="text/javascript" src="//rf.revolvermaps.com/<span class="number">0</span>/<span class="number">0</span>/<span class="number">6.</span>js?i=<span class="number">57</span>vw1e7mezp<span class="variable">&amp;amp</span>;m=<span class="number">7</span><span class="variable">&amp;amp</span>;c=e63100<span class="variable">&amp;amp</span>;cr1=ffffff<span class="variable">&amp;amp</span>;f=arial<span class="variable">&amp;amp</span>;l=<span class="number">0</span><span class="variable">&amp;amp</span>;bv=<span class="number">90</span><span class="variable">&amp;amp</span>;lx=<span class="number">-420</span><span class="variable">&amp;amp</span>;ly=<span class="number">420</span><span class="variable">&amp;amp</span>;hi=<span class="number">20</span><span class="variable">&amp;amp</span>;he=<span class="number">7</span><span class="variable">&amp;amp</span>;hc=a8ddff<span class="variable">&amp;amp</span>;rs=<span class="number">80</span>" async="async"&gt;</span><span class="params">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>打开官网首页，在<code>Get Started</code>这里把这段js复制到你的网页上即可。</p>
+<p>这里用的是hexo主题，我希望在左边栏显示，那么就找到<code>/themes/hexo/layout/_partials/left-col.ejs</code>,插入复制来的脚本即可。</p>
+<p><a href="https://www.imooc.com/article/details/id/37826" target="_blank" rel="noopener">参考</a></p>
+<h3 id="3-7、-给博客增加动态标签"><a href="#3-7、-给博客增加动态标签" class="headerlink" title="3.7、 给博客增加动态标签"></a><div style="background:#dfecd5; color:#000">3.7、 给博客增加动态标签</div></h3><p><em>实现方式</em></p>
 <p>打开博客路径themes/yilia/layout/layout.ejs</p>
 <p>在前添加如下代码即可</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"><span class="keyword">var</span> OriginTitile=<span class="built_in">document</span>.title,st;<span class="built_in">document</span>.addEventListener(<span class="string">"visibilitychange"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">document</span>.hidden?(<span class="built_in">document</span>.title=<span class="string">"看不见我🙈~看不见我🙈~"</span>,clearTimeout(st)):(<span class="built_in">document</span>.title=<span class="string">"(๑•̀ㅂ•́) ✧被发现了～"</span>,st=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">document</span>.title=OriginTitile&#125;,<span class="number">3e3</span>))&#125;)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-7、-图床推荐"><a href="#3-7、-图床推荐" class="headerlink" title="3.7、 图床推荐"></a><div style="background:#dfecd5; color:#000" id="001">3.7、 图床推荐</div></h3><p>→<a href="https://www.miaomiaomiao.org/9596.html" target="_blank" rel="noopener">好用图床推荐</a></p>
+<h3 id="3-8、-图床推荐"><a href="#3-8、-图床推荐" class="headerlink" title="3.8、 图床推荐"></a><div style="background:#dfecd5; color:#000" id="001">3.8、 图床推荐</div></h3><p>→<a href="https://www.miaomiaomiao.org/9596.html" target="_blank" rel="noopener">好用图床推荐</a></p>
 <font face="宋体" color="#FF8000">博主用的<a href="https://moetu.org/" target="_blank" rel="noopener">MoeTu图床</a>、<a href="https://tu.aixinxi.net/" target="_blank" rel="noopener">爱信息图床</a></font>
 
 <p>具体根据个人爱好选择(<font face="宋体" color="#FF8000">建议使用<strong>https</strong>的</font>)</p>
-<h3 id="3-8、-绑定个人域名"><a href="#3-8、-绑定个人域名" class="headerlink" title="3.8、 绑定个人域名"></a><div style="background:#dfecd5; color:#000">3.8、 绑定个人域名</div></h3><p><strong>购买域名</strong></p>
+<h3 id="3-9、-绑定个人域名"><a href="#3-9、-绑定个人域名" class="headerlink" title="3.9、 绑定个人域名"></a><div style="background:#dfecd5; color:#000">3.9、 绑定个人域名</div></h3><p><strong>购买域名</strong></p>
 <p>国内的域名服务商有新网，腾讯云，还有阿里云的万网等。下面以阿里云的万网为例：</p>
 <blockquote>
 <p>在万网购买了自己心仪的域名后，进入阿里云的管理控制台-域名与网站-域名就可以看到购买的域名此时的域名状态是未实名认证的，然后就是实名认证（一般需要2小时左右）。</p>
@@ -457,7 +448,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、使用"><span class="toc-number">2.</span> <span class="toc-text">一、使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、配置"><span class="toc-number">3.</span> <span class="toc-text">二、配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、优化"><span class="toc-number">4.</span> <span class="toc-text">三、优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1、-所有文章功能不能用"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、 所有文章功能不能用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2、-设置主页文章只显示一部分"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、 设置主页文章只显示一部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3、-添加文章访问量统计"><span class="toc-number">4.3.</span> <span class="toc-text">3.3、 添加文章访问量统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4、-设置网站小图标"><span class="toc-number">4.4.</span> <span class="toc-text">3.4、 设置网站小图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5、-添加音乐"><span class="toc-number">4.5.</span> <span class="toc-text">3.5、 添加音乐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6、-给博客增加动态标签"><span class="toc-number">4.6.</span> <span class="toc-text">3.6、 给博客增加动态标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7、-图床推荐"><span class="toc-number">4.7.</span> <span class="toc-text">3.7、 图床推荐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8、-绑定个人域名"><span class="toc-number">4.8.</span> <span class="toc-text">3.8、 绑定个人域名</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、使用"><span class="toc-number">2.</span> <span class="toc-text">一、使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、配置"><span class="toc-number">3.</span> <span class="toc-text">二、配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、优化"><span class="toc-number">4.</span> <span class="toc-text">三、优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1、-所有文章功能不能用"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、 所有文章功能不能用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2、-设置主页文章只显示一部分"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、 设置主页文章只显示一部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3、-添加文章访问量统计"><span class="toc-number">4.3.</span> <span class="toc-text">3.3、 添加文章访问量统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4、-设置网站小图标"><span class="toc-number">4.4.</span> <span class="toc-text">3.4、 设置网站小图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5、-添加音乐"><span class="toc-number">4.5.</span> <span class="toc-text">3.5、 添加音乐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6、-很好玩的“小插件”"><span class="toc-number">4.6.</span> <span class="toc-text">3.6、 很好玩的“小插件”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7、-给博客增加动态标签"><span class="toc-number">4.7.</span> <span class="toc-text">3.7、 给博客增加动态标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8、-图床推荐"><span class="toc-number">4.8.</span> <span class="toc-text">3.8、 图床推荐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9、-绑定个人域名"><span class="toc-number">4.9.</span> <span class="toc-text">3.9、 绑定个人域名</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -612,11 +603,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
