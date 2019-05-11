@@ -258,6 +258,19 @@ Jmeter
 </header>
 
 
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -934,8 +947,7 @@ OK ，正式开始今日的主题 ：
                 <a href="/archives/51de246d.html">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hexo＋Github搭建博客">
+                        <img src="https://moetu.fastmirror.org/images/2019/05/11/8d7e92965d6ec1414c615d3d7eb4388c38973f1e43a31f7c.jpg" class="responsive-img" alt="Hexo＋Github搭建博客">
                         
                         <span class="card-title">Hexo＋Github搭建博客</span>
                     </div>
@@ -988,7 +1000,7 @@ OK ，正式开始今日的主题 ：
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('500')) {
             return;
         }
 
@@ -1125,7 +1137,7 @@ OK ，正式开始今日的主题 ：
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">56.9k</span>
+                <span class="white-color">59.9k</span>
             
 
             

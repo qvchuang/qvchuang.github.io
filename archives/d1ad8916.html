@@ -262,6 +262,19 @@ ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票�
 </header>
 
 
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -939,52 +952,35 @@ myUrllib - urllib库
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/archives/d1ad8916.html">
+                <a href="/archives/417fd41c.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="12306智能刷票、订票">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="测试文章加密-[test]">
                         
-                        <span class="card-title">12306智能刷票、订票</span>
+                        <span class="card-title">测试文章加密-[test]</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
+                    <div class="summary">==测试文章加密==
+test
+test
 
-
-
-一年一度的春运又开启了，相信还有很多小伙伴没有抢到一张回家的车票。没抢到票怎么办？自己动手丰衣足食，这个项目也许能帮到你。
-
-
-ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票没抢到
-&nbsp;&nbsp;&nbsp</div>
+test
+</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-10
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-11
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            qvchuang
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1054,7 +1050,7 @@ APP测试要点梳理
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('500')) {
             return;
         }
 
@@ -1191,7 +1187,7 @@ APP测试要点梳理
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">56.9k</span>
+                <span class="white-color">59.9k</span>
             
 
             

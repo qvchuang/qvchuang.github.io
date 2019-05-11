@@ -258,6 +258,19 @@ FOREIGN KEY (外键列名称) REFERENCES 父表">
 </header>
 
 
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -1119,7 +1132,7 @@ ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AF
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('500')) {
             return;
         }
 
@@ -1256,7 +1269,7 @@ ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AF
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">56.9k</span>
+                <span class="white-color">59.9k</span>
             
 
             
