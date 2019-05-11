@@ -299,6 +299,13 @@
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
+    <div id="prev-cover" class="left waves-effect carousel-control">
+        <i class="icon fa fa-angle-left"></i>
+    </div>
+    <div id="next-cover" class="right waves-effect carousel-control">
+        <i class="icon fa fa-angle-right"></i>
+    </div>
+    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container">
@@ -362,15 +369,46 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     </div>
 
     
+    
+
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover" style="background-image: url('/medias/featureimages/9.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">Hexo＋Github搭建博客</div>
+                    <div class="description center-align">
+                    
+                        
+
+前言：电脑系统为window 10专业版，64位
+相关步骤：  
+1、安装Git和配置好Git环境安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择  
+
+注意：一般出于安全考虑，只有在Git Bash Here中才能进行G
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/archives/51de246d.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 </div>
 
 <script>
 $(function () {
     let coverSlider = $('.carousel');
     coverSlider.carousel({
-        duration: Number('120'),
+        duration: Number('180'),
         fullWidth: true,
-        indicators: 'true' === 'true'
+        indicators: 'false' === 'true'
     });
 
     let carouselIntervalId;
@@ -423,12 +461,43 @@ $(function () {
     
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+            梦想一旦被付诸行动，就会变得神 ————  丁尼生
         </div>
     </div>
 </div>
                     
 
+                    
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"平凡之路","artist":"朴树","url":"http://music.163.com/song/media/outer/url?id=28815250.mp3","cover":"http://p2.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg?param=130y130"},{"name":"Counting Sheep","artist":"SAFIA","url":"http://music.163.com/song/media/outer/url?id=31081299.mp3","cover":"http://p2.music.126.net/MXzI7ExXb6ru3CeW_P1HSw==/7906588115831440.jpg?param=130y130"},{"name":"心如止水","artist":"Ice Paper","url":"http://music.163.com/song/media/outer/url?id=1349292048.mp3","cover":"http://p2.music.126.net/MLQl_7poLz2PTON6_JZZRQ==/109951163938219545.jpg?param=130y130"},{"name":"归去来兮","artist":"花粥","url":"http://music.163.com/song/media/outer/url?id=1357999894.mp3","cover":"http://p1.music.126.net/H6dt7IgvXNWhRM_w7XbcqQ==/109951163990575387.jpg?param=130y130"}]')
+    });
+});
+</script>
                     
 
                     
@@ -436,6 +505,42 @@ $(function () {
                     <div id="recommend-sections" class="recommend">
                         
 
+
+
+
+
+<div class="title"><i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12">
+        <div class="post-card" style="background-image: url('/medias/featureimages/9.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/blog/" class="category" target="_blank">blog</a>
+                    
+                </div>
+                <a href="/archives/51de246d.html" target="_blank">
+                    <h3 class="post-title">Hexo＋Github搭建博客</h3>
+                </a>
+                <p class="post-description">
+
+前言：电脑系统为window 10专业版，64位
+相关步骤：  
+1、安装Git和配置好Git环境安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择  
+</p>
+                <a href="/archives/51de246d.html" target="_blank" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
 
 
                     </div>
@@ -482,8 +587,12 @@ ps
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                qvchuang
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/随笔/" class="post-category" target="_blank">
+                                    随笔
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -529,8 +638,12 @@ APP测试要点梳理
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                qvchuang
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/测试/" class="post-category" target="_blank">
+                                    测试
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -576,8 +689,12 @@ APP测试要点梳理
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                qvchuang
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/随笔/" class="post-category" target="_blank">
+                                    随笔
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -624,8 +741,12 @@ python一共为我们提供了68个内置函数。它们就是python提供给你
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                qvchuang
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -671,8 +792,12 @@ for i
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                qvchuang
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -728,8 +853,183 @@ for i
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                qvchuang
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/python3/" target="_blank">
+                            <span class="chip bg-color">python3</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/archives/d4e5ce76.html">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python3-函数进阶">
+                            
+                            <span class="card-title">Python3-函数进阶</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            
+                                
+
+阅读目录
+命名空间和作用域
+
+函数嵌套及作用域链
+
+函数名的本质
+
+闭包
+
+
+一、命名空间和作用域命名空间python代码运行的时候遇到
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/python3/" target="_blank">
+                            <span class="chip bg-color">python3</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/archives/e03bb111.html">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Python3-初识函数">
+                            
+                            <span class="card-title">Python3-初识函数</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            
+                                
+
+阅读目录
+为什么要用函数
+
+函数的定义与调用
+
+函数的返回值
+
+函数的参数
+
+总结
+
+
+为什么要用函数打个比方，加入现在len()方法突
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/python3/" target="_blank">
+                            <span class="chip bg-color">python3</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/archives/74c6600f.html">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python3之文件操作">
+                            
+                            <span class="card-title">Python3之文件操作</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">
+                            
+                                
+
+一、文件操作基本流程计算机系统分为：计算机硬件，操作系统，应用程序三部分。
+
+我们用python或其他语言编写的应用程序若想要把数据永久
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -763,7 +1063,7 @@ for i
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 5</div>
+            <div class="center-align b-text-gray">1 / 3</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -784,6 +1084,9 @@ for i
             <a href="https://hexo.io/" target="_blank">Hexo</a> 的
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
 
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">56.9k</span>
             
 
             
