@@ -1,0 +1,1616 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python3-初识函数, My blog">
+    <meta name="description" content="
+
+阅读目录
+为什么要用函数
+
+函数的定义与调用
+
+函数的返回值
+
+函数的参数
+
+总结
+
+
+为什么要用函数打个比方，加入现在len()方法突然不能直接用了。。。
+然后现在有一个需求，让你计算’hello world’的长度，你怎么计算？
+s">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python3-初识函数 | My blog</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">My blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">My blog</div>
+        <div class="logo-desc">
+            
+            Do want you want to do !
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Python3-初识函数
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python3/" target="_blank">
+                                <span class="chip bg-color">python3</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-11-25
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        2.9k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        11 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href="https://moetu.org/image/1y7Tx" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/25/python3ad68a95f61a4830e.md.png" alt="python3ad68a95f61a4830e.md.png"></a></p>
+<a id="more"></a>
+<h2 id="阅读目录"><a href="#阅读目录" class="headerlink" title="阅读目录"></a><div style="background:greenyellow; color:#000">阅读目录</div></h2><ul>
+<li><p><a href="#01">为什么要用函数</a></p>
+</li>
+<li><p><a href="#02">函数的定义与调用</a></p>
+</li>
+<li><p><a href="#03">函数的返回值</a></p>
+</li>
+<li><p><a href="#04">函数的参数</a></p>
+</li>
+<li><p><a href="#05">总结</a></p>
+</li>
+</ul>
+<h2 id="为什么要用函数"><a href="#为什么要用函数" class="headerlink" title="为什么要用函数"></a><div id="01" style="background:skyblue; color:#000">为什么要用函数</div></h2><p>打个比方，加入现在len()方法突然不能直接用了。。。</p>
+<p>然后现在有一个需求，让你计算’hello world’的长度，你怎么计算？</p>
+<pre class=" language-python"><code class="language-python">s1 <span class="token operator">=</span> <span class="token string">"hello world"</span>
+length <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+    length <span class="token operator">=</span> length<span class="token operator">+</span><span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+</code></pre>
+<p>好了，功能实现了，非常完美。然后现在又有了一个需求，</p>
+<p>要计算另外一个字符串的长度，”hello eva”</p>
+<p>于是，这个时候你的代码就变成了这样：</p>
+<pre class=" language-python"><code class="language-python">s2 <span class="token operator">=</span> <span class="token string">"hello eva"</span>
+length <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> s2<span class="token punctuation">:</span>
+    length <span class="token operator">=</span> length<span class="token operator">+</span><span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+</code></pre>
+<p>这样确实可以实现len方法的效果，但是总感觉不是那么完美？为什么呢？</p>
+<blockquote>
+<p>首先，之前只要我们执行len方法就可以直接拿到一个字符串的长度了，现在为了实现相同的功能我们把相同的代码写了好多遍 —— 代码冗余</p>
+<p>其次，之前我们只写两句话读起来也很简单，一看就知道这两句代码是在计算长度，但是刚刚的代码却不那么容易读懂 —— 可读性差</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="初识函数定义与调用"><a href="#初识函数定义与调用" class="headerlink" title="初识函数定义与调用"></a><div id="02" style="background:skyblue; color:#000">初识函数定义与调用</div></h2><pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#函数定义</span>
+<span class="token keyword">def</span> <span class="token function">mylen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""计算s1的长度"""</span>
+    s1 <span class="token operator">=</span> <span class="token string">"hello world"</span>
+    length <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+        length <span class="token operator">=</span> length<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#函数调用  </span>
+mylen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>总结一：</p>
+<blockquote>
+<p>定义：def 关键词开头，空格之后接函数名称和圆括号()，最后还有一个”:”。</p>
+<p>　　　def 是固定的，不能变，必须是连续的def三个字母，不能分开。。。它们要相亲相爱的在一起。</p>
+<p>　　　空格 为了将def关键字和函数名分开，必须空(四声)，当然你可以空2格、3格或者你想空多少都行，但正常人还是空1格。</p>
+<p>　　　函数名：函数名只能包含字符串、下划线和数字且不能以数字开头。虽然函数名可以随便起，但我们给函数起名字还是要尽量简短，并能表达函数功能</p>
+<p>　　　括号：是必须加的，先别问为啥要有括号，总之加上括号就对了！</p>
+<p>注释：每一个函数都应该对功能和参数进行相应的说明，应该写在函数下面第一行。以增强代码的可读性。</p>
+<p>调用：就是 <strong>函数名()</strong> 要记得加上括号。</p>
+</blockquote>
+<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a><div id="03" style="background:skyblue; color:#000">函数的返回值</div></h2><blockquote>
+<p>刚刚我们就写了一个函数，这个函数可以帮助我们计算字符串的长度，并且把结果打印出来。</p>
+<p>但是，这和我们的len()方法还不是太一样。哪里不一样呢？</p>
+<p>以前我们调用len方法会得到一个值，我们必须用一个变量来接收这个值。</p>
+</blockquote>
+<p><code>str_len = len(&#39;hello,world&#39;)</code></p>
+<p>这个str_len就是‘hello，world’的长度。那我们自己写的函数能做到这一点么？我们也来试一下。</p>
+<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#函数定义</span>
+<span class="token keyword">def</span> <span class="token function">mylen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""计算s1的长度"""</span>
+    s1 <span class="token operator">=</span> <span class="token string">"hello world"</span>
+    length <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+        length <span class="token operator">=</span> length<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#函数调用</span>
+str_len <span class="token operator">=</span> mylen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'str_len : %s'</span><span class="token operator">%</span>str_len<span class="token punctuation">)</span>
+</code></pre>
+<p>很遗憾，如果你执行这段代码，得到的str_len 值为None，这说明我们这段代码什么也没有给你返回。</p>
+<p>那如何让它也想len函数一样返回值呢？</p>
+<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#函数定义</span>
+<span class="token keyword">def</span> <span class="token function">mylen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""计算s1的长度"""</span>
+    s1 <span class="token operator">=</span> <span class="token string">"hello world"</span>
+    length <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+        length <span class="token operator">=</span> length<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">return</span> length
+ <span class="token comment" spellcheck="true">#函数调用</span>
+str_len <span class="token operator">=</span> mylen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'str_len : %s'</span><span class="token operator">%</span>str_len
+</code></pre>
+<p>我们只需要在函数的最后加上一个return，return后面写上你要返回的值就可以了。</p>
+<p>接下来就来研究一下这个return的用法:</p>
+<p><strong>return关键字的作用</strong></p>
+<p>return 是一个关键字，翻译过来就是“返回”，所以我们管写在return后面的值叫“返回值”</p>
+<p>要研究返回值，我们还要知道返回值有几种情况：<font face="宋体" color="#FF8000">分别是没有返回值、返回一个值、返回多个值</font></p>
+<h3 id="没有返回值"><a href="#没有返回值" class="headerlink" title="没有返回值"></a><div style="background:beige; color:#000">没有返回值</div></h3><font face="宋体" color="blue">不写return的情况下，会默认返回一个None</font>
+
+<p>我们写的第一个函数，就没有写return，这就是没有返回值的一种情况。　</p>
+<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#函数定义</span>
+<span class="token keyword">def</span> <span class="token function">mylen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""计算s1的长度"""</span>
+    s1 <span class="token operator">=</span> <span class="token string">"hello world"</span>
+    length <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+        length <span class="token operator">=</span> length<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#函数调用</span>
+str_len <span class="token operator">=</span> mylen<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#因为没有返回值，此时的str_len为None</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'str_len : %s'</span><span class="token operator">%</span>str_len<span class="token punctuation">)</span>
+</code></pre>
+<font face="宋体" color="blue">只写return，后面不写其他内容，也会返回None</font>
+
+<p>这里要说一下return的其他用法，就是一旦遇到return，结束整个函数。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">ret_demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">222</span><span class="token punctuation">)</span>
+ret <span class="token operator">=</span> ret_demo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+</code></pre>
+<font face="宋体" color="blue">return None：和上面的两种情况一样，我们一般不这样写</font>
+
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">ret_demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> None
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">222</span><span class="token punctuation">)</span>
+ret <span class="token operator">=</span> ret_demo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="返回一个值"><a href="#返回一个值" class="headerlink" title="返回一个值"></a><div style="background:beige; color:#000">返回一个值</div></h3><p>刚刚我们已经写过一个返回一个值的情况</p>
+<p>只需在return后面写上要返回的内容即可</p>
+<h3 id="返回多个值"><a href="#返回多个值" class="headerlink" title="返回多个值"></a><div style="background:beige; color:#000">返回多个值</div></h3><p>可以返回任意多个、任意数据类型的值</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">ret_demo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''返回多个值'''</span> 
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span>
+<span class="token keyword">def</span> <span class="token function">ret_demo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''返回多个任意类型的值'''</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span>
+ret1 <span class="token operator">=</span> ret_demo1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret1<span class="token punctuation">)</span>
+ret2 <span class="token operator">=</span> ret_demo2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret2<span class="token punctuation">)</span>
+</code></pre>
+<p>返回的多个值会被组织成元组被返回，也可以用多个值来接收</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">ret_demo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span>
+ <span class="token comment" spellcheck="true">#返回多个值，用一个变量接收</span>
+ret2 <span class="token operator">=</span> ret_demo2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret2<span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#返回多个值，用多个变量接收</span>
+a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d <span class="token operator">=</span> ret_demo2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#用多个值接收返回值：返回几个值，就用几个变量接收</span>
+a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d <span class="token operator">=</span> ret_demo2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">)</span>
+</code></pre>
+<font face="宋体" color="blue">原因：</font>
+
+<pre><code>&gt;&gt;&gt; 1,2  #python中把用逗号分割的多个值就认为是一个元组。
+(1, 2)
+&gt;&gt;&gt; 1,2,3,4
+(1, 2, 3, 4)
+&gt;&gt;&gt; (1,2,3,4)
+(1, 2, 3, 4)
+
+#序列解压一
+&gt;&gt;&gt; a,b,c,d = (1,2,3,4)
+&gt;&gt;&gt; a
+1
+&gt;&gt;&gt; b
+2
+&gt;&gt;&gt; c
+3
+&gt;&gt;&gt; d
+4
+#序列解压二
+&gt;&gt;&gt; a,_,_,d=(1,2,3,4)
+&gt;&gt;&gt; a
+1
+&gt;&gt;&gt; d
+4
+&gt;&gt;&gt; a,*_=(1,2,3,4)
+&gt;&gt;&gt; *_,d=(1,2,3,4)
+&gt;&gt;&gt; a
+1
+&gt;&gt;&gt; d
+4
+#也适用于字符串、列表、字典、集合
+&gt;&gt;&gt; a,b = {&#39;name&#39;:&#39;eva&#39;,&#39;age&#39;:18} 
+&gt;&gt;&gt; a
+&#39;name&#39;
+&gt;&gt;&gt; b
+&#39;age&#39;
+</code></pre><h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数 "></a><div id="04" style="background:skyblue; color:#000">函数的参数 </div></h2><pre class=" language-text"><code class="language-text">现在，我们已经把函数返回值相关的事情研究清楚了，我们自己已经完成了一个可以返回字符串长度的函数。但是现在这个函数还是不完美，之前我们使用len函数的时候得是length = len("hello world")，这样我可以想计算谁就计算谁的长度。但是现在我们写的这个函数，只能计算一个“hello world”的长度，换一个字符串好像就是不行了。这可怎么办？
+</code></pre>
+<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#函数定义</span>
+<span class="token keyword">def</span> <span class="token function">mylen</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""计算s1的长度"""</span>
+    length <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+        length <span class="token operator">=</span> length<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">return</span> length
+ <span class="token comment" spellcheck="true">#函数调用</span>
+str_len <span class="token operator">=</span> mylen<span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'str_len : %s'</span><span class="token operator">%</span>str_len<span class="token punctuation">)</span>
+</code></pre>
+<p>我们告诉mylen函数要计算的字符串是谁，这个过程就叫做 传递参数，简称传参</p>
+<p>我们调用函数时传递的这个“hello world”和定义函数时的s1就是参数</p>
+<h3 id="实参与形参"><a href="#实参与形参" class="headerlink" title="实参与形参"></a><div style="background:beige; color:#000">实参与形参</div></h3><p>参数还有分别：</p>
+<blockquote>
+<p>我们调用函数时传递的这个“hello world”被称为实际参数，因为这个是实际的要交给函数的内容，简称实参。</p>
+<p>定义函数时的s1，只是一个变量的名字，被称为形式参数，因为在定义函数的时候它只是一个形式，表示这里有一个&gt;参数，简称形参。</p>
+</blockquote>
+<h3 id="传递多个参数"><a href="#传递多个参数" class="headerlink" title="传递多个参数"></a><div style="background:beige; color:#000">传递多个参数</div></h3><p>参数可以传递多个，多个参数之间用逗号分割</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">mymax</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    the_max <span class="token operator">=</span> x <span class="token keyword">if</span> x <span class="token operator">></span> y <span class="token keyword">else</span> y
+    <span class="token keyword">return</span> the_max
+
+ma <span class="token operator">=</span> mymax<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ma<span class="token punctuation">)</span>
+</code></pre>
+<p>也正是因为需要传递多个参数、可以传递多个参数，才会有了后面这一系列参数相关的内容。。。</p>
+<h3 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a><div style="background:beige; color:#000">位置参数</div></h3><h4 id="站在实参角度"><a href="#站在实参角度" class="headerlink" title="站在实参角度"></a><div style="background:pink; color:#000">站在实参角度</div></h4><font face="宋体" color="#FF8000">1. 按照位置传值</font>
+
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">mymax</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#此时x=10,y=20</span>
+    the_max <span class="token operator">=</span> x <span class="token keyword">if</span> x <span class="token operator">></span> y <span class="token keyword">else</span> y
+    <span class="token keyword">return</span> the_max
+ma <span class="token operator">=</span> mymax<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ma<span class="token punctuation">)</span>
+</code></pre>
+<font face="宋体" color="#FF8000">2. 按照关键字传值</font>
+
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">mymax</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#此时x = 20,y = 10</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+    the_max <span class="token operator">=</span> x <span class="token keyword">if</span> x <span class="token operator">></span> y <span class="token keyword">else</span> y
+    <span class="token keyword">return</span> the_max
+ma <span class="token operator">=</span> mymax<span class="token punctuation">(</span>y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>x <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ma<span class="token punctuation">)</span>
+</code></pre>
+<font face="宋体" color="#FF8000">3. 位置、关键字形式混着用</font>
+
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">mymax</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#此时x = 10,y = 20</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+    the_max <span class="token operator">=</span> x <span class="token keyword">if</span> x <span class="token operator">></span> y <span class="token keyword">else</span> y
+    <span class="token keyword">return</span> the_max
+ma <span class="token operator">=</span> mymax<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ma<span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>正确用法</p>
+<p>　　　　　　问题一:位置参数必须在关键字参数的前面</p>
+<p>　　　　　　问题二:对于一个形参只能赋值一次　　</p>
+</blockquote>
+<h4 id="站在形参角度"><a href="#站在形参角度" class="headerlink" title="站在形参角度"></a><div style="background:pink; color:#000">站在形参角度</div></h4><p>位置参数必须传值</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">mymax</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#此时x = 10,y = 20</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+    the_max <span class="token operator">=</span> x <span class="token keyword">if</span> x <span class="token operator">></span> y <span class="token keyword">else</span> y
+    <span class="token keyword">return</span> the_max
+ <span class="token comment" spellcheck="true">#调用mymax不传递参数</span>
+ma <span class="token operator">=</span> mymax<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ma<span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">#结果</span>
+TypeError<span class="token punctuation">:</span> mymax<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">2</span> required positional arguments<span class="token punctuation">:</span> <span class="token string">'x'</span> <span class="token operator">and</span> <span class="token string">'y'</span>
+</code></pre>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a><div style="background:beige; color:#000">默认参数</div></h3><font face="宋体" color="#FF8000">1. 使用</font>
+
+<p>为什么要有默认参数：将变化比较小的值设置成默认参数</p>
+<font face="宋体" color="#FF8000">2. 默认参数的定义</font>
+
+<pre class=" language-python3"><code class="language-python3">def stu_info(name,sex = "male"):
+    """打印学生信息函数，由于班中大部分学生都是男生，
+        所以设置默认参数sex的默认值为'male'
+    """
+    print(name,sex)
+stu_info('alex')
+stu_info('eva','female')
+</code></pre>
+<font face="宋体" color="#FF8000">3. 参数陷阱：默认参数是一个可变数据类型</font>
+
+<pre class=" language-python3"><code class="language-python3"> # 如果默认参数的值是一个可变数据类型，
+ # 那么每一次调用函数的时候，
+ # 如果不传值就公用这个数据类型的资源
+def defult_param(a,l = []):
+    l.append(a)
+    print(l)
+defult_param('alex')
+defult_param('egon')
+</code></pre>
+<h3 id="动态参数"><a href="#动态参数" class="headerlink" title="动态参数"></a><div style="background:beige; color:#000">动态参数</div></h3><font face="宋体" color="#FF8000">按位置传值多余的参数都由args统一接收，保存成一个元组的形式</font>
+
+<pre class=" language-python3"><code class="language-python3">def mysum(*args):
+    the_sum = 0
+    for i in args:
+        the_sum+=i
+    return the_sum
+the_sum = mysum(1,2,3,4)
+print(the_sum)
+</code></pre>
+<font face="宋体" color="#FF8000">**kwargs： 接受的是按照关键字传参的值，组织成一个字典</font>
+
+<pre class=" language-ptyhon3"><code class="language-ptyhon3">def stu_info(**kwargs):
+    print(kwargs)
+    print(kwargs['name'],kwargs['sex'])
+stu_info(name = 'alex',sex = 'male')
+</code></pre>
+<p><font face="宋体" color="#FF8000">顺序：</font><code>必须先定义位置参数，*args，再定义默认参数,**kwargs</code></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><div id="05" style="background:skyblue; color:#000">总结</div></h2><h3 id="定义函数的规则："><a href="#定义函数的规则：" class="headerlink" title="定义函数的规则："></a><div style="background:beige; color:#000">定义函数的规则：</div></h3><pre><code>1.定义：def 关键词开头，空格之后接函数名称和圆括号()。
+2.参数：圆括号用来接收参数。若传入多个参数，参数之间用逗号分割。
+　　　　参数可以定义多个，也可以不定义。
+　　　　参数有很多种，如果涉及到多种参数的定义，应始终遵循位置参数、*args、默认参数、**kwargs顺序定义。
+　　　　如上述定义过程中某参数类型缺省，其他参数依旧遵循上述排序
+3.注释：函数的第一行语句应该添加注释。
+4.函数体：函数内容以冒号起始，并且缩进。
+5.返回值：return [表达式] 结束函数。不带表达式的return相当于返回 None
+
+def 函数名(参数1,参数2,*args,默认参数,**kwargs):
+        &quot;&quot;&quot;注释：函数功能和参数说明&quot;&quot;&quot;
+        函数体
+        ……
+        return 返回值
+</code></pre><h3 id="调用函数的规则："><a href="#调用函数的规则：" class="headerlink" title="调用函数的规则："></a><div style="background:beige; color:#000">调用函数的规则：</div></h3><pre><code>1.函数名()
+    函数名后面+圆括号就是函数的调用。
+2.参数：
+    圆括号用来接收参数。
+    若传入多个参数：
+        应按先位置传值，再按关键字传值
+        具体的传入顺序应按照函数定义的参数情况而定
+3.返回值
+    如果函数有返回值，还应该定义“变量”接收返回值
+    如果返回值有多个，也可以用多个变量来接收，变量数应和返回值数目一致
+
+无返回值的情况：
+函数名()
+
+有返回值的情况：
+变量 = 函数名()
+
+多个变量接收多返回值：
+变量1，变量2，... = 函数名()
+</code></pre><h3 id="参数总结："><a href="#参数总结：" class="headerlink" title="参数总结："></a><div style="background:beige; color:#000">参数总结：</div></h3><p><img src="https://moetu.fastmirror.org/images/2018/11/25/48adebfc1b8c2e56bb0521e6323867f567ec0a794324c153.png" alt></p>
+<p><img src="https://moetu.fastmirror.org/images/2018/12/05/1b4aa491cc5629482.png" alt></p>
+<p>　　
+　　
+　　
+　　</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://qvchuang.top" class="b-link-green">My blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/archives/e03bb111.html" class="b-link-green">Python3-初识函数</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v .vlist .vcard {
+    padding-top: 2.5rem;
+    position: relative;
+    display: block;
+    }
+    
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz',
+        appKey: 'YRX2P1IpmmU9KyhgmvwEXm2Q',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'robohash',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '瞎白话一下'
+    });
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/archives/d4e5ce76.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python3-函数进阶">
+                        
+                        <span class="card-title">Python3-函数进阶</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+
+阅读目录
+命名空间和作用域
+
+函数嵌套及作用域链
+
+函数名的本质
+
+闭包
+
+
+一、命名空间和作用域命名空间python代码运行的时候遇到函数是怎么做的?
+从python解释器开始执行之后，就在内存中开辟了一个空间
+每当遇到一个变量的时候</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python3/" target="_blank">
+                        <span class="chip bg-color">python3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/archives/74c6600f.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python3之文件操作">
+                        
+                        <span class="card-title">Python3之文件操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+
+一、文件操作基本流程计算机系统分为：计算机硬件，操作系统，应用程序三部分。
+
+我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件的，</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python3/" target="_blank">
+                        <span class="chip bg-color">python3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('500')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: My blog<br />'
+            + '作者: qvchuang<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">59.9k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/qvchuang/qvchuang.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:qvchuang@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1763834198" class="tooltipped" data-tooltip="QQ联系我: 1763834198" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/23/2018 20:00:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+    setInterval("createtime()",250);
+</script>
+    </div>
+
+
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
+</body>
+</html>
