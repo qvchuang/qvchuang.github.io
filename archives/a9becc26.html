@@ -7,9 +7,12 @@
     <meta name="keywords" content="mysql学习笔记(二), My blog">
     <meta name="description" content="
 
+
 此学习笔记根据慕课网课程“与MYSQL的零距离接触”学习总结
-3.约束以及修改数据表3-1 外键约束的要求解析外键约束：保证数据一致性、完整性，实现一对一或一对多关系。
-FOREIGN KEY (外键列名称) REFERENCES 父表">
+3.约束以及修改数据表
+¶3-1 外键约束的要求解析
+外键约束：保证数据一致性、完整性，实现一对一或一对多关系。
+FOREIGN KEY (外键列名称) REFERENCE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -99,6 +102,15 @@ FOREIGN KEY (外键列名称) REFERENCES 父表">
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -174,6 +186,15 @@ FOREIGN KEY (外键列名称) REFERENCES 父表">
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -447,10 +468,14 @@ FOREIGN KEY (外键列名称) REFERENCES 父表">
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/1ldHz" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/19/mysql0311a32b9cd926bc.md.jpg" alt="mysql0311a32b9cd926bc.md.jpg"></a></p>
 <a id="more"></a>
-<p><hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3"><br>此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结</p>
-<h1 id="3-约束以及修改数据表"><a href="#3-约束以及修改数据表" class="headerlink" title="3.约束以及修改数据表"></a>3.约束以及修改数据表</h1><h2 id="3-1-外键约束的要求解析"><a href="#3-1-外键约束的要求解析" class="headerlink" title="3-1 外键约束的要求解析"></a>3-1 外键约束的要求解析</h2><p>外键约束：保证数据一致性、完整性，实现一对一或一对多关系。</p>
+<hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
+此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结
+<h1>3.约束以及修改数据表</h1>
+<h2 id="3-1-外键约束的要求解析"><a class="header-anchor" href="#3-1-外键约束的要求解析">¶</a>3-1 外键约束的要求解析</h2>
+<p>外键约束：保证数据一致性、完整性，实现一对一或一对多关系。</p>
 <pre><code>FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称)；
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>外键约束的要求：</p>
 <ol>
 <li>父表和子表必须使用相同的存储引擎，而且禁止使用临时表</li>
@@ -462,10 +487,13 @@ FOREIGN KEY (外键列名称) REFERENCES 父表">
 <pre><code>显示索引：SHOW INDEXES FROM 表名；
     或者：SHOW INDEXES FROM 表名\G；（以网格的形式来呈现）
 删除索引：ALEER TABLE tbl_name DROP INDEX 索引名称;
-</code></pre><h2 id="3-2-外键约束的参照操作"><a href="#3-2-外键约束的参照操作" class="headerlink" title="3-2 外键约束的参照操作"></a>3-2 外键约束的参照操作</h2><p>1.CASCADE     从父表删除或更新且自动删除或更新子表中匹配的行</p>
-<p>2.SET NULL<br>从父表删除或更新行，并设置子表中的外键列为NULL。如果使用该选项，必须保证子列表没有指定NOT NULL</p>
+</code></pre>
+<h2 id="3-2-外键约束的参照操作"><a class="header-anchor" href="#3-2-外键约束的参照操作">¶</a>3-2 外键约束的参照操作</h2>
+<p>1.CASCADE     从父表删除或更新且自动删除或更新子表中匹配的行</p>
+<p>2.SET NULL<br>
+从父表删除或更新行，并设置子表中的外键列为NULL。如果使用该选项，必须保证子列表没有指定NOT NULL</p>
 <p>3.RESTRICT      拒绝对父表的删除或更新操作</p>
-<p>4.NO ACTION    标准SQL的关键字，在MySQL中与RESTRICT相同。</p>
+<p><a href="http://4.NO" target="_blank" rel="noopener">4.NO</a> ACTION    标准SQL的关键字，在MySQL中与RESTRICT相同。</p>
 <p>语法结构：<code>FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称) ON DELETE CASCADE；</code></p>
 <pre><code>mysql&gt; CREATE TABLE users1(
 -&gt; id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -474,16 +502,20 @@ FOREIGN KEY (外键列名称) REFERENCES 父表">
 -&gt; FOREIGN KEY (pid) REFERENCES provinces (id) ON DELETE CASCADE
 -&gt; );
 Query OK, 0 rows affected (0.53 sec)
-</code></pre><h2 id="3-3-表级约束与列级约束"><a href="#3-3-表级约束与列级约束" class="headerlink" title="3-3 表级约束与列级约束"></a>3-3 表级约束与列级约束</h2><blockquote>
+</code></pre>
+<h2 id="3-3-表级约束与列级约束"><a class="header-anchor" href="#3-3-表级约束与列级约束">¶</a>3-3 表级约束与列级约束</h2>
+<blockquote>
 <p>对一个数据列建立的约束，称为列级约束。</p>
 <p>对多个数据列建立的约束，称为表级约束。</p>
 <p>列级约束既可以在列定义时声明，也可以在定义后声明。</p>
 <p>表级约束只能在列定义后声明。</p>
 </blockquote>
-<h2 id="3-4-添加-删除列"><a href="#3-4-添加-删除列" class="headerlink" title="3-4 添加/删除列"></a>3-4 添加/删除列</h2><p>添加单列：</p>
+<h2 id="3-4-添加-删除列"><a class="header-anchor" href="#3-4-添加-删除列">¶</a>3-4 添加/删除列</h2>
+<p>添加单列：</p>
 <pre><code>ALTER TABLE tbl_name ADD col_name column_definition FIRST | AFTER col_name;
 ALTER TABLE 表名称 ADD 列名称 列定义 FIRST | AFTER 列名称;
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>FIRST将新添加的这一列置于所有列最前面</p>
 <p>AFTER col_name 将新添加的列置于你指定列的后方</p>
 <p>如果省略FIRST | AFTER col_name，则置于所有列之后</p>
@@ -492,20 +524,25 @@ ALTER TABLE 表名称 ADD 列名称 列定义 FIRST | AFTER 列名称;
 <pre><code>ALTER TABLE tbl_name ADD [COLUMN] (col_name column_definition,
                                    ……
                                   );
-</code></pre><p>添加多列时不能指定位置关系，只能在原来数据列的下方。</p>
+</code></pre>
+<p>添加多列时不能指定位置关系，只能在原来数据列的下方。</p>
 <hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
-
 <p>删除单列：</p>
 <pre><code>ALTER TABLE tbl_name DROP col_name;
-</code></pre><p>删除多列：</p>
+</code></pre>
+<p>删除多列：</p>
 <pre><code>ALTER TABLE tbl_name DROP col_name1,DROP col_name2;
-</code></pre><h2 id="3-5-添加-删除约束-注：col-name-列名称"><a href="#3-5-添加-删除约束-注：col-name-列名称" class="headerlink" title="3-5 添加/删除约束 (注：col_name:列名称)"></a>3-5 添加/删除约束 (注：col_name:列名称)</h2><p>添加/删除主键约束：</p>
+</code></pre>
+<h2 id="3-5-添加-删除约束-注：col-name-列名称"><a class="header-anchor" href="#3-5-添加-删除约束-注：col-name-列名称">¶</a>3-5 添加/删除约束 (注：col_name:列名称)</h2>
+<p>添加/删除主键约束：</p>
 <pre><code>ALTER TABLE tbl_name ADD PRIMARY KEY (col_name);
 ALTER TABLE tbl_name DROP PRIMARY KEY;
-</code></pre><p>添加/删除唯一约束：</p>
+</code></pre>
+<p>添加/删除唯一约束：</p>
 <pre><code>ALTER TABLE tbl_name ADD UNIQUE (col_name);
 ALEER TABLE tbl_name DROP INDEX 索引名称;  (也可以用于删除其他索引)
-</code></pre><p>添加/删除外键约束：</p>
+</code></pre>
+<p>添加/删除外键约束：</p>
 <pre><code>ALTER TABLE tbl_name ADD FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称);
 ALTER TABLE tbl_name DROP FOREIGN KEY 约束名称； （外键约束名称通过SHOW CREATE TABLE tbl_name 查看）
 
@@ -518,27 +555,32 @@ ALTER TABLE tbl_name DROP FOREIGN KEY 约束名称； （外键约束名称通�
   CONSTRAINT `users2_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `provinces` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
 mysql&gt; ALTER TABLE users2 DROP FOREIGN KEY users2_ibfk_1;
-</code></pre><p>添加/删除默认约束：</p>
+</code></pre>
+<p>添加/删除默认约束：</p>
 <pre><code>ALTER TABLE tbl_name ALTER col_name SET DEFAULT 默认值;
 ALTER TABLE tbl_name ALTER col_name DROP DEFAULT;
-</code></pre><h2 id="3-6-修改列定义和更名数据表"><a href="#3-6-修改列定义和更名数据表" class="headerlink" title="3-6 修改列定义和更名数据表"></a>3-6 修改列定义和更名数据表</h2><p>修改列定义：</p>
+</code></pre>
+<h2 id="3-6-修改列定义和更名数据表"><a class="header-anchor" href="#3-6-修改列定义和更名数据表">¶</a>3-6 修改列定义和更名数据表</h2>
+<p>修改列定义：</p>
 <pre><code>ALTER TABLE tbl_name MODIFY col_name column_definition FIEST | AFTER col_name;
 ALTER TABLE 表名称 MODIFY列名称 列定义 FIRST | AFTER 列名称;
-</code></pre><p>修改列名称：（除了修改列定义还可以修改列名称）</p>
+</code></pre>
+<p>修改列名称：（除了修改列定义还可以修改列名称）</p>
 <pre><code>ALTER TABLE tbl_name CHANGE old_col_name new_col_name column_definition FIRST | AFTER col_name;
 ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AFTER col_name;
-</code></pre><p>数据表更名：</p>
+</code></pre>
+<p>数据表更名：</p>
 <p>方法1：</p>
 <pre><code>ALTER TABLE tbl_name RENAME new_tbl_name;
-</code></pre><p>方法2：</p>
+</code></pre>
+<p>方法2：</p>
 <pre><code>RENAME TABLE tbl_name TO new_tbl_name;
-</code></pre><hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>约束：</strong></p>
+</code></pre>
+<hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
+<h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
+<p><strong>约束：</strong></p>
 <table border="0" bgcolor="#f8c387"><tr><td>按功能划为</td><td>NOT NULL（非空约束）</td></tr><tr><td></td><td>PRIMARY KEY（主键约束）</td></tr><tr><td></td><td>UNIQUE KEY（唯一约束）</td></tr><tr><td></td><td>DEFAULT（默认约束）</td></tr><tr><td></td><td>FOREIGN KEY（外键约束）</td></tr></table>
-
 <table border="0" bgcolor="#f8c387"><tr><td>按数据列的数目划为</td><td>表级约束</td></tr><tr><td></td><td>列级约束</td></tr></table>
-
 <blockquote>
 <p>修改数据表：</p>
 <p>针对字段的操作：添加/删除字段、修改列定义、修改列名称等</p>
@@ -546,24 +588,7 @@ ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AF
 <p>针对数据表的操作：数据表更名（两种方式）</p>
 </blockquote>
 <hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
-
-<font size="10px" color="#00ff00">未完待续。。。</font>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p><font size="10px" color="#00ff00">未完待续。。。</font></p>
 
             </div>
             <hr>
@@ -1014,9 +1039,12 @@ ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AF
                 <div class="card-content article-content">
                     <div class="summary">
 
+
 此学习笔记根据慕课网课程“与MYSQL的零距离接触”学习总结
-4.操作数据表中的记录（增删改查）4-1 插入记录INSERT第一种方法：
-插入单条记录：INSERT [ INFO ] tbl_name [ ( col_name ) ] </div>
+4.操作数据表中的记录（增删改查）
+¶4-1 插入记录INSERT
+第一种方法：
+插入单条记录：INSERT [ INFO ] tbl_name [ ( col_name </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-12
@@ -1066,32 +1094,20 @@ ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AF
 
 
 
-
-
-
 生活，有时感觉莫名的心烦
-
 心烦的时候，最好的是沉默
 
-
 不必喝酒，出去走走
-
 那小路和树林
-
 那天空和海滩
-
 就在身旁
 
-
 不必多怨，言多不逊
-
 不必伤怀，曲折有度
-
 许过了就算了，算了就消失了
 
-
-
-心烦，是自己的，不是</div>
+心烦，是自己的，不是别人的
+生活，有时真的让人</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-01
@@ -1269,7 +1285,7 @@ ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AF
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             

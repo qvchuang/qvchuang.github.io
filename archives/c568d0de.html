@@ -12,7 +12,7 @@
 正好我对来必力不太满意。那就研究一下，看看能不能用上。
 先附上之前来必力的教程
 
-简单记录一">
+¶简单记录">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -102,6 +102,15 @@
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -177,6 +186,15 @@
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -425,7 +443,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        810
+                        790
                     </div>
                     
 
@@ -455,9 +473,10 @@
 <p>正好我对<a href="https://www.livere.com/" target="_blank" rel="noopener">来必力</a>不太满意。那就研究一下，看看能不能用上。</p>
 <p>先附上之前来必力的<a href="http://www.qingpingshan.com/jianzhan/cms/373258.html" target="_blank" rel="noopener">教程</a></p>
 <hr>
-<h2 id="简单记录一下的过程"><a href="#简单记录一下的过程" class="headerlink" title="简单记录一下的过程"></a><div style="background:#f8ebe6; color:#000">简单记录一下的过程</div></h2><font face="宋体" color="red">主要参考 <a href="https://panjunwen.com/diy-a-comment-system/" target="_blank" rel="noopener">@Deserts </a>、<a href="https://ioliu.cn/2017/add-valine-comments-to-your-blog/" target="_blank" rel="noopener">@云淡风轻</a></font>
-
-<h3 id="部署云引擎"><a href="#部署云引擎" class="headerlink" title="部署云引擎"></a><div style="background:#dfecd5; color:#000">部署云引擎</div></h3><ul>
+<h2 id="div-style-background-f8ebe6-color-000-简单记录一下的过程-div"><a class="header-anchor" href="#div-style-background-f8ebe6-color-000-简单记录一下的过程-div">¶</a><div style="background:#f8ebe6; color:#000">简单记录一下的过程</div></h2>
+<p><font face="宋体" color="red">主要参考 <a href="https://panjunwen.com/diy-a-comment-system/" target="_blank" rel="noopener">@Deserts </a>、<a href="https://ioliu.cn/2017/add-valine-comments-to-your-blog/" target="_blank" rel="noopener">@云淡风轻</a></font></p>
+<h3 id="div-style-background-dfecd5-color-000-部署云引擎-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-部署云引擎-div">¶</a><div style="background:#dfecd5; color:#000">部署云引擎</div></h3>
+<ul>
 <li>先简单看了一下，这个评论系统的基础是 LeanCloud，先去注册一个账号，<a href="https://leancloud.cn/" target="_blank" rel="noopener">点这里过去</a></li>
 <li>然后创建应用，应用名字什么的随意</li>
 <li>创建应用之后就可以得到 Key 了，这个等一下会用到的</li>
@@ -472,26 +491,26 @@
 <li>云引擎环境变量我可以简单解释一下（新版增加了不少环境变量，怎么部署请看原站）</li>
 </ul>
 <p><img src="https://moetu.fastmirror.org/images/2018/11/24/leancloud24172761bdf037851.png" alt></p>
-<h3 id="修改主题模板"><a href="#修改主题模板" class="headerlink" title="修改主题模板"></a><div style="background:#dfecd5; color:#000">修改主题模板</div></h3><p>这里基本上是照抄 <a href="https://github.com/litten/hexo-theme-yilia/pull/646" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia/pull/646</a></p>
-<font face="宋体" color="#FF8000"><strong>_config.yml</strong></font>
-
+<h3 id="div-style-background-dfecd5-color-000-修改主题模板-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改主题模板-div">¶</a><div style="background:#dfecd5; color:#000">修改主题模板</div></h3>
+<p>这里基本上是照抄 <a href="https://github.com/litten/hexo-theme-yilia/pull/646" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia/pull/646</a></p>
+<p><font face="宋体" color="#FF8000"><strong>_config.yml</strong></font></p>
 <pre><code> #6、Valine https://valine.js.org
 valine: 
  appid:  #Leancloud应用的appId
  appkey:  #Leancloud应用的appKey
  verify: false #验证码
  notify: false #评论回复提醒
- avatar: &#39;&#39; #评论列表头像样式：&#39;&#39;/mm/identicon/monsterid/wavatar/retro/hide
- avatar_cdn: &#39;https://sdn.geekzu.org/avatar/&#39; #头像CDN
- placeholder: &#39;瞎白话&#39; #评论框占位符
+ avatar: '' #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+ avatar_cdn: 'https://sdn.geekzu.org/avatar/' #头像CDN
+ placeholder: '瞎白话' #评论框占位符
  pageSize: 15 #评论分页
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>其中 verify 和 notify 一定要是 false，不要打开，不要手贱</p>
 <p>avatar 参数详见 <a href="https://valine.js.org/configuration.html" target="_blank" rel="noopener">https://valine.js.org/configuration.html</a></p>
 <p>在这里设置自定义头像 <a href="https://cn.gravatar.com/" target="_blank" rel="noopener">https://cn.gravatar.com/</a></p>
 </blockquote>
-<font face="宋体" color="#FF8000"><strong>themes\yilia\layout_partial\article.ejs</strong></font>
-
+<p><font face="宋体" color="#FF8000"><strong>themes\yilia\layout_partial\article.ejs</strong></font></p>
 <p>重写了一下 style，应该可以做到响应式布局了</p>
 <pre><code>&lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey){ %&gt;
   &lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;
@@ -499,25 +518,25 @@ valine:
       .comments{margin:30px;padding:10px;background:#fff}
       @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
     &lt;/style&gt;
-    &lt;%- partial(&#39;post/valine&#39;, {
+    &lt;%- partial('post/valine', {
       key: post.slug,
       title: post.title,
       url: config.url+url_for(post.path)
       }) %&gt;
   &lt;/section&gt;
 &lt;% } %&gt;
-</code></pre><font face="宋体" color="#FF8000"><strong>themes\yilia\layout_partial\post\valine.ejs</strong></font>
-
+</code></pre>
+<p><font face="宋体" color="#FF8000"><strong>themes\yilia\layout_partial\post\valine.ejs</strong></font></p>
 <pre><code>&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt;
 &lt;script src=&quot;//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&#39;//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'&gt;&lt;/script&gt;
 &lt;script&gt;
-   var notify = &#39;&lt;%= theme.valine.notify %&gt;&#39; == true ? true : false;
-   var verify = &#39;&lt;%= theme.valine.verify %&gt;&#39; == true ? true : false;
+   var notify = '&lt;%= theme.valine.notify %&gt;' == true ? true : false;
+   var verify = '&lt;%= theme.valine.verify %&gt;' == true ? true : false;
    new Valine({
 av: AV,
-el: &#39;#vcomment&#39;,
+el: '#vcomment',
 notify: notify,
 verify: verify,
 app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,
@@ -530,19 +549,24 @@ pageSize: &lt;%= theme.valine.pageSize %&gt;
 if(window.location.hash){
 var checkExist = setInterval(function() {
    if ($(window.location.hash).length) {
-  $(&#39;html, body&#39;).animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+  $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
   clearInterval(checkExist);
    }
 }, 100);
 }
 &lt;/script&gt;
-</code></pre><blockquote>
-<p>这里要注意一下 el 参数，我就是被这个坑爹的参数给坑了半个多小时，el 参数要和上面的id一致。<br>具体有哪些参数可以自己定义，可以看这里 <a href="https://valine.js.org/configuration" target="_blank" rel="noopener">https://valine.js.org/configuration</a></p>
+</code></pre>
+<blockquote>
+<p>这里要注意一下 el 参数，我就是被这个坑爹的参数给坑了半个多小时，el 参数要和上面的id一致。<br>
+具体有哪些参数可以自己定义，可以看这里 <a href="https://valine.js.org/configuration" target="_blank" rel="noopener">https://valine.js.org/configuration</a></p>
 </blockquote>
-<h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a><div style="background:#dfecd5; color:#000">测试效果</div></h3><p>完成了上面的工作，就可以试试能不能正常使用了</p>
+<h3 id="div-style-background-dfecd5-color-000-测试效果-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-测试效果-div">¶</a><div style="background:#dfecd5; color:#000">测试效果</div></h3>
+<p>完成了上面的工作，就可以试试能不能正常使用了</p>
 <p>注意，在本地测试的时候是不能正常加载评论的，因为你设置了域名限制</p>
-<h3 id="评论样式"><a href="#评论样式" class="headerlink" title="评论样式"></a><div style="background:#dfecd5; color:#000">评论样式</div></h3><p><img src="https://moetu.fastmirror.org/images/2018/11/24/d851d952a34e003e536cb208070f063ff89cf00b71576f42.png" alt></p>
-<h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><div style="background:#dfecd5; color:#000">原文链接</div></h3><p><a href="https://www.xxwhite.com/2017/Valine.html" target="_blank" rel="noopener">叉叉白</a></p>
+<h3 id="div-style-background-dfecd5-color-000-评论样式-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-评论样式-div">¶</a><div style="background:#dfecd5; color:#000">评论样式</div></h3>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/24/d851d952a34e003e536cb208070f063ff89cf00b71576f42.png" alt></p>
+<h3 id="div-style-background-dfecd5-color-000-原文链接-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-原文链接-div">¶</a><div style="background:#dfecd5; color:#000">原文链接</div></h3>
+<p><a href="https://www.xxwhite.com/2017/Valine.html" target="_blank" rel="noopener">叉叉白</a></p>
 
             </div>
             <hr>
@@ -1042,9 +1066,12 @@ GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多co
                 <div class="card-content article-content">
                     <div class="summary">
 
+
 此学习笔记根据慕课网课程“与MYSQL的零距离接触”学习总结
-4.操作数据表中的记录（增删改查）4-1 插入记录INSERT第一种方法：
-插入单条记录：INSERT [ INFO ] tbl_name [ ( col_name ) ] </div>
+4.操作数据表中的记录（增删改查）
+¶4-1 插入记录INSERT
+第一种方法：
+插入单条记录：INSERT [ INFO ] tbl_name [ ( col_name </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-12
@@ -1222,7 +1249,7 @@ GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多co
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             

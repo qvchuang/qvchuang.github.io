@@ -8,12 +8,13 @@
     <meta name="description" content="
 
 
-Bug的属性Bug重现环境
+Bug的属性
+Bug重现环境
 这个应该是我们重现bug的一个前提，如果没有这个前提，我们可能会无法重现问题，或者跟本就无从下手。
 
 操作系统
 
-这个是一般软件运行的一大前提，基本上所有的软件都依赖于操作系统之上的，对于一个软件来说，要想">
+这个是一般软件运行的一大前提，基本上所有的软件都依赖于操作系统之上的，对于一个软件来说，要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -103,6 +104,15 @@ Bug的属性Bug重现环境
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -178,6 +188,15 @@ Bug的属性Bug重现环境
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -452,7 +471,8 @@ Bug的属性Bug重现环境
                 <p><a href="https://moetu.org/image/1UYnH" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/19/bug3a7eda5fc40b3e2a.md.jpg" alt="bug3a7eda5fc40b3e2a.md.jpg"></a></p>
 <a id="more"></a>
 <hr>
-<h1 id="Bug的属性"><a href="#Bug的属性" class="headerlink" title="Bug的属性"></a>Bug的属性</h1><p><strong>Bug重现环境</strong></p>
+<h1>Bug的属性</h1>
+<p><strong>Bug重现环境</strong></p>
 <p>这个应该是我们重现bug的一个前提，如果没有这个前提，我们可能会无法重现问题，或者跟本就无从下手。</p>
 <ul>
 <li>操作系统</li>
@@ -472,13 +492,17 @@ Bug的属性Bug重现环境
 <p>根据JIRA的管理系统的划分，bug 只是问题的一种，它可以用于跟踪多种不同类型的问题（其实，他只是将bug做为一子类而已）。</p>
 <p>JIRA系统缺省提供的问题类型（大部分的系统都可以自定义类型的，这样就增加了灵活性。）</p>
 <ul>
-<li><p>Bug : 测试过程、维护过程发现影响系统运行的缺陷。（这就是一般测试人员所提交的bug）</p>
+<li>
+<p>Bug : 测试过程、维护过程发现影响系统运行的缺陷。（这就是一般测试人员所提交的bug）</p>
 </li>
-<li><p>New Feature : 对系统提出的新功能。（单个的小需求可以，如果大的话，就相当于一个需求，放到这里是不合理的。）</p>
+<li>
+<p>New Feature : 对系统提出的新功能。（单个的小需求可以，如果大的话，就相当于一个需求，放到这里是不合理的。）</p>
 </li>
-<li><p>Task : 需要完成的一任务。（开发或测试任务指派。）</p>
+<li>
+<p>Task : 需要完成的一任务。（开发或测试任务指派。）</p>
 </li>
-<li><p>Improvement : 对现有系统功能的改进。（一般产品经理或产品体验师做的事）</p>
+<li>
+<p>Improvement : 对现有系统功能的改进。（一般产品经理或产品体验师做的事）</p>
 </li>
 </ul>
 <p>当然，不同的公司，他们的人员定位与职责是不太相同的，按照上面的分类，JIRA就不是简单的缺陷管理系统了，它涵盖一项目（或产品）所需要处理的任务、需求与缺陷。</p>
@@ -495,14 +519,16 @@ Bug的属性Bug重现环境
 * 标准规范
 * 测试代码
 * 其它
-</code></pre><p>划分方式二：</p>
+</code></pre>
+<p>划分方式二：</p>
 <pre><code>* 功能类（function）
 * 性能类（performance）
 * 界面类（UI）
 * 易用性类（usability）
 * 兼容性类（compatibility）
 * 其它（else）
-</code></pre><p>这个分类当然是可以自定义的，具我接触的缺陷管理都是可以自定义的，既然是对问题的管理，那么你当然可以拿来做特定环境下的系统来使用，或我就想用这个系统来指派任务，那么我的自定义类型为前端任务、后端任务、测试任务、配置部署…</p>
+</code></pre>
+<p>这个分类当然是可以自定义的，具我接触的缺陷管理都是可以自定义的，既然是对问题的管理，那么你当然可以拿来做特定环境下的系统来使用，或我就想用这个系统来指派任务，那么我的自定义类型为前端任务、后端任务、测试任务、配置部署…</p>
 <p><strong>缺陷等级</strong></p>
 <p>缺陷等级，这个划分也比较灵活，有分三级或四级，也有分五级的。</p>
 <ul>
@@ -531,7 +557,8 @@ Bug的属性Bug重现环境
 <pre><code>低——&gt;中——&gt;高——&gt;紧急
 
 延迟处理——&gt;正常排队——&gt;优先处理——&gt;紧急处理
-</code></pre><p>Bug的严重程度和优先级是含义不同但相互联系密切的两个概念，它们从不同的侧面描述了软件缺陷对软件质量和最终用户的影响程序和处理方式。</p>
+</code></pre>
+<p>Bug的严重程度和优先级是含义不同但相互联系密切的两个概念，它们从不同的侧面描述了软件缺陷对软件质量和最终用户的影响程序和处理方式。</p>
 <p>一般地，严重程序高的软件缺陷具有较高的优先级。严重程度高说明缺陷对软件造成的危害性大，需要优先处理，而来严重程序低的缺陷可能只是软件不太尽善尽美，可以稍后处理。</p>
 <ul>
 <li>严重程度高优先级不一定高：</li>
@@ -552,7 +579,8 @@ Bug的属性Bug重现环境
 <li>回归 ： 对已经修复的问题进行回归确认。</li>
 <li>关闭 ： 问题的最后一个状态。</li>
 </ul>
-<h1 id="一个bug的生命周期"><a href="#一个bug的生命周期" class="headerlink" title="一个bug的生命周期"></a>一个bug的生命周期</h1><hr>
+<h1>一个bug的生命周期</h1>
+<hr>
 <p>下面通过一个比较完整的bug的处理流程图，更深刻的理解bug的状态以一个bug的生命周期。</p>
 <p><img src="https://moetu.fastmirror.org/images/2018/11/19/bugbc572d7d79e01181.jpg" alt></p>
 <p><strong>提交（打开）缺陷</strong></p>
@@ -578,12 +606,12 @@ Bug的属性Bug重现环境
 <p>确认固定问题：有计划的对固定问题进行确认，有些固定问题随着时间的推移，版本的更新或已经不存在了，对这类问题应该及时关闭。有些固定问题依然存在且变得紧急，对于这类问题应该及时打开交给开发人员处理。</p>
 <p><strong>关闭缺陷</strong></p>
 <p>对于已经修复的缺陷进行关闭，这也是一个缺陷的最后一个状态。</p>
-<font color="red">最后，“状态”和“指派人”的对应关系如果更加细化，对项目而言是有益的：</font>
-
+<p><font color="red">最后，“状态”和“指派人”的对应关系如果更加细化，对项目而言是有益的：</font></p>
 <pre><code>已关闭---&gt;指派给修复这个bug的开发工程师。
 无需解决，不是bug---&gt;指派给提交这个bug的测试人员。
 无需解决，迭代待解决---&gt;指派给项目的产品经理。
-</code></pre><hr>
+</code></pre>
+<hr>
 <p><img src="https://moetu.fastmirror.org/images/2018/11/19/bug1ae7dd8d12fa7577c.jpg" alt></p>
 
             </div>
@@ -1269,7 +1297,7 @@ Bug的属性Bug重现环境
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             

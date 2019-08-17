@@ -7,12 +7,14 @@
     <meta name="keywords" content="Python3-迭代器与生成器, My blog">
     <meta name="description" content="
 
-一、迭代器python中的for循环要了解for循环是怎么回事儿，还是要从代码的角度出发。
+¶一、迭代器
+¶python中的for循环
+要了解for循环是怎么回事儿，还是要从代码的角度出发。
 首先，对一个列表进行for循环。
 for i in [1,2,3,4]:  
     print(i)
 
-上面这段代码肯定是没有问题的，但是我们">
+上面这段代码肯定是没有问题的，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -102,6 +104,15 @@ for i in [1,2,3,4]:
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -177,6 +188,15 @@ for i in [1,2,3,4]:
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -425,14 +445,14 @@ for i in [1,2,3,4]:
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.4k
+                        3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        14 分
+                        12 分
                     </div>
                     
                 
@@ -450,20 +470,22 @@ for i in [1,2,3,4]:
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/EgY1u" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/12/08/python4e97f6211887c513.md.jpg" alt="python4e97f6211887c513.md.jpg"></a></p>
 <a id="more"></a>
-<h2 id="一、迭代器"><a href="#一、迭代器" class="headerlink" title="一、迭代器"></a><div style="background:#87CEEB; color:#000">一、迭代器</div></h2><h3 id="python中的for循环"><a href="#python中的for循环" class="headerlink" title="python中的for循环"></a><div style="background:pink; color:#000">python中的for循环</div></h3><p>要了解for循环是怎么回事儿，还是要从代码的角度出发。</p>
+<h2 id="div-style-background-87ceeb-color-000-一-迭代器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-一-迭代器-div">¶</a><div style="background:#87CEEB; color:#000">一、迭代器</div></h2>
+<h3 id="div-style-background-pink-color-000-python中的for循环-div"><a class="header-anchor" href="#div-style-background-pink-color-000-python中的for循环-div">¶</a><div style="background:pink; color:#000">python中的for循环</div></h3>
+<p>要了解for循环是怎么回事儿，还是要从代码的角度出发。</p>
 <p>首先，对一个列表进行for循环。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  
-    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">for i in [1,2,3,4]:  
+    print(i)
 </code></pre>
 <p>上面这段代码肯定是没有问题的，但是我们换一种情况，来循环一个数字1234试试</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1234</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> 
+<pre class=" language-language-python"><code class="language-language-python">for i in 1234
+    print(i) 
 结果：
-Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"test.py"</span><span class="token punctuation">,</span> line <span class="token number">4</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1234</span><span class="token punctuation">:</span>
-TypeError<span class="token punctuation">:</span> <span class="token string">'int'</span> object <span class="token keyword">is</span> <span class="token operator">not</span> iterable
-</code></pre>
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    for i in 1234:
+TypeError: 'int' object is not iterable
+</module></code></pre>
 <p>报错了！</p>
 <p>“TypeError: ‘int’ object is not iterable”</p>
 <p>说int类型不是一个<strong>iterable</strong>，那这个<strong>iterable</strong>是什么？</p>
@@ -471,113 +493,125 @@ TypeError<span class="token punctuation">:</span> <span class="token string">'in
 <p>iterable</p>
 <p>可迭代的;可重复的;迭代的</p>
 </blockquote>
-<h3 id="迭代和可迭代协议"><a href="#迭代和可迭代协议" class="headerlink" title="迭代和可迭代协议"></a><div style="background:pink; color:#000">迭代和可迭代协议</div></h3><h4 id="什么是迭代"><a href="#什么是迭代" class="headerlink" title="什么是迭代"></a><div style="background:beige; color:#000">什么是迭代</div></h4><p>现在，我们已经知道有一个叫做“<font face="宋体" color="#FF8000"><strong>可迭代的</strong></font>”概念。</p>
+<h3 id="div-style-background-pink-color-000-迭代和可迭代协议-div"><a class="header-anchor" href="#div-style-background-pink-color-000-迭代和可迭代协议-div">¶</a><div style="background:pink; color:#000">迭代和可迭代协议</div></h3>
+<h4 id="div-style-background-beige-color-000-什么是迭代-div"><a class="header-anchor" href="#div-style-background-beige-color-000-什么是迭代-div">¶</a><div style="background:beige; color:#000">什么是迭代</div></h4>
+<p>现在，我们已经知道有一个叫做“<font face="宋体" color="#FF8000"><strong>可迭代的</strong></font>”概念。</p>
 <p>首先，从报错来分析，好像之所以1234不可以for循环，是因为它不可迭代。</p>
 <p>那么如果“可迭代”，就应该可以被for循环了。</p>
 <p>字符串、列表、元组、字典、集合都可以被for循环，说明他们都是可迭代的。</p>
 <p>怎么来证明这一点呢？</p>
 <pre><code>from collections import Iterable
-
+                             
 l = [1,2,3,4]                
 t = (1,2,3,4)                
 d = {1:2,3:4}                
 s = {1,2,3,4}                
-
+                             
 print(isinstance(l,Iterable))
 print(isinstance(t,Iterable))
 print(isinstance(d,Iterable))
 print(isinstance(s,Iterable))
-</code></pre><p>结合使用for循环取值的现象，再从字面上理解一下，</p>
+</code></pre>
+<p>结合使用for循环取值的现象，再从字面上理解一下，</p>
 <p>其实迭代就是，可以将某个数据集内的数据“一个挨着一个的取出来”，就叫做迭代。</p>
-<h4 id="可迭代协议"><a href="#可迭代协议" class="headerlink" title="可迭代协议"></a><div style="background:beige; color:#000">可迭代协议</div></h4><p>现在从结果分析原因，能被for循环的就是“可迭代的”，但是如果正着想，for怎么知道谁是可迭代的呢？</p>
+<h4 id="div-style-background-beige-color-000-可迭代协议-div"><a class="header-anchor" href="#div-style-background-beige-color-000-可迭代协议-div">¶</a><div style="background:beige; color:#000">可迭代协议</div></h4>
+<p>现在从结果分析原因，能被for循环的就是“可迭代的”，但是如果正着想，for怎么知道谁是可迭代的呢？</p>
 <p>假如我们自己写了一个数据类型，希望这个数据类型里的东西也可以使用for被一个一个的取出来，</p>
 <p>那我们就必须满足for的要求。这个要求就叫做“协议”。</p>
 <p>可以被迭代要满足的要求就叫做可迭代协议。</p>
 <p>可迭代协议的定义非常简单，就是内部实现了<code>__iter__</code>方法。</p>
 <p>接下来就来验证一下：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">print(dir([1,2]))
+print(dir((2,3)))
+print(dir({1:2}))
+print(dir({1,2}))
 </code></pre>
 <pre><code>结果:
-[&#39;__add__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__iadd__&#39;, &#39;__imul__&#39;, &#39;__init__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__reversed__&#39;, &#39;__rmul__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;append&#39;, &#39;clear&#39;, &#39;copy&#39;, &#39;count&#39;, &#39;extend&#39;, &#39;index&#39;, &#39;insert&#39;, &#39;pop&#39;, &#39;remove&#39;, &#39;reverse&#39;, &#39;sort&#39;]
-[&#39;__add__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__getnewargs__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__rmul__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;count&#39;, &#39;index&#39;]
-[&#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;clear&#39;, &#39;copy&#39;, &#39;fromkeys&#39;, &#39;get&#39;, &#39;items&#39;, &#39;keys&#39;, &#39;pop&#39;, &#39;popitem&#39;, &#39;setdefault&#39;, &#39;update&#39;, &#39;values&#39;]
-[&#39;__and__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__iand__&#39;, &#39;__init__&#39;, &#39;__ior__&#39;, &#39;__isub__&#39;, &#39;__iter__&#39;, &#39;__ixor__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__or__&#39;, &#39;__rand__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__ror__&#39;, &#39;__rsub__&#39;, &#39;__rxor__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__sub__&#39;, &#39;__subclasshook__&#39;, &#39;__xor__&#39;, &#39;add&#39;, &#39;clear&#39;, &#39;copy&#39;, &#39;difference&#39;, &#39;difference_update&#39;, &#39;discard&#39;, &#39;intersection&#39;, &#39;intersection_update&#39;, &#39;isdisjoint&#39;, &#39;issubset&#39;, &#39;issuperset&#39;, &#39;pop&#39;, &#39;remove&#39;, &#39;symmetric_difference&#39;, &#39;symmetric_difference_update&#39;, &#39;union&#39;, &#39;update&#39;]
-</code></pre><p>总结一下：<font face="宋体" color="#FF8000">可以被for循环的都是可迭代的，要想可迭代，内部必须有一个<code>__iter__</code>方法。</font></p>
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+['__and__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+</code></pre>
+<p>总结一下：<font face="宋体" color="#FF8000">可以被for循环的都是可迭代的，要想可迭代，内部必须有一个<code>__iter__</code>方法。</font></p>
 <p>接着分析，<code>__iter__</code>方法做了什么事情呢？</p>
 <pre><code>print([1,2].__iter__())
 
 结果
 &lt;list_iterator object at 0x1024784a8&gt;
-</code></pre><p>执行了list([1,2])的<code>__iter__</code>方法，得到了一个list_iterator，</p>
+</code></pre>
+<p>执行了list([1,2])的<code>__iter__</code>方法，得到了一个list_iterator，</p>
 <p>现在又得到了一个新名词——<code>iterator</code>。</p>
 <blockquote>
 <p>iterator</p>
 <p>迭代器，迭代程序</p>
 </blockquote>
 <p>iterator,是一个计算机中的专属名词，叫做迭代器</p>
-<h3 id="迭代器协议"><a href="#迭代器协议" class="headerlink" title="迭代器协议"></a><div style="background:pink; color:#000">迭代器协议</div></h3><blockquote>
+<h3 id="div-style-background-pink-color-000-迭代器协议-div"><a class="header-anchor" href="#div-style-background-pink-color-000-迭代器协议-div">¶</a><div style="background:pink; color:#000">迭代器协议</div></h3>
+<blockquote>
 <p>知道“可迭代”之后，那么什么叫“迭代器”？</p>
 <p>虽然不知道什么叫迭代器，但是现在已经有一个迭代器了，这个迭代器是一个列表的迭代器。</p>
 <p>先来看看这个列表的迭代器比起列表来说实现了哪些新方法，这样就能揭开迭代器的神秘面纱了</p>
 </blockquote>
-<pre><code>&#39;&#39;&#39;
+<pre><code>'''
 dir([1,2].__iter__())是列表迭代器中实现的所有方法，dir([1,2])是列表中实现的所有方法,都是以列表的形式返回给我们的，为了看的更清楚，我们分别把他们转换成集合，
 然后取差集。
-&#39;&#39;&#39;
+'''
 #print(dir([1,2].__iter__()))
 #print(dir([1,2]))
 print(set(dir([1,2].__iter__()))-set(dir([1,2])))
 
 结果：
-{&#39;__length_hint__&#39;, &#39;__next__&#39;, &#39;__setstate__&#39;}
-</code></pre><p>在列表迭代器中多了三个方法，那么这三个方法都分别做了什么事呢？</p>
+{'__length_hint__', '__next__', '__setstate__'}
+</code></pre>
+<p>在列表迭代器中多了三个方法，那么这三个方法都分别做了什么事呢？</p>
 <pre><code>ter_l = [1,2,3,4,5,6].__iter__()
 #获取迭代器中元素的长度
 print(iter_l.__length_hint__())
 #根据索引值指定从哪里开始迭代
-print(&#39;*&#39;,iter_l.__setstate__(4))
+print('*',iter_l.__setstate__(4))
 #一个一个的取值
-print(&#39;**&#39;,iter_l.__next__())
-print(&#39;***&#39;,iter_l.__next__())
-</code></pre><p>这三个方法中，能让我们一个一个取值的神奇方法就是<code>__next__</code></p>
+print('**',iter_l.__next__())
+print('***',iter_l.__next__())
+</code></pre>
+<p>这三个方法中，能让我们一个一个取值的神奇方法就是<code>__next__</code></p>
 <p>在for循环中，就是在内部调用了<code>__next__</code>方法才能取到一个一个的值。</p>
 <p>接下来就用迭代器的next方法来写一个不依赖for的遍历。</p>
-<pre class=" language-python"><code class="language-python">l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
-l_iter <span class="token operator">=</span> l<span class="token punctuation">.</span>__iter__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-item <span class="token operator">=</span> l_iter<span class="token punctuation">.</span>__next__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
-item <span class="token operator">=</span> l_iter<span class="token punctuation">.</span>__next__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
-item <span class="token operator">=</span> l_iter<span class="token punctuation">.</span>__next__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
-item <span class="token operator">=</span> l_iter<span class="token punctuation">.</span>__next__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
-item <span class="token operator">=</span> l_iter<span class="token punctuation">.</span>__next__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">l = [1,2,3,4]
+l_iter = l.__iter__()
+item = l_iter.__next__()
+print(item)
+item = l_iter.__next__()
+print(item)
+item = l_iter.__next__()
+print(item)
+item = l_iter.__next__()
+print(item)
+item = l_iter.__next__()
+print(item)
 </code></pre>
 <p>这是一段会报错的代码，如果我们一直取next取到迭代器里已经没有元素了，</p>
 <p>就会抛出一个异常StopIteration，告诉我们，列表中已经没有有效的元素了。</p>
 <p>这个时候，就要使用异常处理机制来把这个异常处理掉。</p>
-<pre class=" language-python"><code class="language-python">l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
-l_iter <span class="token operator">=</span> l<span class="token punctuation">.</span>__iter__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        item <span class="token operator">=</span> l_iter<span class="token punctuation">.</span>__next__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
-    <span class="token keyword">except</span> StopIteration<span class="token punctuation">:</span>
-        <span class="token keyword">break</span>
+<pre class=" language-language-python"><code class="language-language-python">l = [1,2,3,4]
+l_iter = l.__iter__()
+while True:
+    try:
+        item = l_iter.__next__()
+        print(item)
+    except StopIteration:
+        break
 </code></pre>
 <p>现在就是使用while循环实现了原本for循环做的事情，这个<code>l.__iter__()</code>就是一个迭代器。</p>
 <p><strong>迭代器遵循迭代器协议：</strong><font face="宋体" color="#FF8000"><strong>必须拥有<code>__iter__</code>方法和<code>__next__</code>方法。</strong></font></p>
-<pre><code>print(&#39;__next__&#39; in dir(range(12)))  #查看&#39;__next__&#39;是不是在range()方法执行之后内部是否有__next__
-print(&#39;__iter__&#39; in dir(range(12)))  #查看&#39;__next__&#39;是不是在range()方法执行之后内部是否有__next__
+<pre><code>print('__next__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__
+print('__iter__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__
 
 from collections import Iterator
 print(isinstance(range(100000000),Iterator))  #验证range执行之后得到的结果不是一个迭代器
-</code></pre><h2 id="二、生成器"><a href="#二、生成器" class="headerlink" title="二、生成器"></a><div style="background:#87CEEB; color:#000">二、生成器</div></h2><h3 id="初识生成器"><a href="#初识生成器" class="headerlink" title="初识生成器"></a><div style="background:pink; color:#000">初识生成器</div></h3><blockquote>
+</code></pre>
+<h2 id="div-style-background-87ceeb-color-000-二-生成器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-二-生成器-div">¶</a><div style="background:#87CEEB; color:#000">二、生成器</div></h2>
+<h3 id="div-style-background-pink-color-000-初识生成器-div"><a class="header-anchor" href="#div-style-background-pink-color-000-初识生成器-div">¶</a><div style="background:pink; color:#000">初识生成器</div></h3>
+<blockquote>
 <p>我们知道的迭代器有两种：</p>
 <p>一种是调用方法直接返回的，一种是可迭代对象通过执行iter方法得到的</p>
 <p>迭代器有的好处是可以节省内存。</p>
@@ -591,27 +625,28 @@ print(isinstance(range(100000000),Iterator))  #验证range执行之后得到的�
 </blockquote>
 <blockquote>
 <p>生成器Generator：</p>
-<p>　　本质：迭代器(所以自带了<code>__iter__</code>方法和<code>__next__</code>方法，不需要我们去实现)</p>
-<p>　　特点：惰性运算,开发者自定义</p>
+<p>本质：迭代器(所以自带了<code>__iter__</code>方法和<code>__next__</code>方法，不需要我们去实现)</p>
+<p>特点：惰性运算,开发者自定义</p>
 </blockquote>
-<h3 id="生成器函数"><a href="#生成器函数" class="headerlink" title="生成器函数"></a><div style="background:pink; color:#000">生成器函数</div></h3><p>一个包含<code>yield</code>关键字的函数就是一个生成器函数。</p>
+<h3 id="div-style-background-pink-color-000-生成器函数-div"><a class="header-anchor" href="#div-style-background-pink-color-000-生成器函数-div">¶</a><div style="background:pink; color:#000">生成器函数</div></h3>
+<p>一个包含<code>yield</code>关键字的函数就是一个生成器函数。</p>
 <blockquote>
 <p>yield可以为我们从函数中返回值，但是yield又不同于return，return的执行意味着程序的结束，调用生成器函数不会得到返回的具体的值，而是得到一个可迭代的对象。每一次获取这个可迭代对象的值，就能推动函数的执行，获取新的返回值。直到函数执行结束。</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> time
-<span class="token keyword">def</span> <span class="token function">genrator_fun1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'现在定义了a变量'</span><span class="token punctuation">)</span>
-    <span class="token keyword">yield</span> a
-    b <span class="token operator">=</span> <span class="token number">2</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'现在又定义了b变量'</span><span class="token punctuation">)</span>
-    <span class="token keyword">yield</span> b
-g1 <span class="token operator">=</span> genrator_fun1<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'g1 : '</span><span class="token punctuation">,</span>g1<span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">#打印g1可以发现g1就是一个生成器</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token operator">*</span><span class="token number">20</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#我是华丽的分割线</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>next<span class="token punctuation">(</span>g1<span class="token punctuation">)</span><span class="token punctuation">)</span>
-time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#sleep一秒看清执行过程</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>next<span class="token punctuation">(</span>g1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">import time
+def genrator_fun1():
+    a = 1
+    print('现在定义了a变量')
+    yield a
+    b = 2
+    print('现在又定义了b变量')
+    yield b
+g1 = genrator_fun1()
+print('g1 : ',g1)       #打印g1可以发现g1就是一个生成器
+print('-'*20)   #我是华丽的分割线
+print(next(g1))
+time.sleep(1)   #sleep一秒看清执行过程
+print(next(g1))
 </code></pre>
 <p>生成器有什么好处呢？就是不会一下子在内存中生成太多数据</p>
 <blockquote>
@@ -637,8 +672,9 @@ for i in product_g:         #要一批衣服，比如5件
 
 #到这里我们找工厂拿了8件衣服，我一共让我的生产函数(也就是produce生成器函数)生产2000000件衣服。
 #剩下的还有很多衣服，我们可以一直拿，也可以放着等想拿的时候再拿
-</code></pre><h4 id="更多应用"><a href="#更多应用" class="headerlink" title="更多应用"></a><div style="background:beige; color:#000">更多应用</div></h4><font face="宋体" color="#FF8000">生成器监听文件输入的例子</font>
-
+</code></pre>
+<h4 id="div-style-background-beige-color-000-更多应用-div"><a class="header-anchor" href="#div-style-background-beige-color-000-更多应用-div">¶</a><div style="background:beige; color:#000">更多应用</div></h4>
+<p><font face="宋体" color="#FF8000">生成器监听文件输入的例子</font></p>
 <pre><code>import time
 
 def tail(filename):
@@ -651,29 +687,48 @@ def tail(filename):
             continue
         yield line
 
-tail_g = tail(&#39;tmp&#39;)
+tail_g = tail('tmp')
 for line in tail_g:
     print(line)
-</code></pre><h4 id="send"><a href="#send" class="headerlink" title="send"></a><div style="background:beige; color:#000">send</div></h4><pre><code>def generator():
+</code></pre>
+<h4 id="div-style-background-beige-color-000-send-div"><a class="header-anchor" href="#div-style-background-beige-color-000-send-div">¶</a><div style="background:beige; color:#000">send</div></h4>
+<pre><code>def generator():
     print(123)
     content = yield 1
-    print(&#39;=======&#39;,content)
+    print('=======',content)
     print(456)
     yield2
 
 g = generator()
 ret = g.__next__()
-print(&#39;***&#39;,ret)
-ret = g.send(&#39;hello&#39;)   #send的效果和next一样
-print(&#39;***&#39;,ret)
+print('***',ret)
+ret = g.send('hello')   #send的效果和next一样
+print('***',ret)
 
 #send 获取下一个值的效果和next基本一致
 #只是在获取下一个值的时候，给上一yield的位置传递一个数据
 #使用send的注意事项
     # 第一次使用生成器的时候 是用next获取下一个值
     # 最后一个yield不能接受外部的值
-</code></pre><font face="宋体" color="#FF8000">计算移动平均值</font>(1)<br><br>    def averager():<br>        total = 0.0<br>        count = 0<br>        average = None<br>        while True:<br>            term = yield average<br>            total += term<br>            count += 1<br>            average = total/count<br><br>    g_avg = averager()<br>    next(g_avg)<br>    print(g_avg.send(10))<br>    print(g_avg.send(30))<br>    print(g_avg.send(5))<br><br>计算移动平均值(2)_<font face="宋体" color="#FF8000">预激协程的装饰器</font>
-
+</code></pre>
+<p><font face="宋体" color="#FF8000">计算移动平均值</font>(1)</p>
+<pre><code>def averager():
+    total = 0.0
+    count = 0
+    average = None
+    while True:
+        term = yield average
+        total += term
+        count += 1
+        average = total/count
+	
+g_avg = averager()
+next(g_avg)
+print(g_avg.send(10))
+print(g_avg.send(30))
+print(g_avg.send(5))
+</code></pre>
+<p>计算移动平均值(2)_<font face="宋体" color="#FF8000">预激协程的装饰器</font></p>
 <pre><code>def init(func):  #在调用被装饰生成器函数的时候首先用next激活生成器
     def inner(*args,**kwargs):
         g = func(*args,**kwargs)
@@ -698,8 +753,10 @@ g_avg = averager()
 print(g_avg.send(10))
 print(g_avg.send(30))
 print(g_avg.send(5))
-</code></pre><h4 id="yield-from"><a href="#yield-from" class="headerlink" title="yield from"></a><div style="background:beige; color:#000">yield from</div></h4><pre><code>def gen1():
-    for c in &#39;AB&#39;:
+</code></pre>
+<h4 id="div-style-background-beige-color-000-yield-from-div"><a class="header-anchor" href="#div-style-background-beige-color-000-yield-from-div">¶</a><div style="background:beige; color:#000">yield from</div></h4>
+<pre><code>def gen1():
+    for c in 'AB':
         yield c
     for i in range(3):
         yield i
@@ -707,19 +764,22 @@ print(g_avg.send(5))
 print(list(gen1()))
 
 def gen2():
-    yield from &#39;AB&#39;
+    yield from 'AB'
     yield from range(3)
 
 print(list(gen2()))
-</code></pre><h3 id="列表推导式和生成器表达式"><a href="#列表推导式和生成器表达式" class="headerlink" title="列表推导式和生成器表达式"></a><div style="background:pink; color:#000">列表推导式和生成器表达式</div></h3><pre><code>egg_list=[&#39;鸡蛋%s&#39; %i for i in range(10)] #列表解析
+</code></pre>
+<h3 id="div-style-background-pink-color-000-列表推导式和生成器表达式-div"><a class="header-anchor" href="#div-style-background-pink-color-000-列表推导式和生成器表达式-div">¶</a><div style="background:pink; color:#000">列表推导式和生成器表达式</div></h3>
+<pre><code>egg_list=['鸡蛋%s' %i for i in range(10)] #列表解析
 
-laomuji=(&#39;鸡蛋%s&#39; %i for i in range(10))#生成器表达式
+laomuji=('鸡蛋%s' %i for i in range(10))#生成器表达式
 
 print(laomuji)
 print(next(laomuji)) #next本质就是调用__next__
 print(laomuji.__next__())
 print(next(laomuji))
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>总结：</p>
 <p>1.把列表解析的[]换成()得到的就是生成器表达式</p>
 <p>2.列表解析与生成器表达式都是一种便利的编程方式，只不过生成器表达式更节省内存</p>
@@ -730,30 +790,27 @@ print(next(laomuji))
 <p><code>sum(x ** 2 for x in range(4))</code></p>
 <p>而不用多此一举的先构造一个列表：</p>
 <p><code>sum([x ** 2 for x in range(4)])</code></p>
-<h2 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a><div style="background:#87CEEB; color:#000">三、小结</div></h2><blockquote>
-<font face="宋体" color="#FF8000">可迭代对象：</font>
-
+<h2 id="div-style-background-87ceeb-color-000-三-小结-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-三-小结-div">¶</a><div style="background:#87CEEB; color:#000">三、小结</div></h2>
+<blockquote>
+<p><font face="宋体" color="#FF8000">可迭代对象：</font></p>
 <p>拥有<code>__iter__</code>方法</p>
 <p>特点：惰性运算,例如:<code>range(),str,list,tuple,dict,set</code></p>
 </blockquote>
 <blockquote>
-<font face="宋体" color="#FF8000">迭代器Iterator：</font>
-
+<p><font face="宋体" color="#FF8000">迭代器Iterator：</font></p>
 <p>拥有<code>__iter__</code>方法和<code>__next__</code>方法</p>
 </blockquote>
 <blockquote>
-<font face="宋体" color="#FF8000">生成器Generator：</font>
-
-<p>　　本质：迭代器，所以拥有<code>__iter__</code>方法和<code>__next__</code>方法</p>
-<p>　　特点：惰性运算,开发者自定义</p>
+<p><font face="宋体" color="#FF8000">生成器Generator：</font></p>
+<p>本质：迭代器，所以拥有<code>__iter__</code>方法和<code>__next__</code>方法</p>
+<p>特点：惰性运算,开发者自定义</p>
 </blockquote>
-<font face="宋体" color="red">使用生成器的优点：</font>
-
+<p><font face="宋体" color="red">使用生成器的优点：</font></p>
 <p>1.<font face="宋体" color="skyblue">延迟计算，一次返回一个结果。也就是说，它不会一次生成所有的结果，这对于大数据量处理，将会非常有用。</font></p>
-<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#列表解析</span>
-sum<span class="token punctuation">(</span><span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100000000</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#内存占用大,机器容易卡死</span>
- <span class="token comment" spellcheck="true">#生成器表达式</span>
-sum<span class="token punctuation">(</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100000000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#几乎不占内存</span>
+<pre class=" language-language-python"><code class="language-language-python"> #列表解析
+sum([i for i in range(100000000)])#内存占用大,机器容易卡死
+ #生成器表达式
+sum(i for i in range(100000000))#几乎不占内存
 </code></pre>
 <p>2.<font face="宋体" color="skyblue">提高代码可读性</font></p>
 
@@ -1206,15 +1263,16 @@ sum<span class="token punctuation">(</span>i <span class="token keyword">for</sp
                 <div class="card-content article-content">
                     <div class="summary">
 
-一、内置函数
+¶一、内置函数
+
 python一共为我们提供了68个内置函数。它们就是python提供给你直接可以拿来使用的所有函数。
 
 →内置函数思维导图
 
-常用内置函数方法1、print 输出
-
+¶常用内置函数方法
+1、print 输出
 print('666',end='')
-print('6</div>
+print</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-16
@@ -1261,21 +1319,29 @@ print('6</div>
                 <div class="card-content article-content">
                     <div class="summary">
 
-阅读目录
+¶阅读目录
+
+
 装饰器的形成过程
+
 
 开放封闭原则
 
+
 装饰器主要功能和装饰器固定结构
 
+
 带参数的装饰器
+
 
 多个装饰器装饰一个函数
 
 
-装饰器的形成过程装饰器——简单版import time
+¶装饰器的形成过程
+¶装饰器——简单版
+import time
 def func1():
-    print('in </div>
+   </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
@@ -1453,7 +1519,7 @@ def func1():
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             

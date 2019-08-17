@@ -4,18 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python3小知识点, My blog">
-    <meta name="description" content="
-
-¶1、id  查询内存地址
-name = &#39;alex&#39;
-print(id(name))
-li = [1,2,3]
-print(id(li))
-
-¶2、is  判断的是内存地址
-¶==  是比较值，is 是内存地址是否相同
-name1 =">
+    <meta name="keywords" content="留言板, My blog">
+    <meta name="description" content="留言板 | My blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +13,7 @@ name1 =">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python3小知识点 | My blog</title>
+    <title>留言板 | My blog</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -304,7 +294,7 @@ name1 =">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python3小知识点
+                        留言板
                     </div>
                 </div>
             </div>
@@ -413,25 +403,12 @@ name1 =">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/python3/" target="_blank">
-                                <span class="chip bg-color">python3</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                python
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -439,21 +416,21 @@ name1 =">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-11-23
+                    2019-08-17
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        493
+                        14
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -469,88 +446,9 @@ name1 =">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://moetu.org/image/1lCaj" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/19/pythona3f781c4df4745da.md.png" alt="pythona3f781c4df4745da.md.png"></a></p>
-<a id="more"></a>
-<h2 id="div-style-background-c3d7df-color-000-1-id-查询内存地址-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-1-id-查询内存地址-div">¶</a><div style="background:#c3d7df; color:#000">1、id  查询内存地址</div></h2>
-<pre class=" language-language-python"><code class="language-language-python">name = 'alex'
-print(id(name))
-li = [1,2,3]
-print(id(li))
-</code></pre>
-<h2 id="div-style-background-c3d7df-color-000-2-is-判断的是内存地址-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-2-is-判断的是内存地址-div">¶</a><div style="background:#c3d7df; color:#000">2、is  判断的是内存地址</div></h2>
-<h3 id="font-face-宋体-color-ff8000-是比较值-is-是内存地址是否相同-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-是比较值-is-是内存地址是否相同-font">¶</a><font face="宋体" color="#FF8000">==  是比较值，is 是内存地址是否相同</font></h3>
-<pre class=" language-language-python"><code class="language-language-python">name1 = 'alex@'
-name2 = 'alex@'
-print(name1 == name2)---Ture
-print(name1 is name2)-----Ture
-</code></pre>
-<h2 id="div-style-background-c3d7df-color-000-3-小数据池-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-3-小数据池-div">¶</a><div style="background:#c3d7df; color:#000">3、小数据池</div></h2>
-<p>Python中   int  与 str  存在小数据池，其他类型没有</p>
-<p>int 范围  -5 —256—指向一个内存地址</p>
-<p>str 如果是全部由字母组成的字符串 都是指向一个内存地址.</p>
-<p>如果是数字与str(单个字母)想乘,则20以内(包含20)的是同一个内存地址.</p>
-<p>其他数据类型 则没有小数据池概念.</p>
-<h2 id="div-style-background-c3d7df-color-000-4-编码进阶-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-4-编码进阶-div">¶</a><div style="background:#c3d7df; color:#000">4、编码进阶</div></h2>
-<h3 id="div-style-background-beige-color-000-4-1-编码回顾-div"><a class="header-anchor" href="#div-style-background-beige-color-000-4-1-编码回顾-div">¶</a><div style="background:beige; color:#000">4.1 编码回顾</div></h3>
-<p><font face="宋体" color="#FF8000">unicode :万国码</font></p>
-<blockquote>
-<p>A : 0000 0001 0000 0001 0000 0001 0000 0001 32位</p>
-<p>中: 0000 0101 0000 0001 0000 0001 0000 0001 32位</p>
-</blockquote>
-<p><font face="宋体" color="#FF8000">升级:utf-8 :用最少8位表示一个字符</font></p>
-<blockquote>
-<p>A : 0000 0001 8位</p>
-<p>欧洲 : 0000 0001 0000 0001 16位</p>
-<p>亚洲 中 : 0000 0101 0000 0001 0000 0001 24位</p>
-</blockquote>
-<p><font face="宋体" color="#FF8000">gbk :国标</font></p>
-<blockquote>
-<p>a : 0000 0001 8位</p>
-<p>中 : 0000 0101 0000 0001 16位</p>
-</blockquote>
-<pre class=" language-language-text"><code class="language-language-text">不同编码之间是不能互相识别对方的二进制,会报错,或者产生乱码.
-在你的字符串(文件),存储,传输时,必须使用非unicode的二进制(01010101).
-</code></pre>
-<blockquote>
-<p>py3:</p>
-<p>字符串:编码方式(在内存中的运行方式):默认都是unicode.</p>
-</blockquote>
-<h3 id="div-style-background-beige-color-000-4-2-byte-表现形式-div"><a class="header-anchor" href="#div-style-background-beige-color-000-4-2-byte-表现形式-div">¶</a><div style="background:beige; color:#000">4.2 byte 表现形式</div></h3>
-<p><font face="宋体" color="#FF8000">byte</font></p>
-<blockquote>
-<p>对于非中文:  表现形式: b’alex’</p>
-<p>内部编码: utf-8 gbk,gb2312…(非unicode) 你设定的.</p>
-</blockquote>
-<blockquote>
-<p>对于中文: 表现形式: b’xe3\xf2\x36\xe3\xf2\x36’</p>
-<p>内部编码: utf-8 gbk,gb2312…(非unicode) 你设定的.</p>
-</blockquote>
-<p><font face="宋体" color="#FF8000">str</font></p>
-<blockquote>
-<p>对于非中文:   表现形式: ‘alex’</p>
-<p>内部编码: unicode</p>
-</blockquote>
-<blockquote>
-<p>对于中文:   表现形式: ‘中国’</p>
-<p>内部编码: unicode</p>
-</blockquote>
-<p><code>str &gt;&gt;&gt; byte</code></p>
-<p><strong>b = s.encode(‘utf-8’)</strong></p>
-<pre class=" language-language-python"><code class="language-language-python">s = 'alex'
-b = s.encode('utf-8')
-b1 = s.encode('gbk')
-print(s,type(s))-----alex <class 'str'>
-print(b,type(b))-----b'alex' <class 'bytes'>
-print(b1,type(b1))--b'alex' <class 'bytes'>
-</class></class></class></code></pre>
-<pre class=" language-language-python"><code class="language-language-python">s = '中国'
-b = s.encode('utf-8')
-b1 = s.encode('gbk')
-print(s,type(s))
-print(b,type(b))------b'\xe4\xb8\xad\xe5\x9b\xbd' <class 'bytes'>
-print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' <class 'bytes'>
-</class></class></code></pre>
-
+                <h1><p style="text-align:center">可以在下方留言区进行留言哦(<sup>__</sup>)</p></h1>
+<p>😄</p>
+<p style="text-align:center"><img src><img src="https://moetu.fastmirror.org/images/2019/01/05/lyb8ca77fda9962c84f.md.jpg" alt="lyb8ca77fda9962c84f.md.jpg" border="0"></p>
             </div>
             <hr>
 
@@ -697,7 +595,7 @@ print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' <class 'bytes'>
                     </span>
                     <a href="http://qvchuang.top" class="b-link-green">My blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/archives/f1a41560.html" class="b-link-green">Python3小知识点</a>
+                    <a href="/lyb/index.html" class="b-link-green">留言板</a>
                 </p>
             </div>
         </div>
@@ -986,48 +884,35 @@ print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' <class 'bytes'>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/archives/48f2972.html">
+                <a href="/lyb/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Python3之深浅copy">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="留言板">
                         
-                        <span class="card-title">Python3之深浅copy</span>
+                        <span class="card-title">留言板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-
-¶定义：
-
-在Python中对象的赋值其实就是对象的引用。当创建一个对象，把它赋值给另一个变量的时候，python并没有拷贝这个对象，只是拷贝了这个对象的引用而已。
-浅拷贝：拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。也</div>
+                    <div class="summary">可以在下方留言区进行留言哦(__)
+😄
+</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-17
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            qvchuang
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1035,49 +920,35 @@ print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' <class 'bytes'>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/archives/b7729c81.html">
+                <a href="/lyb/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python3基础·二">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="留言板">
                         
-                        <span class="card-title">Python3基础·二</span>
+                        <span class="card-title">留言板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-
-一、什么是数据类型？
-
-我们人类可以很容易的分清数字与字符的区别，但是计算机并不能呀，计算机虽然很强大，但从某种角度上看又很傻，除非你明确的告诉它，
-1是数字，“汉”是文字，否则它是分不清1和‘汉’的区别的，因此，在每个编程语言里都会有</div>
+                    <div class="summary">可以在下方留言区进行留言哦(__)
+😄
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-17
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            qvchuang
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>

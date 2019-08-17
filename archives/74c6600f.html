@@ -7,9 +7,10 @@
     <meta name="keywords" content="Python3之文件操作, My blog">
     <meta name="description" content="
 
-一、文件操作基本流程计算机系统分为：计算机硬件，操作系统，应用程序三部分。
+¶一、文件操作基本流程
+计算机系统分为：计算机硬件，操作系统，应用程序三部分。
 
-我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件的，">
+我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -99,6 +100,15 @@
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -174,6 +184,15 @@
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -447,21 +466,21 @@
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/18CL7" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/24/python3089516611e2d38ba.md.jpg" alt="python3089516611e2d38ba.md.jpg"></a></p>
 <a id="more"></a>
-<h2 id="一、文件操作基本流程"><a href="#一、文件操作基本流程" class="headerlink" title="一、文件操作基本流程"></a><div style="background:#b2bbbe; color:#000">一、文件操作基本流程</div></h2><p>计算机系统分为：计算机硬件，操作系统，应用程序三部分。</p>
+<h2 id="div-style-background-b2bbbe-color-000-一-文件操作基本流程-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-一-文件操作基本流程-div">¶</a><div style="background:#b2bbbe; color:#000">一、文件操作基本流程</div></h2>
+<p>计算机系统分为：计算机硬件，操作系统，应用程序三部分。</p>
 <blockquote>
 <p>我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件的，这就用到了操作系统。操作系统把复杂的硬件操作封装成简单的接口给用户/应用程序使用，其中文件就是操作系统提供给应用程序来操作硬盘虚拟概念，用户或应用程序通过操作文件，可以将自己的数据永久保存下来。</p>
 </blockquote>
 <p>有了文件的概念，我们无需再去考虑操作硬盘的细节，只需要关注操作文件的流程：</p>
-<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#1. 打开文件，得到文件句柄并赋值给一个变量</span>
-f<span class="token operator">=</span>open<span class="token punctuation">(</span><span class="token string">'a.txt'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#默认打开模式就为r</span>
- <span class="token comment" spellcheck="true">#2. 通过句柄对文件进行操作</span>
-data<span class="token operator">=</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true">#3. 关闭文件</span>
-f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python"> #1. 打开文件，得到文件句柄并赋值给一个变量
+f=open('a.txt','r',encoding='utf-8') #默认打开模式就为r
+ #2. 通过句柄对文件进行操作
+data=f.read()
+ #3. 关闭文件
+f.close()
 </code></pre>
-<font face="宋体" color="#FF8000">关闭文件的注意事项：</font>
-
-<pre class=" language-text"><code class="language-text">打开一个文件包含两部分资源：操作系统级打开的文件+应用程序的变量。在操作完毕一个文件时，必须把与该文件的这两部分资源一个不落地回收，回收方法为：
+<p><font face="宋体" color="#FF8000">关闭文件的注意事项：</font></p>
+<pre class=" language-language-text"><code class="language-language-text">打开一个文件包含两部分资源：操作系统级打开的文件+应用程序的变量。在操作完毕一个文件时，必须把与该文件的这两部分资源一个不落地回收，回收方法为：
 1、f.close() #回收操作系统级打开的文件
 2、del f #回收应用程序级的变量
 其中del f一定要发生在f.close()之后，否则就会导致操作系统打开的文件还没有关闭，白白占用资源，
@@ -473,31 +492,35 @@ with open('a.txt','r') as read_f,open('b.txt','w') as write_f:
     data=read_f.read()
     write_f.write(data)
 </code></pre>
-<h2 id="二、文件编码"><a href="#二、文件编码" class="headerlink" title="二、文件编码"></a><div style="background:#b2bbbe; color:#000">二、文件编码</div></h2><blockquote>
+<h2 id="div-style-background-b2bbbe-color-000-二-文件编码-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-二-文件编码-div">¶</a><div style="background:#b2bbbe; color:#000">二、文件编码</div></h2>
+<blockquote>
 <p>f=open(…)是由操作系统打开文件，那么如果我们没有为open指定编码，那么打开文件的默认编码很明显是操作系统说了算了，操作系统会用自己的默认编码去打开文件，在windows下是gbk，在linux下是utf-8。</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#这就用到了上节课讲的字符编码的知识：若要保证不乱码，文件以什么方式存的，就要以什么方式打开。</span>
-f<span class="token operator">=</span>open<span class="token punctuation">(</span><span class="token string">'a.txt'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python"> #这就用到了上节课讲的字符编码的知识：若要保证不乱码，文件以什么方式存的，就要以什么方式打开。
+f=open('a.txt','r',encoding='utf-8')
 </code></pre>
-<h2 id="三、文件的打开模式"><a href="#三、文件的打开模式" class="headerlink" title="三、文件的打开模式"></a><div style="background:#b2bbbe; color:#000">三、文件的打开模式</div></h2><pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#1. 打开文件的模式有(默认为文本模式)：</span>
+<h2 id="div-style-background-b2bbbe-color-000-三-文件的打开模式-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-三-文件的打开模式-div">¶</a><div style="background:#b2bbbe; color:#000">三、文件的打开模式</div></h2>
+<pre class=" language-language-python"><code class="language-language-python"> #1. 打开文件的模式有(默认为文本模式)：
 r ，只读模式【默认模式，文件必须存在，不存在则抛出异常】
 w，只写模式【不可读；不存在则创建；存在则清空内容】
 a， 只追加写模式【不可读；不存在则创建；存在则只追加内容】
- <span class="token comment" spellcheck="true">#2. 对于非文本文件，我们只能使用b模式，"b"表示以字节的方式操作（而所有文件也都是以字节的形式存储的，使用这种模式无需考虑文本文件的字符编码、图片文件的jgp格式、视频文件的avi格式）</span>
+ #2. 对于非文本文件，我们只能使用b模式，"b"表示以字节的方式操作（而所有文件也都是以字节的形式存储的，使用这种模式无需考虑文本文件的字符编码、图片文件的jgp格式、视频文件的avi格式）
 rb 
 wb
 ab
 注：以b方式打开时，读取到的内容是字节类型，写入时也需要提供字节类型，不能指定编码
- <span class="token comment" spellcheck="true">#3,‘+’模式（就是增加了一个功能）</span>
-r<span class="token operator">+</span>， 读写【可读，可写】
-w<span class="token operator">+</span>，写读【可写，可读】
-a<span class="token operator">+</span>， 写读【可写，可读】
- <span class="token comment" spellcheck="true">#4，以bytes类型操作的读写，写读，写读模式</span>
-r<span class="token operator">+</span>b， 读写【可读，可写】
-w<span class="token operator">+</span>b，写读【可写，可读】
-a<span class="token operator">+</span>b， 写读【可写，可读】
+ #3,‘+’模式（就是增加了一个功能）
+r+， 读写【可读，可写】
+w+，写读【可写，可读】
+a+， 写读【可写，可读】
+ #4，以bytes类型操作的读写，写读，写读模式
+r+b， 读写【可读，可写】
+w+b，写读【可写，可读】
+a+b， 写读【可写，可读】
 </code></pre>
-<h2 id="四、文件操作方法"><a href="#四、文件操作方法" class="headerlink" title="四、文件操作方法"></a><div style="background:#b2bbbe; color:#000">四、文件操作方法</div></h2><h3 id="常用操作方法"><a href="#常用操作方法" class="headerlink" title="常用操作方法"></a><div style="background:#fbeee2; color:#000">常用操作方法</div></h3><pre class=" language-text"><code class="language-text">read（3）：
+<h2 id="div-style-background-b2bbbe-color-000-四-文件操作方法-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-四-文件操作方法-div">¶</a><div style="background:#b2bbbe; color:#000">四、文件操作方法</div></h2>
+<h3 id="div-style-background-fbeee2-color-000-常用操作方法-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-常用操作方法-div">¶</a><div style="background:#fbeee2; color:#000">常用操作方法</div></h3>
+<pre class=" language-language-text"><code class="language-language-text">read（3）：
 　　1. 文件打开方式为文本模式时，代表读取3个字符
 　　2. 文件打开方式为b模式时，代表读取3个字节
 其余的文件内光标移动都是以字节为单位的如：seek，tell，truncate
@@ -505,46 +528,47 @@ a<span class="token operator">+</span>b， 写读【可写，可读】
 　　1. seek有三种移动方式0，1，2，其中1和2必须在b模式下进行，但无论哪种模式，都是以bytes为单位移动的
 　　2. truncate是截断文件，所以文件的打开方式必须可写，但是不能用w或w+等方式打开，因为那样直接清空文件了，所以truncate要在r+或a或a+等模式下测试效果。
 </code></pre>
-<pre class=" language-python"><code class="language-python">f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#读取所有内容,光标移动到文件末尾</span>
-f<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#读取一行内容,光标移动到第二行首部</span>
-f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#读取每一行内容,存放于列表中</span>
-f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'1111\n222\n'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#针对文本模式的写,需要自己写换行符</span>
-f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'1111\n222\n'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#针对b模式的写,需要自己写换行符</span>
-f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'333\n'</span><span class="token punctuation">,</span><span class="token string">'444\n'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#文件模式</span>
-f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span><span class="token punctuation">[</span>bytes<span class="token punctuation">(</span><span class="token string">'333\n'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'444\n'</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#b模式</span>
- <span class="token comment" spellcheck="true">#seek 光标移动到第几个字节的位置</span>
-f<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>    移动到最开始
-f<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>    移动到最末尾
- <span class="token comment" spellcheck="true">#tell    告诉你光标的位置</span>
-f<span class="token punctuation">.</span>tell<span class="token punctuation">(</span><span class="token punctuation">)</span>
- <span class="token comment" spellcheck="true">#readable    #文件是否可读</span>
-f<span class="token punctuation">.</span>readable<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">f.read() #读取所有内容,光标移动到文件末尾
+f.readline() #读取一行内容,光标移动到第二行首部
+f.readlines() #读取每一行内容,存放于列表中
+f.write('1111\n222\n') #针对文本模式的写,需要自己写换行符
+f.write('1111\n222\n'.encode('utf-8')) #针对b模式的写,需要自己写换行符
+f.writelines(['333\n','444\n']) #文件模式
+f.writelines([bytes('333\n',encoding='utf-8'),'444\n'.encode('utf-8')]) #b模式
+ #seek 光标移动到第几个字节的位置
+f.seek(0,0)    移动到最开始
+f.seek(0,2)    移动到最末尾
+ #tell    告诉你光标的位置
+f.tell()
+ #readable    #文件是否可读
+f.readable()
 </code></pre>
-<h2 id="五、文件的修改"><a href="#五、文件的修改" class="headerlink" title="五、文件的修改"></a><div style="background:#b2bbbe; color:#000">五、文件的修改</div></h2><blockquote>
+<h2 id="div-style-background-b2bbbe-color-000-五-文件的修改-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-五-文件的修改-div">¶</a><div style="background:#b2bbbe; color:#000">五、文件的修改</div></h2>
+<blockquote>
 <p>文件的数据是存放于硬盘上的，因而只存在覆盖、不存在修改这么一说，我们平时看到的修改文件，都是模拟出来的效果，具体的说有两种实现方式：</p>
 </blockquote>
 <hr>
 <blockquote>
 <p>方式一：将硬盘存放的该文件的内容全部加载到内存，在内存中是可以修改的，修改完毕后，再由内存覆盖到硬盘（word，vim，nodpad++等编辑器）</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os  <span class="token comment" spellcheck="true"># 调用系统模块</span>
-<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'a.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> read_f<span class="token punctuation">,</span>open<span class="token punctuation">(</span><span class="token string">'.a.txt.swap'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> write_f<span class="token punctuation">:</span>
-    data<span class="token operator">=</span>read_f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#全部读入内存,如果文件很大,会很卡</span>
-    data<span class="token operator">=</span>data<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'alex'</span><span class="token punctuation">,</span><span class="token string">'SB'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#在内存中完成修改</span>
-    write_f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#一次性写入新文件</span>
-os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'a.txt'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#删除原文件</span>
-os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span><span class="token string">'.a.txt.swap'</span><span class="token punctuation">,</span><span class="token string">'a.txt'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#将新建的文件重命名为原文件</span>
+<pre class=" language-language-python"><code class="language-language-python">import os  # 调用系统模块
+with open('a.txt') as read_f,open('.a.txt.swap','w') as write_f:
+    data=read_f.read() #全部读入内存,如果文件很大,会很卡
+    data=data.replace('alex','SB') #在内存中完成修改
+    write_f.write(data) #一次性写入新文件
+os.remove('a.txt')  #删除原文件
+os.rename('.a.txt.swap','a.txt')   #将新建的文件重命名为原文件
 </code></pre>
 <blockquote>
 <p>方式二：将硬盘存放的该文件的内容一行一行地读入内存，修改完毕就写入新文件，最后用新文件覆盖源文件</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
-<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'a.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> read_f<span class="token punctuation">,</span>open<span class="token punctuation">(</span><span class="token string">'.a.txt.swap'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> write_f<span class="token punctuation">:</span>
-    <span class="token keyword">for</span> line <span class="token keyword">in</span> read_f<span class="token punctuation">:</span>
-        line<span class="token operator">=</span>line<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'alex'</span><span class="token punctuation">,</span><span class="token string">'SB'</span><span class="token punctuation">)</span>
-        write_f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
-os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'a.txt'</span><span class="token punctuation">)</span>
-os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span><span class="token string">'.a.txt.swap'</span><span class="token punctuation">,</span><span class="token string">'a.txt'</span><span class="token punctuation">)</span> 
+<pre class=" language-language-python"><code class="language-language-python">import os
+with open('a.txt') as read_f,open('.a.txt.swap','w') as write_f:
+    for line in read_f:
+        line=line.replace('alex','SB')
+        write_f.write(line)
+os.remove('a.txt')
+os.rename('.a.txt.swap','a.txt') 
 </code></pre>
 
             </div>
@@ -996,21 +1020,27 @@ os<span class="token punctuation">.</span>rename<span class="token punctuation">
                 <div class="card-content article-content">
                     <div class="summary">
 
-阅读目录
+¶阅读目录
+
+
 为什么要用函数
+
 
 函数的定义与调用
 
+
 函数的返回值
 
+
 函数的参数
+
 
 总结
 
 
-为什么要用函数打个比方，加入现在len()方法突然不能直接用了。。。
-然后现在有一个需求，让你计算’hello world’的长度，你怎么计算？
-s</div>
+¶为什么要用函数
+打个比方，加入现在len()方法突然不能直接用了。。。
+然后现在有一个需求，让你计算’hello world’的长度</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-25
@@ -1057,9 +1087,10 @@ s</div>
                 <div class="card-content article-content">
                     <div class="summary">
 
-定义：
+¶定义：
+
 在Python中对象的赋值其实就是对象的引用。当创建一个对象，把它赋值给另一个变量的时候，python并没有拷贝这个对象，只是拷贝了这个对象的引用而已。
-浅拷贝：拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。也就是</div>
+浅拷贝：拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。也</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-23
@@ -1237,7 +1268,7 @@ s</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             

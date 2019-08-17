@@ -7,19 +7,26 @@
     <meta name="keywords" content="Python3-函数进阶, My blog">
     <meta name="description" content="
 
-阅读目录
+¶阅读目录
+
+
 命名空间和作用域
+
 
 函数嵌套及作用域链
 
+
 函数名的本质
+
 
 闭包
 
 
-一、命名空间和作用域命名空间python代码运行的时候遇到函数是怎么做的?
+¶一、命名空间和作用域
+¶命名空间
+python代码运行的时候遇到函数是怎么做的?
 从python解释器开始执行之后，就在内存中开辟了一个空间
-每当遇到一个变量的时候">
+每">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -109,6 +116,15 @@
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -184,6 +200,15 @@
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -457,17 +482,24 @@
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/1yFmR" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/12/01/python8ea1736073a1a019.md.png" alt="python8ea1736073a1a019.md.png"></a></p>
 <a id="more"></a>
-<h2 id="阅读目录"><a href="#阅读目录" class="headerlink" title="阅读目录"></a><div style="background:greenyellow; color:#000">阅读目录</div></h2><ul>
-<li><p><a href="#01">命名空间和作用域</a></p>
+<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">¶</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
+<ul>
+<li>
+<p><a href="#01">命名空间和作用域</a></p>
 </li>
-<li><p><a href="#02">函数嵌套及作用域链</a></p>
+<li>
+<p><a href="#02">函数嵌套及作用域链</a></p>
 </li>
-<li><p><a href="#03">函数名的本质</a></p>
+<li>
+<p><a href="#03">函数名的本质</a></p>
 </li>
-<li><p><a href="#04">闭包</a></p>
+<li>
+<p><a href="#04">闭包</a></p>
 </li>
 </ul>
-<h2 id="一、命名空间和作用域"><a href="#一、命名空间和作用域" class="headerlink" title="一、命名空间和作用域"></a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2><h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a><div style="background:pink; color:#000">命名空间</div></h3><pre class=" language-text"><code class="language-text">python代码运行的时候遇到函数是怎么做的?
+<h2 id="div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div">¶</a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2>
+<h3 id="div-style-background-pink-color-000-命名空间-div"><a class="header-anchor" href="#div-style-background-pink-color-000-命名空间-div">¶</a><div style="background:pink; color:#000">命名空间</div></h3>
+<pre class=" language-language-text"><code class="language-language-text">python代码运行的时候遇到函数是怎么做的?
 从python解释器开始执行之后，就在内存中开辟了一个空间
 每当遇到一个变量的时候，就把变量名和值之间的对应关系记录下来。
 但是当遇到函数定义的时候解释器只是象征性的将函数名读入内存，表示知道这个函数的存在了，至于函数内部的变量和逻辑解释器根本不关心。
@@ -493,7 +525,8 @@
 　　               内置命名空间 —— python解释器
                   # 就是函数内部定义的名字
                   # 当调用函数的时候 才会产生这个名称空间 随着函数执行的结束 这个命名空间就又消失了
-</code></pre><p>注：<strong><code>内置命名空间</code></strong>中存放了python解释器为我们提供的名字：<code>input,print,str,list,tuple...</code>它们都是我们熟悉的，拿过来就可以用的方法。</p>
+</code></pre>
+<p>注：**<code>内置命名空间</code>**中存放了python解释器为我们提供的名字：<code>input,print,str,list,tuple...</code>它们都是我们熟悉的，拿过来就可以用的方法。</p>
 <p><strong>三种命名空间之间的加载与取值顺序：</strong></p>
 <p>加载顺序：<code>内置命名空间(程序运行前加载)-&gt;全局命名空间(程序运行中：从上到下加载)-&gt;局部命名空间(程序运行中：调用时才加载)</code></p>
 <p><a href="https://moetu.org/image/Em7TY" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/12/01/be7926a39cdf743ac4bd4cd991d28656968f02de43133425.md.png" alt="be7926a39cdf743ac4bd4cd991d28656968f02de43133425.md.png"></a></p>
@@ -502,12 +535,13 @@
 　　    在局部调用：局部命名空间-----&gt;全局命名空间------&gt;内置命名空间
 
 　　    在全局调用：全局命名空间--------&gt;内置命名空间
-</code></pre><p>在局部:可以使用全局、内置命名空间中的名字</p>
+</code></pre>
+<p>在局部:可以使用全局、内置命名空间中的名字</p>
 <p>在全局:可以使用内置命名空间中的名字，但是不能使用局部空间中的名字</p>
 <p>在内置:不能使用局部和全局的名字的</p>
-<font face="宋体" color="#FF8000">综上所述，在找寻变量时，从小范围，一层一层到大范围去找寻</font>
-
-<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a><div style="background:pink; color:#000">作用域</div></h3><blockquote>
+<p><font face="宋体" color="#FF8000">综上所述，在找寻变量时，从小范围，一层一层到大范围去找寻</font></p>
+<h3 id="div-style-background-pink-color-000-作用域-div"><a class="header-anchor" href="#div-style-background-pink-color-000-作用域-div">¶</a><div style="background:pink; color:#000">作用域</div></h3>
+<blockquote>
 <p>作用域就是作用范围，按照生效范围可以分为全局作用域和局部作用域。</p>
 <p>全局作用域：包含内置名称空间、全局名称空间，在整个文件的任意位置都能被引用、全局有效</p>
 <p>局部作用域：局部名称空间，只能在局部范围内生效</p>
@@ -517,12 +551,12 @@
 <p>全局作用域 —— 作用在全局 —— 内置和全局名字空间中的名字都属于全局作用域  ——globals()</p>
 <p>局部作用域 —— 作用在局部 —— 函数（局部名字空间中的名字属于局部作用域） ——locals()</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">12</span>
-    b <span class="token operator">=</span> <span class="token number">20</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>locals<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>globals<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">def func():
+    a = 12
+    b = 20
+    print(locals())
+    print(globals())
+func()
 </code></pre>
 <p>globals 永远打印全局的名字</p>
 <p>locals 输出什么 根据locals所在的位置</p>
@@ -531,16 +565,16 @@ func<span class="token punctuation">(</span><span class="token punctuation">)</s
 <p>1、声明一个全局变量。</p>
 <p>2、在局部作用域想要对全局作用域的全局变量进行修改时，需要用到 global(<font face="宋体" color="#red">限于字符串，数字</font>)。</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
-<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">global</span> a
-    a <span class="token operator">=</span> <span class="token number">20</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-func<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">a = 10
+def func():
+    global a
+    a = 20
+print(a)
+func()
+print(a)
 </code></pre>
 <p>ps：对可变数据类型（list，dict，set）可以直接引用不用通过global</p>
-<pre class=" language-ptyhon"><code class="language-ptyhon">l1 = [1,2,3]
+<pre class=" language-language-ptyhon"><code class="language-language-ptyhon">l1 = [1,2,3]
 def func():
     l1.append(444)
 func()
@@ -553,122 +587,117 @@ print(l1)
 <p>2、声明了nonlocal的内部函数的变量修改会影响到 离当前函数最近一层的局部变量</p>
 <p>3、对局部 也只是对 最近的 一层 有影响</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    name <span class="token operator">=</span> <span class="token string">'wusir'</span>
-    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class=" language-language-python"><code class="language-language-python">def func():
+    name = 'wusir'
+    def inner():
         nonlocal name
-        name <span class="token operator">=</span> <span class="token string">'taibai'</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-    inner<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        name = 'taibai'
+        print(name)
+    print(name)
+    inner()
+    print(name)
+func()
 wusir
 taibai
 taibai
 </code></pre>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add_b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    b <span class="token operator">=</span> <span class="token number">42</span>
-    <span class="token keyword">def</span> <span class="token function">do_global</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        b <span class="token operator">=</span> <span class="token number">10</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-        <span class="token keyword">def</span> <span class="token function">dd_nonlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class=" language-language-python"><code class="language-language-python">def add_b():
+    b = 42
+    def do_global():
+        b = 10
+        print(b)
+        def dd_nonlocal():
             nonlocal b
-            b <span class="token operator">=</span> b <span class="token operator">+</span> <span class="token number">20</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-        dd_nonlocal<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-    do_global<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-add_b<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token number">310</span>
-<span class="token number">30</span>
-<span class="token number">30</span>
-<span class="token number">42</span>
+            b = b + 20
+            print(b)
+        dd_nonlocal()
+        print(b)
+    do_global()
+    print(b)
+add_b()
+310
+30
+30
+42
 </code></pre>
-<h2 id="二、函数嵌套及作用域链"><a href="#二、函数嵌套及作用域链" class="headerlink" title="二、函数嵌套及作用域链"></a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2><font face="宋体" color="#FF8000">函数的嵌套调用</font>
-
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">max2</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    m  <span class="token operator">=</span> x <span class="token keyword">if</span> x<span class="token operator">></span>y <span class="token keyword">else</span> y
-    <span class="token keyword">return</span> m
-<span class="token keyword">def</span> <span class="token function">max4</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    res1 <span class="token operator">=</span> max2<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
-    res2 <span class="token operator">=</span> max2<span class="token punctuation">(</span>res1<span class="token punctuation">,</span>c<span class="token punctuation">)</span>
-    res3 <span class="token operator">=</span> max2<span class="token punctuation">(</span>res2<span class="token punctuation">,</span>d<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> res3
- <span class="token comment" spellcheck="true"># max4(23,-7,31,11)</span>
+<h2 id="div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div">¶</a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2>
+<p><font face="宋体" color="#FF8000">函数的嵌套调用</font></p>
+<pre class=" language-language-python"><code class="language-language-python">def max2(x,y):
+    m  = x if x>y else y
+    return m
+def max4(a,b,c,d):
+    res1 = max2(a,b)
+    res2 = max2(res1,c)
+    res3 = max2(res2,d)
+    return res3
+ # max4(23,-7,31,11)
 </code></pre>
-<font face="宋体" color="#FF8000">函数的嵌套定义</font>
-
+<p><font face="宋体" color="#FF8000">函数的嵌套定义</font></p>
 <p><em>定义在内部的函数无法直接在全局被调用</em></p>
-<pre class=" language-ptyhon"><code class="language-ptyhon">def f1():
+<pre class=" language-language-ptyhon"><code class="language-language-ptyhon">def f1():
     print("in f1")
     def f2():
         print("in f2")
     f2()
 f1()
 </code></pre>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">f3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"in f3"</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"in f2"</span><span class="token punctuation">)</span>
-        f3<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"in f1"</span><span class="token punctuation">)</span>
-    f2<span class="token punctuation">(</span><span class="token punctuation">)</span>    
-f1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">def f1():
+    def f2():
+        def f3():
+            print("in f3")
+        print("in f2")
+        f3()
+    print("in f1")
+    f2()    
+f1()
 </code></pre>
-<font face="宋体" color="#FF8000">函数的作用域链</font>
-
-<pre class=" language-poython"><code class="language-poython">def f1():
+<p><font face="宋体" color="#FF8000">函数的作用域链</font></p>
+<pre class=" language-language-poython"><code class="language-language-poython">def f1():
     a = 1
     def f2():
         print(a)
     f2()
 f1()
 </code></pre>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token keyword">def</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">f3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-        f3<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    f2<span class="token punctuation">(</span><span class="token punctuation">)</span>
-f1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">def f1():
+    a = 1
+    def f2():
+        def f3():
+            print(a)
+        f3()
+    f2()
+f1()
 </code></pre>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token keyword">def</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        a <span class="token operator">=</span> <span class="token number">2</span>
-    f2<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a in f1 : '</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
-f1<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class=" language-language-python"><code class="language-language-python">def f1():
+    a = 1
+    def f2():
+        a = 2
+    f2()
+    print('a in f1 : ',a)
+f1()
 </code></pre>
-<h2 id="三、函数名的本质"><a href="#三、函数名的本质" class="headerlink" title="三、函数名的本质"></a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2><font face="宋体" color="#red">函数名本质上就是一个变量，保存了函数所在的内存地址</font>
-
-<font face="宋体" color="#FF8000">1.可以被引用</font>
-
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'in func'</span><span class="token punctuation">)</span>
-f <span class="token operator">=</span> func
-<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<h2 id="div-id-03-style-background-skyblue-color-000-三-函数名的本质-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-三-函数名的本质-div">¶</a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2>
+<p><font face="宋体" color="#red">函数名本质上就是一个变量，保存了函数所在的内存地址</font></p>
+<p><font face="宋体" color="#FF8000">1.可以被引用</font></p>
+<pre class=" language-language-python"><code class="language-language-python">def func():
+    print('in func')
+f = func
+print(f)
 </code></pre>
-<font face="宋体" color="#FF8000">2.可以被当作容器类型的元素</font>
-
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'f1'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'f2'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">f3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'f3'</span><span class="token punctuation">)</span>
-l <span class="token operator">=</span> <span class="token punctuation">[</span>f1<span class="token punctuation">,</span>f2<span class="token punctuation">,</span>f3<span class="token punctuation">]</span>
-d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'f1'</span><span class="token punctuation">:</span>f1<span class="token punctuation">,</span><span class="token string">'f2'</span><span class="token punctuation">:</span>f2<span class="token punctuation">,</span><span class="token string">'f3'</span><span class="token punctuation">:</span>f3<span class="token punctuation">}</span>
- <span class="token comment" spellcheck="true">#调用</span>
-l<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-d<span class="token punctuation">[</span><span class="token string">'f2'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<p><font face="宋体" color="#FF8000">2.可以被当作容器类型的元素</font></p>
+<pre class=" language-language-python"><code class="language-language-python">def f1():
+    print('f1')
+def f2():
+    print('f2')
+def f3():
+    print('f3')
+l = [f1,f2,f3]
+d = {'f1':f1,'f2':f2,'f3':f3}
+ #调用
+l[0]()
+d['f2']()
 </code></pre>
-<font face="宋体" color="#FF8000">3.可以当作函数的参数和返回值</font>
-
+<p><font face="宋体" color="#FF8000">3.可以当作函数的参数和返回值</font></p>
 <p>不明白？那就记住一句话，就当普通变量用</p>
 <blockquote>
 <p>第一类对象（first-class object）指</p>
@@ -676,31 +705,30 @@ d<span class="token punctuation">[</span><span class="token string">'f2'</span><
 <p>2.可用作函数参数或返回值</p>
 <p>3.可存入变量的实体。</p>
 </blockquote>
-<h2 id="四、闭包"><a href="#四、闭包" class="headerlink" title="四、闭包"></a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    name <span class="token operator">=</span> <span class="token string">'eva'</span>
-    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+<h2 id="div-id-04-style-background-skyblue-color-000-四-闭包-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-四-闭包-div">¶</a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2>
+<pre class=" language-language-python"><code class="language-language-python">def func():
+    name = 'eva'
+    def inner():
+        print(name)
 </code></pre>
 <blockquote>
 <p>闭包函数：</p>
 <p>内部函数包含对外部作用域而非全剧作用域名字的引用，该内部函数称为闭包函数</p>
 <p>函数内部定义的函数称为内部函数</p>
 </blockquote>
-<font face="宋体" color="#FF8000">如何实现对内层函数的调用？</font>
-
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    name <span class="token operator">=</span> <span class="token string">'eva'</span>
-    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> inner
-f <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token punctuation">)</span>
-f<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<p><font face="宋体" color="#FF8000">如何实现对内层函数的调用？</font></p>
+<pre class=" language-language-python"><code class="language-language-python">def func():
+    name = 'eva'
+    def inner():
+        print(name)
+    return inner
+f = func()
+f()
 </code></pre>
-<font face="宋体" color="#FF8000">判断闭包函数的方法<strong>closure</strong></font>
-
+<p><font face="宋体" color="#FF8000">判断闭包函数的方法__closure__</font></p>
 <pre><code>#输出的__closure__有cell元素 ：是闭包函数
 def func():
-    name = &#39;eva&#39;
+    name = 'eva'
     def inner():
         print(name)
     print(inner.__closure__)
@@ -710,7 +738,7 @@ f = func()
 f()
 
 #输出的__closure__为None ：不是闭包函数
-name = &#39;egon&#39;
+name = 'egon'
 def func2():
     def inner():
         print(name)
@@ -719,19 +747,19 @@ def func2():
 
 f2 = func2()
 f2()
-</code></pre><font face="宋体" color="#FF8000">闭包的嵌套</font>
-
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    money <span class="token operator">=</span> <span class="token number">1000</span>
-    <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        name <span class="token operator">=</span> <span class="token string">'eva'</span>
-        <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>money<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> inner
-    <span class="token keyword">return</span> func
-f <span class="token operator">=</span> wrapper<span class="token punctuation">(</span><span class="token punctuation">)</span>
-i <span class="token operator">=</span> f<span class="token punctuation">(</span><span class="token punctuation">)</span>
-i<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><font face="宋体" color="#FF8000">闭包的嵌套</font></p>
+<pre class=" language-language-python"><code class="language-language-python">def wrapper():
+    money = 1000
+    def func():
+        name = 'eva'
+        def inner():
+            print(name,money)
+        return inner
+    return func
+f = wrapper()
+i = f()
+i()
 </code></pre>
 <p><strong>闭包的好处：</strong><font face="宋体" color="#red">保护内存，闭包函数在内存中的局部命名空间不会随着函数的结束而结束</font></p>
 
@@ -1184,21 +1212,29 @@ i<span class="token punctuation">(</span><span class="token punctuation">)</span
                 <div class="card-content article-content">
                     <div class="summary">
 
-阅读目录
+¶阅读目录
+
+
 装饰器的形成过程
+
 
 开放封闭原则
 
+
 装饰器主要功能和装饰器固定结构
 
+
 带参数的装饰器
+
 
 多个装饰器装饰一个函数
 
 
-装饰器的形成过程装饰器——简单版import time
+¶装饰器的形成过程
+¶装饰器——简单版
+import time
 def func1():
-    print('in </div>
+   </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
@@ -1245,21 +1281,27 @@ def func1():
                 <div class="card-content article-content">
                     <div class="summary">
 
-阅读目录
+¶阅读目录
+
+
 为什么要用函数
+
 
 函数的定义与调用
 
+
 函数的返回值
 
+
 函数的参数
+
 
 总结
 
 
-为什么要用函数打个比方，加入现在len()方法突然不能直接用了。。。
-然后现在有一个需求，让你计算’hello world’的长度，你怎么计算？
-s</div>
+¶为什么要用函数
+打个比方，加入现在len()方法突然不能直接用了。。。
+然后现在有一个需求，让你计算’hello world’的长度</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-25
@@ -1437,7 +1479,7 @@ s</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             

@@ -13,7 +13,7 @@
 
 
 ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票没抢到
-&amp;nbsp;&amp;nbsp;&amp;nbsp">
+       于是便找到了大神的开">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -103,6 +103,15 @@ ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票�
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -178,6 +187,15 @@ ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票�
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -426,7 +444,7 @@ ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        559
+                        552
                     </div>
                     
 
@@ -457,39 +475,45 @@ ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票�
 </blockquote>
 <blockquote>
 <p>ps：博主用<a href="https://www.12306bypass.com/" target="_blank" rel="noopener">12306分流</a>抢票软件抢到了回家的票，但是开工的票没抢到</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于是便找到了大神的开源项目<a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">购票小助手</a>折腾一番</p>
+<p>       于是便找到了大神的开源项目<a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">购票小助手</a>折腾一番</p>
 </blockquote>
 <p style="FONT-FAMILY:楷体;FONT-WEIGHT: BOLD">下面是博主的折腾过程以及踩过的坑</p>
-
-<font face="宋体" color="#FF8000">12306购票小助手</font>
-
-<h4 id="python-版本支持"><a href="#python-版本支持" class="headerlink" title="python 版本支持"></a><div style="background:#c6e6e8; color:#fff">python 版本支持</div></h4><pre><code>2.7.10 - 2.7.15
-</code></pre><h4 id="依赖库"><a href="#依赖库" class="headerlink" title="依赖库"></a><div style="background:#c6e6e8; color:#fff">依赖库</div></h4><blockquote>
+<p><font face="宋体" color="#FF8000">12306购票小助手</font></p>
+<h4 id="div-style-background-c6e6e8-color-fff-python-版本支持-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-python-版本支持-div">¶</a><div style="background:#c6e6e8; color:#fff">python 版本支持</div></h4>
+<pre><code>2.7.10 - 2.7.15
+</code></pre>
+<h4 id="div-style-background-c6e6e8-color-fff-依赖库-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-依赖库-div">¶</a><div style="background:#c6e6e8; color:#fff">依赖库</div></h4>
+<blockquote>
 <p>依赖若快 (若快注册地址：<a href="http://www.ruokuai.com/login" target="_blank" rel="noopener">http://www.ruokuai.com/login</a>)</p>
 <p>项目依赖包 requirements.txt</p>
 <blockquote>
 <p>安装方法 pip install -r requirements.txt</p>
 </blockquote>
 </blockquote>
-<h4 id="项目使用说明"><a href="#项目使用说明" class="headerlink" title="项目使用说明"></a><div style="background:#c6e6e8; color:#fff">项目使用说明</div></h4><ul>
+<h4 id="div-style-background-c6e6e8-color-fff-项目使用说明-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-项目使用说明-div">¶</a><div style="background:#c6e6e8; color:#fff">项目使用说明</div></h4>
+<ul>
 <li>可以配置邮箱，可以配置可以不配置，配置邮箱的格式在yaml里面可以看到</li>
 <li>可以配置server酱提醒（推荐）， [配置教程] (<a href="https://www.jianshu.com/p/8d10b5b9c4e3" target="_blank" rel="noopener">https://www.jianshu.com/p/8d10b5b9c4e3</a>)</li>
 <li>提交订单验证码哪里依赖打码兔，所以如果是订票遇到验证码的时候，没有打码兔是过不了的，不推荐手动，手动太慢</li>
 <li>配置yaml文件的时候，需注意空格和遵循yaml语法格式</li>
 </ul>
-<h4 id="项目开始"><a href="#项目开始" class="headerlink" title="项目开始"></a><div style="background:#c6e6e8; color:#fff">项目开始</div></h4><ul>
+<h4 id="div-style-background-c6e6e8-color-fff-项目开始-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-项目开始-div">¶</a><div style="background:#c6e6e8; color:#fff">项目开始</div></h4>
+<ul>
 <li>修改 config/ticket_config.yaml 文件，按照提示更改自己想要的信息</li>
-<li>windows 打开 ide 或者 cmd 请用管理员身份执行 python run.py</li>
+<li>windows 打开 ide 或者 cmd 请用管理员身份执行 python <a href="http://run.py" target="_blank" rel="noopener">run.py</a></li>
 </ul>
-<h4 id="目录对应说明"><a href="#目录对应说明" class="headerlink" title="目录对应说明"></a><div style="background:#c6e6e8; color:#fff">目录对应说明</div></h4><pre class=" language-text"><code class="language-text">agency - cdn代理
+<h4 id="div-style-background-c6e6e8-color-fff-目录对应说明-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-目录对应说明-div">¶</a><div style="background:#c6e6e8; color:#fff">目录对应说明</div></h4>
+<pre class=" language-language-text"><code class="language-language-text">agency - cdn代理
 config - 项目配置
 damatuCode - 打码兔接口
 init - 项目主运行目录
 myException - 异常
 myUrllib - urllib库
 </code></pre>
-<h4 id="思路图"><a href="#思路图" class="headerlink" title="思路图 "></a><div style="background:#c6e6e8; color:#fff">思路图 </div></h4><p><a href="https://moetu.org/image/LUtAe" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2019/01/19/uml98f6c347365add6b.md.png" alt="uml98f6c347365add6b.md.png" border="0"></a></p>
-<h4 id="过程中遇到的坑"><a href="#过程中遇到的坑" class="headerlink" title="过程中遇到的坑"></a><div style="background:#c6e6e8; color:#ff2">过程中遇到的坑</div></h4><blockquote>
+<h4 id="div-style-background-c6e6e8-color-fff-思路图-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-思路图-div">¶</a><div style="background:#c6e6e8; color:#fff">思路图 </div></h4>
+<p><a href="https://moetu.org/image/LUtAe" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2019/01/19/uml98f6c347365add6b.md.png" alt="uml98f6c347365add6b.md.png" border="0"></a></p>
+<h4 id="div-style-background-c6e6e8-color-ff2-过程中遇到的坑-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-ff2-过程中遇到的坑-div">¶</a><div style="background:#c6e6e8; color:#ff2">过程中遇到的坑</div></h4>
+<blockquote>
 <p>1.无法安装依赖包requirements.txt</p>
 <blockquote>
 <p>解决方法： 将项目clone下来，进到根目录，直接 pip install -r requirements.txt</p>
@@ -513,8 +537,10 @@ myUrllib - urllib库
 </blockquote>
 </blockquote>
 </blockquote>
-<h4 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a><div style="background:#c6e6e8; color:#fff">运行项目</div></h4><pre><code>python run.py
-</code></pre><p>好了，接下来就坐等抢到票了</p>
+<h4 id="div-style-background-c6e6e8-color-fff-运行项目-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-运行项目-div">¶</a><div style="background:#c6e6e8; color:#fff">运行项目</div></h4>
+<pre><code>python run.py
+</code></pre>
+<p>好了，接下来就坐等抢到票了</p>
 <p>收到抢票通知后记得在30分钟内登录12306网站进行支付哦！</p>
 
             </div>
@@ -1006,10 +1032,13 @@ test
 
 
 APP测试要点梳理
-链接：链接：https://pan.baidu.com/s/1mXzsYwZdM8_G8VKjrpvkog  提取码：gcfo 
+链接：链接：https://pan.baidu.com/s/1mXzsYwZdM8_G8VKjrpvkog  提取码：gcfo
 
-一、APP测试基本流程1.1 流程图
-1.2 测试周期测试周期可按项目的开发周期来</div>
+一、APP测试基本流程
+¶1.1 流程图
+
+¶1.2 测试周期
+测试周期可按项目的开</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31
@@ -1187,7 +1216,7 @@ APP测试要点梳理
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             

@@ -7,11 +7,13 @@
     <meta name="keywords" content="mysql学习笔记(一), My blog">
     <meta name="description" content="
 
+
 此学习笔记根据慕课网课程“与MYSQL的零距离接触”学习总结
 首先安装好mysql，安装方式可以选择MSI引导安装程序或者压缩包安装方式，具体安装步骤请自行百度。
 1.初涉mysql
 
-1-1 启动与停止mysql服务启动MySQL服务">
+¶1-1 启动与停止mysql服务
+启动MySQ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -101,6 +103,15 @@
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/lyb" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -176,6 +187,15 @@
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lyb" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
             </a>
         </li>
         
@@ -431,7 +451,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -449,26 +469,32 @@
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/1ldHz" target="_blank" rel="noopener"><img src="https://moetu.fastmirror.org/images/2018/11/19/mysql0311a32b9cd926bc.md.jpg" alt="mysql0311a32b9cd926bc.md.jpg"></a></p>
 <a id="more"></a>
-<p><hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3"><br>此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结</p>
+<hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
+此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结
 <p>首先安装好mysql，安装方式可以选择<font color="red">MSI引导安装程序</font>或者<font color="red">压缩包</font>安装方式，具体安装步骤请自行百度。</p>
-<h1 id="1-初涉mysql"><a href="#1-初涉mysql" class="headerlink" title="1.初涉mysql"></a>1.初涉mysql</h1><font color="red"></font>
-
-<h2 id="1-1-启动与停止mysql服务"><a href="#1-1-启动与停止mysql服务" class="headerlink" title="1-1 启动与停止mysql服务"></a>1-1 启动与停止mysql服务</h2><p><strong>启动</strong>MySQL服务命令：<code>net start mysql</code> </p>
+<h1>1.初涉mysql</h1>
+<p><font color="red"></font></p>
+<h2 id="1-1-启动与停止mysql服务"><a class="header-anchor" href="#1-1-启动与停止mysql服务">¶</a>1-1 启动与停止mysql服务</h2>
+<p><strong>启动</strong>MySQL服务命令：<code>net start mysql</code></p>
 <p>作用：启动MySQL服务，注意此时的“mysql”表示服务名</p>
-<p>如果想<strong>停止</strong>MySQL服务，可以使用命令：<code>net stop mysql</code> </p>
+<p>如果想<strong>停止</strong>MySQL服务，可以使用命令：<code>net stop mysql</code></p>
 <p>只有停止了MySQL服务之后，才能再去删除MySQL服务。</p>
-<h2 id="1-2-mysql登录与退出"><a href="#1-2-mysql登录与退出" class="headerlink" title="1-2 mysql登录与退出"></a>1-2 mysql登录与退出</h2><p><strong>登录</strong>mysql</p>
+<h2 id="1-2-mysql登录与退出"><a class="header-anchor" href="#1-2-mysql登录与退出">¶</a>1-2 mysql登录与退出</h2>
+<p><strong>登录</strong>mysql</p>
 <p><code>mysql -uroot -p</code>  【mysql -u(用户名） -p（密码）】</p>
 <p>在mysql控制台下以root用户登录，默认root用户是没有密码的，直接按回车。</p>
 <p>修改用户密码</p>
-<p><code>mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;;</code>  </p>
-<p>或者       </p>
+<p><code>mysql&gt; alter user 'root'@'localhost' identified by 'youpassword';</code></p>
+<p>或者</p>
 <pre><code>mysqlset password=password(&quot;youpassword&quot;);
-</code></pre><p>mysql<strong>退出</strong>三种方法：</p>
+</code></pre>
+<p>mysql<strong>退出</strong>三种方法：</p>
 <pre><code>mysql &gt; exit;
 mysql &gt; quit;
 mysql &gt; \q;
-</code></pre><h2 id="1-3-修改mysql提示符"><a href="#1-3-修改mysql提示符" class="headerlink" title="1-3 修改mysql提示符"></a>1-3 修改mysql提示符</h2><p><code>mysql&gt;prompt \d</code>        (输入想要设置的提示符或者命令)</p>
+</code></pre>
+<h2 id="1-3-修改mysql提示符"><a class="header-anchor" href="#1-3-修改mysql提示符">¶</a>1-3 修改mysql提示符</h2>
+<p><code>mysql&gt;prompt \d</code>        (输入想要设置的提示符或者命令)</p>
 <blockquote>
 <p>\D  完整的日期</p>
 </blockquote>
@@ -481,20 +507,24 @@ mysql &gt; \q;
 <blockquote>
 <p>\u  当前用户</p>
 </blockquote>
-<h2 id="1-4-mysql常用命令及语法规范"><a href="#1-4-mysql常用命令及语法规范" class="headerlink" title="1-4 mysql常用命令及语法规范"></a>1-4 mysql常用命令及语法规范</h2><font color="red">mysql语句的规范：</font><br><br><font color="red">1.关键字与函数名称全部大写</font><br><br><font color="red">2.数据库名称、表名称、字段名称全部小写</font><br><br><font color="red">3.SQL语句必须以分号结尾</font>
-
+<h2 id="1-4-mysql常用命令及语法规范"><a class="header-anchor" href="#1-4-mysql常用命令及语法规范">¶</a>1-4 mysql常用命令及语法规范</h2>
+<p><font color="red">mysql语句的规范：</font><br><br>
+<font color="red">1.关键字与函数名称全部大写</font><br><br>
+<font color="red">2.数据库名称、表名称、字段名称全部小写</font><br><br>
+<font color="red">3.SQL语句必须以分号结尾</font></p>
 <hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
-
 <p>创建数据库的语法结构：<font color="red">{}</font>代表必选项一定要有的、<font color="red">丨</font>代表或、<font color="red">[]</font>代表可选项</p>
 <pre><code>CREATE { DATABASE 丨 SCHEMA } [ IF NOT EXISTS ] db_name [ DEFAULT ] CHARACTER SET [ = ] 
-</code></pre><p>CHARACTER SET [ = ]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 编码格式; (创建数据库时所使用的编码方式）</p>
+</code></pre>
+<p>CHARACTER SET [ = ]         编码格式; (创建数据库时所使用的编码方式）</p>
 <p>修改数据库的编码格式：</p>
 <pre><code>ALTER { DATABASE 丨 SCHEMA } [db_name] [DEFAULT] CHARACTER SET [=] 编码格式；
-</code></pre><table border="0"><tr><td>删除数据库</td><td>DROP { DATABASE 丨 SCHEMA } [ IF EXISTS ] db_name;</td></tr><tr><td>查看所有数据库</td><td>SHOW { DATABASES 丨 SCHEMAS };</td></tr><td>查看创建数据库信息</td><td>SHOW CREATE DATABASE db_name;</td><tr><td>查看错误信息</td><td>SHOW WARNINGS;</td></tr><tr><td>进入数据库</td><td>USE db_name;</td></tr></table>
-
+</code></pre>
+<table border="0"><tr><td>删除数据库</td><td>DROP { DATABASE 丨 SCHEMA } [ IF EXISTS ] db_name;</td></tr><tr><td>查看所有数据库</td><td>SHOW { DATABASES 丨 SCHEMAS };</td></tr><td>查看创建数据库信息</td><td>SHOW CREATE DATABASE db_name;</td><tr><td>查看错误信息</td><td>SHOW WARNINGS;</td></tr><tr><td>进入数据库</td><td>USE db_name;</td></tr></table>
 <table border="0"><tr><td>查看当前服务器版本</td><td>SELECT VERSION();</td></tr><tr><td>查看当前日期时间</td><td>SELECT NOW(); </td></tr><tr><td>查看当前用户</td><td>SELECT USER(); </td></tr><tr><td>查看用户当前打开的数据库</td><td>SELECT DATABASE(); </td></tr></table>
-
-<h1 id="2-数据类型与操作数据表"><a href="#2-数据类型与操作数据表" class="headerlink" title="2.数据类型与操作数据表"></a>2.数据类型与操作数据表</h1><h2 id="2-1-数据类型"><a href="#2-1-数据类型" class="headerlink" title="2-1 数据类型"></a>2-1 数据类型</h2><p><img src="https://moetu.fastmirror.org/images/2018/11/19/81e0565f6de9946552be61272525e206d58a359ebace9f4e.png" alt></p>
+<h1>2.数据类型与操作数据表</h1>
+<h2 id="2-1-数据类型"><a class="header-anchor" href="#2-1-数据类型">¶</a>2-1 数据类型</h2>
+<p><img src="https://moetu.fastmirror.org/images/2018/11/19/81e0565f6de9946552be61272525e206d58a359ebace9f4e.png" alt></p>
 <p><img src="https://moetu.fastmirror.org/images/2018/11/19/0b248415a4b2b818363f6b03dd6126408fc8c5a20114a609.png" alt></p>
 <p><img src="https://moetu.fastmirror.org/images/2018/11/19/3b82812664148c00224f3b9b7b25100f96dfe814a5a1d3ca.png" alt></p>
 <p>还有一种数据类型：日期时间型，实际工作中并不常用，这里就不做介绍</p>
@@ -509,38 +539,30 @@ column_name data_type,
 …
 
 );
-</code></pre><hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
-
+</code></pre>
+<hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
 <p>创建数据表时还可以为字段指定某些属性例如：</p>
 <table border="0"><tr><td>无符号位（没有负数只有正数)</td><td>UNSIGNED</td></tr><tr><td>字段值可以为空 (不写默认可以为空)</td><td>NULL</td></tr><td>字段值禁止为空</td><td>NOT NULL </td></table>
-
 <table border="0"><tr><td>AUTO_INCREMENT</td><td>自动编号，且必须与主键组合使用，默认情况下，起始值为1，每次的增量为1</td></tr></table>
-
 <table border="0"><tr><td>PRIMARY KEY</td><td>主键约束</td></tr><tr><td></td><td>每张数据表只能存在一个主键</td></tr><tr><td></td><td>主键保证记录的唯一性</td></tr><tr><td></td><td>主键自动为NOT NULL</td></tr></table>
-
-<font color="red">注意:&nbsp;&nbsp;&nbsp;自动编号必须和主键一起使用</font>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">但是主键不一定必须和自动编号一起使用</font></p>
+<p><font color="red">注意:   自动编号必须和主键一起使用</font></p>
+<p>           <font color="red">但是主键不一定必须和自动编号一起使用</font></p>
 <table border="0"><tr><td>UNIQUE KEY</td><td>唯一约束</td></tr><tr><td></td><td>唯一约束可以保证记录的唯一性</td></tr><tr><td></td><td>唯一约束的字段可以为空值（NULL）</td></tr><tr><td></td><td>每张数据表可以存在多个唯一约束</td></tr></table>
-
 <table border="0"><tr><td>DEFAULT</td><td>默认约束</td></tr><td></td><td>默认值</td><tr><td></td><td>当插入记录时，如果没有明确为字段赋值，则自动赋予默认值</td></tr></table>
-
-<h2 id="2-2-操作数据表"><a href="#2-2-操作数据表" class="headerlink" title="2-2 操作数据表"></a>2-2 操作数据表</h2><p>查看数据表列表语法结构：</p>
+<h2 id="2-2-操作数据表"><a class="header-anchor" href="#2-2-操作数据表">¶</a>2-2 操作数据表</h2>
+<p>查看数据表列表语法结构：</p>
 <pre><code>SHOW TABLES [ FROM db_name ] [ LIKE ‘pattern’ | WHERE expr ];
-</code></pre><table border="0"><tr><td>SHOW TABLES;</td><td>查看当前数据库当中的数据表列表</td></tr><td>SHOW TABLES FROM &nbsp;db_name;</td><td>还可以查看其它数据库当中的数据表列表</td></table>
-
+</code></pre>
+<table border="0"><tr><td>SHOW TABLES;</td><td>查看当前数据库当中的数据表列表</td></tr><td>SHOW TABLES FROM &nbsp;db_name;</td><td>还可以查看其它数据库当中的数据表列表</td></table>
 <p>插入记录：</p>
 <pre><code>INSERT [INTO] tbl_name [(col_name,…)] VALUES(val,…)
-</code></pre><p>[(col_name,…)] 可以省略掉，但是省略掉就要为所有的列赋值</p>
+</code></pre>
+<p>[(col_name,…)] 可以省略掉，但是省略掉就要为所有的列赋值</p>
 <table border="0"><tr><td>查看数据表结构</td><td>SHOW COLUMNS FROM &nbsp;table_name； 丨 DESC &nbsp;table_name;</td></tr><tr><td>查看表数据</td><td>SELECT * FROM &nbsp;table_name;</td></tr><tr><td>删除数据表</td><td>DROP &nbsp;table_name;</td></tr></table>
-
-<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a><font color="red">3.总结</font></h1><table border="0" bgcolor="#f8c387"><tr><td>数据类型</td><td>整型、浮点型、字符型、日期时间型</td></tr><tr><td>数据表操作</td><td>插入记录、查找记录</td></tr><tr><td>记录操作</td><td>创建数据表、约束的使用</td></tr></table>
-
+<h1><font color="red">3.总结</font></h1>
+<table border="0" bgcolor="#f8c387"><tr><td>数据类型</td><td>整型、浮点型、字符型、日期时间型</td></tr><tr><td>数据表操作</td><td>插入记录、查找记录</td></tr><tr><td>记录操作</td><td>创建数据表、约束的使用</td></tr></table>
 <hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
-
-<font size="10px" color="#00ff00">未完待续。。。</font>
-
-
+<p><font size="10px" color="#00ff00">未完待续。。。</font></p>
 
             </div>
             <hr>
@@ -994,32 +1016,20 @@ column_name data_type,
 
 
 
-
-
-
 生活，有时感觉莫名的心烦
-
 心烦的时候，最好的是沉默
 
-
 不必喝酒，出去走走
-
 那小路和树林
-
 那天空和海滩
-
 就在身旁
 
-
 不必多怨，言多不逊
-
 不必伤怀，曲折有度
-
 许过了就算了，算了就消失了
 
-
-
-心烦，是自己的，不是</div>
+心烦，是自己的，不是别人的
+生活，有时真的让人</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-01
@@ -1066,7 +1076,10 @@ column_name data_type,
                 <div class="card-content article-content">
                     <div class="summary">
 
-前言hexo主题网站：https://hexo.io/themes/我试了好几个主题，有的不能用，有的不太好看，最后选择了yilia主题，这个挺好配的yilia主题网址：https://github.com/litten/hexo-th</div>
+¶前言
+hexo主题网站：https://hexo.io/themes/
+我试了好几个主题，有的不能用，有的不太好看，最后选择了yilia主题，这个挺好配的
+yilia主题网址：https://github.com/litten/hex</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-15
@@ -1244,7 +1257,7 @@ column_name data_type,
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">59.9k</span>
+                <span class="white-color">58.8k</span>
             
 
             
