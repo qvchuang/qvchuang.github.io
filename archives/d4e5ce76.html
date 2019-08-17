@@ -49,7 +49,8 @@ python代码运行的时候遇到函数是怎么做的?
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -499,12 +500,12 @@ python代码运行的时候遇到函数是怎么做的?
 </ul>
 <h2 id="div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div">¶</a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2>
 <h3 id="div-style-background-pink-color-000-命名空间-div"><a class="header-anchor" href="#div-style-background-pink-color-000-命名空间-div">¶</a><div style="background:pink; color:#000">命名空间</div></h3>
-<pre class=" language-language-text"><code class="language-language-text">python代码运行的时候遇到函数是怎么做的?
+<pre class="line-numbers language-language-text"><code class="language-language-text">python代码运行的时候遇到函数是怎么做的?
 从python解释器开始执行之后，就在内存中开辟了一个空间
 每当遇到一个变量的时候，就把变量名和值之间的对应关系记录下来。
 但是当遇到函数定义的时候解释器只是象征性的将函数名读入内存，表示知道这个函数的存在了，至于函数内部的变量和逻辑解释器根本不关心。
 等执行到函数调用的时候，python解释器会再开辟一块内存来存储这个函数里的内容，这个时候，才关注函数里面有哪些变量，而函数中的变量会存储在新开辟出来的内存中。函数中的变量只能在函数的内部使用，并且会随着函数执行完毕，这块内存中的所有内容也会被清空。
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们给这个“存放名字与值的关系”的空间起了一个名字——叫做命名空间</p>
 <p>代码在运行伊始，创建的存储“变量名与值的关系”的空间叫做全局命名空间</p>
 <p>在函数的运行中开辟的临时的空间叫做局部命名空间</p>
@@ -551,13 +552,13 @@ python代码运行的时候遇到函数是怎么做的?
 <p>全局作用域 —— 作用在全局 —— 内置和全局名字空间中的名字都属于全局作用域  ——globals()</p>
 <p>局部作用域 —— 作用在局部 —— 函数（局部名字空间中的名字属于局部作用域） ——locals()</p>
 </blockquote>
-<pre class=" language-language-python"><code class="language-language-python">def func():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
     a = 12
     b = 20
     print(locals())
     print(globals())
 func()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>globals 永远打印全局的名字</p>
 <p>locals 输出什么 根据locals所在的位置</p>
 <p><strong>global关键字</strong></p>
@@ -565,29 +566,29 @@ func()
 <p>1、声明一个全局变量。</p>
 <p>2、在局部作用域想要对全局作用域的全局变量进行修改时，需要用到 global(<font face="宋体" color="#red">限于字符串，数字</font>)。</p>
 </blockquote>
-<pre class=" language-language-python"><code class="language-language-python">a = 10
+<pre class="line-numbers language-language-python"><code class="language-language-python">a = 10
 def func():
     global a
     a = 20
 print(a)
 func()
 print(a)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>ps：对可变数据类型（list，dict，set）可以直接引用不用通过global</p>
-<pre class=" language-language-ptyhon"><code class="language-language-ptyhon">l1 = [1,2,3]
+<pre class="line-numbers language-language-ptyhon"><code class="language-language-ptyhon">l1 = [1,2,3]
 def func():
     l1.append(444)
 func()
 print(l1)
  #[1, 2, 3, 444]
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>nonlocal关键字</strong></p>
 <blockquote>
 <p>1、nonlocal 只能用于局部变量 找上层中离当前函数最近一层的局部变量，不能修改全局变量。</p>
 <p>2、声明了nonlocal的内部函数的变量修改会影响到 离当前函数最近一层的局部变量</p>
 <p>3、对局部 也只是对 最近的 一层 有影响</p>
 </blockquote>
-<pre class=" language-language-python"><code class="language-language-python">def func():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
     name = 'wusir'
     def inner():
         nonlocal name
@@ -600,8 +601,8 @@ func()
 wusir
 taibai
 taibai
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def add_b():
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def add_b():
     b = 42
     def do_global():
         b = 10
@@ -619,10 +620,10 @@ add_b()
 30
 30
 42
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div">¶</a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2>
 <p><font face="宋体" color="#FF8000">函数的嵌套调用</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def max2(x,y):
+<pre class="line-numbers language-language-python"><code class="language-language-python">def max2(x,y):
     m  = x if x>y else y
     return m
 def max4(a,b,c,d):
@@ -631,17 +632,17 @@ def max4(a,b,c,d):
     res3 = max2(res2,d)
     return res3
  # max4(23,-7,31,11)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">函数的嵌套定义</font></p>
 <p><em>定义在内部的函数无法直接在全局被调用</em></p>
-<pre class=" language-language-ptyhon"><code class="language-language-ptyhon">def f1():
+<pre class="line-numbers language-language-ptyhon"><code class="language-language-ptyhon">def f1():
     print("in f1")
     def f2():
         print("in f2")
     f2()
 f1()
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
     def f2():
         def f3():
             print("in f3")
@@ -650,16 +651,16 @@ f1()
     print("in f1")
     f2()    
 f1()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">函数的作用域链</font></p>
-<pre class=" language-language-poython"><code class="language-language-poython">def f1():
+<pre class="line-numbers language-language-poython"><code class="language-language-poython">def f1():
     a = 1
     def f2():
         print(a)
     f2()
 f1()
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
     a = 1
     def f2():
         def f3():
@@ -667,25 +668,25 @@ f1()
         f3()
     f2()
 f1()
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
     a = 1
     def f2():
         a = 2
     f2()
     print('a in f1 : ',a)
 f1()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-id-03-style-background-skyblue-color-000-三-函数名的本质-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-三-函数名的本质-div">¶</a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2>
 <p><font face="宋体" color="#red">函数名本质上就是一个变量，保存了函数所在的内存地址</font></p>
 <p><font face="宋体" color="#FF8000">1.可以被引用</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def func():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
     print('in func')
 f = func
 print(f)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">2.可以被当作容器类型的元素</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
     print('f1')
 def f2():
     print('f2')
@@ -696,7 +697,7 @@ d = {'f1':f1,'f2':f2,'f3':f3}
  #调用
 l[0]()
 d['f2']()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">3.可以当作函数的参数和返回值</font></p>
 <p>不明白？那就记住一句话，就当普通变量用</p>
 <blockquote>
@@ -706,25 +707,25 @@ d['f2']()
 <p>3.可存入变量的实体。</p>
 </blockquote>
 <h2 id="div-id-04-style-background-skyblue-color-000-四-闭包-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-四-闭包-div">¶</a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2>
-<pre class=" language-language-python"><code class="language-language-python">def func():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
     name = 'eva'
     def inner():
         print(name)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>闭包函数：</p>
 <p>内部函数包含对外部作用域而非全剧作用域名字的引用，该内部函数称为闭包函数</p>
 <p>函数内部定义的函数称为内部函数</p>
 </blockquote>
 <p><font face="宋体" color="#FF8000">如何实现对内层函数的调用？</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def func():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
     name = 'eva'
     def inner():
         print(name)
     return inner
 f = func()
 f()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">判断闭包函数的方法__closure__</font></p>
 <pre><code>#输出的__closure__有cell元素 ：是闭包函数
 def func():
@@ -749,7 +750,7 @@ f2 = func2()
 f2()
 </code></pre>
 <p><font face="宋体" color="#FF8000">闭包的嵌套</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def wrapper():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def wrapper():
     money = 1000
     def func():
         name = 'eva'
@@ -760,7 +761,7 @@ f2()
 f = wrapper()
 i = f()
 i()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>闭包的好处：</strong><font face="宋体" color="#red">保护内存，闭包函数在内存中的局部命名空间不会随着函数的结束而结束</font></p>
 
             </div>
