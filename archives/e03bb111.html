@@ -50,8 +50,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -505,31 +504,31 @@
 <h2 id="div-id-01-style-background-skyblue-color-000-为什么要用函数-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-为什么要用函数-div">¶</a><div id="01" style="background:skyblue; color:#000">为什么要用函数</div></h2>
 <p>打个比方，加入现在len()方法突然不能直接用了。。。</p>
 <p>然后现在有一个需求，让你计算’hello world’的长度，你怎么计算？</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">s1 = "hello world"
+<pre class=" language-language-python"><code class="language-language-python">s1 = "hello world"
 length = 0
 for i in s1:
     length = length+1
 print(length)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>好了，功能实现了，非常完美。然后现在又有了一个需求，</p>
 <p>要计算另外一个字符串的长度，“hello eva”</p>
 <p>于是，这个时候你的代码就变成了这样：</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">s2 = "hello eva"
+<pre class=" language-language-python"><code class="language-language-python">s2 = "hello eva"
 length = 0
 for i in s2:
     length = length+1
 print(length)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>这样确实可以实现len方法的效果，但是总感觉不是那么完美？为什么呢？</p>
 <blockquote>
 <p>首先，之前只要我们执行len方法就可以直接拿到一个字符串的长度了，现在为了实现相同的功能我们把相同的代码写了好多遍 —— 代码冗余</p>
 <p>其次，之前我们只写两句话读起来也很简单，一看就知道这两句代码是在计算长度，但是刚刚的代码却不那么容易读懂 —— 可读性差</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">print(len(s1))
+<pre class=" language-language-python"><code class="language-language-python">print(len(s1))
 print(len(s2))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-id-02-style-background-skyblue-color-000-初识函数定义与调用-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-初识函数定义与调用-div">¶</a><div id="02" style="background:skyblue; color:#000">初识函数定义与调用</div></h2>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
+<pre class=" language-language-python"><code class="language-language-python"> #函数定义
 def mylen():
     """计算s1的长度"""
     s1 = "hello world"
@@ -539,7 +538,7 @@ def mylen():
     print(length)
  #函数调用  
 mylen()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>总结一：</p>
 <blockquote>
 <p>定义：def 关键词开头，空格之后接函数名称和圆括号()，最后还有一个&quot;:&quot;。</p>
@@ -558,7 +557,7 @@ mylen()
 </blockquote>
 <p><code>str_len = len('hello,world')</code></p>
 <p>这个str_len就是‘hello，world’的长度。那我们自己写的函数能做到这一点么？我们也来试一下。</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
+<pre class=" language-language-python"><code class="language-language-python"> #函数定义
 def mylen():
     """计算s1的长度"""
     s1 = "hello world"
@@ -569,10 +568,10 @@ def mylen():
  #函数调用
 str_len = mylen()
 print('str_len : %s'%str_len)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>很遗憾，如果你执行这段代码，得到的str_len 值为None，这说明我们这段代码什么也没有给你返回。</p>
 <p>那如何让它也想len函数一样返回值呢？</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
+<pre class=" language-language-python"><code class="language-language-python"> #函数定义
 def mylen():
     """计算s1的长度"""
     s1 = "hello world"
@@ -583,7 +582,7 @@ def mylen():
  #函数调用
 str_len = mylen()
 print('str_len : %s'%str_len
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>我们只需要在函数的最后加上一个return，return后面写上你要返回的值就可以了。</p>
 <p>接下来就来研究一下这个return的用法:</p>
 <p><strong>return关键字的作用</strong></p>
@@ -592,7 +591,7 @@ print('str_len : %s'%str_len
 <h3 id="div-style-background-beige-color-000-没有返回值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-没有返回值-div">¶</a><div style="background:beige; color:#000">没有返回值</div></h3>
 <p><font face="宋体" color="blue">不写return的情况下，会默认返回一个None</font></p>
 <p>我们写的第一个函数，就没有写return，这就是没有返回值的一种情况。</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
+<pre class=" language-language-python"><code class="language-language-python"> #函数定义
 def mylen():
     """计算s1的长度"""
     s1 = "hello world"
@@ -604,30 +603,30 @@ def mylen():
 str_len = mylen()
  #因为没有返回值，此时的str_len为None
 print('str_len : %s'%str_len)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="blue">只写return，后面不写其他内容，也会返回None</font></p>
 <p>这里要说一下return的其他用法，就是一旦遇到return，结束整个函数。</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def ret_demo():
+<pre class=" language-language-python"><code class="language-language-python">def ret_demo():
     print(111)
     return
     print(222)
 ret = ret_demo()
 print(ret)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="blue">return None：和上面的两种情况一样，我们一般不这样写</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def ret_demo():
+<pre class=" language-language-python"><code class="language-language-python">def ret_demo():
     print(111)
     return None
     print(222)
 ret = ret_demo()
 print(ret)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="div-style-background-beige-color-000-返回一个值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-返回一个值-div">¶</a><div style="background:beige; color:#000">返回一个值</div></h3>
 <p>刚刚我们已经写过一个返回一个值的情况</p>
 <p>只需在return后面写上要返回的内容即可</p>
 <h3 id="div-style-background-beige-color-000-返回多个值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-返回多个值-div">¶</a><div style="background:beige; color:#000">返回多个值</div></h3>
 <p>可以返回任意多个、任意数据类型的值</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def ret_demo1():
+<pre class=" language-language-python"><code class="language-language-python">def ret_demo1():
     '''返回多个值''' 
     return 1,2,3,4
 def ret_demo2():
@@ -637,9 +636,9 @@ ret1 = ret_demo1()
 print(ret1)
 ret2 = ret_demo2()
 print(ret2)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>返回的多个值会被组织成元组被返回，也可以用多个值来接收</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def ret_demo2():
+<pre class=" language-language-python"><code class="language-language-python">def ret_demo2():
     return 1,['a','b'],3,4
  #返回多个值，用一个变量接收
 ret2 = ret_demo2()
@@ -650,7 +649,7 @@ print(a,b,c,d)
  #用多个值接收返回值：返回几个值，就用几个变量接收
 a,b,c,d = ret_demo2()
 print(a,b,c,d)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="blue">原因：</font></p>
 <pre><code>&gt;&gt;&gt; 1,2  #python中把用逗号分割的多个值就认为是一个元组。
 (1, 2)
@@ -689,9 +688,9 @@ print(a,b,c,d)
 'age'
 </code></pre>
 <h2 id="div-id-04-style-background-skyblue-color-000-函数的参数-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-函数的参数-div">¶</a><div id="04" style="background:skyblue; color:#000">函数的参数 </div></h2>
-<pre class="line-numbers language-language-text"><code class="language-language-text">现在，我们已经把函数返回值相关的事情研究清楚了，我们自己已经完成了一个可以返回字符串长度的函数。但是现在这个函数还是不完美，之前我们使用len函数的时候得是length = len("hello world")，这样我可以想计算谁就计算谁的长度。但是现在我们写的这个函数，只能计算一个“hello world”的长度，换一个字符串好像就是不行了。这可怎么办？
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
+<pre class=" language-language-text"><code class="language-language-text">现在，我们已经把函数返回值相关的事情研究清楚了，我们自己已经完成了一个可以返回字符串长度的函数。但是现在这个函数还是不完美，之前我们使用len函数的时候得是length = len("hello world")，这样我可以想计算谁就计算谁的长度。但是现在我们写的这个函数，只能计算一个“hello world”的长度，换一个字符串好像就是不行了。这可怎么办？
+</code></pre>
+<pre class=" language-language-python"><code class="language-language-python"> #函数定义
 def mylen(s1):
     """计算s1的长度"""
     length = 0
@@ -701,7 +700,7 @@ def mylen(s1):
  #函数调用
 str_len = mylen("hello world")
 print('str_len : %s'%str_len)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>我们告诉mylen函数要计算的字符串是谁，这个过程就叫做 传递参数，简称传参</p>
 <p>我们调用函数时传递的这个“hello world”和定义函数时的s1就是参数</p>
 <h3 id="div-style-background-beige-color-000-实参与形参-div"><a class="header-anchor" href="#div-style-background-beige-color-000-实参与形参-div">¶</a><div style="background:beige; color:#000">实参与形参</div></h3>
@@ -712,42 +711,42 @@ print('str_len : %s'%str_len)
 </blockquote>
 <h3 id="div-style-background-beige-color-000-传递多个参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-传递多个参数-div">¶</a><div style="background:beige; color:#000">传递多个参数</div></h3>
 <p>参数可以传递多个，多个参数之间用逗号分割</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
+<pre class=" language-language-python"><code class="language-language-python">def mymax(x,y):
     the_max = x if x > y else y
     return the_max
 
 ma = mymax(10,20)
 print(ma)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>也正是因为需要传递多个参数、可以传递多个参数，才会有了后面这一系列参数相关的内容。。。</p>
 <h3 id="div-style-background-beige-color-000-位置参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-位置参数-div">¶</a><div style="background:beige; color:#000">位置参数</div></h3>
 <h4 id="div-style-background-pink-color-000-站在实参角度-div"><a class="header-anchor" href="#div-style-background-pink-color-000-站在实参角度-div">¶</a><div style="background:pink; color:#000">站在实参角度</div></h4>
 <p><font face="宋体" color="#FF8000">1. 按照位置传值</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
+<pre class=" language-language-python"><code class="language-language-python">def mymax(x,y):
     #此时x=10,y=20
     the_max = x if x > y else y
     return the_max
 ma = mymax(10,20)
 print(ma)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="#FF8000">2. 按照关键字传值</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
+<pre class=" language-language-python"><code class="language-language-python">def mymax(x,y):
     #此时x = 20,y = 10
     print(x,y)
     the_max = x if x > y else y
     return the_max
 ma = mymax(y = 10,x = 20)
 print(ma)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="#FF8000">3. 位置、关键字形式混着用</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
+<pre class=" language-language-python"><code class="language-language-python">def mymax(x,y):
     #此时x = 10,y = 20
     print(x,y)
     the_max = x if x > y else y
     return the_max
 ma = mymax(10,y = 20)
 print(ma)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <blockquote>
 <p>正确用法</p>
 <p>问题一:位置参数必须在关键字参数的前面</p>
@@ -755,7 +754,7 @@ print(ma)
 </blockquote>
 <h4 id="div-style-background-pink-color-000-站在形参角度-div"><a class="header-anchor" href="#div-style-background-pink-color-000-站在形参角度-div">¶</a><div style="background:pink; color:#000">站在形参角度</div></h4>
 <p>位置参数必须传值</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
+<pre class=" language-language-python"><code class="language-language-python">def mymax(x,y):
     #此时x = 10,y = 20
     print(x,y)
     the_max = x if x > y else y
@@ -765,21 +764,21 @@ ma = mymax()
 print(ma)
  #结果
 TypeError: mymax() missing 2 required positional arguments: 'x' and 'y'
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="div-style-background-beige-color-000-默认参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-默认参数-div">¶</a><div style="background:beige; color:#000">默认参数</div></h3>
 <p><font face="宋体" color="#FF8000">1. 使用</font></p>
 <p>为什么要有默认参数：将变化比较小的值设置成默认参数</p>
 <p><font face="宋体" color="#FF8000">2. 默认参数的定义</font></p>
-<pre class="line-numbers language-language-python3"><code class="language-language-python3">def stu_info(name,sex = "male"):
+<pre class=" language-language-python3"><code class="language-language-python3">def stu_info(name,sex = "male"):
     """打印学生信息函数，由于班中大部分学生都是男生，
         所以设置默认参数sex的默认值为'male'
     """
     print(name,sex)
 stu_info('alex')
 stu_info('eva','female')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="#FF8000">3. 参数陷阱：默认参数是一个可变数据类型</font></p>
-<pre class="line-numbers language-language-python3"><code class="language-language-python3"> # 如果默认参数的值是一个可变数据类型，
+<pre class=" language-language-python3"><code class="language-language-python3"> # 如果默认参数的值是一个可变数据类型，
  # 那么每一次调用函数的时候，
  # 如果不传值就公用这个数据类型的资源
 def defult_param(a,l = []):
@@ -787,23 +786,23 @@ def defult_param(a,l = []):
     print(l)
 defult_param('alex')
 defult_param('egon')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="div-style-background-beige-color-000-动态参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-动态参数-div">¶</a><div style="background:beige; color:#000">动态参数</div></h3>
 <p><font face="宋体" color="#FF8000">按位置传值多余的参数都由args统一接收，保存成一个元组的形式</font></p>
-<pre class="line-numbers language-language-python3"><code class="language-language-python3">def mysum(*args):
+<pre class=" language-language-python3"><code class="language-language-python3">def mysum(*args):
     the_sum = 0
     for i in args:
         the_sum+=i
     return the_sum
 the_sum = mysum(1,2,3,4)
 print(the_sum)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="#FF8000">**kwargs： 接受的是按照关键字传参的值，组织成一个字典</font></p>
-<pre class="line-numbers language-language-ptyhon3"><code class="language-language-ptyhon3">def stu_info(**kwargs):
+<pre class=" language-language-ptyhon3"><code class="language-language-ptyhon3">def stu_info(**kwargs):
     print(kwargs)
     print(kwargs['name'],kwargs['sex'])
 stu_info(name = 'alex',sex = 'male')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="宋体" color="#FF8000">顺序：</font><code>必须先定义位置参数，*args，再定义默认参数,**kwargs</code></p>
 <h2 id="div-id-05-style-background-skyblue-color-000-总结-div"><a class="header-anchor" href="#div-id-05-style-background-skyblue-color-000-总结-div">¶</a><div id="05" style="background:skyblue; color:#000">总结</div></h2>
 <h3 id="div-style-background-beige-color-000-定义函数的规则：-div"><a class="header-anchor" href="#div-style-background-beige-color-000-定义函数的规则：-div">¶</a><div style="background:beige; color:#000">定义函数的规则：</div></h3>
