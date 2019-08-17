@@ -104,7 +104,12 @@ $(function () {
             selector: '.img-item',
             // 启用字幕
             subHtmlSelectorRelative: true
+            showThumbByDefault: false   //这句加上
         });
+        
+        $(document).find('img[data-original]').each(function(){
+    		$(this).parent().attr("href", $(this).attr("data-original"));
+		});
 
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
