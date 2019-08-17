@@ -5,9 +5,9 @@
   <subtitle>学习、记录、分享</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://qvchuang.top/"/>
+  <link href="https://qvchuang.top/"/>
   <updated>2019-05-14T14:24:06.016Z</updated>
-  <id>http://qvchuang.top/</id>
+  <id>https://qvchuang.top/</id>
   
   <author>
     <name>qvchuang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>测试文章加密-[test]</title>
-    <link href="http://qvchuang.top/archives/417fd41c.html"/>
-    <id>http://qvchuang.top/archives/417fd41c.html</id>
+    <link href="https://qvchuang.top/archives/417fd41c.html"/>
+    <id>https://qvchuang.top/archives/417fd41c.html</id>
     <published>2019-05-11T07:39:02.000Z</published>
     <updated>2019-05-14T14:24:06.016Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>12306智能刷票、订票</title>
-    <link href="http://qvchuang.top/archives/d1ad8916.html"/>
-    <id>http://qvchuang.top/archives/d1ad8916.html</id>
+    <link href="https://qvchuang.top/archives/d1ad8916.html"/>
+    <id>https://qvchuang.top/archives/d1ad8916.html</id>
     <published>2019-01-10T08:47:05.000Z</published>
     <updated>2019-05-11T06:10:34.015Z</updated>
     
@@ -56,17 +56,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://qvchuang.top/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://qvchuang.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>APP测试流程梳理</title>
-    <link href="http://qvchuang.top/archives/74c76214.html"/>
-    <id>http://qvchuang.top/archives/74c76214.html</id>
+    <link href="https://qvchuang.top/archives/74c76214.html"/>
+    <id>https://qvchuang.top/archives/74c76214.html</id>
     <published>2018-12-31T08:31:08.000Z</published>
     <updated>2019-05-11T06:10:08.361Z</updated>
     
@@ -76,17 +76,17 @@
     
     </summary>
     
-      <category term="测试" scheme="http://qvchuang.top/categories/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="https://qvchuang.top/categories/%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="APP测试" scheme="http://qvchuang.top/tags/APP%E6%B5%8B%E8%AF%95/"/>
+      <category term="APP测试" scheme="https://qvchuang.top/tags/APP%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>如果这五件事都做不了，那你的生活早已偏离了航向</title>
-    <link href="http://qvchuang.top/archives/12b541cb.html"/>
-    <id>http://qvchuang.top/archives/12b541cb.html</id>
+    <link href="https://qvchuang.top/archives/12b541cb.html"/>
+    <id>https://qvchuang.top/archives/12b541cb.html</id>
     <published>2018-12-22T07:21:43.000Z</published>
     <updated>2019-05-11T06:15:59.557Z</updated>
     
@@ -96,17 +96,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://qvchuang.top/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://qvchuang.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>Python3-内置函数和匿名函数</title>
-    <link href="http://qvchuang.top/archives/b2fd9b25.html"/>
-    <id>http://qvchuang.top/archives/b2fd9b25.html</id>
+    <link href="https://qvchuang.top/archives/b2fd9b25.html"/>
+    <id>https://qvchuang.top/archives/b2fd9b25.html</id>
     <published>2018-12-16T06:10:02.000Z</published>
     <updated>2019-05-11T06:14:01.119Z</updated>
     
@@ -116,17 +116,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3-迭代器与生成器</title>
-    <link href="http://qvchuang.top/archives/7c18a91b.html"/>
-    <id>http://qvchuang.top/archives/7c18a91b.html</id>
+    <link href="https://qvchuang.top/archives/7c18a91b.html"/>
+    <id>https://qvchuang.top/archives/7c18a91b.html</id>
     <published>2018-12-08T12:43:49.000Z</published>
     <updated>2019-05-11T06:13:19.564Z</updated>
     
@@ -136,17 +136,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3-装饰器函数</title>
-    <link href="http://qvchuang.top/archives/7af05b52.html"/>
-    <id>http://qvchuang.top/archives/7af05b52.html</id>
+    <link href="https://qvchuang.top/archives/7af05b52.html"/>
+    <id>https://qvchuang.top/archives/7af05b52.html</id>
     <published>2018-12-02T13:09:24.000Z</published>
     <updated>2019-05-11T06:14:31.831Z</updated>
     
@@ -156,17 +156,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3-函数进阶</title>
-    <link href="http://qvchuang.top/archives/d4e5ce76.html"/>
-    <id>http://qvchuang.top/archives/d4e5ce76.html</id>
+    <link href="https://qvchuang.top/archives/d4e5ce76.html"/>
+    <id>https://qvchuang.top/archives/d4e5ce76.html</id>
     <published>2018-12-01T05:05:32.000Z</published>
     <updated>2019-05-11T06:13:30.347Z</updated>
     
@@ -176,17 +176,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3-初识函数</title>
-    <link href="http://qvchuang.top/archives/e03bb111.html"/>
-    <id>http://qvchuang.top/archives/e03bb111.html</id>
+    <link href="https://qvchuang.top/archives/e03bb111.html"/>
+    <id>https://qvchuang.top/archives/e03bb111.html</id>
     <published>2018-11-25T05:46:24.000Z</published>
     <updated>2019-05-11T06:13:02.255Z</updated>
     
@@ -196,17 +196,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3之文件操作</title>
-    <link href="http://qvchuang.top/archives/74c6600f.html"/>
-    <id>http://qvchuang.top/archives/74c6600f.html</id>
+    <link href="https://qvchuang.top/archives/74c6600f.html"/>
+    <id>https://qvchuang.top/archives/74c6600f.html</id>
     <published>2018-11-24T05:44:30.000Z</published>
     <updated>2019-05-11T06:14:41.986Z</updated>
     
@@ -216,17 +216,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3之深浅copy</title>
-    <link href="http://qvchuang.top/archives/48f2972.html"/>
-    <id>http://qvchuang.top/archives/48f2972.html</id>
+    <link href="https://qvchuang.top/archives/48f2972.html"/>
+    <id>https://qvchuang.top/archives/48f2972.html</id>
     <published>2018-11-23T13:52:05.000Z</published>
     <updated>2019-05-11T06:14:21.201Z</updated>
     
@@ -236,17 +236,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3小知识点</title>
-    <link href="http://qvchuang.top/archives/f1a41560.html"/>
-    <id>http://qvchuang.top/archives/f1a41560.html</id>
+    <link href="https://qvchuang.top/archives/f1a41560.html"/>
+    <id>https://qvchuang.top/archives/f1a41560.html</id>
     <published>2018-11-23T13:22:34.000Z</published>
     <updated>2019-05-11T06:14:12.031Z</updated>
     
@@ -256,17 +256,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3基础·二</title>
-    <link href="http://qvchuang.top/archives/b7729c81.html"/>
-    <id>http://qvchuang.top/archives/b7729c81.html</id>
+    <link href="https://qvchuang.top/archives/b7729c81.html"/>
+    <id>https://qvchuang.top/archives/b7729c81.html</id>
     <published>2018-11-16T14:36:04.000Z</published>
     <updated>2019-05-11T06:13:41.687Z</updated>
     
@@ -276,17 +276,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>Python3基础·一</title>
-    <link href="http://qvchuang.top/archives/8cf2b228.html"/>
-    <id>http://qvchuang.top/archives/8cf2b228.html</id>
+    <link href="https://qvchuang.top/archives/8cf2b228.html"/>
+    <id>https://qvchuang.top/archives/8cf2b228.html</id>
     <published>2018-11-12T14:23:38.000Z</published>
     <updated>2019-05-11T06:13:51.487Z</updated>
     
@@ -296,17 +296,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://qvchuang.top/categories/python/"/>
+      <category term="python" scheme="https://qvchuang.top/categories/python/"/>
     
     
-      <category term="python3" scheme="http://qvchuang.top/tags/python3/"/>
+      <category term="python3" scheme="https://qvchuang.top/tags/python3/"/>
     
   </entry>
   
   <entry>
     <title>GitHub Pages自定义域名开启HTTPS</title>
-    <link href="http://qvchuang.top/archives/92147245.html"/>
-    <id>http://qvchuang.top/archives/92147245.html</id>
+    <link href="https://qvchuang.top/archives/92147245.html"/>
+    <id>https://qvchuang.top/archives/92147245.html</id>
     <published>2018-10-24T16:00:28.000Z</published>
     <updated>2019-05-11T06:09:59.129Z</updated>
     
@@ -316,17 +316,17 @@
     
     </summary>
     
-      <category term="blog" scheme="http://qvchuang.top/categories/blog/"/>
+      <category term="blog" scheme="https://qvchuang.top/categories/blog/"/>
     
     
-      <category term="Hexo" scheme="http://qvchuang.top/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://qvchuang.top/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>加个Valine评论系统</title>
-    <link href="http://qvchuang.top/archives/c568d0de.html"/>
-    <id>http://qvchuang.top/archives/c568d0de.html</id>
+    <link href="https://qvchuang.top/archives/c568d0de.html"/>
+    <id>https://qvchuang.top/archives/c568d0de.html</id>
     <published>2018-10-10T10:31:46.000Z</published>
     <updated>2019-05-11T06:15:47.868Z</updated>
     
@@ -336,17 +336,17 @@
     
     </summary>
     
-      <category term="blog" scheme="http://qvchuang.top/categories/blog/"/>
+      <category term="blog" scheme="https://qvchuang.top/categories/blog/"/>
     
     
-      <category term="Hexo" scheme="http://qvchuang.top/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://qvchuang.top/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>mysql学习笔记(三)</title>
-    <link href="http://qvchuang.top/archives/d74dec0d.html"/>
-    <id>http://qvchuang.top/archives/d74dec0d.html</id>
+    <link href="https://qvchuang.top/archives/d74dec0d.html"/>
+    <id>https://qvchuang.top/archives/d74dec0d.html</id>
     <published>2018-08-12T06:41:16.000Z</published>
     <updated>2019-05-11T06:09:35.089Z</updated>
     
@@ -356,17 +356,17 @@
     
     </summary>
     
-      <category term="mysql" scheme="http://qvchuang.top/categories/mysql/"/>
+      <category term="mysql" scheme="https://qvchuang.top/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://qvchuang.top/tags/mysql/"/>
+      <category term="mysql" scheme="https://qvchuang.top/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>mysql学习笔记(二)</title>
-    <link href="http://qvchuang.top/archives/a9becc26.html"/>
-    <id>http://qvchuang.top/archives/a9becc26.html</id>
+    <link href="https://qvchuang.top/archives/a9becc26.html"/>
+    <id>https://qvchuang.top/archives/a9becc26.html</id>
     <published>2018-08-04T17:13:24.000Z</published>
     <updated>2019-05-11T06:09:30.759Z</updated>
     
@@ -376,17 +376,17 @@
     
     </summary>
     
-      <category term="mysql" scheme="http://qvchuang.top/categories/mysql/"/>
+      <category term="mysql" scheme="https://qvchuang.top/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://qvchuang.top/tags/mysql/"/>
+      <category term="mysql" scheme="https://qvchuang.top/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>心烦的时候，就这样安慰自己</title>
-    <link href="http://qvchuang.top/archives/4643a402.html"/>
-    <id>http://qvchuang.top/archives/4643a402.html</id>
+    <link href="https://qvchuang.top/archives/4643a402.html"/>
+    <id>https://qvchuang.top/archives/4643a402.html</id>
     <published>2018-08-01T06:15:51.000Z</published>
     <updated>2019-05-11T06:16:23.466Z</updated>
     
@@ -396,17 +396,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://qvchuang.top/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://qvchuang.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>mysql学习笔记(一)</title>
-    <link href="http://qvchuang.top/archives/68f5744.html"/>
-    <id>http://qvchuang.top/archives/68f5744.html</id>
+    <link href="https://qvchuang.top/archives/68f5744.html"/>
+    <id>https://qvchuang.top/archives/68f5744.html</id>
     <published>2018-07-29T07:56:44.000Z</published>
     <updated>2019-05-11T06:09:12.260Z</updated>
     
@@ -416,10 +416,10 @@
     
     </summary>
     
-      <category term="mysql" scheme="http://qvchuang.top/categories/mysql/"/>
+      <category term="mysql" scheme="https://qvchuang.top/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://qvchuang.top/tags/mysql/"/>
+      <category term="mysql" scheme="https://qvchuang.top/tags/mysql/"/>
     
   </entry>
   
