@@ -27,9 +27,7 @@
 
 ¶装饰器的形成过程
 ¶装饰器——简单版
-import time
-def func1():
-   ">
+1234567891011import timedef ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -461,7 +459,7 @@ def func1():
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        933
+                        930
                     </div>
                     
 
@@ -506,48 +504,16 @@ def func1():
 </ul>
 <h2 id="div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div"><a class="header-anchor" href="#div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div">¶</a><div id="01" style="background:#DEB887; color:#8A2BE2">装饰器的形成过程</div></h2>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-简单版-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-简单版-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——简单版</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import time
-def func1():
-    print('in func1')
-def timer(func):
-    def inner():
-        start = time.time()
-        func()
-        print(time.time() - start)
-    return inner
-func1 = timer(func1)
-func1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'in func1'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        start = time.time()</span><br><span class="line">        func()</span><br><span class="line">        print(time.time() - start)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line">func1 = timer(func1)</span><br><span class="line">func1()</span><br></pre></td></tr></table></figure>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-语法糖-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-语法糖-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——语法糖</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import time
-def timer(func):
-    def inner():
-        start = time.time()
-        func()
-        print(time.time() - start)
-    return inner
-@timer   #==> func1 = timer(func1)
-def func1():
-    print('in func1')
-func1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        start = time.time()</span><br><span class="line">        func()</span><br><span class="line">        print(time.time() - start)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"><span class="meta">@timer   #==&gt; func1 = timer(func1)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'in func1'</span>)</span><br><span class="line">func1()</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>可以简单的总结一下：</p>
 <p>装饰器的本质：一个闭包函数</p>
 <p>装饰器的功能：在不修改原函数及其调用方式的情况下对原函数功能进行扩展</p>
 </blockquote>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——带参数的装饰器</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def timer(func):
-    def inner(a):
-        start = time.time()
-        func(a)
-        print(time.time() - start)
-    return inner
-@timer
-def func1(a):
-    print(a)
-func1(1)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(a)</span>:</span></span><br><span class="line">        start = time.time()</span><br><span class="line">        func(a)</span><br><span class="line">        print(time.time() - start)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">(a)</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">func1(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="div-style-background-87ceeb-color-000-通用装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-通用装饰器-div">¶</a><div style="background:#87CEEB; color:#000">通用装饰器</div></h3>
 <pre><code>import time
 def timer(func):
@@ -570,14 +536,7 @@ def func2(a):
 func1('aaaaaa','bbbbbb')
 print(func2('aaaaaa'))
 </code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def wrapper(func):
-    def inner(*args,**kwargs):
-        '''执行函数前操作'''
-        ret = func(*args,**kwargs)
-        '''执行函数后的操作'''
-        return ret
-    return inner
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="string">'''执行函数前操作'''</span></span><br><span class="line">        ret = func(*args,**kwargs)</span><br><span class="line">        <span class="string">'''执行函数后的操作'''</span></span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    <span class="keyword">return</span> inner</span><br></pre></td></tr></table></figure>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——带返回值的装饰器</div></h3>
 <pre><code>import time
 def timer(func):
@@ -597,12 +556,7 @@ func2('aaaaaa')
 print(func2('aaaaaa'))
 </code></pre>
 <h3 id="div-style-background-87ceeb-color-000-查看函数信息的一些方法-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-查看函数信息的一些方法-div">¶</a><div style="background:#87CEEB; color:#000">查看函数信息的一些方法</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def index():
-    '''这是一个主页信息'''
-    print('from index')
-print(index.__doc__)    #查看函数注释的方法
-print(index.__name__)   #查看函数名的方法
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''这是一个主页信息'''</span></span><br><span class="line">    print(<span class="string">'from index'</span>)</span><br><span class="line">print(index.__doc__)    <span class="comment">#查看函数注释的方法</span></span><br><span class="line">print(index.__name__)   <span class="comment">#查看函数名的方法</span></span><br></pre></td></tr></table></figure>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-wraps-demo-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-wraps-demo-div">¶</a><div style="background:#87CEEB; color:#000"> 装饰器——wraps demo</div></h3>
 <pre><code>from functools import wraps
 
@@ -636,23 +590,8 @@ print(index.__name__)      #查看字符串格式的函数名
 <p>在不改变函数调用方式的基础上在函数的前、后添加功能。</p>
 </blockquote>
 <p><font face="宋体" color="#FF8000">装饰器的固定格式：</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #装饰器的固定格式
-def wrapper(f):    #装饰器函数，f是被装饰的函数
-    def inner(*args,**kwargs):
-        '''在被装饰函数之前要做的事'''
-        ret = f(*args,**kwargs)    #被装饰的函数
-        '''在被装饰函数之后要做的事'''
-        return ret
-    return inner
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #装饰器的固定格式——wraps版
-from functools import wraps
-def deco(func):
-    @wraps(func) #加在最内层函数正上方
-    def wrapper(*args,**kwargs):
-        return func(*args,**kwargs)
-    return wrapper
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#装饰器的固定格式</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(f)</span>:</span>    <span class="comment">#装饰器函数，f是被装饰的函数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="string">'''在被装饰函数之前要做的事'''</span></span><br><span class="line">        ret = f(*args,**kwargs)    <span class="comment">#被装饰的函数</span></span><br><span class="line">        <span class="string">'''在被装饰函数之后要做的事'''</span></span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    <span class="keyword">return</span> inner</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#装饰器的固定格式——wraps版</span></span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(func) #加在最内层函数正上方</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> func(*args,**kwargs)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
 <h2 id="div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div"><a class="header-anchor" href="#div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div">¶</a><div id="04" style="background:#DEB887; color:#8A2BE2">带参数的装饰器</div></h2>
 <pre><code>FLAGE = True
 def outer(flag):
@@ -1153,9 +1092,7 @@ f()</code></pre>
 ¶python中的for循环
 要了解for循环是怎么回事儿，还是要从代码的角度出发。
 首先，对一个列表进行for循环。
-for i in [1,2,3,4]:  
-    print(i)
-
+12for i in [1,2,3,4]:      print(i)
 上面这段代码肯定是没有问题的，</div>
                     <div class="publish-info">
                         <span class="publish-date">
@@ -1220,9 +1157,7 @@ for i in [1,2,3,4]:
 
 ¶一、命名空间和作用域
 ¶命名空间
-python代码运行的时候遇到函数是怎么做的?
-从python解释器开始执行之后，就在内存中开辟了一个空间
-每</div>
+12345python代码运行的时候遇到函数是怎么做的?从python解释器开始执行之后，就在内存中开辟了一个</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
@@ -1400,7 +1335,7 @@ python代码运行的时候遇到函数是怎么做的?
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">58.8k</span>
+                <span class="white-color">59.6k</span>
             
 
             

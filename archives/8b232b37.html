@@ -442,14 +442,14 @@ yilia主题网址：https://github.com/litten/hex">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.4k
+                        2.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        10 分
                     </div>
                     
                 
@@ -478,119 +478,10 @@ yilia主题网址：https://github.com/litten/hex">
 <p><font face="宋体" color="#FF8000">配置</font></p>
 <p>修改hexo根目录下的 <code>_config.yml ： theme: yilia</code></p>
 <p><font face="宋体" color="#FF8000">更新</font></p>
-<pre><code>cd themes/yilia
-git pull
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/yilia</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 <h2 id="div-style-background-f8ebe6-color-000-二-配置-div"><a class="header-anchor" href="#div-style-background-f8ebe6-color-000-二-配置-div">¶</a><div style="background:#f8ebe6; color:#000">二、配置</div></h2>
 <p>主题配置文件在主目录下的_config.yml，请根据自己需要修改使用。</p>
-<pre class="line-numbers language-language-text"><code class="language-language-text"> # Header
-menu:
-  主页: /
-  随笔: /tags/随笔/
- # SubNav
-subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
-  #qq: "#"
-  #weixin: "#"
-  #jianshu: "#"
-  #douban: "#"
-  #segmentfault: "#"
-  #bilibili: "#"
-  #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
-  #facebook: "#"
-  #google: "#"
-  #twitter: "#"
-  #linkedin: "#"
-rss: /atom.xml
- # 是否需要修改 root 路径
- # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
- # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: 
- # Content
- # 文章太长，截断按钮文字
-excerpt_link: more
- # 文章卡片右下角常驻链接，不需要请设置为false
-show_all_link: '展开全文'
- # 数学公式
-mathjax: false
- # 是否在新窗口打开链接
-open_in_new: false
- # 打赏
- # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
- # 打赏wording
-reward_wording: '谢谢你请我吃糖果'
- # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: 
- # 微信二维码图片地址
-weixin: 
- # 目录
- # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
-toc: 1
- # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
-toc_hide_index: true
- # 目录为空时的提示
-toc_empty_wording: '目录，不存在的…'
- # 是否有快速回到顶部的按钮
-top: true
- # Miscellaneous
-baidu_analytics: ''
-google_analytics: ''
-favicon: /favicon.png
- #你的头像url
-avatar:
- #是否开启分享
-share_jia: true
- #评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
- #不需要使用某项，直接设置值为false，或注释掉
- #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
- #1、多说
-duoshuo: false
- #2、网易云跟帖
-wangyiyun: false
- #3、畅言
-changyan_appid: false
-changyan_conf: false
- #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
-disqus: false
- #5、Gitment
-gitment_owner: false      #你的 GitHub ID
-gitment_repo: ''          #存储评论的 repo
-gitment_oauth:
-  client_id: ''           #client ID
-  client_secret: ''       #client secret
- # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
-style:
-  # 头像上面的背景颜色
-  header: '#4d4d4d'
-  # 右滑板块背景
-  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
- # slider的设置
-slider:
-  # 是否默认展开tags板块
-  showTags: false
- # 智能菜单
- # 如不需要，将该对应项置为false
- # 比如
- #smart_menu:
- #  friends: false
-smart_menu:
-  innerArchive: '所有文章'
-  friends: '友链'
-  aboutme: '关于我'
-friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"> # Header</span><br><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  随笔: /tags/随笔/</span><br><span class="line"> # SubNav</span><br><span class="line">subnav:</span><br><span class="line">  github: &quot;#&quot;</span><br><span class="line">  weibo: &quot;#&quot;</span><br><span class="line">  rss: &quot;#&quot;</span><br><span class="line">  zhihu: &quot;#&quot;</span><br><span class="line">  #qq: &quot;#&quot;</span><br><span class="line">  #weixin: &quot;#&quot;</span><br><span class="line">  #jianshu: &quot;#&quot;</span><br><span class="line">  #douban: &quot;#&quot;</span><br><span class="line">  #segmentfault: &quot;#&quot;</span><br><span class="line">  #bilibili: &quot;#&quot;</span><br><span class="line">  #acfun: &quot;#&quot;</span><br><span class="line">  #mail: &quot;mailto:litten225@qq.com&quot;</span><br><span class="line">  #facebook: &quot;#&quot;</span><br><span class="line">  #google: &quot;#&quot;</span><br><span class="line">  #twitter: &quot;#&quot;</span><br><span class="line">  #linkedin: &quot;#&quot;</span><br><span class="line">rss: /atom.xml</span><br><span class="line"> # 是否需要修改 root 路径</span><br><span class="line"> # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span><br><span class="line"> # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span><br><span class="line">root: </span><br><span class="line"> # Content</span><br><span class="line"> # 文章太长，截断按钮文字</span><br><span class="line">excerpt_link: more</span><br><span class="line"> # 文章卡片右下角常驻链接，不需要请设置为false</span><br><span class="line">show_all_link: &apos;展开全文&apos;</span><br><span class="line"> # 数学公式</span><br><span class="line">mathjax: false</span><br><span class="line"> # 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"> # 打赏</span><br><span class="line"> # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span><br><span class="line">reward_type: 2</span><br><span class="line"> # 打赏wording</span><br><span class="line">reward_wording: &apos;谢谢你请我吃糖果&apos;</span><br><span class="line"> # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span><br><span class="line">alipay: </span><br><span class="line"> # 微信二维码图片地址</span><br><span class="line">weixin: </span><br><span class="line"> # 目录</span><br><span class="line"> # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span><br><span class="line">toc: 1</span><br><span class="line"> # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span><br><span class="line">toc_hide_index: true</span><br><span class="line"> # 目录为空时的提示</span><br><span class="line">toc_empty_wording: &apos;目录，不存在的…&apos;</span><br><span class="line"> # 是否有快速回到顶部的按钮</span><br><span class="line">top: true</span><br><span class="line"> # Miscellaneous</span><br><span class="line">baidu_analytics: &apos;&apos;</span><br><span class="line">google_analytics: &apos;&apos;</span><br><span class="line">favicon: /favicon.png</span><br><span class="line"> #你的头像url</span><br><span class="line">avatar:</span><br><span class="line"> #是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line"> #评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span><br><span class="line"> #不需要使用某项，直接设置值为false，或注释掉</span><br><span class="line"> #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span><br><span class="line"> #1、多说</span><br><span class="line">duoshuo: false</span><br><span class="line"> #2、网易云跟帖</span><br><span class="line">wangyiyun: false</span><br><span class="line"> #3、畅言</span><br><span class="line">changyan_appid: false</span><br><span class="line">changyan_conf: false</span><br><span class="line"> #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span><br><span class="line">disqus: false</span><br><span class="line"> #5、Gitment</span><br><span class="line">gitment_owner: false      #你的 GitHub ID</span><br><span class="line">gitment_repo: &apos;&apos;          #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: &apos;&apos;           #client ID</span><br><span class="line">  client_secret: &apos;&apos;       #client secret</span><br><span class="line"> # 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span><br><span class="line">style:</span><br><span class="line">  # 头像上面的背景颜色</span><br><span class="line">  header: &apos;#4d4d4d&apos;</span><br><span class="line">  # 右滑板块背景</span><br><span class="line">  slider: &apos;linear-gradient(200deg,#a0cfe4,#e8c37e)&apos;</span><br><span class="line"> # slider的设置</span><br><span class="line">slider:</span><br><span class="line">  # 是否默认展开tags板块</span><br><span class="line">  showTags: false</span><br><span class="line"> # 智能菜单</span><br><span class="line"> # 如不需要，将该对应项置为false</span><br><span class="line"> # 比如</span><br><span class="line"> #smart_menu:</span><br><span class="line"> #  friends: false</span><br><span class="line">smart_menu:</span><br><span class="line">  innerArchive: &apos;所有文章&apos;</span><br><span class="line">  friends: &apos;友链&apos;</span><br><span class="line">  aboutme: &apos;关于我&apos;</span><br><span class="line">friends:</span><br><span class="line">  友情链接1: http://localhost:4000/</span><br><span class="line">  友情链接2: http://localhost:4000/</span><br><span class="line">  友情链接3: http://localhost:4000/</span><br><span class="line">  友情链接4: http://localhost:4000/</span><br><span class="line">  友情链接5: http://localhost:4000/</span><br><span class="line">  友情链接6: http://localhost:4000/</span><br><span class="line">aboutme: 很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/litten/hexo-theme-yilia#四配置" target="_blank" rel="noopener">具体参考原作者</a></p>
 <h2 id="div-style-background-f8ebe6-color-000-三-优化-div"><a class="header-anchor" href="#div-style-background-f8ebe6-color-000-三-优化-div">¶</a><div style="background:#f8ebe6; color:#000">三、优化</div></h2>
 <h3 id="div-style-background-dfecd5-color-000-3-1-所有文章功能不能用-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-3-1-所有文章功能不能用-div">¶</a><div style="background:#dfecd5; color:#000">3.1、 所有文章功能不能用</div></h3>
@@ -598,25 +489,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 <p>在hexo根目录下(注意不是yilia根目录)执行命令：</p>
 <p><code>npm i hexo-generator-json-content --save</code></p>
 <p>在hexo的配置文件_config.yml最后添加</p>
-<pre><code>jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true 
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line">    meta: false</span><br><span class="line">    pages: false</span><br><span class="line">    posts:</span><br><span class="line">      title: true</span><br><span class="line">      date: true</span><br><span class="line">      path: true</span><br><span class="line">      text: false</span><br><span class="line">      raw: false</span><br><span class="line">      content: false</span><br><span class="line">      slug: false</span><br><span class="line">      updated: false</span><br><span class="line">      comments: false</span><br><span class="line">      link: false</span><br><span class="line">      permalink: false</span><br><span class="line">      excerpt: false</span><br><span class="line">      categories: false</span><br><span class="line">      tags: true</span><br></pre></td></tr></table></figure>
 <p>添加后 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 就行了</p>
 <h3 id="div-style-background-dfecd5-color-000-3-2-设置主页文章只显示一部分-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-3-2-设置主页文章只显示一部分-div">¶</a><div style="background:#dfecd5; color:#000">3.2、 设置主页文章只显示一部分</div></h3>
 <blockquote>
@@ -630,10 +503,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 <p>这段代码,我用的yilia主题，放在/themes/yilia/layout/_partial/footer.ejs</p>
 <p><strong>添加站点访问量</strong></p>
 <p>通常站点的总访问量会显示在footer的位置，所以我们可以在footer.ejs里加上如下标签</p>
-<pre><code>&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt; 
-  本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人次
-&lt;/span&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt; </span><br><span class="line">  本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>计算访问量的方法有两种：</p>
 <p>算法a：pv的方式，单个用户连续点击n篇文章，记录n次访问量。</p>
@@ -642,19 +512,11 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 </blockquote>
 <p><strong>添加文章访问量</strong></p>
 <p>文章的访问量显示在文章里面，所以在article.ejs里加上文章访问量的标签：</p>
-<pre><code>&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;
-   本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次
-&lt;/span&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;</span><br><span class="line">   本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>我们直接就这样放在yilia主题中，首页也会显示该网页的访问量，没法正常使用，所以我加一个判断，如果是首页不显示该文章的访问量，下面这段代码添加在/themes/yilia/layout/_partial/article.ejs的header的日期后面：</p>
 </blockquote>
-<pre><code>&lt;% if ( !index ){ %&gt;
-		&lt;span class=&quot;archive-article-date&quot;&gt;
-			阅读量 &lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;
-		&lt;/span&gt;
-&lt;% } %&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if ( !index )&#123; %&gt;</span><br><span class="line">		&lt;span class=&quot;archive-article-date&quot;&gt;</span><br><span class="line">			阅读量 &lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">		&lt;/span&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="div-style-background-dfecd5-color-000-3-4-设置网站小图标-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-3-4-设置网站小图标-div">¶</a><div style="background:#dfecd5; color:#000">3.4、 设置网站小图标</div></h3>
 <p>到ico在线制作生成一个ico图片，命名为favicon.ico</p>
 <p>然后把图标放在/themes/yilia/source/img里</p>
@@ -668,18 +530,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 <blockquote>
 <p>打开/hexo/themes/yilia/layout/_partial/left-col.ejs文件，把音乐HTML代码粘贴进去，可以添加样式，改变大小，这是我的代码：</p>
 </blockquote>
-<pre><code>&lt;nav class=&quot;header-nav&quot;&gt;
-        &lt;div class=&quot;social&quot;&gt;
-        &lt;% for (var i in theme.subnav){ %&gt;
-            &lt;a class=&quot;&lt;%= i %&gt;&quot; target=&quot;_blank&quot; href=&quot;&lt;%- url_for(theme.subnav[i]) %&gt;&quot; title=&quot;&lt;%= i %&gt;&quot;&gt;&lt;i class=&quot;icon-&lt;%= i %&gt;&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-        &lt;%}%&gt;
-        &lt;/div&gt;
-         &lt;!--音乐播放插件--&gt;
-        &lt;div style=&quot;margin-top:30px;&quot;&gt;
-        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=240 height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=458639375&amp;auto=0&amp;height=32&quot;&gt;&lt;/iframe&gt;
-        &lt;/div&gt;
-        &lt;/nav&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class=&quot;header-nav&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;social&quot;&gt;</span><br><span class="line">        &lt;% for (var i in theme.subnav)&#123; %&gt;</span><br><span class="line">            &lt;a class=&quot;&lt;%= i %&gt;&quot; target=&quot;_blank&quot; href=&quot;&lt;%- url_for(theme.subnav[i]) %&gt;&quot; title=&quot;&lt;%= i %&gt;&quot;&gt;&lt;i class=&quot;icon-&lt;%= i %&gt;&quot;&gt;&lt;/i&gt;&lt;/a&gt;</span><br><span class="line">        &lt;%&#125;%&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">         &lt;!--音乐播放插件--&gt;</span><br><span class="line">        &lt;div style=&quot;margin-top:30px;&quot;&gt;</span><br><span class="line">        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=240 height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=458639375&amp;auto=0&amp;height=32&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;/nav&gt;</span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000">在文章中添加音乐</font></p>
 <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=484311961&auto=0&height=66"></iframe></p>
 <p>配置hexo下的_config.yml的post_asset_folder: true 设置为true。</p>
@@ -692,8 +543,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 <p>地球仪上的label表示访问站点的人的位置。<br>
 点击那个xxx visits，就会跳转到你的访问记录详情页了。</p>
 <p><strong>用法</strong></p>
-<pre class="line-numbers language-language-text"><code class="language-language-text"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5eb32qbhhbj&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//rf.revolvermaps.com/0/0/6.js?i=5eb32qbhhbj&amp;amp;m=7&amp;amp;c=e63100&amp;amp;cr1=ffffff&amp;amp;f=arial&amp;amp;l=0&amp;amp;bv=90&amp;amp;lx=-420&amp;amp;ly=420&amp;amp;hi=20&amp;amp;he=7&amp;amp;hc=a8ddff&amp;amp;rs=80&quot; async=&quot;async&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>打开官网首页，在<code>Get Started</code>这里把这段js复制到你的网页上即可。</p>
 <p>这里用的是hexo主题，我希望在左边栏显示，那么就找到<code>/themes/hexo/layout/_partials/left-col.ejs</code>,插入复制来的脚本即可。</p>
 <p><a href="https://www.imooc.com/article/details/id/37826" target="_blank" rel="noopener">参考</a></p>
@@ -701,8 +551,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 <p><em>实现方式</em></p>
 <p>打开博客路径themes/yilia/layout/layout.ejs</p>
 <p>在前添加如下代码即可</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;var OriginTitile=document.title,st;document.addEventListener(&quot;visibilitychange&quot;,function(){document.hidden?(document.title=&quot;看不见我🙈~看不见我🙈~&quot;,clearTimeout(st)):(document.title=&quot;(๑•̀ㅂ•́) ✧被发现了～&quot;,st=setTimeout(function(){document.title=OriginTitile},3e3))})&lt;/script&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;var OriginTitile=document.title,st;document.addEventListener(&quot;visibilitychange&quot;,function()&#123;document.hidden?(document.title=&quot;看不见我🙈~看不见我🙈~&quot;,clearTimeout(st)):(document.title=&quot;(๑•̀ㅂ•́) ✧被发现了～&quot;,st=setTimeout(function()&#123;document.title=OriginTitile&#125;,3e3))&#125;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="div-style-background-dfecd5-color-000-id-001-3-8-图床推荐-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-id-001-3-8-图床推荐-div">¶</a><div style="background:#dfecd5; color:#000" id="001">3.8、 图床推荐</div></h3>
 <p>→<a href="https://www.miaomiaomiao.org/9596.html" target="_blank" rel="noopener">好用图床推荐</a></p>
 <p><font face="宋体" color="#FF8000">博主用的<a href="https://moetu.org/" target="_blank" rel="noopener">MoeTu图床</a>、<a href="https://tu.aixinxi.net/" target="_blank" rel="noopener">爱信息图床</a></font></p>
@@ -1415,7 +1264,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">58.8k</span>
+                <span class="white-color">59.6k</span>
             
 
             

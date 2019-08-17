@@ -473,77 +473,20 @@
 <p>我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件的，这就用到了操作系统。操作系统把复杂的硬件操作封装成简单的接口给用户/应用程序使用，其中文件就是操作系统提供给应用程序来操作硬盘虚拟概念，用户或应用程序通过操作文件，可以将自己的数据永久保存下来。</p>
 </blockquote>
 <p>有了文件的概念，我们无需再去考虑操作硬盘的细节，只需要关注操作文件的流程：</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #1. 打开文件，得到文件句柄并赋值给一个变量
-f=open('a.txt','r',encoding='utf-8') #默认打开模式就为r
- #2. 通过句柄对文件进行操作
-data=f.read()
- #3. 关闭文件
-f.close()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#1. 打开文件，得到文件句柄并赋值给一个变量</span></span><br><span class="line">f=open(<span class="string">'a.txt'</span>,<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>) <span class="comment">#默认打开模式就为r</span></span><br><span class="line"> <span class="comment">#2. 通过句柄对文件进行操作</span></span><br><span class="line">data=f.read()</span><br><span class="line"> <span class="comment">#3. 关闭文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000">关闭文件的注意事项：</font></p>
-<pre class="line-numbers language-language-text"><code class="language-language-text">打开一个文件包含两部分资源：操作系统级打开的文件+应用程序的变量。在操作完毕一个文件时，必须把与该文件的这两部分资源一个不落地回收，回收方法为：
-1、f.close() #回收操作系统级打开的文件
-2、del f #回收应用程序级的变量
-其中del f一定要发生在f.close()之后，否则就会导致操作系统打开的文件还没有关闭，白白占用资源，
-而python自动的垃圾回收机制决定了我们无需考虑del f，这就要求我们，在操作完毕文件后，一定要记住f.close()
-虽然我这么说，但是很多同学还是会很不要脸地忘记f.close(),对于这些不长脑子的同学，我们推荐傻瓜式操作方式：使用with关键字来帮我们管理上下文
-with open('a.txt','w') as f:
-    pass 
-with open('a.txt','r') as read_f,open('b.txt','w') as write_f:
-    data=read_f.read()
-    write_f.write(data)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">打开一个文件包含两部分资源：操作系统级打开的文件+应用程序的变量。在操作完毕一个文件时，必须把与该文件的这两部分资源一个不落地回收，回收方法为：</span><br><span class="line">1、f.close() #回收操作系统级打开的文件</span><br><span class="line">2、del f #回收应用程序级的变量</span><br><span class="line">其中del f一定要发生在f.close()之后，否则就会导致操作系统打开的文件还没有关闭，白白占用资源，</span><br><span class="line">而python自动的垃圾回收机制决定了我们无需考虑del f，这就要求我们，在操作完毕文件后，一定要记住f.close()</span><br><span class="line">虽然我这么说，但是很多同学还是会很不要脸地忘记f.close(),对于这些不长脑子的同学，我们推荐傻瓜式操作方式：使用with关键字来帮我们管理上下文</span><br><span class="line">with open(&apos;a.txt&apos;,&apos;w&apos;) as f:</span><br><span class="line">    pass </span><br><span class="line">with open(&apos;a.txt&apos;,&apos;r&apos;) as read_f,open(&apos;b.txt&apos;,&apos;w&apos;) as write_f:</span><br><span class="line">    data=read_f.read()</span><br><span class="line">    write_f.write(data)</span><br></pre></td></tr></table></figure>
 <h2 id="div-style-background-b2bbbe-color-000-二-文件编码-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-二-文件编码-div">¶</a><div style="background:#b2bbbe; color:#000">二、文件编码</div></h2>
 <blockquote>
 <p>f=open(…)是由操作系统打开文件，那么如果我们没有为open指定编码，那么打开文件的默认编码很明显是操作系统说了算了，操作系统会用自己的默认编码去打开文件，在windows下是gbk，在linux下是utf-8。</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #这就用到了上节课讲的字符编码的知识：若要保证不乱码，文件以什么方式存的，就要以什么方式打开。
-f=open('a.txt','r',encoding='utf-8')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#这就用到了上节课讲的字符编码的知识：若要保证不乱码，文件以什么方式存的，就要以什么方式打开。</span></span><br><span class="line">f=open(<span class="string">'a.txt'</span>,<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="div-style-background-b2bbbe-color-000-三-文件的打开模式-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-三-文件的打开模式-div">¶</a><div style="background:#b2bbbe; color:#000">三、文件的打开模式</div></h2>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #1. 打开文件的模式有(默认为文本模式)：
-r ，只读模式【默认模式，文件必须存在，不存在则抛出异常】
-w，只写模式【不可读；不存在则创建；存在则清空内容】
-a， 只追加写模式【不可读；不存在则创建；存在则只追加内容】
- #2. 对于非文本文件，我们只能使用b模式，"b"表示以字节的方式操作（而所有文件也都是以字节的形式存储的，使用这种模式无需考虑文本文件的字符编码、图片文件的jgp格式、视频文件的avi格式）
-rb 
-wb
-ab
-注：以b方式打开时，读取到的内容是字节类型，写入时也需要提供字节类型，不能指定编码
- #3,‘+’模式（就是增加了一个功能）
-r+， 读写【可读，可写】
-w+，写读【可写，可读】
-a+， 写读【可写，可读】
- #4，以bytes类型操作的读写，写读，写读模式
-r+b， 读写【可读，可写】
-w+b，写读【可写，可读】
-a+b， 写读【可写，可读】
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#1. 打开文件的模式有(默认为文本模式)：</span></span><br><span class="line">r ，只读模式【默认模式，文件必须存在，不存在则抛出异常】</span><br><span class="line">w，只写模式【不可读；不存在则创建；存在则清空内容】</span><br><span class="line">a， 只追加写模式【不可读；不存在则创建；存在则只追加内容】</span><br><span class="line"> <span class="comment">#2. 对于非文本文件，我们只能使用b模式，"b"表示以字节的方式操作（而所有文件也都是以字节的形式存储的，使用这种模式无需考虑文本文件的字符编码、图片文件的jgp格式、视频文件的avi格式）</span></span><br><span class="line">rb </span><br><span class="line">wb</span><br><span class="line">ab</span><br><span class="line">注：以b方式打开时，读取到的内容是字节类型，写入时也需要提供字节类型，不能指定编码</span><br><span class="line"> <span class="comment">#3,‘+’模式（就是增加了一个功能）</span></span><br><span class="line">r+， 读写【可读，可写】</span><br><span class="line">w+，写读【可写，可读】</span><br><span class="line">a+， 写读【可写，可读】</span><br><span class="line"> <span class="comment">#4，以bytes类型操作的读写，写读，写读模式</span></span><br><span class="line">r+b， 读写【可读，可写】</span><br><span class="line">w+b，写读【可写，可读】</span><br><span class="line">a+b， 写读【可写，可读】</span><br></pre></td></tr></table></figure>
 <h2 id="div-style-background-b2bbbe-color-000-四-文件操作方法-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-四-文件操作方法-div">¶</a><div style="background:#b2bbbe; color:#000">四、文件操作方法</div></h2>
 <h3 id="div-style-background-fbeee2-color-000-常用操作方法-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-常用操作方法-div">¶</a><div style="background:#fbeee2; color:#000">常用操作方法</div></h3>
-<pre class="line-numbers language-language-text"><code class="language-language-text">read（3）：
-　　1. 文件打开方式为文本模式时，代表读取3个字符
-　　2. 文件打开方式为b模式时，代表读取3个字节
-其余的文件内光标移动都是以字节为单位的如：seek，tell，truncate
-注意：
-　　1. seek有三种移动方式0，1，2，其中1和2必须在b模式下进行，但无论哪种模式，都是以bytes为单位移动的
-　　2. truncate是截断文件，所以文件的打开方式必须可写，但是不能用w或w+等方式打开，因为那样直接清空文件了，所以truncate要在r+或a或a+等模式下测试效果。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">f.read() #读取所有内容,光标移动到文件末尾
-f.readline() #读取一行内容,光标移动到第二行首部
-f.readlines() #读取每一行内容,存放于列表中
-f.write('1111\n222\n') #针对文本模式的写,需要自己写换行符
-f.write('1111\n222\n'.encode('utf-8')) #针对b模式的写,需要自己写换行符
-f.writelines(['333\n','444\n']) #文件模式
-f.writelines([bytes('333\n',encoding='utf-8'),'444\n'.encode('utf-8')]) #b模式
- #seek 光标移动到第几个字节的位置
-f.seek(0,0)    移动到最开始
-f.seek(0,2)    移动到最末尾
- #tell    告诉你光标的位置
-f.tell()
- #readable    #文件是否可读
-f.readable()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">read（3）：</span><br><span class="line">　　1. 文件打开方式为文本模式时，代表读取3个字符</span><br><span class="line">　　2. 文件打开方式为b模式时，代表读取3个字节</span><br><span class="line">其余的文件内光标移动都是以字节为单位的如：seek，tell，truncate</span><br><span class="line">注意：</span><br><span class="line">　　1. seek有三种移动方式0，1，2，其中1和2必须在b模式下进行，但无论哪种模式，都是以bytes为单位移动的</span><br><span class="line">　　2. truncate是截断文件，所以文件的打开方式必须可写，但是不能用w或w+等方式打开，因为那样直接清空文件了，所以truncate要在r+或a或a+等模式下测试效果。</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">f.read() <span class="comment">#读取所有内容,光标移动到文件末尾</span></span><br><span class="line">f.readline() <span class="comment">#读取一行内容,光标移动到第二行首部</span></span><br><span class="line">f.readlines() <span class="comment">#读取每一行内容,存放于列表中</span></span><br><span class="line">f.write(<span class="string">'1111\n222\n'</span>) <span class="comment">#针对文本模式的写,需要自己写换行符</span></span><br><span class="line">f.write(<span class="string">'1111\n222\n'</span>.encode(<span class="string">'utf-8'</span>)) <span class="comment">#针对b模式的写,需要自己写换行符</span></span><br><span class="line">f.writelines([<span class="string">'333\n'</span>,<span class="string">'444\n'</span>]) <span class="comment">#文件模式</span></span><br><span class="line">f.writelines([bytes(<span class="string">'333\n'</span>,encoding=<span class="string">'utf-8'</span>),<span class="string">'444\n'</span>.encode(<span class="string">'utf-8'</span>)]) <span class="comment">#b模式</span></span><br><span class="line"> <span class="comment">#seek 光标移动到第几个字节的位置</span></span><br><span class="line">f.seek(<span class="number">0</span>,<span class="number">0</span>)    移动到最开始</span><br><span class="line">f.seek(<span class="number">0</span>,<span class="number">2</span>)    移动到最末尾</span><br><span class="line"> <span class="comment">#tell    告诉你光标的位置</span></span><br><span class="line">f.tell()</span><br><span class="line"> <span class="comment">#readable    #文件是否可读</span></span><br><span class="line">f.readable()</span><br></pre></td></tr></table></figure>
 <h2 id="div-style-background-b2bbbe-color-000-五-文件的修改-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-五-文件的修改-div">¶</a><div style="background:#b2bbbe; color:#000">五、文件的修改</div></h2>
 <blockquote>
 <p>文件的数据是存放于硬盘上的，因而只存在覆盖、不存在修改这么一说，我们平时看到的修改文件，都是模拟出来的效果，具体的说有两种实现方式：</p>
@@ -552,25 +495,11 @@ f.readable()
 <blockquote>
 <p>方式一：将硬盘存放的该文件的内容全部加载到内存，在内存中是可以修改的，修改完毕后，再由内存覆盖到硬盘（word，vim，nodpad++等编辑器）</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import os  # 调用系统模块
-with open('a.txt') as read_f,open('.a.txt.swap','w') as write_f:
-    data=read_f.read() #全部读入内存,如果文件很大,会很卡
-    data=data.replace('alex','SB') #在内存中完成修改
-    write_f.write(data) #一次性写入新文件
-os.remove('a.txt')  #删除原文件
-os.rename('.a.txt.swap','a.txt')   #将新建的文件重命名为原文件
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os  <span class="comment"># 调用系统模块</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>) <span class="keyword">as</span> read_f,open(<span class="string">'.a.txt.swap'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> write_f:</span><br><span class="line">    data=read_f.read() <span class="comment">#全部读入内存,如果文件很大,会很卡</span></span><br><span class="line">    data=data.replace(<span class="string">'alex'</span>,<span class="string">'SB'</span>) <span class="comment">#在内存中完成修改</span></span><br><span class="line">    write_f.write(data) <span class="comment">#一次性写入新文件</span></span><br><span class="line">os.remove(<span class="string">'a.txt'</span>)  <span class="comment">#删除原文件</span></span><br><span class="line">os.rename(<span class="string">'.a.txt.swap'</span>,<span class="string">'a.txt'</span>)   <span class="comment">#将新建的文件重命名为原文件</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>方式二：将硬盘存放的该文件的内容一行一行地读入内存，修改完毕就写入新文件，最后用新文件覆盖源文件</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import os
-with open('a.txt') as read_f,open('.a.txt.swap','w') as write_f:
-    for line in read_f:
-        line=line.replace('alex','SB')
-        write_f.write(line)
-os.remove('a.txt')
-os.rename('.a.txt.swap','a.txt') 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>) <span class="keyword">as</span> read_f,open(<span class="string">'.a.txt.swap'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> write_f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> read_f:</span><br><span class="line">        line=line.replace(<span class="string">'alex'</span>,<span class="string">'SB'</span>)</span><br><span class="line">        write_f.write(line)</span><br><span class="line">os.remove(<span class="string">'a.txt'</span>)</span><br><span class="line">os.rename(<span class="string">'.a.txt.swap'</span>,<span class="string">'a.txt'</span>)</span><br></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -1269,7 +1198,7 @@ os.rename('.a.txt.swap','a.txt')
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">58.8k</span>
+                <span class="white-color">59.6k</span>
             
 
             

@@ -444,7 +444,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        790
+                        811
                     </div>
                     
 
@@ -495,17 +495,7 @@
 <h3 id="div-style-background-dfecd5-color-000-修改主题模板-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改主题模板-div">¶</a><div style="background:#dfecd5; color:#000">修改主题模板</div></h3>
 <p>这里基本上是照抄 <a href="https://github.com/litten/hexo-theme-yilia/pull/646" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia/pull/646</a></p>
 <p><font face="宋体" color="#FF8000"><strong>_config.yml</strong></font></p>
-<pre><code> #6、Valine https://valine.js.org
-valine: 
- appid:  #Leancloud应用的appId
- appkey:  #Leancloud应用的appKey
- verify: false #验证码
- notify: false #评论回复提醒
- avatar: '' #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
- avatar_cdn: 'https://sdn.geekzu.org/avatar/' #头像CDN
- placeholder: '瞎白话' #评论框占位符
- pageSize: 15 #评论分页
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> #6、Valine https://valine.js.org</span><br><span class="line">valine: </span><br><span class="line"> appid:  #Leancloud应用的appId</span><br><span class="line"> appkey:  #Leancloud应用的appKey</span><br><span class="line"> verify: false #验证码</span><br><span class="line"> notify: false #评论回复提醒</span><br><span class="line"> avatar: &apos;&apos; #评论列表头像样式：&apos;&apos;/mm/identicon/monsterid/wavatar/retro/hide</span><br><span class="line"> avatar_cdn: &apos;https://sdn.geekzu.org/avatar/&apos; #头像CDN</span><br><span class="line"> placeholder: &apos;瞎白话&apos; #评论框占位符</span><br><span class="line"> pageSize: 15 #评论分页</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>其中 verify 和 notify 一定要是 false，不要打开，不要手贱</p>
 <p>avatar 参数详见 <a href="https://valine.js.org/configuration.html" target="_blank" rel="noopener">https://valine.js.org/configuration.html</a></p>
@@ -513,20 +503,7 @@ valine:
 </blockquote>
 <p><font face="宋体" color="#FF8000"><strong>themes\yilia\layout_partial\article.ejs</strong></font></p>
 <p>重写了一下 style，应该可以做到响应式布局了</p>
-<pre><code>&lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey){ %&gt;
-  &lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;
-    &lt;style&gt;
-      .comments{margin:30px;padding:10px;background:#fff}
-      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-    &lt;/style&gt;
-    &lt;%- partial('post/valine', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-      }) %&gt;
-  &lt;/section&gt;
-&lt;% } %&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey)&#123; %&gt;</span><br><span class="line">  &lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      .comments&#123;margin:30px;padding:10px;background:#fff&#125;</span><br><span class="line">      @media screen and (max-width:800px)&#123;.comments&#123;margin:auto;padding:10px;background:#fff&#125;&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;%- partial(&apos;post/valine&apos;, &#123;</span><br><span class="line">      key: post.slug,</span><br><span class="line">      title: post.title,</span><br><span class="line">      url: config.url+url_for(post.path)</span><br><span class="line">      &#125;) %&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000"><strong>themes\yilia\layout_partial\post\valine.ejs</strong></font></p>
 <pre><code>&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt;
 &lt;script src=&quot;//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -1250,7 +1227,7 @@ GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多co
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">58.8k</span>
+                <span class="white-color">59.6k</span>
             
 
             

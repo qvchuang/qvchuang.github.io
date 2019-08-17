@@ -24,9 +24,7 @@
 
 ¶一、命名空间和作用域
 ¶命名空间
-python代码运行的时候遇到函数是怎么做的?
-从python解释器开始执行之后，就在内存中开辟了一个空间
-每">
+12345python代码运行的时候遇到函数是怎么做的?从python解释器开始执行之后，就在内存中开辟了一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -500,12 +498,7 @@ python代码运行的时候遇到函数是怎么做的?
 </ul>
 <h2 id="div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div">¶</a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2>
 <h3 id="div-style-background-pink-color-000-命名空间-div"><a class="header-anchor" href="#div-style-background-pink-color-000-命名空间-div">¶</a><div style="background:pink; color:#000">命名空间</div></h3>
-<pre class="line-numbers language-language-text"><code class="language-language-text">python代码运行的时候遇到函数是怎么做的?
-从python解释器开始执行之后，就在内存中开辟了一个空间
-每当遇到一个变量的时候，就把变量名和值之间的对应关系记录下来。
-但是当遇到函数定义的时候解释器只是象征性的将函数名读入内存，表示知道这个函数的存在了，至于函数内部的变量和逻辑解释器根本不关心。
-等执行到函数调用的时候，python解释器会再开辟一块内存来存储这个函数里的内容，这个时候，才关注函数里面有哪些变量，而函数中的变量会存储在新开辟出来的内存中。函数中的变量只能在函数的内部使用，并且会随着函数执行完毕，这块内存中的所有内容也会被清空。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python代码运行的时候遇到函数是怎么做的?</span><br><span class="line">从python解释器开始执行之后，就在内存中开辟了一个空间</span><br><span class="line">每当遇到一个变量的时候，就把变量名和值之间的对应关系记录下来。</span><br><span class="line">但是当遇到函数定义的时候解释器只是象征性的将函数名读入内存，表示知道这个函数的存在了，至于函数内部的变量和逻辑解释器根本不关心。</span><br><span class="line">等执行到函数调用的时候，python解释器会再开辟一块内存来存储这个函数里的内容，这个时候，才关注函数里面有哪些变量，而函数中的变量会存储在新开辟出来的内存中。函数中的变量只能在函数的内部使用，并且会随着函数执行完毕，这块内存中的所有内容也会被清空。</span><br></pre></td></tr></table></figure>
 <p>我们给这个“存放名字与值的关系”的空间起了一个名字——叫做命名空间</p>
 <p>代码在运行伊始，创建的存储“变量名与值的关系”的空间叫做全局命名空间</p>
 <p>在函数的运行中开辟的临时的空间叫做局部命名空间</p>
@@ -552,13 +545,7 @@ python代码运行的时候遇到函数是怎么做的?
 <p>全局作用域 —— 作用在全局 —— 内置和全局名字空间中的名字都属于全局作用域  ——globals()</p>
 <p>局部作用域 —— 作用在局部 —— 函数（局部名字空间中的名字属于局部作用域） ——locals()</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
-    a = 12
-    b = 20
-    print(locals())
-    print(globals())
-func()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">12</span></span><br><span class="line">    b = <span class="number">20</span></span><br><span class="line">    print(locals())</span><br><span class="line">    print(globals())</span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
 <p>globals 永远打印全局的名字</p>
 <p>locals 输出什么 根据locals所在的位置</p>
 <p><strong>global关键字</strong></p>
@@ -566,138 +553,34 @@ func()
 <p>1、声明一个全局变量。</p>
 <p>2、在局部作用域想要对全局作用域的全局变量进行修改时，需要用到 global(<font face="宋体" color="#red">限于字符串，数字</font>)。</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">a = 10
-def func():
-    global a
-    a = 20
-print(a)
-func()
-print(a)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">20</span></span><br><span class="line">print(a)</span><br><span class="line">func()</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
 <p>ps：对可变数据类型（list，dict，set）可以直接引用不用通过global</p>
-<pre class="line-numbers language-language-ptyhon"><code class="language-language-ptyhon">l1 = [1,2,3]
-def func():
-    l1.append(444)
-func()
-print(l1)
- #[1, 2, 3, 444]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l1 = [1,2,3]</span><br><span class="line">def func():</span><br><span class="line">    l1.append(444)</span><br><span class="line">func()</span><br><span class="line">print(l1)</span><br><span class="line"> #[1, 2, 3, 444]</span><br></pre></td></tr></table></figure>
 <p><strong>nonlocal关键字</strong></p>
 <blockquote>
 <p>1、nonlocal 只能用于局部变量 找上层中离当前函数最近一层的局部变量，不能修改全局变量。</p>
 <p>2、声明了nonlocal的内部函数的变量修改会影响到 离当前函数最近一层的局部变量</p>
 <p>3、对局部 也只是对 最近的 一层 有影响</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
-    name = 'wusir'
-    def inner():
-        nonlocal name
-        name = 'taibai'
-        print(name)
-    print(name)
-    inner()
-    print(name)
-func()
-wusir
-taibai
-taibai
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def add_b():
-    b = 42
-    def do_global():
-        b = 10
-        print(b)
-        def dd_nonlocal():
-            nonlocal b
-            b = b + 20
-            print(b)
-        dd_nonlocal()
-        print(b)
-    do_global()
-    print(b)
-add_b()
-310
-30
-30
-42
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'wusir'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> name</span><br><span class="line">        name = <span class="string">'taibai'</span></span><br><span class="line">        print(name)</span><br><span class="line">    print(name)</span><br><span class="line">    inner()</span><br><span class="line">    print(name)</span><br><span class="line">func()</span><br><span class="line">wusir</span><br><span class="line">taibai</span><br><span class="line">taibai</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_b</span><span class="params">()</span>:</span></span><br><span class="line">    b = <span class="number">42</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_global</span><span class="params">()</span>:</span></span><br><span class="line">        b = <span class="number">10</span></span><br><span class="line">        print(b)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dd_nonlocal</span><span class="params">()</span>:</span></span><br><span class="line">            <span class="keyword">nonlocal</span> b</span><br><span class="line">            b = b + <span class="number">20</span></span><br><span class="line">            print(b)</span><br><span class="line">        dd_nonlocal()</span><br><span class="line">        print(b)</span><br><span class="line">    do_global()</span><br><span class="line">    print(b)</span><br><span class="line">add_b()</span><br><span class="line"><span class="number">310</span></span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">42</span></span><br></pre></td></tr></table></figure>
 <h2 id="div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div">¶</a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2>
 <p><font face="宋体" color="#FF8000">函数的嵌套调用</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def max2(x,y):
-    m  = x if x>y else y
-    return m
-def max4(a,b,c,d):
-    res1 = max2(a,b)
-    res2 = max2(res1,c)
-    res3 = max2(res2,d)
-    return res3
- # max4(23,-7,31,11)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max2</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    m  = x <span class="keyword">if</span> x&gt;y <span class="keyword">else</span> y</span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max4</span><span class="params">(a,b,c,d)</span>:</span></span><br><span class="line">    res1 = max2(a,b)</span><br><span class="line">    res2 = max2(res1,c)</span><br><span class="line">    res3 = max2(res2,d)</span><br><span class="line">    <span class="keyword">return</span> res3</span><br><span class="line"> <span class="comment"># max4(23,-7,31,11)</span></span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000">函数的嵌套定义</font></p>
 <p><em>定义在内部的函数无法直接在全局被调用</em></p>
-<pre class="line-numbers language-language-ptyhon"><code class="language-language-ptyhon">def f1():
-    print("in f1")
-    def f2():
-        print("in f2")
-    f2()
-f1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
-    def f2():
-        def f3():
-            print("in f3")
-        print("in f2")
-        f3()
-    print("in f1")
-    f2()    
-f1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">    print(&quot;in f1&quot;)</span><br><span class="line">    def f2():</span><br><span class="line">        print(&quot;in f2&quot;)</span><br><span class="line">    f2()</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">            print(<span class="string">"in f3"</span>)</span><br><span class="line">        print(<span class="string">"in f2"</span>)</span><br><span class="line">        f3()</span><br><span class="line">    print(<span class="string">"in f1"</span>)</span><br><span class="line">    f2()    </span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000">函数的作用域链</font></p>
-<pre class="line-numbers language-language-poython"><code class="language-language-poython">def f1():
-    a = 1
-    def f2():
-        print(a)
-    f2()
-f1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
-    a = 1
-    def f2():
-        def f3():
-            print(a)
-        f3()
-    f2()
-f1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
-    a = 1
-    def f2():
-        a = 2
-    f2()
-    print('a in f1 : ',a)
-f1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">    a = 1</span><br><span class="line">    def f2():</span><br><span class="line">        print(a)</span><br><span class="line">    f2()</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">            print(a)</span><br><span class="line">        f3()</span><br><span class="line">    f2()</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">        a = <span class="number">2</span></span><br><span class="line">    f2()</span><br><span class="line">    print(<span class="string">'a in f1 : '</span>,a)</span><br><span class="line">f1()</span><br></pre></td></tr></table></figure>
 <h2 id="div-id-03-style-background-skyblue-color-000-三-函数名的本质-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-三-函数名的本质-div">¶</a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2>
 <p><font face="宋体" color="#red">函数名本质上就是一个变量，保存了函数所在的内存地址</font></p>
 <p><font face="宋体" color="#FF8000">1.可以被引用</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
-    print('in func')
-f = func
-print(f)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'in func'</span>)</span><br><span class="line">f = func</span><br><span class="line">print(f)</span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000">2.可以被当作容器类型的元素</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def f1():
-    print('f1')
-def f2():
-    print('f2')
-def f3():
-    print('f3')
-l = [f1,f2,f3]
-d = {'f1':f1,'f2':f2,'f3':f3}
- #调用
-l[0]()
-d['f2']()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'f1'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'f2'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'f3'</span>)</span><br><span class="line">l = [f1,f2,f3]</span><br><span class="line">d = &#123;<span class="string">'f1'</span>:f1,<span class="string">'f2'</span>:f2,<span class="string">'f3'</span>:f3&#125;</span><br><span class="line"> <span class="comment">#调用</span></span><br><span class="line">l[<span class="number">0</span>]()</span><br><span class="line">d[<span class="string">'f2'</span>]()</span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000">3.可以当作函数的参数和返回值</font></p>
 <p>不明白？那就记住一句话，就当普通变量用</p>
 <blockquote>
@@ -707,25 +590,14 @@ d['f2']()
 <p>3.可存入变量的实体。</p>
 </blockquote>
 <h2 id="div-id-04-style-background-skyblue-color-000-四-闭包-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-四-闭包-div">¶</a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
-    name = 'eva'
-    def inner():
-        print(name)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'eva'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(name)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>闭包函数：</p>
 <p>内部函数包含对外部作用域而非全剧作用域名字的引用，该内部函数称为闭包函数</p>
 <p>函数内部定义的函数称为内部函数</p>
 </blockquote>
 <p><font face="宋体" color="#FF8000">如何实现对内层函数的调用？</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
-    name = 'eva'
-    def inner():
-        print(name)
-    return inner
-f = func()
-f()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'eva'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        print(name)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line">f = func()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
 <p><font face="宋体" color="#FF8000">判断闭包函数的方法__closure__</font></p>
 <pre><code>#输出的__closure__有cell元素 ：是闭包函数
 def func():
@@ -750,18 +622,7 @@ f2 = func2()
 f2()
 </code></pre>
 <p><font face="宋体" color="#FF8000">闭包的嵌套</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def wrapper():
-    money = 1000
-    def func():
-        name = 'eva'
-        def inner():
-            print(name,money)
-        return inner
-    return func
-f = wrapper()
-i = f()
-i()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></span><br><span class="line">    money = <span class="number">1000</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        name = <span class="string">'eva'</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">            print(name,money)</span><br><span class="line">        <span class="keyword">return</span> inner</span><br><span class="line">    <span class="keyword">return</span> func</span><br><span class="line">f = wrapper()</span><br><span class="line">i = f()</span><br><span class="line">i()</span><br></pre></td></tr></table></figure>
 <p><strong>闭包的好处：</strong><font face="宋体" color="#red">保护内存，闭包函数在内存中的局部命名空间不会随着函数的结束而结束</font></p>
 
             </div>
@@ -1233,9 +1094,7 @@ i()
 
 ¶装饰器的形成过程
 ¶装饰器——简单版
-import time
-def func1():
-   </div>
+1234567891011import timedef </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
@@ -1480,7 +1339,7 @@ def func1():
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">58.8k</span>
+                <span class="white-color">59.6k</span>
             
 
             
