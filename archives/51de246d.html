@@ -9,7 +9,7 @@
 
 前言：电脑系统为window 10专业版，64位
 相关步骤：
-¶1、安装Git和配置好Git环境
+☞1、安装Git和配置好Git环境
 安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择
 
 注意：一般出于安全考虑，只有在Git Bash Here中才能进行Git">
@@ -471,21 +471,21 @@
 <a id="more"></a>
 <p>前言：电脑系统为window 10专业版，64位</p>
 <p><strong>相关步骤：</strong></p>
-<h2 id="1-安装git和配置好git环境"><a class="header-anchor" href="#1-安装git和配置好git环境">¶</a>1、安装Git和配置好Git环境</h2>
+<h2 id="1-安装git和配置好git环境"><a class="header-anchor" href="#1-安装git和配置好git环境">☞</a>1、安装Git和配置好Git环境</h2>
 <p>安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/1c04535410eadc223.png" alt="Alt text"></p>
 <p>注意：一般出于安全考虑，只有在Git Bash Here中才能进行Git的相关操作。如果需要在cmd命令行里调用Git，那么就要配置电脑的环境变量Path，或者在安装的时候选择use Git from the Windows Command Prompt。这个可有可无，影响不大，成功配置的界面如图</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/249320c90973e888f.png" alt="Alt text"></p>
-<h2 id="2-安装node-js和配置好node-js环境"><a class="header-anchor" href="#2-安装node-js和配置好node-js环境">¶</a>2、安装Node.js和配置好Node.js环境</h2>
+<h2 id="2-安装node-js和配置好node-js环境"><a class="header-anchor" href="#2-安装node-js和配置好node-js环境">☞</a>2、安装Node.js和配置好Node.js环境</h2>
 <p>打开cmd命令行，成功界面如下</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/3358f5943a52fcb14.png" alt="Alt text"></p>
-<h2 id="3-github账户注册和新建项目"><a class="header-anchor" href="#3-github账户注册和新建项目">¶</a>3、Github账户注册和新建项目</h2>
+<h2 id="3-github账户注册和新建项目"><a class="header-anchor" href="#3-github账户注册和新建项目">☞</a>3、Github账户注册和新建项目</h2>
 <pre><code>项目必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。并且需要勾选Initialize this repository with a README  
 </code></pre>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/44c5d00043fa76ad2.png" alt="Alt text"></p>
 <p>在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/5cd15dfb1be060636.png" alt="Alt text"></p>
-<h2 id="4-安装hexo"><a class="header-anchor" href="#4-安装hexo">¶</a>4、安装Hexo</h2>
+<h2 id="4-安装hexo"><a class="header-anchor" href="#4-安装hexo">☞</a>4、安装Hexo</h2>
 <p>在自己认为合适的地方创个文件夹，我是在D盘建了一个blog文件夹。然后通过命令行进入到该文件夹里面</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/6aee2ee5a940a0a42.png" alt="Alt text"></p>
 <p>输入npm install hexo -g，开始安装Hexo</p>
@@ -506,7 +506,7 @@
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/148b84f2e89c0b6b0e.png" alt="Alt text"></p>
 <p>那么出现如下图就成功了</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/152c49c1309f65e0cd.png" alt="Alt text"></p>
-<h2 id="5-将hexo与github-page联系起来"><a class="header-anchor" href="#5-将hexo与github-page联系起来">¶</a>5、将Hexo与Github page联系起来</h2>
+<h2 id="5-将hexo与github-page联系起来"><a class="header-anchor" href="#5-将hexo与github-page联系起来">☞</a>5、将Hexo与Github page联系起来</h2>
 <p>设置Git的user name和email（如果是第一次的话）</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/16e7e0a6c34befb5d9.png" alt="Alt text"></p>
 <p>上图是在其文件夹里面鼠标右键，点击Git Base Here。这里“feng”可以替换成自己的用户名，邮箱可以替换成自己的邮箱</p>
@@ -539,12 +539,12 @@ ssh-keygen -t rsa -C <a href="mailto:%22xxx@xxx.com" target="_blank" rel="noopen
 <p>3、保存</p>
 <p>测试：<br>
 在终端 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p>
-<h2 id="6-配置deployment"><a class="header-anchor" href="#6-配置deployment">¶</a>6、配置Deployment</h2>
+<h2 id="6-配置deployment"><a class="header-anchor" href="#6-配置deployment">☞</a>6、配置Deployment</h2>
 <p>在其文件夹中，找到_config.yml文件，修改repo值（在末尾）</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/25df0b020e50a97675.png" alt="Alt text"></p>
 <p>repo值是你在github项目里的ssh（右下角）</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/260e130a1f97d1a653.png" alt="Alt text"></p>
-<h2 id="7-生成以及部署文章"><a class="header-anchor" href="#7-生成以及部署文章">¶</a>7、生成以及部署文章</h2>
+<h2 id="7-生成以及部署文章"><a class="header-anchor" href="#7-生成以及部署文章">☞</a>7、生成以及部署文章</h2>
 <p>在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git --save</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/2713ef95297b55f645.png" alt="Alt text"></p>
 <p>新建一篇博客，在cmd执行命令：hexo new post “博客名”</p>
@@ -561,11 +561,11 @@ ssh-keygen -t rsa -C <a href="mailto:%22xxx@xxx.com" target="_blank" rel="noopen
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/31a0f9169d5b707cc1.png" alt="Alt text"></p>
 <p>好了，到此为止，最基本的也是最全面的hexo+github搭建博客完结。</p>
 <hr>
-<h3 id="双部署"><a class="header-anchor" href="#双部署">¶</a>双部署</h3>
+<h3 id="双部署"><a class="header-anchor" href="#双部署">☞</a>双部署</h3>
 <p><a href="https://www.cnblogs.com/compassblog/p/8922624.html" target="_blank" rel="noopener">将 Hexo 个人博客同时部署到 GitHub 和 Coding 上</a></p>
-<h3 id="其它"><a class="header-anchor" href="#其它">¶</a>其它</h3>
+<h3 id="其它"><a class="header-anchor" href="#其它">☞</a>其它</h3>
 <p><a href="https://www.jianshu.com/p/ca87dd7b9e00" target="_blank" rel="noopener">换了新电脑，需要在新电脑上进行部署Hexo</a></p>
-<h2 id="借鉴"><a class="header-anchor" href="#借鉴">¶</a>借鉴</h2>
+<h2 id="借鉴"><a class="header-anchor" href="#借鉴">☞</a>借鉴</h2>
 <ol>
 <li><a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">Hexo+GitHub搭建教程</a></li>
 <li><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">nexT主题个性化配置教程</a></li>
@@ -1024,7 +1024,7 @@ ssh-keygen -t rsa -C <a href="mailto:%22xxx@xxx.com" target="_blank" rel="noopen
                     <div class="summary">
 
 Jmeter
-¶环境搭建及安装
+☞环境搭建及安装
 Jmeter新手教程
 </div>
                     <div class="publish-info">
@@ -1074,7 +1074,7 @@ Jmeter新手教程
 
 前言：电脑系统为window 10专业版，64位
 相关步骤：
-¶1、安装Git和配置好Git环境
+☞1、安装Git和配置好Git环境
 安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择
 
 注意：一般出于安全考虑，只有在Git Bash Here中才能进行Git</div>

@@ -7,7 +7,7 @@
     <meta name="keywords" content="Python3-函数进阶, My blog">
     <meta name="description" content="
 
-¶阅读目录
+☞阅读目录
 
 
 命名空间和作用域
@@ -22,8 +22,8 @@
 闭包
 
 
-¶一、命名空间和作用域
-¶命名空间
+☞一、命名空间和作用域
+☞命名空间
 python代码运行的时候遇到函数是怎么做的?
 从python解释器开始执行之后，就在内存中开辟了一个空间
 每">
@@ -483,7 +483,7 @@ python代码运行的时候遇到函数是怎么做的?
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/1yFmR" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/01/python8ea1736073a1a019.md.png" alt="python8ea1736073a1a019.md.png"></a></p>
 <a id="more"></a>
-<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">¶</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
+<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">☞</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
 <ul>
 <li>
 <p><a href="#01">命名空间和作用域</a></p>
@@ -498,8 +498,8 @@ python代码运行的时候遇到函数是怎么做的?
 <p><a href="#04">闭包</a></p>
 </li>
 </ul>
-<h2 id="div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div">¶</a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2>
-<h3 id="div-style-background-pink-color-000-命名空间-div"><a class="header-anchor" href="#div-style-background-pink-color-000-命名空间-div">¶</a><div style="background:pink; color:#000">命名空间</div></h3>
+<h2 id="div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div">☞</a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2>
+<h3 id="div-style-background-pink-color-000-命名空间-div"><a class="header-anchor" href="#div-style-background-pink-color-000-命名空间-div">☞</a><div style="background:pink; color:#000">命名空间</div></h3>
 <pre class="line-numbers language-language-text"><code class="language-language-text">python代码运行的时候遇到函数是怎么做的?
 从python解释器开始执行之后，就在内存中开辟了一个空间
 每当遇到一个变量的时候，就把变量名和值之间的对应关系记录下来。
@@ -541,7 +541,7 @@ python代码运行的时候遇到函数是怎么做的?
 <p>在全局:可以使用内置命名空间中的名字，但是不能使用局部空间中的名字</p>
 <p>在内置:不能使用局部和全局的名字的</p>
 <p><font face="宋体" color="#FF8000">综上所述，在找寻变量时，从小范围，一层一层到大范围去找寻</font></p>
-<h3 id="div-style-background-pink-color-000-作用域-div"><a class="header-anchor" href="#div-style-background-pink-color-000-作用域-div">¶</a><div style="background:pink; color:#000">作用域</div></h3>
+<h3 id="div-style-background-pink-color-000-作用域-div"><a class="header-anchor" href="#div-style-background-pink-color-000-作用域-div">☞</a><div style="background:pink; color:#000">作用域</div></h3>
 <blockquote>
 <p>作用域就是作用范围，按照生效范围可以分为全局作用域和局部作用域。</p>
 <p>全局作用域：包含内置名称空间、全局名称空间，在整个文件的任意位置都能被引用、全局有效</p>
@@ -621,7 +621,7 @@ add_b()
 30
 42
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div">¶</a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2>
+<h2 id="div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div">☞</a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2>
 <p><font face="宋体" color="#FF8000">函数的嵌套调用</font></p>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def max2(x,y):
     m  = x if x>y else y
@@ -677,7 +677,7 @@ f1()
     print('a in f1 : ',a)
 f1()
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-id-03-style-background-skyblue-color-000-三-函数名的本质-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-三-函数名的本质-div">¶</a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2>
+<h2 id="div-id-03-style-background-skyblue-color-000-三-函数名的本质-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-三-函数名的本质-div">☞</a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2>
 <p><font face="宋体" color="#red">函数名本质上就是一个变量，保存了函数所在的内存地址</font></p>
 <p><font face="宋体" color="#FF8000">1.可以被引用</font></p>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def func():
@@ -706,7 +706,7 @@ d['f2']()
 <p>2.可用作函数参数或返回值</p>
 <p>3.可存入变量的实体。</p>
 </blockquote>
-<h2 id="div-id-04-style-background-skyblue-color-000-四-闭包-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-四-闭包-div">¶</a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2>
+<h2 id="div-id-04-style-background-skyblue-color-000-四-闭包-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-四-闭包-div">☞</a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def func():
     name = 'eva'
     def inner():
@@ -1213,7 +1213,7 @@ i()
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶阅读目录
+☞阅读目录
 
 
 装饰器的形成过程
@@ -1231,8 +1231,8 @@ i()
 多个装饰器装饰一个函数
 
 
-¶装饰器的形成过程
-¶装饰器——简单版
+☞装饰器的形成过程
+☞装饰器——简单版
 import time
 def func1():
    </div>
@@ -1282,7 +1282,7 @@ def func1():
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶阅读目录
+☞阅读目录
 
 
 为什么要用函数
@@ -1300,7 +1300,7 @@ def func1():
 总结
 
 
-¶为什么要用函数
+☞为什么要用函数
 打个比方，加入现在len()方法突然不能直接用了。。。
 然后现在有一个需求，让你计算’hello world’的长度</div>
                     <div class="publish-info">

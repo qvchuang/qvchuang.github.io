@@ -7,7 +7,7 @@
     <meta name="keywords" content="Python3-装饰器函数, My blog">
     <meta name="description" content="
 
-¶阅读目录
+☞阅读目录
 
 
 装饰器的形成过程
@@ -25,8 +25,8 @@
 多个装饰器装饰一个函数
 
 
-¶装饰器的形成过程
-¶装饰器——简单版
+☞装饰器的形成过程
+☞装饰器——简单版
 import time
 def func1():
    ">
@@ -486,7 +486,7 @@ def func1():
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/EmUnq" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/01/ba460c414b0f6216f7054f96153dcd01c2b12424167e5883.md.jpg" alt="ba460c414b0f6216f7054f96153dcd01c2b12424167e5883.md.jpg"></a></p>
 <a id="more"></a>
-<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">¶</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
+<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">☞</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
 <ul>
 <li>
 <p><a href="#01">装饰器的形成过程</a></p>
@@ -504,8 +504,8 @@ def func1():
 <p><a href="#05">多个装饰器装饰一个函数</a></p>
 </li>
 </ul>
-<h2 id="div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div"><a class="header-anchor" href="#div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div">¶</a><div id="01" style="background:#DEB887; color:#8A2BE2">装饰器的形成过程</div></h2>
-<h3 id="div-style-background-87ceeb-color-000-装饰器-简单版-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-简单版-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——简单版</div></h3>
+<h2 id="div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div"><a class="header-anchor" href="#div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div">☞</a><div id="01" style="background:#DEB887; color:#8A2BE2">装饰器的形成过程</div></h2>
+<h3 id="div-style-background-87ceeb-color-000-装饰器-简单版-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-简单版-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——简单版</div></h3>
 <pre class="line-numbers language-language-python"><code class="language-language-python">import time
 def func1():
     print('in func1')
@@ -518,7 +518,7 @@ def timer(func):
 func1 = timer(func1)
 func1()
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div-style-background-87ceeb-color-000-装饰器-语法糖-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-语法糖-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——语法糖</div></h3>
+<h3 id="div-style-background-87ceeb-color-000-装饰器-语法糖-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-语法糖-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——语法糖</div></h3>
 <pre class="line-numbers language-language-python"><code class="language-language-python">import time
 def timer(func):
     def inner():
@@ -536,7 +536,7 @@ func1()
 <p>装饰器的本质：一个闭包函数</p>
 <p>装饰器的功能：在不修改原函数及其调用方式的情况下对原函数功能进行扩展</p>
 </blockquote>
-<h3 id="div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——带参数的装饰器</div></h3>
+<h3 id="div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——带参数的装饰器</div></h3>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def timer(func):
     def inner(a):
         start = time.time()
@@ -548,7 +548,7 @@ def func1(a):
     print(a)
 func1(1)
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div-style-background-87ceeb-color-000-通用装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-通用装饰器-div">¶</a><div style="background:#87CEEB; color:#000">通用装饰器</div></h3>
+<h3 id="div-style-background-87ceeb-color-000-通用装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-通用装饰器-div">☞</a><div style="background:#87CEEB; color:#000">通用装饰器</div></h3>
 <pre><code>import time
 def timer(func):
     def inner(*args,**kwargs):
@@ -578,7 +578,7 @@ print(func2('aaaaaa'))
         return ret
     return inner
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div">¶</a><div style="background:#87CEEB; color:#000">装饰器——带返回值的装饰器</div></h3>
+<h3 id="div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——带返回值的装饰器</div></h3>
 <pre><code>import time
 def timer(func):
     def inner(*args,**kwargs):
@@ -596,14 +596,14 @@ def func2(a):
 func2('aaaaaa')
 print(func2('aaaaaa'))
 </code></pre>
-<h3 id="div-style-background-87ceeb-color-000-查看函数信息的一些方法-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-查看函数信息的一些方法-div">¶</a><div style="background:#87CEEB; color:#000">查看函数信息的一些方法</div></h3>
+<h3 id="div-style-background-87ceeb-color-000-查看函数信息的一些方法-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-查看函数信息的一些方法-div">☞</a><div style="background:#87CEEB; color:#000">查看函数信息的一些方法</div></h3>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def index():
     '''这是一个主页信息'''
     print('from index')
 print(index.__doc__)    #查看函数注释的方法
 print(index.__name__)   #查看函数名的方法
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div-style-background-87ceeb-color-000-装饰器-wraps-demo-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-wraps-demo-div">¶</a><div style="background:#87CEEB; color:#000"> 装饰器——wraps demo</div></h3>
+<h3 id="div-style-background-87ceeb-color-000-装饰器-wraps-demo-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-wraps-demo-div">☞</a><div style="background:#87CEEB; color:#000"> 装饰器——wraps demo</div></h3>
 <pre><code>from functools import wraps
 
 def deco(func):
@@ -620,7 +620,7 @@ def index():
 print(index.__doc__)       #document(文档)
 print(index.__name__)      #查看字符串格式的函数名
 </code></pre>
-<h2 id="div-id-02-style-background-deb887-color-8a2be2-开放封闭原则-div"><a class="header-anchor" href="#div-id-02-style-background-deb887-color-8a2be2-开放封闭原则-div">¶</a><div id="02" style="background:#DEB887; color:#8A2BE2">开放封闭原则</div></h2>
+<h2 id="div-id-02-style-background-deb887-color-8a2be2-开放封闭原则-div"><a class="header-anchor" href="#div-id-02-style-background-deb887-color-8a2be2-开放封闭原则-div">☞</a><div id="02" style="background:#DEB887; color:#8A2BE2">开放封闭原则</div></h2>
 <blockquote>
 <p>1.对扩展是开放的</p>
 <p>为什么要对扩展开放呢？</p>
@@ -630,7 +630,7 @@ print(index.__name__)      #查看字符串格式的函数名
 <p>因为我们写的一个函数，很有可能已经交付给其他人使用了，如果这个时候我们对其进行了修改，很有可能影响其他已经在使用该函数的用户。</p>
 </blockquote>
 <p>装饰器完美的遵循了这个开放封闭原则</p>
-<h2 id="div-id-03-style-background-deb887-color-8a2be2-装饰器的主要功能和装饰器的固定结构-div"><a class="header-anchor" href="#div-id-03-style-background-deb887-color-8a2be2-装饰器的主要功能和装饰器的固定结构-div">¶</a><div id="03" style="background:#DEB887; color:#8A2BE2">装饰器的主要功能和装饰器的固定结构</div></h2>
+<h2 id="div-id-03-style-background-deb887-color-8a2be2-装饰器的主要功能和装饰器的固定结构-div"><a class="header-anchor" href="#div-id-03-style-background-deb887-color-8a2be2-装饰器的主要功能和装饰器的固定结构-div">☞</a><div id="03" style="background:#DEB887; color:#8A2BE2">装饰器的主要功能和装饰器的固定结构</div></h2>
 <p><font face="宋体" color="#FF8000">装饰器的主要功能：</font></p>
 <blockquote>
 <p>在不改变函数调用方式的基础上在函数的前、后添加功能。</p>
@@ -653,7 +653,7 @@ def deco(func):
         return func(*args,**kwargs)
     return wrapper
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div"><a class="header-anchor" href="#div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div">¶</a><div id="04" style="background:#DEB887; color:#8A2BE2">带参数的装饰器</div></h2>
+<h2 id="div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div"><a class="header-anchor" href="#div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div">☞</a><div id="04" style="background:#DEB887; color:#8A2BE2">带参数的装饰器</div></h2>
 <pre><code>FLAGE = True
 def outer(flag):
     def timer(func):
@@ -678,7 +678,7 @@ def func1():
 func()
 func1()
 </code></pre>
-<h2 id="div-id-05-style-background-deb887-color-8a2be2-多个装饰器装饰同一个函数-div"><a class="header-anchor" href="#div-id-05-style-background-deb887-color-8a2be2-多个装饰器装饰同一个函数-div">¶</a><div id="05" style="background:#DEB887; color:#8A2BE2">多个装饰器装饰同一个函数</div></h2>
+<h2 id="div-id-05-style-background-deb887-color-8a2be2-多个装饰器装饰同一个函数-div"><a class="header-anchor" href="#div-id-05-style-background-deb887-color-8a2be2-多个装饰器装饰同一个函数-div">☞</a><div id="05" style="background:#DEB887; color:#8A2BE2">多个装饰器装饰同一个函数</div></h2>
 <pre><code>def wrapper1(func):
     def inner():
         print('wrapper1 ,before func')
@@ -1149,8 +1149,8 @@ f()</code></pre>
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶一、迭代器
-¶python中的for循环
+☞一、迭代器
+☞python中的for循环
 要了解for循环是怎么回事儿，还是要从代码的角度出发。
 首先，对一个列表进行for循环。
 for i in [1,2,3,4]:  
@@ -1203,7 +1203,7 @@ for i in [1,2,3,4]:
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶阅读目录
+☞阅读目录
 
 
 命名空间和作用域
@@ -1218,8 +1218,8 @@ for i in [1,2,3,4]:
 闭包
 
 
-¶一、命名空间和作用域
-¶命名空间
+☞一、命名空间和作用域
+☞命名空间
 python代码运行的时候遇到函数是怎么做的?
 从python解释器开始执行之后，就在内存中开辟了一个空间
 每</div>

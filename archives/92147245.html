@@ -477,10 +477,10 @@ GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多co
 <p>我们这里主要借助的是<font face="宋体" color="#FF8000">Cloudflare</font>免费的CDN服务，让你的GitHub博客支持HTTPS。</p>
 <p>我们可以先看一下最后<a href="https://myssl.com/qvchuang.top?status=q" target="_blank" rel="noopener">成果</a>。</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/00f05023a39d3678033d68ede054af36c379c863540e9b01.png" alt></p>
-<h3 id="div-style-background-f9e9cd-color-000-准备-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-准备-div">¶</a><div style="background:#f9e9cd; color:#000">准备</div></h3>
+<h3 id="div-style-background-f9e9cd-color-000-准备-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-准备-div">☞</a><div style="background:#f9e9cd; color:#000">准备</div></h3>
 <p>在开始之前，你需要先注册一个<a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">Cloudflare账号</a>。</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/b76b354b4f254fb11d7a805e3f2bda18b5b91eb92fa95a10.jpg" alt></p>
-<h3 id="div-style-background-f9e9cd-color-000-修改dns服务器-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-修改dns服务器-div">¶</a><div style="background:#f9e9cd; color:#000">修改DNS服务器</div></h3>
+<h3 id="div-style-background-f9e9cd-color-000-修改dns服务器-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-修改dns服务器-div">☞</a><div style="background:#f9e9cd; color:#000">修改DNS服务器</div></h3>
 <p>在你注册完成，登录后，Cloudflare会提示你添加自己的站点，比如我的自定义域名是 qvchuang.top，</p>
 <p>就填这个,如下图一样(如果没有，点击右上角 Add Site即可)</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/0ba23adbc423dd5ee89deb19617443408db1034592597e9f.png" alt></p>
@@ -498,7 +498,7 @@ GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多co
 <p>主界面应该显示 <code>Status: Website not active</code>，这时需要等待DNS生效，一般1个小时左右就能生效了，如果超过一天还未生效建议查看是否正确修改DNS，生效后再进入Cloudflare主界面，点击 <code>Recheck Nameservers</code> 重新检查DNS服务器，如果已生效，Status就会显示 <code>Active</code> 并显示为绿色，这样就修改成功了</p>
 </blockquote>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/6b97564b6a5acc8f34faf7b68060780fbf29d26cc59a5ee0.png" alt></p>
-<h3 id="div-style-background-f9e9cd-color-000-添加dns记录-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-添加dns记录-div">¶</a><div style="background:#f9e9cd; color:#000">添加DNS记录</div></h3>
+<h3 id="div-style-background-f9e9cd-color-000-添加dns记录-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-添加dns记录-div">☞</a><div style="background:#f9e9cd; color:#000">添加DNS记录</div></h3>
 <ul>
 <li>
 <p>CNAME： 将www.qvchuang.top ☞ qvchuang.top</p>
@@ -511,19 +511,19 @@ GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多co
 </li>
 </ul>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/89410a329cb113270a9a5f06044ceb7f88adcf4ec38e4bd9.png" alt></p>
-<h3 id="div-style-background-f9e9cd-color-000-开启ssl加密-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-开启ssl加密-div">¶</a><div style="background:#f9e9cd; color:#000">开启SSL加密</div></h3>
+<h3 id="div-style-background-f9e9cd-color-000-开启ssl加密-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-开启ssl加密-div">☞</a><div style="background:#f9e9cd; color:#000">开启SSL加密</div></h3>
 <p>点击Crypto按钮，并设置SSL为 <code>Full</code></p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/ssldbf38f49775c5dbc.png" alt></p>
 <p>下滑找到Always Use HTTPS 并开启</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/ssl1ca73cf3e05c54726.png" alt></p>
-<h3 id="div-style-background-f9e9cd-color-000-设置页面规则-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-设置页面规则-div">¶</a><div style="background:#f9e9cd; color:#000">设置页面规则</div></h3>
+<h3 id="div-style-background-f9e9cd-color-000-设置页面规则-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-设置页面规则-div">☞</a><div style="background:#f9e9cd; color:#000">设置页面规则</div></h3>
 <p>同时，我们还需要设置一些页面规则，将所有该站点的资源全部走HTTPS</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/f7f353d0c3756bd54140b5061c7bd2fe9b7a85c9e6298129.png" alt></p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/139fbcf682eebeaee.png" alt></p>
 <p>到这里，你就全部配置好了。等待一段时间，当你的状态变成如下所示时说明你以成功设置</p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/78c7dbb681f377ca0710165abe788b7802c9bde5729b912d.png" alt></p>
 <hr>
-<h3 id="div-style-background-f9e9cd-color-000-参考-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-参考-div">¶</a><div style="background:#f9e9cd; color:#000">参考</div></h3>
+<h3 id="div-style-background-f9e9cd-color-000-参考-div"><a class="header-anchor" href="#div-style-background-f9e9cd-color-000-参考-div">☞</a><div style="background:#f9e9cd; color:#000">参考</div></h3>
 <ol>
 <li><a href="https://blog.vinlic.com/p/50505/" target="_blank" rel="noopener">https://blog.vinlic.com/p/50505/</a></li>
 <li><a href="https://razeen.me/post/https-githubpages.html" target="_blank" rel="noopener">https://razeen.me/post/https-githubpages.html</a></li>
@@ -979,7 +979,7 @@ GitHub Pages由于其免费，轻量，搭建方便等缘故已经成为很多co
                     <div class="summary">
 
 一、python介绍
-¶1.python的出生与应用
+☞1.python的出生与应用
 python的创始人为吉多·范罗苏姆（Guido van Rossum）。
 1989年的圣诞节期间，吉多·范罗苏姆（中文名字：龟叔）
 为了在阿姆斯特丹打发时间，决心开发一个新的脚本解</div>
@@ -1034,7 +1034,7 @@ python的创始人为吉多·范罗苏姆（Guido van Rossum）。
 正好我对来必力不太满意。那就研究一下，看看能不能用上。
 先附上之前来必力的教程
 
-¶简单记录</div>
+☞简单记录</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-10

@@ -10,7 +10,7 @@
 
 此学习笔记根据慕课网课程“与MYSQL的零距离接触”学习总结
 4.操作数据表中的记录（增删改查）
-¶4-1 插入记录INSERT
+☞4-1 插入记录INSERT
 第一种方法：
 插入单条记录：INSERT [ INFO ] tbl_name [ ( col_name ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -472,7 +472,7 @@
 <hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
 此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结
 <h1>4.操作数据表中的记录（增删改查）</h1>
-<h2 id="4-1-插入记录insert"><a class="header-anchor" href="#4-1-插入记录insert">¶</a>4-1 插入记录INSERT</h2>
+<h2 id="4-1-插入记录insert"><a class="header-anchor" href="#4-1-插入记录insert">☞</a>4-1 插入记录INSERT</h2>
 <p>第一种方法：</p>
 <pre><code>插入单条记录：INSERT [ INFO ] tbl_name [ ( col_name ) ] VALUES（…）；
 
@@ -487,19 +487,19 @@
 <p>第三种方法：（将查找的记录插入到表中）</p>
 <pre><code>INSERT tbl_name(col_name) SELECT col_name FROM tbl_name [ WHERT 条件 ]；
 </code></pre>
-<h2 id="4-2-单表更新记录update"><a class="header-anchor" href="#4-2-单表更新记录update">¶</a>4-2 单表更新记录UPDATE</h2>
+<h2 id="4-2-单表更新记录update"><a class="header-anchor" href="#4-2-单表更新记录update">☞</a>4-2 单表更新记录UPDATE</h2>
 <blockquote>
 <p>UPDATE tbl_name SET col_name=(val)，col_name=(val)；</p>
 </blockquote>
 <blockquote>
 <p>UPDATE tbl_name SET col_name=(val) WHERR 条件；</p>
 </blockquote>
-<h2 id="4-3-单表删除记录delete"><a class="header-anchor" href="#4-3-单表删除记录delete">¶</a>4-3 单表删除记录DELETE</h2>
+<h2 id="4-3-单表删除记录delete"><a class="header-anchor" href="#4-3-单表删除记录delete">☞</a>4-3 单表删除记录DELETE</h2>
 <blockquote>
 <p>DELETE FROM tbl_name [ WHERE 条件 ];</p>
 </blockquote>
 <p>如果省略WHERE则会删除数据表的所以数据</p>
-<h2 id="4-4-mysql查询表达式解析"><a class="header-anchor" href="#4-4-mysql查询表达式解析">¶</a>4-4 MySQL查询表达式解析</h2>
+<h2 id="4-4-mysql查询表达式解析"><a class="header-anchor" href="#4-4-mysql查询表达式解析">☞</a>4-4 MySQL查询表达式解析</h2>
 <blockquote>
 <p>SELECT col_name FROM 表名；</p>
 <p>SELECT col_name AS 别名 FROM 表名；</p>
@@ -514,26 +514,26 @@
 <p>字段出现的顺序将影响结果集出现的顺序</p>
 <p>字段的别名也将影响到以后的结果集</p>
 </blockquote>
-<h2 id="4-5-where语句进行条件查询"><a class="header-anchor" href="#4-5-where语句进行条件查询">¶</a>4-5 WHERE语句进行条件查询</h2>
+<h2 id="4-5-where语句进行条件查询"><a class="header-anchor" href="#4-5-where语句进行条件查询">☞</a>4-5 WHERE语句进行条件查询</h2>
 <pre><code>SELECT col_name FROM tbl_name [FROM 条件];
 </code></pre>
 <p>条件表达式：</p>
 <p>对记录进行过滤，如果没有指定WHERE字句，则显示所有记录。</p>
 <p>在WHERE表达式中，可以使用MySQL支持的函数或运算符。</p>
-<h2 id="4-6-group-by-语句对查询结果分组"><a class="header-anchor" href="#4-6-group-by-语句对查询结果分组">¶</a>4-6 GROUP BY 语句对查询结果分组</h2>
+<h2 id="4-6-group-by-语句对查询结果分组"><a class="header-anchor" href="#4-6-group-by-语句对查询结果分组">☞</a>4-6 GROUP BY 语句对查询结果分组</h2>
 <pre><code>SELECT col_name FROM tbl_name GROUP BY col_name;
 </code></pre>
-<h2 id="4-7-order-by语句对查询结果排序"><a class="header-anchor" href="#4-7-order-by语句对查询结果排序">¶</a>4-7 ORDER BY语句对查询结果排序</h2>
+<h2 id="4-7-order-by语句对查询结果排序"><a class="header-anchor" href="#4-7-order-by语句对查询结果排序">☞</a>4-7 ORDER BY语句对查询结果排序</h2>
 <pre><code>SELECT col_name FROM tbl_name ORDER BY col_name [ ASC | DESC ];
 </code></pre>
 <blockquote>
 <p>ASC 升序（默认的）</p>
 </blockquote>
 <p>DESC 降序</p>
-<h2 id="4-8-limit语句限制查询数量"><a class="header-anchor" href="#4-8-limit语句限制查询数量">¶</a>4-8 LIMIT语句限制查询数量</h2>
+<h2 id="4-8-limit语句限制查询数量"><a class="header-anchor" href="#4-8-limit语句限制查询数量">☞</a>4-8 LIMIT语句限制查询数量</h2>
 <pre><code>SELECT col_name FROM tbl_name LIMIT val;
 </code></pre>
-<h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
+<h2 id="总结"><a class="header-anchor" href="#总结">☞</a>总结</h2>
 <table border="0" bgcolor="#f8c387"><tr><td>记录操作</td><td>语句</td></tr><tr><td>增</td><td>INSERT</td></tr><tr><td>删</td><td>DELETE</td></tr><tr><td>改</td><td>UPDATE</td></tr><tr><td>查</td><td>SELECT</td></tr></table>
 <hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
 <p><font size="10px" color="#00ff00">未完待续。。。</font></p>
@@ -992,7 +992,7 @@
 正好我对来必力不太满意。那就研究一下，看看能不能用上。
 先附上之前来必力的教程
 
-¶简单记录</div>
+☞简单记录</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-10
@@ -1042,7 +1042,7 @@
 
 此学习笔记根据慕课网课程“与MYSQL的零距离接触”学习总结
 3.约束以及修改数据表
-¶3-1 外键约束的要求解析
+☞3-1 外键约束的要求解析
 外键约束：保证数据一致性、完整性，实现一对一或一对多关系。
 FOREIGN KEY (外键列名称) REFERENCE</div>
                     <div class="publish-info">

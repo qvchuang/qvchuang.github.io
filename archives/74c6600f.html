@@ -7,7 +7,7 @@
     <meta name="keywords" content="Python3之文件操作, My blog">
     <meta name="description" content="
 
-¶一、文件操作基本流程
+☞一、文件操作基本流程
 计算机系统分为：计算机硬件，操作系统，应用程序三部分。
 
 我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件">
@@ -467,7 +467,7 @@
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/18CL7" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/24/python3089516611e2d38ba.md.jpg" alt="python3089516611e2d38ba.md.jpg"></a></p>
 <a id="more"></a>
-<h2 id="div-style-background-b2bbbe-color-000-一-文件操作基本流程-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-一-文件操作基本流程-div">¶</a><div style="background:#b2bbbe; color:#000">一、文件操作基本流程</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-一-文件操作基本流程-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-一-文件操作基本流程-div">☞</a><div style="background:#b2bbbe; color:#000">一、文件操作基本流程</div></h2>
 <p>计算机系统分为：计算机硬件，操作系统，应用程序三部分。</p>
 <blockquote>
 <p>我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件的，这就用到了操作系统。操作系统把复杂的硬件操作封装成简单的接口给用户/应用程序使用，其中文件就是操作系统提供给应用程序来操作硬盘虚拟概念，用户或应用程序通过操作文件，可以将自己的数据永久保存下来。</p>
@@ -493,14 +493,14 @@ with open('a.txt','r') as read_f,open('b.txt','w') as write_f:
     data=read_f.read()
     write_f.write(data)
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-style-background-b2bbbe-color-000-二-文件编码-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-二-文件编码-div">¶</a><div style="background:#b2bbbe; color:#000">二、文件编码</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-二-文件编码-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-二-文件编码-div">☞</a><div style="background:#b2bbbe; color:#000">二、文件编码</div></h2>
 <blockquote>
 <p>f=open(…)是由操作系统打开文件，那么如果我们没有为open指定编码，那么打开文件的默认编码很明显是操作系统说了算了，操作系统会用自己的默认编码去打开文件，在windows下是gbk，在linux下是utf-8。</p>
 </blockquote>
 <pre class="line-numbers language-language-python"><code class="language-language-python"> #这就用到了上节课讲的字符编码的知识：若要保证不乱码，文件以什么方式存的，就要以什么方式打开。
 f=open('a.txt','r',encoding='utf-8')
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="div-style-background-b2bbbe-color-000-三-文件的打开模式-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-三-文件的打开模式-div">¶</a><div style="background:#b2bbbe; color:#000">三、文件的打开模式</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-三-文件的打开模式-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-三-文件的打开模式-div">☞</a><div style="background:#b2bbbe; color:#000">三、文件的打开模式</div></h2>
 <pre class="line-numbers language-language-python"><code class="language-language-python"> #1. 打开文件的模式有(默认为文本模式)：
 r ，只读模式【默认模式，文件必须存在，不存在则抛出异常】
 w，只写模式【不可读；不存在则创建；存在则清空内容】
@@ -519,8 +519,8 @@ r+b， 读写【可读，可写】
 w+b，写读【可写，可读】
 a+b， 写读【可写，可读】
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-style-background-b2bbbe-color-000-四-文件操作方法-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-四-文件操作方法-div">¶</a><div style="background:#b2bbbe; color:#000">四、文件操作方法</div></h2>
-<h3 id="div-style-background-fbeee2-color-000-常用操作方法-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-常用操作方法-div">¶</a><div style="background:#fbeee2; color:#000">常用操作方法</div></h3>
+<h2 id="div-style-background-b2bbbe-color-000-四-文件操作方法-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-四-文件操作方法-div">☞</a><div style="background:#b2bbbe; color:#000">四、文件操作方法</div></h2>
+<h3 id="div-style-background-fbeee2-color-000-常用操作方法-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-常用操作方法-div">☞</a><div style="background:#fbeee2; color:#000">常用操作方法</div></h3>
 <pre class="line-numbers language-language-text"><code class="language-language-text">read（3）：
 　　1. 文件打开方式为文本模式时，代表读取3个字符
 　　2. 文件打开方式为b模式时，代表读取3个字节
@@ -544,7 +544,7 @@ f.tell()
  #readable    #文件是否可读
 f.readable()
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-style-background-b2bbbe-color-000-五-文件的修改-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-五-文件的修改-div">¶</a><div style="background:#b2bbbe; color:#000">五、文件的修改</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-五-文件的修改-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-五-文件的修改-div">☞</a><div style="background:#b2bbbe; color:#000">五、文件的修改</div></h2>
 <blockquote>
 <p>文件的数据是存放于硬盘上的，因而只存在覆盖、不存在修改这么一说，我们平时看到的修改文件，都是模拟出来的效果，具体的说有两种实现方式：</p>
 </blockquote>
@@ -1021,7 +1021,7 @@ os.rename('.a.txt.swap','a.txt')
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶阅读目录
+☞阅读目录
 
 
 为什么要用函数
@@ -1039,7 +1039,7 @@ os.rename('.a.txt.swap','a.txt')
 总结
 
 
-¶为什么要用函数
+☞为什么要用函数
 打个比方，加入现在len()方法突然不能直接用了。。。
 然后现在有一个需求，让你计算’hello world’的长度</div>
                     <div class="publish-info">
@@ -1088,7 +1088,7 @@ os.rename('.a.txt.swap','a.txt')
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶定义：
+☞定义：
 
 在Python中对象的赋值其实就是对象的引用。当创建一个对象，把它赋值给另一个变量的时候，python并没有拷贝这个对象，只是拷贝了这个对象的引用而已。
 浅拷贝：拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。也</div>

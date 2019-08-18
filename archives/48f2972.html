@@ -7,7 +7,7 @@
     <meta name="keywords" content="Python3之深浅copy, My blog">
     <meta name="description" content="
 
-¶定义：
+☞定义：
 
 在Python中对象的赋值其实就是对象的引用。当创建一个对象，把它赋值给另一个变量的时候，python并没有拷贝这个对象，只是拷贝了这个对象的引用而已。
 浅拷贝：拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。也">
@@ -467,13 +467,13 @@
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/1b2uR" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/24/python3copyb4e22dd54385ceb8.md.jpg" alt="python3copyb4e22dd54385ceb8.md.jpg"></a></p>
 <a id="more"></a>
-<h2 id="div-style-background-b2bbbe-color-000-定义：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-定义：-div">¶</a><div style="background:#b2bbbe; color:#000">定义：</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-定义：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-定义：-div">☞</a><div style="background:#b2bbbe; color:#000">定义：</div></h2>
 <blockquote>
 <p>在Python中对象的赋值其实就是对象的引用。当创建一个对象，把它赋值给另一个变量的时候，python并没有拷贝这个对象，只是拷贝了这个对象的引用而已。</p>
 <p>浅拷贝：拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已。也就是，把对象复制一遍，但是该对象中引用的其他对象我不复制</p>
 <p>深拷贝：外围和内部元素都进行了拷贝对象本身，而不是引用。也就是，把对象复制一遍，并且该对象中引用的其他对象我也复制。</p>
 </blockquote>
-<h2 id="div-style-background-b2bbbe-color-000-几个术语的解释：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-几个术语的解释：-div">¶</a><div style="background:#b2bbbe; color:#000">几个术语的解释：</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-几个术语的解释：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-几个术语的解释：-div">☞</a><div style="background:#b2bbbe; color:#000">几个术语的解释：</div></h2>
 <blockquote>
 <p>1，变量：是一个系统表的元素，拥有指向对象的连接空间</p>
 <p>2，对象：被分配的一块内存，存储其所代表的值</p>
@@ -482,17 +482,17 @@
 <p>5，不可变对象：一旦创建就不可修改的对象，包括字符串、元组、数字</p>
 <p>6，可变对象：可以修改的对象，包括列表、字典。</p>
 </blockquote>
-<h2 id="div-style-background-b2bbbe-color-000-应用的范围：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-应用的范围：-div">¶</a><div style="background:#b2bbbe; color:#000">应用的范围：</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-应用的范围：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-应用的范围：-div">☞</a><div style="background:#b2bbbe; color:#000">应用的范围：</div></h2>
 <blockquote>
 <p>1，切片可以应用于：列表、元组、字符串，但不能应用于字典。</p>
 <p>2，深浅拷贝，既可应用序列（列表、元组、字符串），也可应用字典。</p>
 </blockquote>
-<h2 id="div-style-background-b2bbbe-color-000-深浅拷贝的作用：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-深浅拷贝的作用：-div">¶</a><div style="background:#b2bbbe; color:#000">深浅拷贝的作用：</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-深浅拷贝的作用：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-深浅拷贝的作用：-div">☞</a><div style="background:#b2bbbe; color:#000">深浅拷贝的作用：</div></h2>
 <blockquote>
 <p>1，减少内存的使用</p>
 <p>2，以后在做数据的清洗、修改或者入库的时候，对原数据进行复制一份，以防数据修改之后，找不到原数据。</p>
 </blockquote>
-<h2 id="div-style-background-b2bbbe-color-000-对于不可变对象的深浅拷贝：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-对于不可变对象的深浅拷贝：-div">¶</a><div style="background:#b2bbbe; color:#000">对于不可变对象的深浅拷贝：</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-对于不可变对象的深浅拷贝：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-对于不可变对象的深浅拷贝：-div">☞</a><div style="background:#b2bbbe; color:#000">对于不可变对象的深浅拷贝：</div></h2>
 <blockquote>
 <p>不可变对象类型，没有被拷贝的说法，即便是用深拷贝，查看id的话也是一样的，如果对其重新赋值，也只是新创建一个对象，替换掉旧的而已。</p>
 <p>一句话就是，不可变类型，不管是深拷贝还是浅拷贝，地址值和拷贝后的值都是一样的。</p>
@@ -535,7 +535,7 @@ print(id(b))
 2814522335952
 2814522335952
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-style-background-b2bbbe-color-000-对于可变对象深浅拷贝-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-对于可变对象深浅拷贝-div">¶</a><div style="background:#b2bbbe; color:#000">对于可变对象深浅拷贝:</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-对于可变对象深浅拷贝-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-对于可变对象深浅拷贝-div">☞</a><div style="background:#b2bbbe; color:#000">对于可变对象深浅拷贝:</div></h2>
 <blockquote>
 <p>=浅拷贝：值相等，地址相等</p>
 <p>copy浅拷贝：值相等，地址不相等</p>
@@ -579,7 +579,7 @@ print(id(b))
 2007696321544
 2007696319560
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="div-style-background-b2bbbe-color-000-总结：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-总结：-div">¶</a><div style="background:#b2bbbe; color:#000">总结：</div></h2>
+<h2 id="div-style-background-b2bbbe-color-000-总结：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-总结：-div">☞</a><div style="background:#b2bbbe; color:#000">总结：</div></h2>
 <blockquote>
 <p>1，深浅拷贝都是对源对象的复制，占用不同的内存空间。</p>
 <p>2，不可变类型的对象，对于深浅拷贝毫无影响，最终的地址值和值都是相等的。</p>
@@ -588,7 +588,7 @@ print(id(b))
 <p>                     copy浅拷贝：值相等，地址不相等</p>
 <p>                     deepcopy深拷贝：值相等，地址不相等</p>
 </blockquote>
-<h2 id="a-href-https-www-cnblogs-com-doublexi-p-8745792-html-font-face-宋体-color-ff8000-参考-font-a"><a class="header-anchor" href="#a-href-https-www-cnblogs-com-doublexi-p-8745792-html-font-face-宋体-color-ff8000-参考-font-a">¶</a><a href="https://www.cnblogs.com/doublexi/p/8745792.html" target="_blank" rel="noopener"><font face="宋体" color="#FF8000">参考</font></a></h2>
+<h2 id="a-href-https-www-cnblogs-com-doublexi-p-8745792-html-font-face-宋体-color-ff8000-参考-font-a"><a class="header-anchor" href="#a-href-https-www-cnblogs-com-doublexi-p-8745792-html-font-face-宋体-color-ff8000-参考-font-a">☞</a><a href="https://www.cnblogs.com/doublexi/p/8745792.html" target="_blank" rel="noopener"><font face="宋体" color="#FF8000">参考</font></a></h2>
 
             </div>
             <hr>
@@ -1039,7 +1039,7 @@ print(id(b))
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶一、文件操作基本流程
+☞一、文件操作基本流程
 计算机系统分为：计算机硬件，操作系统，应用程序三部分。
 
 我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件</div>
@@ -1089,14 +1089,14 @@ print(id(b))
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶1、id  查询内存地址
+☞1、id  查询内存地址
 name = 'alex'
 print(id(name))
 li = [1,2,3]
 print(id(li))
 
-¶2、is  判断的是内存地址
-¶==  是比较值，is 是内存地址是否相同
+☞2、is  判断的是内存地址
+☞==  是比较值，is 是内存地址是否相同
 name1 =</div>
                     <div class="publish-info">
                             <span class="publish-date">

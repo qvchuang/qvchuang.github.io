@@ -7,7 +7,7 @@
     <meta name="keywords" content="Python3-初识函数, My blog">
     <meta name="description" content="
 
-¶阅读目录
+☞阅读目录
 
 
 为什么要用函数
@@ -25,7 +25,7 @@
 总结
 
 
-¶为什么要用函数
+☞为什么要用函数
 打个比方，加入现在len()方法突然不能直接用了。。。
 然后现在有一个需求，让你计算’hello world’的长度">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -484,7 +484,7 @@
             <div id="articleContent">
                 <p><a href="https://moetu.org/image/1y7Tx" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/python3ad68a95f61a4830e.md.png" alt="python3ad68a95f61a4830e.md.png"></a></p>
 <a id="more"></a>
-<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">¶</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
+<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">☞</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
 <ul>
 <li>
 <p><a href="#01">为什么要用函数</a></p>
@@ -502,7 +502,7 @@
 <p><a href="#05">总结</a></p>
 </li>
 </ul>
-<h2 id="div-id-01-style-background-skyblue-color-000-为什么要用函数-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-为什么要用函数-div">¶</a><div id="01" style="background:skyblue; color:#000">为什么要用函数</div></h2>
+<h2 id="div-id-01-style-background-skyblue-color-000-为什么要用函数-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-为什么要用函数-div">☞</a><div id="01" style="background:skyblue; color:#000">为什么要用函数</div></h2>
 <p>打个比方，加入现在len()方法突然不能直接用了。。。</p>
 <p>然后现在有一个需求，让你计算’hello world’的长度，你怎么计算？</p>
 <pre class="line-numbers language-language-python"><code class="language-language-python">s1 = "hello world"
@@ -528,7 +528,7 @@ print(length)
 <pre class="line-numbers language-language-python"><code class="language-language-python">print(len(s1))
 print(len(s2))
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="div-id-02-style-background-skyblue-color-000-初识函数定义与调用-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-初识函数定义与调用-div">¶</a><div id="02" style="background:skyblue; color:#000">初识函数定义与调用</div></h2>
+<h2 id="div-id-02-style-background-skyblue-color-000-初识函数定义与调用-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-初识函数定义与调用-div">☞</a><div id="02" style="background:skyblue; color:#000">初识函数定义与调用</div></h2>
 <pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
 def mylen():
     """计算s1的长度"""
@@ -550,7 +550,7 @@ mylen()
 <p>注释：每一个函数都应该对功能和参数进行相应的说明，应该写在函数下面第一行。以增强代码的可读性。</p>
 <p>调用：就是 <strong>函数名()</strong> 要记得加上括号。</p>
 </blockquote>
-<h2 id="div-id-03-style-background-skyblue-color-000-函数的返回值-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-函数的返回值-div">¶</a><div id="03" style="background:skyblue; color:#000">函数的返回值</div></h2>
+<h2 id="div-id-03-style-background-skyblue-color-000-函数的返回值-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-函数的返回值-div">☞</a><div id="03" style="background:skyblue; color:#000">函数的返回值</div></h2>
 <blockquote>
 <p>刚刚我们就写了一个函数，这个函数可以帮助我们计算字符串的长度，并且把结果打印出来。</p>
 <p>但是，这和我们的len()方法还不是太一样。哪里不一样呢？</p>
@@ -589,7 +589,7 @@ print('str_len : %s'%str_len
 <p><strong>return关键字的作用</strong></p>
 <p>return 是一个关键字，翻译过来就是“返回”，所以我们管写在return后面的值叫“返回值”</p>
 <p>要研究返回值，我们还要知道返回值有几种情况：<font face="宋体" color="#FF8000">分别是没有返回值、返回一个值、返回多个值</font></p>
-<h3 id="div-style-background-beige-color-000-没有返回值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-没有返回值-div">¶</a><div style="background:beige; color:#000">没有返回值</div></h3>
+<h3 id="div-style-background-beige-color-000-没有返回值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-没有返回值-div">☞</a><div style="background:beige; color:#000">没有返回值</div></h3>
 <p><font face="宋体" color="blue">不写return的情况下，会默认返回一个None</font></p>
 <p>我们写的第一个函数，就没有写return，这就是没有返回值的一种情况。</p>
 <pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
@@ -622,10 +622,10 @@ print(ret)
 ret = ret_demo()
 print(ret)
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div-style-background-beige-color-000-返回一个值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-返回一个值-div">¶</a><div style="background:beige; color:#000">返回一个值</div></h3>
+<h3 id="div-style-background-beige-color-000-返回一个值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-返回一个值-div">☞</a><div style="background:beige; color:#000">返回一个值</div></h3>
 <p>刚刚我们已经写过一个返回一个值的情况</p>
 <p>只需在return后面写上要返回的内容即可</p>
-<h3 id="div-style-background-beige-color-000-返回多个值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-返回多个值-div">¶</a><div style="background:beige; color:#000">返回多个值</div></h3>
+<h3 id="div-style-background-beige-color-000-返回多个值-div"><a class="header-anchor" href="#div-style-background-beige-color-000-返回多个值-div">☞</a><div style="background:beige; color:#000">返回多个值</div></h3>
 <p>可以返回任意多个、任意数据类型的值</p>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def ret_demo1():
     '''返回多个值''' 
@@ -688,7 +688,7 @@ print(a,b,c,d)
 &gt;&gt;&gt; b
 'age'
 </code></pre>
-<h2 id="div-id-04-style-background-skyblue-color-000-函数的参数-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-函数的参数-div">¶</a><div id="04" style="background:skyblue; color:#000">函数的参数 </div></h2>
+<h2 id="div-id-04-style-background-skyblue-color-000-函数的参数-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-函数的参数-div">☞</a><div id="04" style="background:skyblue; color:#000">函数的参数 </div></h2>
 <pre class="line-numbers language-language-text"><code class="language-language-text">现在，我们已经把函数返回值相关的事情研究清楚了，我们自己已经完成了一个可以返回字符串长度的函数。但是现在这个函数还是不完美，之前我们使用len函数的时候得是length = len("hello world")，这样我可以想计算谁就计算谁的长度。但是现在我们写的这个函数，只能计算一个“hello world”的长度，换一个字符串好像就是不行了。这可怎么办？
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <pre class="line-numbers language-language-python"><code class="language-language-python"> #函数定义
@@ -704,13 +704,13 @@ print('str_len : %s'%str_len)
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>我们告诉mylen函数要计算的字符串是谁，这个过程就叫做 传递参数，简称传参</p>
 <p>我们调用函数时传递的这个“hello world”和定义函数时的s1就是参数</p>
-<h3 id="div-style-background-beige-color-000-实参与形参-div"><a class="header-anchor" href="#div-style-background-beige-color-000-实参与形参-div">¶</a><div style="background:beige; color:#000">实参与形参</div></h3>
+<h3 id="div-style-background-beige-color-000-实参与形参-div"><a class="header-anchor" href="#div-style-background-beige-color-000-实参与形参-div">☞</a><div style="background:beige; color:#000">实参与形参</div></h3>
 <p>参数还有分别：</p>
 <blockquote>
 <p>我们调用函数时传递的这个“hello world”被称为实际参数，因为这个是实际的要交给函数的内容，简称实参。</p>
 <p>定义函数时的s1，只是一个变量的名字，被称为形式参数，因为在定义函数的时候它只是一个形式，表示这里有一个&gt;参数，简称形参。</p>
 </blockquote>
-<h3 id="div-style-background-beige-color-000-传递多个参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-传递多个参数-div">¶</a><div style="background:beige; color:#000">传递多个参数</div></h3>
+<h3 id="div-style-background-beige-color-000-传递多个参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-传递多个参数-div">☞</a><div style="background:beige; color:#000">传递多个参数</div></h3>
 <p>参数可以传递多个，多个参数之间用逗号分割</p>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
     the_max = x if x > y else y
@@ -720,8 +720,8 @@ ma = mymax(10,20)
 print(ma)
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>也正是因为需要传递多个参数、可以传递多个参数，才会有了后面这一系列参数相关的内容。。。</p>
-<h3 id="div-style-background-beige-color-000-位置参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-位置参数-div">¶</a><div style="background:beige; color:#000">位置参数</div></h3>
-<h4 id="div-style-background-pink-color-000-站在实参角度-div"><a class="header-anchor" href="#div-style-background-pink-color-000-站在实参角度-div">¶</a><div style="background:pink; color:#000">站在实参角度</div></h4>
+<h3 id="div-style-background-beige-color-000-位置参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-位置参数-div">☞</a><div style="background:beige; color:#000">位置参数</div></h3>
+<h4 id="div-style-background-pink-color-000-站在实参角度-div"><a class="header-anchor" href="#div-style-background-pink-color-000-站在实参角度-div">☞</a><div style="background:pink; color:#000">站在实参角度</div></h4>
 <p><font face="宋体" color="#FF8000">1. 按照位置传值</font></p>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
     #此时x=10,y=20
@@ -753,7 +753,7 @@ print(ma)
 <p>问题一:位置参数必须在关键字参数的前面</p>
 <p>问题二:对于一个形参只能赋值一次</p>
 </blockquote>
-<h4 id="div-style-background-pink-color-000-站在形参角度-div"><a class="header-anchor" href="#div-style-background-pink-color-000-站在形参角度-div">¶</a><div style="background:pink; color:#000">站在形参角度</div></h4>
+<h4 id="div-style-background-pink-color-000-站在形参角度-div"><a class="header-anchor" href="#div-style-background-pink-color-000-站在形参角度-div">☞</a><div style="background:pink; color:#000">站在形参角度</div></h4>
 <p>位置参数必须传值</p>
 <pre class="line-numbers language-language-python"><code class="language-language-python">def mymax(x,y):
     #此时x = 10,y = 20
@@ -766,7 +766,7 @@ print(ma)
  #结果
 TypeError: mymax() missing 2 required positional arguments: 'x' and 'y'
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div-style-background-beige-color-000-默认参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-默认参数-div">¶</a><div style="background:beige; color:#000">默认参数</div></h3>
+<h3 id="div-style-background-beige-color-000-默认参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-默认参数-div">☞</a><div style="background:beige; color:#000">默认参数</div></h3>
 <p><font face="宋体" color="#FF8000">1. 使用</font></p>
 <p>为什么要有默认参数：将变化比较小的值设置成默认参数</p>
 <p><font face="宋体" color="#FF8000">2. 默认参数的定义</font></p>
@@ -788,7 +788,7 @@ def defult_param(a,l = []):
 defult_param('alex')
 defult_param('egon')
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="div-style-background-beige-color-000-动态参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-动态参数-div">¶</a><div style="background:beige; color:#000">动态参数</div></h3>
+<h3 id="div-style-background-beige-color-000-动态参数-div"><a class="header-anchor" href="#div-style-background-beige-color-000-动态参数-div">☞</a><div style="background:beige; color:#000">动态参数</div></h3>
 <p><font face="宋体" color="#FF8000">按位置传值多余的参数都由args统一接收，保存成一个元组的形式</font></p>
 <pre class="line-numbers language-language-python3"><code class="language-language-python3">def mysum(*args):
     the_sum = 0
@@ -805,8 +805,8 @@ print(the_sum)
 stu_info(name = 'alex',sex = 'male')
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">顺序：</font><code>必须先定义位置参数，*args，再定义默认参数,**kwargs</code></p>
-<h2 id="div-id-05-style-background-skyblue-color-000-总结-div"><a class="header-anchor" href="#div-id-05-style-background-skyblue-color-000-总结-div">¶</a><div id="05" style="background:skyblue; color:#000">总结</div></h2>
-<h3 id="div-style-background-beige-color-000-定义函数的规则：-div"><a class="header-anchor" href="#div-style-background-beige-color-000-定义函数的规则：-div">¶</a><div style="background:beige; color:#000">定义函数的规则：</div></h3>
+<h2 id="div-id-05-style-background-skyblue-color-000-总结-div"><a class="header-anchor" href="#div-id-05-style-background-skyblue-color-000-总结-div">☞</a><div id="05" style="background:skyblue; color:#000">总结</div></h2>
+<h3 id="div-style-background-beige-color-000-定义函数的规则：-div"><a class="header-anchor" href="#div-style-background-beige-color-000-定义函数的规则：-div">☞</a><div style="background:beige; color:#000">定义函数的规则：</div></h3>
 <pre><code>1.定义：def 关键词开头，空格之后接函数名称和圆括号()。
 2.参数：圆括号用来接收参数。若传入多个参数，参数之间用逗号分割。
 　　　　参数可以定义多个，也可以不定义。
@@ -822,7 +822,7 @@ def 函数名(参数1,参数2,*args,默认参数,**kwargs):
         ……
         return 返回值
 </code></pre>
-<h3 id="div-style-background-beige-color-000-调用函数的规则：-div"><a class="header-anchor" href="#div-style-background-beige-color-000-调用函数的规则：-div">¶</a><div style="background:beige; color:#000">调用函数的规则：</div></h3>
+<h3 id="div-style-background-beige-color-000-调用函数的规则：-div"><a class="header-anchor" href="#div-style-background-beige-color-000-调用函数的规则：-div">☞</a><div style="background:beige; color:#000">调用函数的规则：</div></h3>
 <pre><code>1.函数名()
     函数名后面+圆括号就是函数的调用。
 2.参数：
@@ -843,7 +843,7 @@ def 函数名(参数1,参数2,*args,默认参数,**kwargs):
 多个变量接收多返回值：
 变量1，变量2，... = 函数名()
 </code></pre>
-<h3 id="div-style-background-beige-color-000-参数总结：-div"><a class="header-anchor" href="#div-style-background-beige-color-000-参数总结：-div">¶</a><div style="background:beige; color:#000">参数总结：</div></h3>
+<h3 id="div-style-background-beige-color-000-参数总结：-div"><a class="header-anchor" href="#div-style-background-beige-color-000-参数总结：-div">☞</a><div style="background:beige; color:#000">参数总结：</div></h3>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/25/48adebfc1b8c2e56bb0521e6323867f567ec0a794324c153.png" alt></p>
 <p><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/05/1b4aa491cc5629482.png" alt></p>
 <p></p>
@@ -1297,7 +1297,7 @@ def 函数名(参数1,参数2,*args,默认参数,**kwargs):
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶阅读目录
+☞阅读目录
 
 
 命名空间和作用域
@@ -1312,8 +1312,8 @@ def 函数名(参数1,参数2,*args,默认参数,**kwargs):
 闭包
 
 
-¶一、命名空间和作用域
-¶命名空间
+☞一、命名空间和作用域
+☞命名空间
 python代码运行的时候遇到函数是怎么做的?
 从python解释器开始执行之后，就在内存中开辟了一个空间
 每</div>
@@ -1363,7 +1363,7 @@ python代码运行的时候遇到函数是怎么做的?
                 <div class="card-content article-content">
                     <div class="summary">
 
-¶一、文件操作基本流程
+☞一、文件操作基本流程
 计算机系统分为：计算机硬件，操作系统，应用程序三部分。
 
 我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件</div>
