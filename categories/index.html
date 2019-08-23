@@ -319,18 +319,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/categories/测试/" title="测试: 6">
+                <a href="/categories/blog/" title="blog: 4">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #F5EEF8;">测试
-                        <span class="tag-length">6</span>
+                             chip-default " style="background-color: #F5EEF8;">blog
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/blog/" title="blog: 4">
+                <a href="/categories/测试/" title="测试: 6">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #D5F5E3;">blog
-                        <span class="tag-length">4</span>
+                             chip-default " style="background-color: #D5F5E3;">测试
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -350,6 +350,85 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     </span>
                 </a>
                 
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/随笔/" title="随笔: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="随笔" style="background-color: #F9EBEA;">随笔
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Hexo/" title="Hexo: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Hexo" style="background-color: #F5EEF8;">Hexo
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Jmeter/" title="Jmeter: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Jmeter" style="background-color: #D5F5E3;">Jmeter
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/python3/" title="python3: 10">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="python3" style="background-color: #E8F8F5;">python3
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/mysql/" title="mysql: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="mysql" style="background-color: #FEF9E7;">mysql
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/测试用例/" title="测试用例: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="测试用例" style="background-color: #F8F9F9;">测试用例
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Web测试/" title="Web测试: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Web测试" style="background-color: #82E0AA;">Web测试
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/APP测试/" title="APP测试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="APP测试" style="background-color: #D7BDE2;">APP测试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
                 
             </div>
         </div>
@@ -392,7 +471,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"随笔","max":13},{"name":"测试","max":13},{"name":"blog","max":13},{"name":"python","max":13},{"name":"mysql","max":13}],
+            indicator: [{"name":"随笔","max":13},{"name":"blog","max":13},{"name":"测试","max":13},{"name":"python","max":13},{"name":"mysql","max":13}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -403,7 +482,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [4,6,4,10,3],
+                    value : [4,4,6,10,3],
                     name : '文章分类数量'
                 }
             ]
@@ -413,6 +492,174 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     radarChart.setOption(option);
 </script>
     
+
+    <style type="text/css">
+    #posts-chart,
+    #categories-chart,
+    #tags-chart {
+        width: 100%;
+        height: 300px;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+    }
+</style>
+
+<div id="postCharts" class="post-charts">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fa fa-bar-chart"></i>&nbsp;&nbsp;文章统计图
+    </div>
+    <div class="row">
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="posts-chart"></div>
+        </div>
+
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="categories-chart"></div>
+        </div>
+
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="tags-chart"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
+<script>
+    let postsChart = echarts.init(document.getElementById('posts-chart'));
+    let categoriesChart = echarts.init(document.getElementById('categories-chart'));
+    let tagsChart = echarts.init(document.getElementById('tags-chart'));
+
+    
+
+    let postsOption = {
+        title: {
+            text: '文章发布统计图',
+            top: -5,
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            type: 'category',
+            data: ["2018-08","2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08"]
+        },
+        yAxis: {
+            type: 'value',
+        },
+        series: [
+            {
+                name: '文章篇数',
+                type: 'line',
+                color: ['#6772e5'],
+                data: [3,0,2,6,6,1,0,0,0,1,0,0,0],
+                markPoint: {
+                    symbolSize: 45,
+                    color: ['#fa755a','#3ecf8e','#82d3f4'],
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: '最大值'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: '最小值'
+                    }]
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    
+
+    let categoriesOption = {
+        title: {
+            text: '文章分类统计图',
+            top: -4,
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        series: [
+            {
+                name: '分类',
+                type: 'pie',
+                radius: '50%',
+                color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
+                data: [{"name":"随笔","value":4},{"name":"blog","value":4},{"name":"测试","value":6},{"name":"python","value":10},{"name":"mysql","value":3}],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    
+
+    let tagsOption = {
+        title: {
+            text: 'TOP10 标签统计图',
+            top: -5,
+            x: 'center'
+        },
+        tooltip: {},
+        xAxis: [
+            {
+                type: 'category',
+                data: ["python3","随笔","Hexo","mysql","Web测试","Jmeter","测试用例","APP测试"]
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                type: 'bar',
+                color: ['#82d3f4'],
+                barWidth : 18,
+                data: [10,4,4,3,3,1,1,1],
+                markPoint: {
+                    symbolSize: 45,
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: '最大值'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: '最小值'
+                    }],
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    // render the charts
+    postsChart.setOption(postsOption);
+    categoriesChart.setOption(categoriesOption);
+    tagsChart.setOption(tagsOption);
+</script>
+
 
 </main>
 
