@@ -33,8 +33,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -134,7 +133,7 @@
         <div class="logo-name">My blog</div>
         <div class="logo-desc">
             
-            Do want you want to do !
+            Do what you want to do !
             
         </div>
     </div>
@@ -235,7 +234,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -480,11 +479,11 @@
 <h1><div style="background:#f8ebe6; color:#000">二、基础数据类型</div></h1>
 <h2 id="div-style-background-d8e3e7-color-000-2-1-数字int-div"><a class="header-anchor" href="#div-style-background-d8e3e7-color-000-2-1-数字int-div">☞</a><div style="background:#d8e3e7; color:#000">2.1 数字int</div></h2>
 <p>数字主要是用于计算用的，使用方法并不是很多，就记住一种就可以：</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">#bit_length() 当十进制用二进制表示时，最少使用的位数
+<pre class=" language-language-python"><code class="language-language-python">#bit_length() 当十进制用二进制表示时，最少使用的位数
 v = 11
 data = v.bit_length()
 print(data)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-d8e3e7-color-000-2-2-布尔值bool-div"><a class="header-anchor" href="#div-style-background-d8e3e7-color-000-2-2-布尔值bool-div">☞</a><div style="background:#d8e3e7; color:#000">2.2 布尔值bool</div></h2>
 <p>布尔值就两种：True，False。就是反应条件的正确与否</p>
 <p>真   1   True</p>
@@ -492,23 +491,23 @@ print(data)
 <h2 id="div-style-background-d8e3e7-color-000-2-3-字符串str-div"><a class="header-anchor" href="#div-style-background-d8e3e7-color-000-2-3-字符串str-div">☞</a><div style="background:#d8e3e7; color:#000">2.3 字符串str</div></h2>
 <h3 id="font-face-宋体-color-ff8000-2-3-1-字符串的索引与切片-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-3-1-字符串的索引与切片-font">☞</a><font face="宋体" color="#FF8000">2.3.1 字符串的索引与切片</font></h3>
 <p>索引即下标，就是字符串组成的元素从第一个开始，初始索引为0以此类推</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">a = 'ABCDEFGHIJK'
+<pre class=" language-language-python"><code class="language-language-python">a = 'ABCDEFGHIJK'
 print(a[0])
 print(a[3])
 print(a[5])
 print(a[7])
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>切片就是通过索引（索引：索引：步长）截取字符串的一段，形成新的字符串（原则就是顾头不顾腚）</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">a = 'ABCDEFGHIJK'
+<pre class=" language-language-python"><code class="language-language-python">a = 'ABCDEFGHIJK'
 print(a[0:3])
 print(a[2:5])
 print(a[0:]) #默认到最后
 print(a[0:-1]) # -1 是列表中最后一个元素的索引，但是要满足顾头不顾腚的原则，所以取不到K元素
 print(a[0:5:2]) #加步长
 print(a[5:0:-2]) #反向加步长
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-3-2-字符串常用方法-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-3-2-字符串常用方法-font">☞</a><font face="宋体" color="#FF8000">2.3.2 字符串常用方法</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">#captalize,swapcase,title
+<pre class=" language-language-python"><code class="language-language-python">#captalize,swapcase,title
 print(name.capitalize()) #首字母大写
 print(name.swapcase()) #大小写翻转
 msg='egon say hi'
@@ -569,7 +568,7 @@ name='jinxin123'
 print(name.isalnum()) #字符串由字母或数字组成
 print(name.isalpha()) #字符串只由字母组成
 print(name.isdigit()) #字符串只由数字组成
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-d8e3e7-color-000-2-4-元祖tuple-div"><a class="header-anchor" href="#div-style-background-d8e3e7-color-000-2-4-元祖tuple-div">☞</a><div style="background:#d8e3e7; color:#000">2.4 元祖tuple</div></h2>
 <p>元组被称为只读列表，即数据可以被查询，但不能被修改</p>
 <p>所以，字符串的切片操作同样适用于元组。例：（1，2，3）（“a”,“b”,“c”）</p>
@@ -581,7 +580,7 @@ print(name.isdigit()) #字符串只由数字组成
 <p>列表相比于字符串，不仅可以储存不同的数据类型，而且可以储存大量数据，32位python的限制是 536870912 个元素,64位python的限制是 &gt;1152921504606846975 个元素。而且列表是有序的，有索引值，可切片，方便取值。</p>
 </blockquote>
 <h3 id="font-face-宋体-color-ff8000-2-5-1-增-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-5-1-增-font">☞</a><font face="宋体" color="#FF8000">2.5.1 增</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">li = [1,'a','b',2,3,'a']
+<pre class=" language-language-python"><code class="language-language-python">li = [1,'a','b',2,3,'a']
 # li.insert(0,55) #按照索引去增加
 # print(li)
 #
@@ -597,9 +596,9 @@ print(name.isdigit()) #字符串只由数字组成
 # print(li)
 
 列表的增
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-5-2-删-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-5-2-删-font">☞</a><font face="宋体" color="#FF8000">2.5.2 删</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># l1 = li.pop(1) #按照位置去删除，有返回值
+<pre class=" language-language-python"><code class="language-language-python"># l1 = li.pop(1) #按照位置去删除，有返回值
 # print(l1)
 
 # del li[1:3] #按照位置去删除，也可切片删除没有返回值。
@@ -611,9 +610,9 @@ print(name.isdigit()) #字符串只由数字组成
 # li.clear() #清空列表
 
 列表的删
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-5-3-改-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-5-3-改-font">☞</a><font face="宋体" color="#FF8000">2.5.3 改</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># 改
+<pre class=" language-language-python"><code class="language-language-python"># 改
 # li = [1,'a','b',2,3,'a']
 # li[1] = 'dfasdfas'
 # print(li)
@@ -621,26 +620,26 @@ print(name.isdigit()) #字符串只由数字组成
 # print(li)
 
 列表的改
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-5-4-查-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-5-4-查-font">☞</a><font face="宋体" color="#FF8000">2.5.4 查</font></h3>
 <p>切片去查，或者循环去查</p>
 <h3 id="font-face-宋体-color-ff8000-2-5-5-其他操作-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-5-5-其他操作-font">☞</a><font face="宋体" color="#FF8000">2.5.5 其他操作</font></h3>
 <p>count（数）（方法统计某个元素在列表中出现的次数）</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">1 a = ["q","w","q","r","t","y"]
+<pre class=" language-language-python"><code class="language-language-python">1 a = ["q","w","q","r","t","y"]
 2 print(a.count("q"))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <p>index（方法用于从列表中找出某个值第一个匹配项的索引位置）</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">1 a = ["q","w","r","t","y"]
+<pre class=" language-language-python"><code class="language-language-python">1 a = ["q","w","r","t","y"]
 2 print(a.index("r"))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <p>sort （方法用于在原位置对列表进行排序）。</p>
 <p>reverse （方法将列表中的元素反向存放）。</p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">1 a = [2,1,3,4,5]
+<pre class=" language-language-python"><code class="language-language-python">1 a = [2,1,3,4,5]
 2 a.sort()# 他没有返回值，所以只能打印a
 3 print(a)
 4 a.reverse()#他也没有返回值，所以只能打印a
 5 print(a)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-d8e3e7-color-000-2-6-字典dict-div"><a class="header-anchor" href="#div-style-background-d8e3e7-color-000-2-6-字典dict-div">☞</a><div style="background:#d8e3e7; color:#000">2.6 字典dict</div></h2>
 <blockquote>
 <p>字典是python中唯一的映射类型，采用键值对（key-value）的形式存储数据。python对key进行哈希函数运算，根据计算的结果决定value的存储&gt;地址，所以字典是无序存储的，且key必须是可哈希的。可哈希表示key必须是不可变类型，如：数字、字符串、元组。</p>
@@ -649,7 +648,7 @@ print(name.isdigit()) #字符串只由数字组成
 <p>字典(dictionary)是除列表意外python之中最灵活的内置数据结构类型。列表是有序的对象结合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。</p>
 </blockquote>
 <h3 id="font-face-宋体-color-ff8000-2-6-1-增-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-6-1-增-font">☞</a><font face="宋体" color="#FF8000">2.6.1 增</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># dic['li'] = ["a","b","c"]
+<pre class=" language-language-python"><code class="language-language-python"># dic['li'] = ["a","b","c"]
 # print(dic)
 # setdefault 在字典中添加键值对，如果只有键那对应的值是none,但是如果原字典中存在设置的键值对，则他不会更改或者覆盖。
 # dic.setdefault('k','v')
@@ -658,9 +657,9 @@ print(name.isdigit()) #字符串只由数字组成
 # print(dic)
 
 字典的增
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-6-2-删-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-6-2-删-font">☞</a><font face="宋体" color="#FF8000">2.6.2 删</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># dic_pop = dic.pop("a",'无key默认返回值') # pop根据key删除键值对，并返回对应的值，如果没有key则返回默认返回值
+<pre class=" language-language-python"><code class="language-language-python"># dic_pop = dic.pop("a",'无key默认返回值') # pop根据key删除键值对，并返回对应的值，如果没有key则返回默认返回值
 # print(dic_pop)
 # del dic["name"]  # 没有返回值。
 # print(dic)
@@ -672,23 +671,23 @@ print(name.isdigit()) #字符串只由数字组成
 # print(dic,dic_clear)  # {} None
 
 字典的删
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-6-3-改-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-6-3-改-font">☞</a><font face="宋体" color="#FF8000">2.6.3 改</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># 改
+<pre class=" language-language-python"><code class="language-language-python"># 改
 # dic = {"name":"jin","age":18,"sex":"male"}
 # dic2 = {"name":"alex","weight":75}
 # dic2.update(dic)  # 将dic所有的键值对覆盖添加（相同的覆盖，没有的添加）到dic2中
 # print(dic2)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-6-4-查-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-6-4-查-font">☞</a><font face="宋体" color="#FF8000">2.6.4 查</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># value1 = dic["name"]  # 没有会报错
+<pre class=" language-language-python"><code class="language-language-python"># value1 = dic["name"]  # 没有会报错
 # print(value1)
 #
 # value2 = dic.get("djffdsafg","默认返回值")  # 没有可以返回设定的返回值
 # print(value2)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-6-5-其他操作-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-6-5-其他操作-font">☞</a><font face="宋体" color="#FF8000">2.6.5 其他操作</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># item = dic.items()
+<pre class=" language-language-python"><code class="language-language-python"># item = dic.items()
 # print(item,type(item))  # dict_items([('name', 'jin'), ('sex', 'male'), ('age', 18)]) <class 'dict_items'>
 # 这个类型就是dict_items类型，可迭代的
 
@@ -697,16 +696,16 @@ print(name.isdigit()) #字符串只由数字组成
 
 # values = dic.values()
 # print(values,type(values))  # dict_values(['male', 18, 'jin']) <class 'dict_values'> 同上
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></class></class></class></code></pre>
+</class></class></class></code></pre>
 <p><font face="宋体" color="#FF8000">字典的循环</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python"># dic = {"name":"jin","age":18,"sex":"male"}
+<pre class=" language-language-python"><code class="language-language-python"># dic = {"name":"jin","age":18,"sex":"male"}
 # for key in dic:
 #     print(key)
 # for item in dic.items():
 #     print(item)
 # for key,value in dic.items():
 #     print(key,value)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-d8e3e7-color-000-2-7-集合-div"><a class="header-anchor" href="#div-style-background-d8e3e7-color-000-2-7-集合-div">☞</a><div style="background:#d8e3e7; color:#000">2.7 集合</div></h2>
 <blockquote>
 <p>集合是无序的，不重复的数据集合，它里面的元素是可哈希的(不可变类型)，但是集合本身是不可哈希（所以集合做不了字典的键）的。以下是集合最重要的两点：</p>
@@ -714,12 +713,12 @@ print(name.isdigit()) #字符串只由数字组成
 <p>关系测试，测试两组数据之前的交集、差集、并集等关系。</p>
 </blockquote>
 <h3 id="font-face-宋体-color-ff8000-2-7-1-集合的创建-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-7-1-集合的创建-font">☞</a><font face="宋体" color="#FF8000">2.7.1 集合的创建</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">set1 = set({1,2,'barry'})
+<pre class=" language-language-python"><code class="language-language-python">set1 = set({1,2,'barry'})
 set2 = {1,2,'barry'}
 print(set1,set2)  # {1, 2, 'barry'} {1, 2, 'barry'}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-7-2-集合的增-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-7-2-集合的增-font">☞</a><font face="宋体" color="#FF8000">2.7.2 集合的增</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">set1 = {'alex','wusir','ritian','egon','barry'}
+<pre class=" language-language-python"><code class="language-language-python">set1 = {'alex','wusir','ritian','egon','barry'}
 set1.add('景女神')
 print(set1)
 
@@ -730,9 +729,9 @@ set1.update('老师')
 print(set1)
 set1.update([1,2,3])
 print(set1)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-7-3-集合的删-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-7-3-集合的删-font">☞</a><font face="宋体" color="#FF8000">2.7.3 集合的删</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">set1 = {'alex','wusir','ritian','egon','barry'}
+<pre class=" language-language-python"><code class="language-language-python">set1 = {'alex','wusir','ritian','egon','barry'}
 
 set1.remove('alex')  # 删除一个元素
 print(set1)
@@ -745,35 +744,35 @@ print(set1)
 
 del set1  # 删除集合
 print(set1)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-7-4-集合的其他操作-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-7-4-集合的其他操作-font">☞</a><font face="宋体" color="#FF8000">2.7.4 集合的其他操作</font></h3>
 <h4 id="font-face-宋体-color-000-交集-或者-intersection-font"><a class="header-anchor" href="#font-face-宋体-color-000-交集-或者-intersection-font">☞</a><font face="宋体" color="#000">交集。（&amp;  或者 intersection）</font></h4>
-<pre class="line-numbers language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
+<pre class=" language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
 set2 = {4,5,6,7,8}
 print(set1 & set2)  # {4, 5}
 print(set1.intersection(set2))  # {4, 5}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="font-face-宋体-color-000-并集-或者-union-font"><a class="header-anchor" href="#font-face-宋体-color-000-并集-或者-union-font">☞</a><font face="宋体" color="#000">并集。（| 或者 union）</font></h4>
-<pre class="line-numbers language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
+<pre class=" language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
 set2 = {4,5,6,7,8}
 print(set1 | set2)  # {1, 2, 3, 4, 5, 6, 7,8}
 
 print(set2.union(set1))  # {1, 2, 3, 4, 5, 6, 7,8}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="font-face-宋体-color-000-差集-或者-difference-font"><a class="header-anchor" href="#font-face-宋体-color-000-差集-或者-difference-font">☞</a><font face="宋体" color="#000">差集。（- 或者 difference）</font></h4>
-<pre class="line-numbers language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
+<pre class=" language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
 set2 = {4,5,6,7,8}
 print(set1 - set2)  # {1, 2, 3}
 print(set1.difference(set2))  # {1, 2, 3}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="font-face-宋体-color-000-反交集-或者-symmetric-difference-font"><a class="header-anchor" href="#font-face-宋体-color-000-反交集-或者-symmetric-difference-font">☞</a><font face="宋体" color="#000">反交集。 （^ 或者 symmetric_difference）</font></h4>
-<pre class="line-numbers language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
+<pre class=" language-language-python"><code class="language-language-python">set1 = {1,2,3,4,5}
 set2 = {4,5,6,7,8}
 print(set1 ^ set2)  # {1, 2, 3, 6, 7, 8}
 print(set1.symmetric_difference(set2))  # {1, 2, 3, 6, 7, 8}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h4 id="font-face-宋体-color-000-子集与超集-font"><a class="header-anchor" href="#font-face-宋体-color-000-子集与超集-font">☞</a><font face="宋体" color="#000">子集与超集</font></h4>
-<pre class="line-numbers language-language-python"><code class="language-language-python">复制代码
+<pre class=" language-language-python"><code class="language-language-python">复制代码
 set1 = {1,2,3}
 set2 = {1,2,3,4,5,6}
 
@@ -783,21 +782,21 @@ print(set1.issubset(set2))  # 这两个相同，都是说明set1是set2子集。
 print(set2 > set1)
 print(set2.issuperset(set1))  # 这两个相同，都是说明set2是set1超集。
 复制代码
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="font-face-宋体-color-ff8000-2-7-5-frozenset不可变集合-让集合变成不可变类型-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-7-5-frozenset不可变集合-让集合变成不可变类型-font">☞</a><font face="宋体" color="#FF8000">2.7.5 frozenset不可变集合，让集合变成不可变类型</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">s = frozenset('barry')
+<pre class=" language-language-python"><code class="language-language-python">s = frozenset('barry')
 print(s,type(s))  # frozenset({'a', 'y', 'b', 'r'}) <class 'frozenset'>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></class></code></pre>
+</class></code></pre>
 <h1><div style="background:#f8ebe6; color:#000">三、基础数据类型的总结</div></h1>
 <p><strong>按存储空间的占用分（从低到高</strong>）</p>
-<pre class="line-numbers language-language-text"><code class="language-language-text">复制代码
+<pre class=" language-language-text"><code class="language-language-text">复制代码
 数字
 字符串
 集合：无序，即无序存索引相关信息
 元组：有序，需要存索引相关信息，不可变
 列表：有序，需要存索引相关信息，可变，需要处理数据的增删改
 字典：无序，需要存key与value映射的相关信息，可变，需要处理数据的增删改
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><strong>按存值个数区分</strong></p>
 <table border="0"><tr><td>标量／原子类型</td><td>数字，字符串</td></tr><tr><td>容器类型</td><td>列表，元组，字典</td></tr></table>
 <p><strong>按可变不可变区分</strong></p>
@@ -806,7 +805,7 @@ print(s,type(s))  # frozenset({'a', 'y', 'b', 'r'}) <class 'frozenset'>
 <table border="0"><tr><td>直接访问</td><td>数字</td></tr><tr><td>顺序访问（序列类型）</td><td>字符串，列表，元组</td></tr><tr><td>key值访问（映射类型）</td><td>字典</td></tr></table>
 <h1><div style="background:#f8ebe6; color:#000">四、其他（for，enumerate，range）</div></h1>
 <p><font face="隶书" color="#FF8000">for循环：用户按照顺序循环可迭代对象的内容</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">msg = '我们一起来学习'
+<pre class=" language-language-python"><code class="language-language-python">msg = '我们一起来学习'
 for item in msg:
     print(item)
 
@@ -817,18 +816,18 @@ for i in li:
 dic = {'name':'太白','age':18,'sex':'man'}
 for k,v in dic.items():
     print(k,v)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="隶书" color="#FF8000">enumerate：枚举，对于一个可迭代的（iterable）/可遍历的对象（如列表、字符串），enumerate将其组成一个索引序列，利用它可以同时获得索引和值</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">li = ['alex','银角','女神','egon','太白']
+<pre class=" language-language-python"><code class="language-language-python">li = ['alex','银角','女神','egon','太白']
 for i in enumerate(li):
     print(i)
 for index,name in enumerate(li,1):
     print(index,name)
 for index, name in enumerate(li, 100):  # 起始位置默认是0，可更改
     print(index, name)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><font face="隶书" color="#FF8000">range：指定范围，生成指定数字</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">for i in range(1,10):
+<pre class=" language-language-python"><code class="language-language-python">for i in range(1,10):
     print(i)
 
 for i in range(1,10,2):  # 步长
@@ -836,7 +835,7 @@ for i in range(1,10,2):  # 步长
 
 for i in range(10,1,-2): # 反向步长
     print(i)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 
             </div>
             <hr>
@@ -1566,6 +1565,7 @@ python的创始人为吉多·范罗苏姆（Guido van Rossum）。
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
+
 </div>
 
         <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>My blog</title>
   
-  <subtitle>学习、记录、分享</subtitle>
+  <subtitle>🐬学习、记录、分享</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qvchuang.top/"/>
