@@ -162,8 +162,9 @@ mark {
     margin-bottom: 0;
 }
 
+/*#2eab9f 0%, #EE82EE 100%*/
 .bg-color {
-    background-image: linear-gradient(to right, #2eab9f 0%, #EE82EE 100%);
+    background-image: linear-gradient(to right, rgb(139, 127, 142) 0%, #e4dee4 100%);
 }
 
 .text-color {
