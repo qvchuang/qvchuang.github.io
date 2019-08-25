@@ -4,29 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python3-函数进阶, My blog">
-    <meta name="description" content="
+    <meta name="keywords" content="matery主题个性化定制, My blog">
+    <meta name="description" content="☞==前言==
 
-☞阅读目录
-
-
-命名空间和作用域
-
-
-函数嵌套及作用域链
-
-
-函数名的本质
-
-
-闭包
-
-
-☞一、命名空间和作用域
-☞命名空间
-python代码运行的时候遇到函数是怎么做的?
-从python解释器开始执行之后，就在内存中开辟了一个空间
-每">
+之前用的yilia主题，最近换了matery主题，也折腾的许多东西，抽空把一些自己个性化定制的内容整理一下，整理内容是官方文档里没有的，官方文档链接贴在下方，有需要个性化修改的可以来参考此篇文章，仅代表个人审美，有瑕疵的地">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +15,7 @@ python代码运行的时候遇到函数是怎么做的?
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python3-函数进阶 | My blog</title>
+    <title>matery主题个性化定制 | My blog</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -309,13 +290,13 @@ python代码运行的时候遇到函数是怎么做的?
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://file.moetu.org/images/2019/08/25/architect-architecture-black-and-white-15370084f1dd75b7684fe89.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python3-函数进阶
+                        matery主题个性化定制
                     </div>
                 </div>
             </div>
@@ -426,8 +407,8 @@ python代码运行的时候遇到函数是怎么做的?
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python3/" target="_blank">
-                                <span class="chip bg-color">python3</span>
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -438,8 +419,8 @@ python代码运行的时候遇到函数是怎么做的?
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                python
+                            <a href="/categories/blog/" class="post-category" target="_blank">
+                                blog
                             </a>
                         
                     </div>
@@ -450,7 +431,7 @@ python代码运行的时候遇到函数是怎么做的?
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-12-01
+                    2019-08-25
                 </div>
 
                 
@@ -464,7 +445,7 @@ python代码运行的时候遇到函数是怎么做的?
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        8 分
                     </div>
                     
                 
@@ -480,288 +461,248 @@ python代码运行的时候遇到函数是怎么做的?
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://moetu.org/image/1yFmR" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/01/python8ea1736073a1a019.md.png" alt></a></p>
-<a id="more"></a>
-<h2 id="div-style-background-greenyellow-color-000-阅读目录-div"><a class="header-anchor" href="#div-style-background-greenyellow-color-000-阅读目录-div">☞</a><div style="background:greenyellow; color:#000">阅读目录</div></h2>
-<ul>
-<li>
-<p><a href="#01">命名空间和作用域</a></p>
-</li>
-<li>
-<p><a href="#02">函数嵌套及作用域链</a></p>
-</li>
-<li>
-<p><a href="#03">函数名的本质</a></p>
-</li>
-<li>
-<p><a href="#04">闭包</a></p>
-</li>
-</ul>
-<h2 id="div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div"><a class="header-anchor" href="#div-id-01-style-background-skyblue-color-000-一-命名空间和作用域-div">☞</a><div id="01" style="background:skyblue; color:#000">一、命名空间和作用域</div></h2>
-<h3 id="div-style-background-pink-color-000-命名空间-div"><a class="header-anchor" href="#div-style-background-pink-color-000-命名空间-div">☞</a><div style="background:pink; color:#000">命名空间</div></h3>
-<pre class=" language-language-text"><code class="language-language-text">python代码运行的时候遇到函数是怎么做的?
-从python解释器开始执行之后，就在内存中开辟了一个空间
-每当遇到一个变量的时候，就把变量名和值之间的对应关系记录下来。
-但是当遇到函数定义的时候解释器只是象征性的将函数名读入内存，表示知道这个函数的存在了，至于函数内部的变量和逻辑解释器根本不关心。
-等执行到函数调用的时候，python解释器会再开辟一块内存来存储这个函数里的内容，这个时候，才关注函数里面有哪些变量，而函数中的变量会存储在新开辟出来的内存中。函数中的变量只能在函数的内部使用，并且会随着函数执行完毕，这块内存中的所有内容也会被清空。
-</code></pre>
-<p>我们给这个“存放名字与值的关系”的空间起了一个名字——叫做命名空间</p>
-<p>代码在运行伊始，创建的存储“变量名与值的关系”的空间叫做全局命名空间</p>
-<p>在函数的运行中开辟的临时的空间叫做局部命名空间</p>
+                <h3 id="前言"><a class="header-anchor" href="#前言">☞</a>==前言==</h3>
 <blockquote>
-<p>命名空间的本质：存放名字与值的绑定关系</p>
-<p>在python之禅中提到过：命名空间是一种绝妙的理念，让我们尽情的使用发挥吧！</p>
+<p>之前用的yilia主题，最近换了matery主题，也折腾的许多东西，抽空把一些自己个性化定制的内容整理一下，整理内容是官方文档里没有的，官方文档链接贴在下方，有需要个性化修改的可以来参考此篇文章，仅代表个人审美，有瑕疵的地方还请指出，谢谢！</p>
 </blockquote>
-<pre><code>命名空间一共分为三种：
+<p><i class="far fa-hand-point-right"></i>先贴出<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener"><strong>matery主题</strong></a>的官方文档</p>
+<h3 id="div-style-background-fbeee2-color-000-个性化定制修改-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-个性化定制修改-div">☞</a><div style="background:#fbeee2; color:#000">个性化定制修改</div></h3>
+<h4 id="div-style-background-dfecd5-color-000-添加留言板页面-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-添加留言板页面-div">☞</a><div style="background:#dfecd5; color:#000">添加留言板页面</div></h4>
+<p>留言板页面就相当于新建一篇文章，评论功能充当留言</p>
+<p>步骤：在你的博客根目录<font color="red">source</font>里新建<font color="red">lyb/index.md</font></p>
+<p>编辑你刚刚新建的页面文件<font color="red">/source/lyb/index.md</font> ,至少需要以下内容：</p>
+<pre><code>---
+title: 留言板
+date: 
+type: &quot;lyb&quot;
+layout: &quot;lyb&quot;
+---
+</code></pre>
+<p>然后在主题的配置文件<font color="red">_config.yml</font>中找到menu项增加：</p>
+<pre><code>  留言板:
+    url: /lyb
+    icon: fa fa-paper-plane-o
+</code></pre>
+<p><em>注意按照文档的格式添加空格</em></p>
+<h4 id="div-style-background-dfecd5-color-000-添加404页面-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-添加404页面-div">☞</a><div style="background:#dfecd5; color:#000">添加404页面</div></h4>
+<p>步骤：在你的博客根目录<font color="red">source</font>里新建一个<font color="red">404.md</font>，内容如下：</p>
+<pre><code>---
+title: 404
+date: 
+type: &quot;404&quot;
+layout: &quot;404&quot;
+description: &quot;Oops～，你来到了没有知识的荒原！ :(&quot;
+---
+</code></pre>
+<p>然后在<font color="red">/themes/matery/layout/</font>目录下新建一个<font color="red">404.ejs</font>文件，内容如下：</p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+    /* don't remove. */
+    .about-cover {
+        height: 75vh;
+    }
+&lt;/style&gt;
 
-　　               全局命名空间 —— 我们写的代码但不是函数中的代码
-                  # 是在程序从上到下被执行的过程中依次加载进内存的
-                  # 放置了我们设置的所有变量名和函数名
+&lt;div class=&quot;bg-cover pd-header about-cover&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col s10 offset-s1 m8 offset-m2 l8 offset-l2&quot;&gt;
+                &lt;div class=&quot;brand&quot;&gt;
+                    &lt;div class=&quot;title center-align&quot;&gt;
+                        404
+                    &lt;/div&gt;
+                    &lt;div class=&quot;description center-align&quot;&gt;
+                        &lt;%= page.description %&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 
-　　               局部命名空间 —— 函数
-                  # 就是函数内部定义的名字
-                  # 当调用函数的时候 才会产生这个名称空间 随着函数执行的结束 这个命名空间就又消失了
+&lt;script&gt;
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+&lt;/script&gt;
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-分类页和标签页合并-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-分类页和标签页合并-div">☞</a><div style="background:#dfecd5; color:#000">分类页和标签页合并</div></h4>
+<p>首先在主题的配置文件<font color="red">_config.yml</font>中找到menu项，注释掉Tags</p>
+<pre><code>  #Tags:
+  #  url: /tags
+  #  icon: fa-tags
+</code></pre>
+<p>打开<font color="red">layout/tags.ejs</font>把第5行（文章标签）<strong>复制</strong>粘贴到<font color="red">layout/categories.ejs</font>中去，这里只复制了文章标签内容，下面的词云未复制，可以根据自己需要</p>
+<pre><code> &lt;%- partial('_widget/tag-cloud') %&gt;
+</code></pre>
+<p>打开<font color="red">layout/about.ejs</font>把第46行（文章统计图）<strong>剪切</strong>粘贴到<font color="red">layout/categories.ejs</font>中去，这里只把文章统计图位置换到了分类页面去，其他的可以根据自己需要自由转移</p>
+<pre><code>&lt;%- partial('_widget/post-charts') %&gt;
+</code></pre>
+<p>下面是整理后的<font color="red">categories.ejs</font>文档内容</p>
+<pre><code>&lt;%- partial('_partial/bg-cover') %&gt;
 
-　　               内置命名空间 —— python解释器
-                  # 就是函数内部定义的名字
-                  # 当调用函数的时候 才会产生这个名称空间 随着函数执行的结束 这个命名空间就又消失了
-</code></pre>
-<p>注：**<code>内置命名空间</code>**中存放了python解释器为我们提供的名字：<code>input,print,str,list,tuple...</code>它们都是我们熟悉的，拿过来就可以用的方法。</p>
-<p><strong>三种命名空间之间的加载与取值顺序：</strong></p>
-<p>加载顺序：<code>内置命名空间(程序运行前加载)-&gt;全局命名空间(程序运行中：从上到下加载)-&gt;局部命名空间(程序运行中：调用时才加载)</code></p>
-<p><a href="https://moetu.org/image/Em7TY" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/01/be7926a39cdf743ac4bd4cd991d28656968f02de43133425.md.png" alt></a></p>
-<pre><code>取值顺序：
+&lt;main class=&quot;content&quot;&gt;
 
-　　    在局部调用：局部命名空间-----&gt;全局命名空间------&gt;内置命名空间
+    &lt;%- partial('_widget/category-cloud') %&gt;
 
-　　    在全局调用：全局命名空间--------&gt;内置命名空间
-</code></pre>
-<p>在局部:可以使用全局、内置命名空间中的名字</p>
-<p>在全局:可以使用内置命名空间中的名字，但是不能使用局部空间中的名字</p>
-<p>在内置:不能使用局部和全局的名字的</p>
-<p><font face="宋体" color="#FF8000">综上所述，在找寻变量时，从小范围，一层一层到大范围去找寻</font></p>
-<h3 id="div-style-background-pink-color-000-作用域-div"><a class="header-anchor" href="#div-style-background-pink-color-000-作用域-div">☞</a><div style="background:pink; color:#000">作用域</div></h3>
-<blockquote>
-<p>作用域就是作用范围，按照生效范围可以分为全局作用域和局部作用域。</p>
-<p>全局作用域：包含内置名称空间、全局名称空间，在整个文件的任意位置都能被引用、全局有效</p>
-<p>局部作用域：局部名称空间，只能在局部范围内生效</p>
-</blockquote>
-<p><strong>globals和locals方法</strong></p>
-<blockquote>
-<p>全局作用域 —— 作用在全局 —— 内置和全局名字空间中的名字都属于全局作用域  ——globals()</p>
-<p>局部作用域 —— 作用在局部 —— 函数（局部名字空间中的名字属于局部作用域） ——locals()</p>
-</blockquote>
-<pre class=" language-language-python"><code class="language-language-python">def func():
-    a = 12
-    b = 20
-    print(locals())
-    print(globals())
-func()
-</code></pre>
-<p>globals 永远打印全局的名字</p>
-<p>locals 输出什么 根据locals所在的位置</p>
-<p><strong>global关键字</strong></p>
-<blockquote>
-<p>1、声明一个全局变量。</p>
-<p>2、在局部作用域想要对全局作用域的全局变量进行修改时，需要用到 global(<font face="宋体" color="#red">限于字符串，数字</font>)。</p>
-</blockquote>
-<pre class=" language-language-python"><code class="language-language-python">a = 10
-def func():
-    global a
-    a = 20
-print(a)
-func()
-print(a)
-</code></pre>
-<p>ps：对可变数据类型（list，dict，set）可以直接引用不用通过global</p>
-<pre class=" language-language-ptyhon"><code class="language-language-ptyhon">l1 = [1,2,3]
-def func():
-    l1.append(444)
-func()
-print(l1)
- #[1, 2, 3, 444]
-</code></pre>
-<p><strong>nonlocal关键字</strong></p>
-<blockquote>
-<p>1、nonlocal 只能用于局部变量 找上层中离当前函数最近一层的局部变量，不能修改全局变量。</p>
-<p>2、声明了nonlocal的内部函数的变量修改会影响到 离当前函数最近一层的局部变量</p>
-<p>3、对局部 也只是对 最近的 一层 有影响</p>
-</blockquote>
-<pre class=" language-language-python"><code class="language-language-python">def func():
-    name = 'wusir'
-    def inner():
-        nonlocal name
-        name = 'taibai'
-        print(name)
-    print(name)
-    inner()
-    print(name)
-func()
-wusir
-taibai
-taibai
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def add_b():
-    b = 42
-    def do_global():
-        b = 10
-        print(b)
-        def dd_nonlocal():
-            nonlocal b
-            b = b + 20
-            print(b)
-        dd_nonlocal()
-        print(b)
-    do_global()
-    print(b)
-add_b()
-310
-30
-30
-42
-</code></pre>
-<h2 id="div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div"><a class="header-anchor" href="#div-id-02-style-background-skyblue-color-000-二-函数嵌套及作用域链-div">☞</a><div id="02" style="background:skyblue; color:#000">二、函数嵌套及作用域链</div></h2>
-<p><font face="宋体" color="#FF8000">函数的嵌套调用</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def max2(x,y):
-    m  = x if x>y else y
-    return m
-def max4(a,b,c,d):
-    res1 = max2(a,b)
-    res2 = max2(res1,c)
-    res3 = max2(res2,d)
-    return res3
- # max4(23,-7,31,11)
-</code></pre>
-<p><font face="宋体" color="#FF8000">函数的嵌套定义</font></p>
-<p><em>定义在内部的函数无法直接在全局被调用</em></p>
-<pre class=" language-language-ptyhon"><code class="language-language-ptyhon">def f1():
-    print("in f1")
-    def f2():
-        print("in f2")
-    f2()
-f1()
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
-    def f2():
-        def f3():
-            print("in f3")
-        print("in f2")
-        f3()
-    print("in f1")
-    f2()    
-f1()
-</code></pre>
-<p><font face="宋体" color="#FF8000">函数的作用域链</font></p>
-<pre class=" language-language-poython"><code class="language-language-poython">def f1():
-    a = 1
-    def f2():
-        print(a)
-    f2()
-f1()
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
-    a = 1
-    def f2():
-        def f3():
-            print(a)
-        f3()
-    f2()
-f1()
-</code></pre>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
-    a = 1
-    def f2():
-        a = 2
-    f2()
-    print('a in f1 : ',a)
-f1()
-</code></pre>
-<h2 id="div-id-03-style-background-skyblue-color-000-三-函数名的本质-div"><a class="header-anchor" href="#div-id-03-style-background-skyblue-color-000-三-函数名的本质-div">☞</a><div id="03" style="background:skyblue; color:#000">三、函数名的本质</div></h2>
-<p><font face="宋体" color="#red">函数名本质上就是一个变量，保存了函数所在的内存地址</font></p>
-<p><font face="宋体" color="#FF8000">1.可以被引用</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def func():
-    print('in func')
-f = func
-print(f)
-</code></pre>
-<p><font face="宋体" color="#FF8000">2.可以被当作容器类型的元素</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def f1():
-    print('f1')
-def f2():
-    print('f2')
-def f3():
-    print('f3')
-l = [f1,f2,f3]
-d = {'f1':f1,'f2':f2,'f3':f3}
- #调用
-l[0]()
-d['f2']()
-</code></pre>
-<p><font face="宋体" color="#FF8000">3.可以当作函数的参数和返回值</font></p>
-<p>不明白？那就记住一句话，就当普通变量用</p>
-<blockquote>
-<p>第一类对象（first-class object）指</p>
-<p>1.可在运行期创建</p>
-<p>2.可用作函数参数或返回值</p>
-<p>3.可存入变量的实体。</p>
-</blockquote>
-<h2 id="div-id-04-style-background-skyblue-color-000-四-闭包-div"><a class="header-anchor" href="#div-id-04-style-background-skyblue-color-000-四-闭包-div">☞</a><div id="04" style="background:skyblue; color:#000">四、闭包</div></h2>
-<pre class=" language-language-python"><code class="language-language-python">def func():
-    name = 'eva'
-    def inner():
-        print(name)
-</code></pre>
-<blockquote>
-<p>闭包函数：</p>
-<p>内部函数包含对外部作用域而非全剧作用域名字的引用，该内部函数称为闭包函数</p>
-<p>函数内部定义的函数称为内部函数</p>
-</blockquote>
-<p><font face="宋体" color="#FF8000">如何实现对内层函数的调用？</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def func():
-    name = 'eva'
-    def inner():
-        print(name)
-    return inner
-f = func()
-f()
-</code></pre>
-<p><font face="宋体" color="#FF8000">判断闭包函数的方法__closure__</font></p>
-<pre><code>#输出的__closure__有cell元素 ：是闭包函数
-def func():
-    name = 'eva'
-    def inner():
-        print(name)
-    print(inner.__closure__)
-    return inner
+    &lt;%- partial('_widget/tag-cloud') %&gt;
 
-f = func()
-f()
+    &lt;% if (site.categories &amp;&amp; site.categories.length &gt; 0) { %&gt;
+    &lt;%- partial('_widget/category-radar') %&gt;
+    &lt;% } %&gt;
 
-#输出的__closure__为None ：不是闭包函数
-name = 'egon'
-def func2():
-    def inner():
-        print(name)
-    print(inner.__closure__)
-    return inner
+    &lt;%- partial('_widget/post-charts') %&gt;
 
-f2 = func2()
-f2()
+
+&lt;/main&gt;
 </code></pre>
-<p><font face="宋体" color="#FF8000">闭包的嵌套</font></p>
-<pre class=" language-language-python"><code class="language-language-python">def wrapper():
-    money = 1000
-    def func():
-        name = 'eva'
-        def inner():
-            print(name,money)
-        return inner
-    return func
-f = wrapper()
-i = f()
-i()
+<h4 id="div-style-background-dfecd5-color-000-关于-页面增加简历-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-关于-页面增加简历-div">☞</a><div style="background:#dfecd5; color:#000">“关于”页面增加简历</div></h4>
+<p>打开/themes/matery/layout/about.ejs，找到<code>&lt;div class=&quot;card&quot;&gt;</code>标签，然后找到它对应的标签，接在后面新增一个card，语句如下：</p>
+<pre><code>        &lt;div class=&quot;card&quot;&gt;
+    		&lt;div class=&quot;card-content&quot;&gt;
+        		&lt;div class=&quot;card-content article-card-content&quot;&gt;
+                		&lt;div class=&quot;title center-align&quot; data-aos=&quot;zoom-in-up&quot;&gt;
+                    		&lt;i class=&quot;fa fa-address-book&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&lt;%- __('我的简历') %&gt;
+                		&lt;/div&gt;
+                		&lt;div id=&quot;articleContent&quot; data-aos=&quot;fade-up&quot;&gt;
+                    		&lt;%- page.content %&gt;
+                		&lt;/div&gt;
+        		&lt;/div&gt;
+    		&lt;/div&gt;
+		&lt;/div&gt;
 </code></pre>
-<p><strong>闭包的好处：</strong><font face="宋体" color="#red">保护内存，闭包函数在内存中的局部命名空间不会随着函数的结束而结束</font></p>
+<p><font color="red">注意粘贴的位置和空格要正确，这里的位置随你自己设置，你也可以把简历作为第一个card</font></p>
+<p>然后在/source/about/index.md下面写上你的简历了（就像写博客一样）</p>
+<h4 id="div-style-background-dfecd5-color-000-添加相册页面-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-添加相册页面-div">☞</a><div style="background:#dfecd5; color:#000">添加相册页面</div></h4>
+<p>步骤：在你的博客根目录<font color="red">source</font>里新建<font color="red">phone/index.md</font></p>
+<p>编辑你刚刚新建的页面文件<font color="red">/source/phone/index.md</font> ,至少需要以下内容：</p>
+<pre><code>---
+title: 相册
+date: 
+type: &quot;photo&quot;
+layout: &quot;photo&quot;
+---
+</code></pre>
+<p>然后在<font color="red">/themes/matery/layout/</font>目录下新建一个<font color="red">phone.ejs</font>文件，博主是把首页的我的梦想、音乐和关于我页面的我的相册内容剪切粘贴过来的，步骤如下：</p>
+<p>打开<font color="red">/themes/matery/layout/index.md</font>复制以下内容到<font color="red">phone.ejs</font>文件：</p>
+<pre><code>&lt;main class=&quot;content&quot;&gt;
+
+    &lt;% if (page.current === 1) { %&gt;
+    &lt;div id=&quot;indexCard&quot; class=&quot;index-card&quot;&gt;
+        &lt;div class=&quot;container &quot;&gt;
+            &lt;div class=&quot;card&quot;&gt;
+                &lt;div class=&quot;card-content&quot;&gt;
+                    &lt;% if (theme.dream.enable) { %&gt;
+                        &lt;%- partial('_widget/dream') %&gt;
+                    &lt;% } %&gt;
+
+                    &lt;% if (theme.music.enable &amp;&amp; site.data &amp;&amp; site.data.musics) { %&gt;
+                        &lt;%- partial('_widget/music') %&gt;
+                    &lt;% } %&gt;
+
+                    &lt;% if (theme.video.enable) { %&gt;
+                        &lt;%- partial('_widget/video') %&gt;
+                    &lt;% } %&gt;
+
+                    &lt;div id=&quot;recommend-sections&quot; class=&quot;recommend&quot;&gt;
+                        &lt;%- partial('_widget/recommend') %&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;% } %&gt;
+</code></pre>
+<p><strong>下面比较绕了：</strong></p>
+<p>上面步骤操作完之后：</p>
+<p>删除<font color="red">index.ejs</font>文件中的代码(我的梦想、音乐，可以根据自己爱好选择)如下：</p>
+<pre><code>                    &lt;% if (theme.dream.enable) { %&gt;
+                        &lt;%- partial('_widget/dream') %&gt;
+                    &lt;% } %&gt;
+
+                    &lt;% if (theme.music.enable &amp;&amp; site.data &amp;&amp; site.data.musics) { %&gt;
+                        &lt;%- partial('_widget/music') %&gt;
+                    &lt;% } %&gt;
+</code></pre>
+<p>删除<font color="red">phone.ejs</font>文件中的代码（文章置顶）如下：</p>
+<pre><code>                    &lt;div id=&quot;recommend-sections&quot; class=&quot;recommend&quot;&gt;
+                        &lt;%- partial('_widget/recommend') %&gt;
+                    &lt;/div&gt;
+</code></pre>
+<p>下面再把<font color="red">about.ejs</font>文件中的代码（我的相册）剪切粘贴到<font color="red">phone.ejs</font>如下：</p>
+<pre><code>    &lt;% if (theme.myGallery &amp;&amp; theme.myGallery.enable) { %&gt;
+    &lt;%- partial('_widget/my-gallery') %&gt;
+    &lt;% } %&gt;
+</code></pre>
+<h5 id="div-style-background-dfecf3-color-000-最后贴出修改后完整的phone-ejs文件代码-div"><a class="header-anchor" href="#div-style-background-dfecf3-color-000-最后贴出修改后完整的phone-ejs文件代码-div">☞</a><div style="background:#dfecf3; color:#000">最后贴出修改后完整的phone.ejs文件代码</div></h5>
+<pre><code>&lt;%- partial('_partial/bg-cover') %&gt;
+
+&lt;main class=&quot;content&quot;&gt;
+
+    &lt;div id=&quot;indexCard&quot; class=&quot;index-card&quot;&gt;
+        &lt;div class=&quot;container &quot;&gt;
+            &lt;div class=&quot;card&quot;&gt;
+                &lt;div class=&quot;card-content&quot;&gt;
+                    &lt;% if (theme.dream.enable) { %&gt;
+                        &lt;%- partial('_widget/dream') %&gt;
+                    &lt;% } %&gt;
+
+                    &lt;% if (theme.music.enable &amp;&amp; site.data &amp;&amp; site.data.musics) { %&gt;
+                        &lt;%- partial('_widget/music') %&gt;
+                    &lt;% } %&gt;
+
+                    &lt;% if (theme.video.enable) { %&gt;
+                        &lt;%- partial('_widget/video') %&gt;
+                    &lt;% } %&gt;
+
+                    &lt;div id=&quot;recommend-sections&quot; class=&quot;recommend&quot;&gt;
+                        
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;% if (theme.myGallery &amp;&amp; theme.myGallery.enable) { %&gt;
+    &lt;%- partial('_widget/my-gallery') %&gt;
+    &lt;% } %&gt;
+
+
+&lt;/main&gt;
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-修改导航栏颜色-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改导航栏颜色-div">☞</a><div style="background:#dfecd5; color:#000">修改导航栏颜色</div></h4>
+<p>打开<font color="red">themes/matery/source/css/matery.css</font>文件(165行):修改自己想要的颜色</p>
+<p>然后注释掉这两行css</p>
+<pre><code>.bg-color {
+    background-image: linear-gradient(to right, #2eab9f 0%, #EE82EE 100%);
+}
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-去掉首页banner轮播图的背景颜色-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-去掉首页banner轮播图的背景颜色-div">☞</a><div style="background:#dfecd5; color:#000">去掉首页banner轮播图的背景颜色</div></h4>
+<p>打开<font color="red">themes/matery/source/css/matery.css</font>文件(367行，也可以快速搜索<code>.bg-cover:after</code>进行定位):</p>
+<pre><code>.bg-cover:after {
+/*  -webkit-animation: rainbow 60s infinite;
+    animation: rainbow 60s infinite;*/
+}
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-给博客增加动态标签-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-给博客增加动态标签-div">☞</a><div style="background:#dfecd5; color:#000">给博客增加动态标签</div></h4>
+<p>实现方式:</p>
+<p>打开博客路径themes/matery/layout/layout.ejs</p>
+<p>在前添加如下代码即可</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;var OriginTitile=document.title,st;document.addEventListener(&quot;visibilitychange&quot;,function(){document.hidden?(document.title=&quot;看不见我🙈~看不见我🙈~&quot;,clearTimeout(st)):(document.title=&quot;(๑•̀ㅂ•́) ✧被发现了～&quot;,st=setTimeout(function(){document.title=OriginTitile},3e3))})&lt;/script&gt;
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-修改首页轮播图高度-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改首页轮播图高度-div">☞</a><div style="background:#dfecd5; color:#000">修改首页轮播图高度</div></h4>
+<p>打开<font color="red">themes/matery/source/libs/materialize/materialize.min.css</font>文件(<code>ctrl+f</code>搜索<code>.carousel.carousel-slider .carousel-item</code>)修改style属性</p>
+<pre><code>height:50%;min-height:550px;
+</code></pre>
+<p>打开<font color="red">themes/matery/source/css/matery.css</font>文件(<code>ctrl+f</code>搜索<code>.index-card</code>)修改style属性</p>
+<pre><code>margin-top: -410px;
+</code></pre>
+<p>修改后首页的一行小图标：github   、email   、qq   、rss订阅对手机全面屏幕不是太适配，懒得调整css了，索性就把这一行删掉了：</p>
+<p>打开<font color="red">themes/matery/layout/_partial/index-cover.ejs</font>文件(<code>ctrl+f</code>搜索<code>cover-social-link</code>)第82行</p>
+<p>然后直接删除这行代码，这行图标就消失了</p>
+<pre><code>&lt;div class=&quot;cover-social-link&quot;&gt;&lt;%- partial('_partial/social-link') %&gt;&lt;/div&gt;
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-div">☞</a><div style="background:#dfecd5; color:#000"></div></h4>
+<h4 id="div-style-background-dfecd5-color-000-div-v2"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-div-v2">☞</a><div style="background:#dfecd5; color:#000"></div></h4>
+<p><font color="red">未完待续</font></p>
 
             </div>
             <hr>
@@ -909,7 +850,7 @@ i()
                     </span>
                     <a href="https://qvchuang.top" class="b-link-green">My blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/archives/d4e5ce76.html" class="b-link-green">Python3-函数进阶</a>
+                    <a href="/archives/d3c10307.html" class="b-link-green">matery主题个性化定制</a>
                 </p>
             </div>
         </div>
@@ -1198,64 +1139,43 @@ i()
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/archives/7af05b52.html">
+                <a href="/archives/d3c10307.html">
                     <div class="card-image">
                         
+                        <img src="https://file.moetu.org/images/2019/08/25/architect-architecture-black-and-white-15370084f1dd75b7684fe89.jpg" class="responsive-img" alt="matery主题个性化定制">
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python3-装饰器函数">
-                        
-                        <span class="card-title">Python3-装饰器函数</span>
+                        <span class="card-title">matery主题个性化定制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
+                    <div class="summary">☞==前言==
 
-☞阅读目录
-
-
-装饰器的形成过程
-
-
-开放封闭原则
-
-
-装饰器主要功能和装饰器固定结构
-
-
-带参数的装饰器
-
-
-多个装饰器装饰一个函数
-
-
-☞装饰器的形成过程
-☞装饰器——简单版
-import time
-def func1():
-   </div>
+之前用的yilia主题，最近换了matery主题，也折腾的许多东西，抽空把一些自己个性化定制的内容整理一下，整理内容是官方文档里没有的，官方文档链接贴在下方，有需要个性化修改的可以来参考此篇文章，仅代表个人审美，有瑕疵的地</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
+                            <a href="/categories/blog/" class="post-category" target="_blank">
+                                    blog
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -1269,62 +1189,33 @@ def func1():
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/archives/e03bb111.html">
+                <a href="/archives/417fd41c.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Python3-初识函数">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="测试文章加密-[test]">
                         
-                        <span class="card-title">Python3-初识函数</span>
+                        <span class="card-title">测试文章加密-[test]</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
+                    <div class="summary">==测试文章加密==
+test
+test
 
-☞阅读目录
-
-
-为什么要用函数
-
-
-函数的定义与调用
-
-
-函数的返回值
-
-
-函数的参数
-
-
-总结
-
-
-☞为什么要用函数
-打个比方，加入现在len()方法突然不能直接用了。。。
-然后现在有一个需求，让你计算’hello world’的长度</div>
+test
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            qvchuang
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
-                    </a>
-                    
                 </div>
                 
             </div>

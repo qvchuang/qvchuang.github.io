@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qvchuang.top/"/>
-  <updated>2019-05-14T14:24:06.016Z</updated>
+  <updated>2019-08-25T08:17:02.493Z</updated>
   <id>https://qvchuang.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>matery主题个性化定制</title>
+    <link href="https://qvchuang.top/archives/d3c10307.html"/>
+    <id>https://qvchuang.top/archives/d3c10307.html</id>
+    <published>2019-08-25T04:53:41.130Z</published>
+    <updated>2019-08-25T08:17:02.493Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="blog" scheme="https://qvchuang.top/categories/blog/"/>
+    
+    
+      <category term="Hexo" scheme="https://qvchuang.top/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>测试文章加密-[test]</title>
@@ -313,26 +339,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://moetu.org/image/1yEdI&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://moetu.fastmirror.org/images/2018/11/25/https7d20126c47cc848a.md.jpg&quot; alt&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="blog" scheme="https://qvchuang.top/categories/blog/"/>
-    
-    
-      <category term="Hexo" scheme="https://qvchuang.top/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>加个Valine评论系统</title>
-    <link href="https://qvchuang.top/archives/c568d0de.html"/>
-    <id>https://qvchuang.top/archives/c568d0de.html</id>
-    <published>2018-10-10T10:31:46.000Z</published>
-    <updated>2019-08-24T18:13:21.591Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://moetu.org/image/1y9Vj&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://file.moetu.org/images/2018/11/24/Valinebb6c97a032abd7f0.md.png&quot; border=&quot;0&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
