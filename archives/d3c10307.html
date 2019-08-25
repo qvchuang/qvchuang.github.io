@@ -709,8 +709,16 @@ layout: &quot;photo&quot;
 <p>然后直接删除这行代码，这行图标就消失了</p>
 <pre><code>&lt;div class=&quot;cover-social-link&quot;&gt;&lt;%- partial('_partial/social-link') %&gt;&lt;/div&gt;
 </code></pre>
+<h4 id="div-style-background-dfecd5-color-000-valine评论显示问题-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-valine评论显示问题-div">☞</a><div style="background:#dfecd5; color:#000">valine评论显示问题</div></h4>
+<p>打开<font color="red">themes/matery/layout/_partial/valine.ejs</font>文件(<code>ctrl+f</code>搜索<code>.v .vlist .vcard</code>)第238行</p>
+<p>修改padding-top:为2.5rem就OK了</p>
+<pre><code>    .v .vlist .vcard {
+    padding-top: 2.5rem;
+    position: relative;
+    display: block;
+    }
+</code></pre>
 <h4 id="div-style-background-dfecd5-color-000-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-div">☞</a><div style="background:#dfecd5; color:#000"></div></h4>
-<h4 id="div-style-background-dfecd5-color-000-div-v2"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-div-v2">☞</a><div style="background:#dfecd5; color:#000"></div></h4>
 <p><font color="red">未完待续</font></p>
 
             </div>
@@ -1379,7 +1387,7 @@ test
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">60.7k</span>
+                <span class="white-color">60.8k</span>
             
 
             
