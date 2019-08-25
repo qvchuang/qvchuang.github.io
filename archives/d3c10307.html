@@ -438,14 +438,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        9 分
                     </div>
                     
                 
@@ -670,13 +670,22 @@ layout: &quot;photo&quot;
 </code></pre>
 <h4 id="div-style-background-dfecd5-color-000-修改导航栏颜色-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改导航栏颜色-div">☞</a><div style="background:#dfecd5; color:#000">修改导航栏颜色</div></h4>
 <p>打开<font color="red">themes/matery/source/css/matery.css</font>文件(165行):修改自己想要的颜色</p>
-<p>然后注释掉这两行css</p>
 <pre><code>.bg-color {
     background-image: linear-gradient(to right, #2eab9f 0%, #EE82EE 100%);
 }
 </code></pre>
+<h4 id="div-style-background-dfecd5-color-000-修改导航栏右上角github角标颜色-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改导航栏右上角github角标颜色-div">☞</a><div style="background:#dfecd5; color:#000">修改导航栏右上角github角标颜色</div></h4>
+<p>打开<font color="red">themes/matery/layout/_partial/github-link.ejs</font>文件(第十五行)修改color属性就可以随心所欲的改变github角标的颜色</p>
+<pre><code>    .github-corner svg {
+        color: #F062A7;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+</code></pre>
 <h4 id="div-style-background-dfecd5-color-000-去掉首页banner轮播图的背景颜色-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-去掉首页banner轮播图的背景颜色-div">☞</a><div style="background:#dfecd5; color:#000">去掉首页banner轮播图的背景颜色</div></h4>
 <p>打开<font color="red">themes/matery/source/css/matery.css</font>文件(367行，也可以快速搜索<code>.bg-cover:after</code>进行定位):</p>
+<p>然后注释掉这两行css</p>
 <pre><code>.bg-cover:after {
 /*  -webkit-animation: rainbow 60s infinite;
     animation: rainbow 60s infinite;*/
