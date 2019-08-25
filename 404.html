@@ -301,6 +301,85 @@
 </script>
 
 {% aplayer "归去来兮" "花粥" "http://music.163.com/song/media/outer/url?id=1357999894.mp3" "http://p1.music.126.net/H6dt7IgvXNWhRM_w7XbcqQ==/109951163990575387.jpg?param=130y130" "autoplay" %}
+
+<div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    🐬 学习、记录、分享
+                
+            </div>
+
+            <div class="description center-align">
+                
+                    Do what you want to do !
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+// 每天切换 banner 图.  Switch banner image every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+    </div>
+</div>
+
+<main class="content">
+
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+
+                    
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"平凡之路","artist":"朴树","url":"http://music.163.com/song/media/outer/url?id=28815250.mp3","cover":"http://p2.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg?param=130y130"},{"name":"Counting Sheep","artist":"SAFIA","url":"http://music.163.com/song/media/outer/url?id=31081299.mp3","cover":"http://p2.music.126.net/MXzI7ExXb6ru3CeW_P1HSw==/7906588115831440.jpg?param=130y130"},{"name":"心如止水","artist":"Ice Paper","url":"http://music.163.com/song/media/outer/url?id=1349292048.mp3","cover":"http://p2.music.126.net/MLQl_7poLz2PTON6_JZZRQ==/109951163938219545.jpg?param=130y130"},{"name":"归去来兮","artist":"花粥","url":"http://music.163.com/song/media/outer/url?id=1357999894.mp3","cover":"http://p1.music.126.net/H6dt7IgvXNWhRM_w7XbcqQ==/109951163990575387.jpg?param=130y130"}]')
+    });
+});
+</script>
+                    
+
+                    
+
+                    <div id="recommend-sections" class="recommend">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
