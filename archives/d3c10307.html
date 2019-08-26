@@ -438,14 +438,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
+                        2.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        10 分
                     </div>
                     
                 
@@ -523,6 +523,22 @@ description: &quot;Oops～，你来到了没有知识的荒原！ :(&quot;
     // 每天切换 banner 图.  Switch banner image every day.
     $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 &lt;/script&gt;
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-修改首页轮播图高度-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改首页轮播图高度-div">☞</a><div style="background:#dfecd5; color:#000">修改首页轮播图高度</div></h4>
+<p>打开<font color="red">themes/matery/source/libs/materialize/materialize.min.css</font>文件(<code>ctrl+f</code>搜索<code>.carousel.carousel-slider .carousel-item</code>)修改style属性</p>
+<pre><code>height:50%;min-height:550px;
+</code></pre>
+<p>打开<font color="red">themes/matery/source/css/matery.css</font>文件(<code>ctrl+f</code>搜索<code>.index-card</code>)修改style属性</p>
+<pre><code>margin-top: -410px;
+</code></pre>
+<blockquote>
+<p>根据自己的实际情况调整，可以浏览器F12调整好再做修改<br>
+这里只是告诉你要在哪里改css参数，参数根据自己喜好修改</p>
+</blockquote>
+<p>修改后首页的一行小图标：github   、email   、qq   、rss订阅对手机全面屏幕不是太适配，懒得调整css了，索性就把这一行删掉了：</p>
+<p>打开<font color="red">themes/matery/layout/_partial/index-cover.ejs</font>文件(<code>ctrl+f</code>搜索<code>cover-social-link</code>)第82行</p>
+<p>然后直接删除这行代码，这行图标就消失了</p>
+<pre><code>&lt;div class=&quot;cover-social-link&quot;&gt;&lt;%- partial('_partial/social-link') %&gt;&lt;/div&gt;
 </code></pre>
 <h4 id="div-style-background-dfecd5-color-000-分类页和标签页合并-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-分类页和标签页合并-div">☞</a><div style="background:#dfecd5; color:#000">分类页和标签页合并</div></h4>
 <p>首先在主题的配置文件<font color="red">_config.yml</font>中找到menu项，注释掉Tags</p>
@@ -697,18 +713,6 @@ layout: &quot;photo&quot;
 <p>在前添加如下代码即可</p>
 <pre><code>&lt;script type=&quot;text/javascript&quot;&gt;var OriginTitile=document.title,st;document.addEventListener(&quot;visibilitychange&quot;,function(){document.hidden?(document.title=&quot;看不见我🙈~看不见我🙈~&quot;,clearTimeout(st)):(document.title=&quot;(๑•̀ㅂ•́) ✧被发现了～&quot;,st=setTimeout(function(){document.title=OriginTitile},3e3))})&lt;/script&gt;
 </code></pre>
-<h4 id="div-style-background-dfecd5-color-000-修改首页轮播图高度-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-修改首页轮播图高度-div">☞</a><div style="background:#dfecd5; color:#000">修改首页轮播图高度</div></h4>
-<p>打开<font color="red">themes/matery/source/libs/materialize/materialize.min.css</font>文件(<code>ctrl+f</code>搜索<code>.carousel.carousel-slider .carousel-item</code>)修改style属性</p>
-<pre><code>height:50%;min-height:550px;
-</code></pre>
-<p>打开<font color="red">themes/matery/source/css/matery.css</font>文件(<code>ctrl+f</code>搜索<code>.index-card</code>)修改style属性</p>
-<pre><code>margin-top: -410px;
-</code></pre>
-<p>修改后首页的一行小图标：github   、email   、qq   、rss订阅对手机全面屏幕不是太适配，懒得调整css了，索性就把这一行删掉了：</p>
-<p>打开<font color="red">themes/matery/layout/_partial/index-cover.ejs</font>文件(<code>ctrl+f</code>搜索<code>cover-social-link</code>)第82行</p>
-<p>然后直接删除这行代码，这行图标就消失了</p>
-<pre><code>&lt;div class=&quot;cover-social-link&quot;&gt;&lt;%- partial('_partial/social-link') %&gt;&lt;/div&gt;
-</code></pre>
 <h4 id="div-style-background-dfecd5-color-000-valine评论显示问题-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-valine评论显示问题-div">☞</a><div style="background:#dfecd5; color:#000">valine评论显示问题</div></h4>
 <p>打开<font color="red">themes/matery/layout/_partial/valine.ejs</font>文件(<code>ctrl+f</code>搜索<code>.v .vlist .vcard</code>)第238行</p>
 <p>修改padding-top:为2.5rem就OK了</p>
@@ -718,6 +722,31 @@ layout: &quot;photo&quot;
     display: block;
     }
 </code></pre>
+<h4 id="div-style-background-dfecd5-color-000-图片懒加载-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-图片懒加载-div">☞</a><div style="background:#dfecd5; color:#000">图片懒加载</div></h4>
+<p>修改<font color="red">/themes/matery/source/js</font>中的<font color="red">matery.js</font>文件：</p>
+<p>第103行，后面加上最后一段代码</p>
+<pre><code>        $('#articleContent, #myGallery').lightGallery({
+            selector: '.img-item',
+            // 启用字幕
+            subHtmlSelectorRelative: true
+        });
+
+        $(document).find('img[data-original]').each(function(){
+    		$(this).parent().attr(&quot;href&quot;, $(this).attr(&quot;data-original&quot;));
+		});
+</code></pre>
+<p><a href="https://github.com/Troy-Yang/hexo-lazyload-image" target="_blank" rel="noopener">再装个插件</a></p>
+<p><code>$ npm install hexo-lazyload-image --save</code></p>
+<p>在博客根目录配置.yml文件加入对应字段，如下：</p>
+<pre><code>lazyload:
+  enable: true 
+  #如果为真，则只有文章或页面中的图像支持延迟加载。
+  #如果为假，整个网站的图像将使用惰性加载，包括来自主题的图像，但不包括来自CSS样式的背景图像。
+  onlypost: true
+  loadingImg: /loading.gif
+</code></pre>
+<p>这里的loading.gif我放在了<font color="red">/themes/matery/source</font>目录上</p>
+<p>这样就可以实现图片懒加载</p>
 <h4 id="div-style-background-dfecd5-color-000-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-div">☞</a><div style="background:#dfecd5; color:#000"></div></h4>
 <p><font color="red">未完待续</font></p>
 
@@ -1387,7 +1416,7 @@ test
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">60.8k</span>
+                <span class="white-color">61k</span>
             
 
             
