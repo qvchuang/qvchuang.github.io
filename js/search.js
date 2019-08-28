@@ -72,7 +72,7 @@ var searchFunc = function (path, search_id, content_id) {
                                 match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
                             });
 
-                            str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            str += "<p class=\"search-result\">" + match_content.substring(0,120) + "...</p>"
                         }
                         str += "</li>";
                     }
