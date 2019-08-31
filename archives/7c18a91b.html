@@ -1,11 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Python3-迭代器与生成器, My blog">
-    <meta name="description" content="
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="keywords" content="Python3-迭代器与生成器, My blog"><meta name="description" content="
 
 ☞一、迭代器
 ☞python中的for循环
@@ -14,298 +7,7 @@
 for i in [1,2,3,4]:  
     print(i)
 
-上面这段代码肯定是没有问题的，">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python3-迭代器与生成器 | My blog</title>
-    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    <style type="text/css">
-        
-    </style>
-
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
-    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
-    
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
-
-
-<body>
-
-<header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">My blog</span>
-                </a>
-            </div>
-            
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
-    
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>首页</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-line-chart"></i>
-            
-            <span>分类</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-calendar"></i>
-            
-            <span>归档</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/music" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-music"></i>
-            
-            <span>视听</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/galleries" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-camera-retro"></i>
-            
-            <span>相册</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-smile-o"></i>
-            
-            <span>关于</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/lyb" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-paper-plane-o"></i>
-            
-            <span>留言板</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/friends" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-share-alt"></i>
-            
-            <span>友情链接</span>
-        </a>
-    </li>
-    
-    <li>
-        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
-        </a>
-    </li>
-</ul>
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">My blog</div>
-        <div class="logo-desc">
-            
-            Do what you want to do !
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                首页
-            </a>
-        </li>
-        
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-line-chart"></i>
-                
-                分类
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-calendar"></i>
-                
-                归档
-            </a>
-        </li>
-        
-        <li>
-            <a href="/music" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-music"></i>
-                
-                视听
-            </a>
-        </li>
-        
-        <li>
-            <a href="/galleries" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-camera-retro"></i>
-                
-                相册
-            </a>
-        </li>
-        
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-smile-o"></i>
-                
-                关于
-            </a>
-        </li>
-        
-        <li>
-            <a href="/lyb" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-paper-plane-o"></i>
-                
-                留言板
-            </a>
-        </li>
-        
-        <li>
-            <a href="/friends" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-share-alt"></i>
-                
-                友情链接
-            </a>
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #F062A7;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
-<script>
+上面这段代码肯定是没有问题的，"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Python3-迭代器与生成器 | My blog</title><link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><style type="text/css"></style><script src="/libs/jquery/jquery-2.2.0.min.js"></script><script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer="defer"></script><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"> <a href="/" class="waves-effect waves-light"><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">My blog</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a><ul class="right"><li class="hide-on-med-and-down"><a href="/" class="waves-effect waves-light"><i class="fa fa-home"></i> <span>首页</span></a></li><li class="hide-on-med-and-down"><a href="/categories" class="waves-effect waves-light"><i class="fa fa fa-line-chart"></i> <span>分类</span></a></li><li class="hide-on-med-and-down"><a href="/archives" class="waves-effect waves-light"><i class="fa fa fa-calendar"></i> <span>归档</span></a></li><li class="hide-on-med-and-down"><a href="/music" class="waves-effect waves-light"><i class="fa fa fa-music"></i> <span>视听</span></a></li><li class="hide-on-med-and-down"><a href="/galleries" class="waves-effect waves-light"><i class="fa fa fa-camera-retro"></i> <span>相册</span></a></li><li class="hide-on-med-and-down"><a href="/about" class="waves-effect waves-light"><i class="fa fa fa-smile-o"></i> <span>关于</span></a></li><li class="hide-on-med-and-down"><a href="/lyb" class="waves-effect waves-light"><i class="fa fa fa-paper-plane-o"></i> <span>留言板</span></a></li><li class="hide-on-med-and-down"><a href="/friends" class="waves-effect waves-light"><i class="fa fa fa-share-alt"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fa fa-search" title="搜索"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"> <img src="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">My blog</div><div class="logo-desc"> Do what you want to do !</div></div><ul class="menu-list mobile-menu-list"><li><a href="/" class="waves-effect waves-light"><i class="fa fa-fw fa-home"></i> 首页</a></li><li><a href="/categories" class="waves-effect waves-light"><i class="fa fa-fw fa fa-line-chart"></i> 分类</a></li><li><a href="/archives" class="waves-effect waves-light"><i class="fa fa-fw fa fa-calendar"></i> 归档</a></li><li><a href="/music" class="waves-effect waves-light"><i class="fa fa-fw fa fa-music"></i> 视听</a></li><li><a href="/galleries" class="waves-effect waves-light"><i class="fa fa-fw fa fa-camera-retro"></i> 相册</a></li><li><a href="/about" class="waves-effect waves-light"><i class="fa fa-fw fa fa-smile-o"></i> 关于</a></li><li><a href="/lyb" class="waves-effect waves-light"><i class="fa fa-fw fa fa-paper-plane-o"></i> 留言板</a></li><li><a href="/friends" class="waves-effect waves-light"><i class="fa fa-fw fa fa-share-alt"></i> 友情链接</a></li><li><div class="divider"></div></li><li><a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank"><i class="fa fa-github-square fa-fw"></i> Fork Me</a></li></ul></div></div><style>.nav-transparent .github-corner{display:none!important}.github-corner{position:absolute;z-index:10;top:0;right:0;border:0;transform:scale(1.1)}.github-corner svg{color:#f062a7;fill:#fff;height:64px;width:64px}.github-corner:hover .octo-arm{animation:a .56s ease-in-out}.github-corner .octo-arm{animation:none}@keyframes a{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}</style> <a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewbox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"/></svg></a></nav></header><script src="/libs/cryptojs/crypto-js.min.js"></script><script>
     (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
@@ -315,215 +17,16 @@ for i in [1,2,3,4]:
             }
         }
     })();
-</script>
-
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <div class="description center-align post-title">
-                        Python3-迭代器与生成器
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<main class="post-container content">
-
-    
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/python3/" target="_blank">
-                                <span class="chip bg-color">python3</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                python
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
-                <div class="post-date info-break-policy">
-                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-12-08
-                </div>
-
-                
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3k
-                    </div>
-                    
-
-                    
-                    <div class="info-break-policy">
-                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        12 分
-                    </div>
-                    
-                
-				
-				
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <p><a href="https://moetu.org/image/EgY1u" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/08/python4e97f6211887c513.md.jpg" alt></a></p>
-<a id="more"></a>
-<h2 id="div-style-background-87ceeb-color-000-一-迭代器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-一-迭代器-div">☞</a><div style="background:#87CEEB; color:#000">一、迭代器</div></h2>
-<h3 id="div-style-background-pink-color-000-python中的for循环-div"><a class="header-anchor" href="#div-style-background-pink-color-000-python中的for循环-div">☞</a><div style="background:pink; color:#000">python中的for循环</div></h3>
-<p>要了解for循环是怎么回事儿，还是要从代码的角度出发。</p>
-<p>首先，对一个列表进行for循环。</p>
-<pre class=" language-language-python"><code class="language-language-python">for i in [1,2,3,4]:  
+</script><div class="bg-cover pd-header post-cover" style="background-image:url(/medias/featureimages/20.jpg)"><div class="container"><div class="row"><div class="col s12 m12 l12"><div class="brand"><div class="description center-align post-title"> Python3-迭代器与生成器</div></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:20px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/python3/" target="_blank"><span class="chip bg-color">python3</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/python/" class="post-category" target="_blank">python</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="fa fa-calendar-minus-o fa-fw"></i> 发布日期:&nbsp;&nbsp; 2018-12-08</div><div class="info-break-policy"><i class="fa fa-file-word-o fa-fw"></i> 文章字数:&nbsp;&nbsp; 3k</div><div class="info-break-policy"><i class="fa fa-clock-o fa-fw"></i> 阅读时长:&nbsp;&nbsp; 12 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="fa fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><p><a href="https://moetu.org/image/EgY1u" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/08/python4e97f6211887c513.md.jpg" alt></a></p><a id="more"></a><h2 id="div-style-background-87ceeb-color-000-一-迭代器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-一-迭代器-div">☞</a><div style="background:#87ceeb;color:#000">一、迭代器</div></h2><h3 id="div-style-background-pink-color-000-python中的for循环-div"><a class="header-anchor" href="#div-style-background-pink-color-000-python中的for循环-div">☞</a><div style="background:pink;color:#000">python中的for循环</div></h3><p>要了解for循环是怎么回事儿，还是要从代码的角度出发。</p><p>首先，对一个列表进行for循环。</p><pre class="language-language-python"><code class="language-language-python">for i in [1,2,3,4]:  
     print(i)
-</code></pre>
-<p>上面这段代码肯定是没有问题的，但是我们换一种情况，来循环一个数字1234试试</p>
-<pre class=" language-language-python"><code class="language-language-python">for i in 1234
+</code></pre><p>上面这段代码肯定是没有问题的，但是我们换一种情况，来循环一个数字1234试试</p><pre class="language-language-python"><code class="language-language-python">for i in 1234
     print(i) 
 结果：
 Traceback (most recent call last):
   File "test.py", line 4, in <module>
     for i in 1234:
 TypeError: 'int' object is not iterable
-</module></code></pre>
-<p>报错了！</p>
-<p>“TypeError: ‘int’ object is not iterable”</p>
-<p>说int类型不是一个<strong>iterable</strong>，那这个<strong>iterable</strong>是什么？</p>
-<blockquote>
-<p>iterable</p>
-<p>可迭代的;可重复的;迭代的</p>
-</blockquote>
-<h3 id="div-style-background-pink-color-000-迭代和可迭代协议-div"><a class="header-anchor" href="#div-style-background-pink-color-000-迭代和可迭代协议-div">☞</a><div style="background:pink; color:#000">迭代和可迭代协议</div></h3>
-<h4 id="div-style-background-beige-color-000-什么是迭代-div"><a class="header-anchor" href="#div-style-background-beige-color-000-什么是迭代-div">☞</a><div style="background:beige; color:#000">什么是迭代</div></h4>
-<p>现在，我们已经知道有一个叫做“<font face="宋体" color="#FF8000"><strong>可迭代的</strong></font>”概念。</p>
-<p>首先，从报错来分析，好像之所以1234不可以for循环，是因为它不可迭代。</p>
-<p>那么如果“可迭代”，就应该可以被for循环了。</p>
-<p>字符串、列表、元组、字典、集合都可以被for循环，说明他们都是可迭代的。</p>
-<p>怎么来证明这一点呢？</p>
-<pre><code>from collections import Iterable
+</module></code></pre><p>报错了！</p><p>“TypeError: ‘int’ object is not iterable”</p><p>说int类型不是一个<strong>iterable</strong>，那这个<strong>iterable</strong>是什么？</p><blockquote><p>iterable</p><p>可迭代的;可重复的;迭代的</p></blockquote><h3 id="div-style-background-pink-color-000-迭代和可迭代协议-div"><a class="header-anchor" href="#div-style-background-pink-color-000-迭代和可迭代协议-div">☞</a><div style="background:pink;color:#000">迭代和可迭代协议</div></h3><h4 id="div-style-background-beige-color-000-什么是迭代-div"><a class="header-anchor" href="#div-style-background-beige-color-000-什么是迭代-div">☞</a><div style="background:beige;color:#000">什么是迭代</div></h4><p>现在，我们已经知道有一个叫做“<font face="宋体" color="#FF8000"><strong>可迭代的</strong></font>”概念。</p><p>首先，从报错来分析，好像之所以1234不可以for循环，是因为它不可迭代。</p><p>那么如果“可迭代”，就应该可以被for循环了。</p><p>字符串、列表、元组、字典、集合都可以被for循环，说明他们都是可迭代的。</p><p>怎么来证明这一点呢？</p><pre><code>from collections import Iterable
                              
 l = [1,2,3,4]                
 t = (1,2,3,4)                
@@ -534,48 +37,20 @@ print(isinstance(l,Iterable))
 print(isinstance(t,Iterable))
 print(isinstance(d,Iterable))
 print(isinstance(s,Iterable))
-</code></pre>
-<p>结合使用for循环取值的现象，再从字面上理解一下，</p>
-<p>其实迭代就是，可以将某个数据集内的数据“一个挨着一个的取出来”，就叫做迭代。</p>
-<h4 id="div-style-background-beige-color-000-可迭代协议-div"><a class="header-anchor" href="#div-style-background-beige-color-000-可迭代协议-div">☞</a><div style="background:beige; color:#000">可迭代协议</div></h4>
-<p>现在从结果分析原因，能被for循环的就是“可迭代的”，但是如果正着想，for怎么知道谁是可迭代的呢？</p>
-<p>假如我们自己写了一个数据类型，希望这个数据类型里的东西也可以使用for被一个一个的取出来，</p>
-<p>那我们就必须满足for的要求。这个要求就叫做“协议”。</p>
-<p>可以被迭代要满足的要求就叫做可迭代协议。</p>
-<p>可迭代协议的定义非常简单，就是内部实现了<code>__iter__</code>方法。</p>
-<p>接下来就来验证一下：</p>
-<pre class=" language-language-python"><code class="language-language-python">print(dir([1,2]))
+</code></pre><p>结合使用for循环取值的现象，再从字面上理解一下，</p><p>其实迭代就是，可以将某个数据集内的数据“一个挨着一个的取出来”，就叫做迭代。</p><h4 id="div-style-background-beige-color-000-可迭代协议-div"><a class="header-anchor" href="#div-style-background-beige-color-000-可迭代协议-div">☞</a><div style="background:beige;color:#000">可迭代协议</div></h4><p>现在从结果分析原因，能被for循环的就是“可迭代的”，但是如果正着想，for怎么知道谁是可迭代的呢？</p><p>假如我们自己写了一个数据类型，希望这个数据类型里的东西也可以使用for被一个一个的取出来，</p><p>那我们就必须满足for的要求。这个要求就叫做“协议”。</p><p>可以被迭代要满足的要求就叫做可迭代协议。</p><p>可迭代协议的定义非常简单，就是内部实现了<code>__iter__</code>方法。</p><p>接下来就来验证一下：</p><pre class="language-language-python"><code class="language-language-python">print(dir([1,2]))
 print(dir((2,3)))
 print(dir({1:2}))
 print(dir({1,2}))
-</code></pre>
-<pre><code>结果:
+</code></pre><pre><code>结果:
 ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
 ['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
 ['__and__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
-</code></pre>
-<p>总结一下：<font face="宋体" color="#FF8000">可以被for循环的都是可迭代的，要想可迭代，内部必须有一个<code>__iter__</code>方法。</font></p>
-<p>接着分析，<code>__iter__</code>方法做了什么事情呢？</p>
-<pre><code>print([1,2].__iter__())
+</code></pre><p>总结一下：<font face="宋体" color="#FF8000">可以被for循环的都是可迭代的，要想可迭代，内部必须有一个<code>__iter__</code>方法。</font></p><p>接着分析，<code>__iter__</code>方法做了什么事情呢？</p><pre><code>print([1,2].__iter__())
 
 结果
 &lt;list_iterator object at 0x1024784a8&gt;
-</code></pre>
-<p>执行了list([1,2])的<code>__iter__</code>方法，得到了一个list_iterator，</p>
-<p>现在又得到了一个新名词——<code>iterator</code>。</p>
-<blockquote>
-<p>iterator</p>
-<p>迭代器，迭代程序</p>
-</blockquote>
-<p>iterator,是一个计算机中的专属名词，叫做迭代器</p>
-<h3 id="div-style-background-pink-color-000-迭代器协议-div"><a class="header-anchor" href="#div-style-background-pink-color-000-迭代器协议-div">☞</a><div style="background:pink; color:#000">迭代器协议</div></h3>
-<blockquote>
-<p>知道“可迭代”之后，那么什么叫“迭代器”？</p>
-<p>虽然不知道什么叫迭代器，但是现在已经有一个迭代器了，这个迭代器是一个列表的迭代器。</p>
-<p>先来看看这个列表的迭代器比起列表来说实现了哪些新方法，这样就能揭开迭代器的神秘面纱了</p>
-</blockquote>
-<pre><code>'''
+</code></pre><p>执行了list([1,2])的<code>__iter__</code>方法，得到了一个list_iterator，</p><p>现在又得到了一个新名词——<code>iterator</code>。</p><blockquote><p>iterator</p><p>迭代器，迭代程序</p></blockquote><p>iterator,是一个计算机中的专属名词，叫做迭代器</p><h3 id="div-style-background-pink-color-000-迭代器协议-div"><a class="header-anchor" href="#div-style-background-pink-color-000-迭代器协议-div">☞</a><div style="background:pink;color:#000">迭代器协议</div></h3><blockquote><p>知道“可迭代”之后，那么什么叫“迭代器”？</p><p>虽然不知道什么叫迭代器，但是现在已经有一个迭代器了，这个迭代器是一个列表的迭代器。</p><p>先来看看这个列表的迭代器比起列表来说实现了哪些新方法，这样就能揭开迭代器的神秘面纱了</p></blockquote><pre><code>'''
 dir([1,2].__iter__())是列表迭代器中实现的所有方法，dir([1,2])是列表中实现的所有方法,都是以列表的形式返回给我们的，为了看的更清楚，我们分别把他们转换成集合，
 然后取差集。
 '''
@@ -585,9 +60,7 @@ print(set(dir([1,2].__iter__()))-set(dir([1,2])))
 
 结果：
 {'__length_hint__', '__next__', '__setstate__'}
-</code></pre>
-<p>在列表迭代器中多了三个方法，那么这三个方法都分别做了什么事呢？</p>
-<pre><code>ter_l = [1,2,3,4,5,6].__iter__()
+</code></pre><p>在列表迭代器中多了三个方法，那么这三个方法都分别做了什么事呢？</p><pre><code>ter_l = [1,2,3,4,5,6].__iter__()
 #获取迭代器中元素的长度
 print(iter_l.__length_hint__())
 #根据索引值指定从哪里开始迭代
@@ -595,11 +68,7 @@ print('*',iter_l.__setstate__(4))
 #一个一个的取值
 print('**',iter_l.__next__())
 print('***',iter_l.__next__())
-</code></pre>
-<p>这三个方法中，能让我们一个一个取值的神奇方法就是<code>__next__</code></p>
-<p>在for循环中，就是在内部调用了<code>__next__</code>方法才能取到一个一个的值。</p>
-<p>接下来就用迭代器的next方法来写一个不依赖for的遍历。</p>
-<pre class=" language-language-python"><code class="language-language-python">l = [1,2,3,4]
+</code></pre><p>这三个方法中，能让我们一个一个取值的神奇方法就是<code>__next__</code></p><p>在for循环中，就是在内部调用了<code>__next__</code>方法才能取到一个一个的值。</p><p>接下来就用迭代器的next方法来写一个不依赖for的遍历。</p><pre class="language-language-python"><code class="language-language-python">l = [1,2,3,4]
 l_iter = l.__iter__()
 item = l_iter.__next__()
 print(item)
@@ -611,11 +80,7 @@ item = l_iter.__next__()
 print(item)
 item = l_iter.__next__()
 print(item)
-</code></pre>
-<p>这是一段会报错的代码，如果我们一直取next取到迭代器里已经没有元素了，</p>
-<p>就会抛出一个异常StopIteration，告诉我们，列表中已经没有有效的元素了。</p>
-<p>这个时候，就要使用异常处理机制来把这个异常处理掉。</p>
-<pre class=" language-language-python"><code class="language-language-python">l = [1,2,3,4]
+</code></pre><p>这是一段会报错的代码，如果我们一直取next取到迭代器里已经没有元素了，</p><p>就会抛出一个异常StopIteration，告诉我们，列表中已经没有有效的元素了。</p><p>这个时候，就要使用异常处理机制来把这个异常处理掉。</p><pre class="language-language-python"><code class="language-language-python">l = [1,2,3,4]
 l_iter = l.__iter__()
 while True:
     try:
@@ -623,40 +88,12 @@ while True:
         print(item)
     except StopIteration:
         break
-</code></pre>
-<p>现在就是使用while循环实现了原本for循环做的事情，这个<code>l.__iter__()</code>就是一个迭代器。</p>
-<p><strong>迭代器遵循迭代器协议：</strong><font face="宋体" color="#FF8000"><strong>必须拥有<code>__iter__</code>方法和<code>__next__</code>方法。</strong></font></p>
-<pre><code>print('__next__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__
+</code></pre><p>现在就是使用while循环实现了原本for循环做的事情，这个<code>l.__iter__()</code>就是一个迭代器。</p><p><strong>迭代器遵循迭代器协议：</strong><font face="宋体" color="#FF8000"><strong>必须拥有<code>__iter__</code>方法和<code>__next__</code>方法。</strong></font></p><pre><code>print('__next__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__
 print('__iter__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__
 
 from collections import Iterator
 print(isinstance(range(100000000),Iterator))  #验证range执行之后得到的结果不是一个迭代器
-</code></pre>
-<h2 id="div-style-background-87ceeb-color-000-二-生成器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-二-生成器-div">☞</a><div style="background:#87CEEB; color:#000">二、生成器</div></h2>
-<h3 id="div-style-background-pink-color-000-初识生成器-div"><a class="header-anchor" href="#div-style-background-pink-color-000-初识生成器-div">☞</a><div style="background:pink; color:#000">初识生成器</div></h3>
-<blockquote>
-<p>我们知道的迭代器有两种：</p>
-<p>一种是调用方法直接返回的，一种是可迭代对象通过执行iter方法得到的</p>
-<p>迭代器有的好处是可以节省内存。</p>
-</blockquote>
-<p>如果在某些情况下，我们也需要节省内存,就只能自己写。</p>
-<p>我们自己写的这个能实现迭代器功能的东西就叫生成器。</p>
-<blockquote>
-<p>Python中提供的生成器：</p>
-<p>1.生成器函数：常规函数定义，但是，使用yield语句而不是return语句返回结果。yield语句一次返回一个结果，在每个结果中间，挂起函数的状态，以便下次重它离开的地方继续执行</p>
-<p>2.生成器表达式：类似于列表推导，但是，生成器返回按需产生结果的一个对象，而不是一次构建一个结果列表</p>
-</blockquote>
-<blockquote>
-<p>生成器Generator：</p>
-<p>本质：迭代器(所以自带了<code>__iter__</code>方法和<code>__next__</code>方法，不需要我们去实现)</p>
-<p>特点：惰性运算,开发者自定义</p>
-</blockquote>
-<h3 id="div-style-background-pink-color-000-生成器函数-div"><a class="header-anchor" href="#div-style-background-pink-color-000-生成器函数-div">☞</a><div style="background:pink; color:#000">生成器函数</div></h3>
-<p>一个包含<code>yield</code>关键字的函数就是一个生成器函数。</p>
-<blockquote>
-<p>yield可以为我们从函数中返回值，但是yield又不同于return，return的执行意味着程序的结束，调用生成器函数不会得到返回的具体的值，而是得到一个可迭代的对象。每一次获取这个可迭代对象的值，就能推动函数的执行，获取新的返回值。直到函数执行结束。</p>
-</blockquote>
-<pre class=" language-language-python"><code class="language-language-python">import time
+</code></pre><h2 id="div-style-background-87ceeb-color-000-二-生成器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-二-生成器-div">☞</a><div style="background:#87ceeb;color:#000">二、生成器</div></h2><h3 id="div-style-background-pink-color-000-初识生成器-div"><a class="header-anchor" href="#div-style-background-pink-color-000-初识生成器-div">☞</a><div style="background:pink;color:#000">初识生成器</div></h3><blockquote><p>我们知道的迭代器有两种：</p><p>一种是调用方法直接返回的，一种是可迭代对象通过执行iter方法得到的</p><p>迭代器有的好处是可以节省内存。</p></blockquote><p>如果在某些情况下，我们也需要节省内存,就只能自己写。</p><p>我们自己写的这个能实现迭代器功能的东西就叫生成器。</p><blockquote><p>Python中提供的生成器：</p><p>1.生成器函数：常规函数定义，但是，使用yield语句而不是return语句返回结果。yield语句一次返回一个结果，在每个结果中间，挂起函数的状态，以便下次重它离开的地方继续执行</p><p>2.生成器表达式：类似于列表推导，但是，生成器返回按需产生结果的一个对象，而不是一次构建一个结果列表</p></blockquote><blockquote><p>生成器Generator：</p><p>本质：迭代器(所以自带了<code>__iter__</code>方法和<code>__next__</code>方法，不需要我们去实现)</p><p>特点：惰性运算,开发者自定义</p></blockquote><h3 id="div-style-background-pink-color-000-生成器函数-div"><a class="header-anchor" href="#div-style-background-pink-color-000-生成器函数-div">☞</a><div style="background:pink;color:#000">生成器函数</div></h3><p>一个包含<code>yield</code>关键字的函数就是一个生成器函数。</p><blockquote><p>yield可以为我们从函数中返回值，但是yield又不同于return，return的执行意味着程序的结束，调用生成器函数不会得到返回的具体的值，而是得到一个可迭代的对象。每一次获取这个可迭代对象的值，就能推动函数的执行，获取新的返回值。直到函数执行结束。</p></blockquote><pre class="language-language-python"><code class="language-language-python">import time
 def genrator_fun1():
     a = 1
     print('现在定义了a变量')
@@ -670,12 +107,7 @@ print('-'*20)   #我是华丽的分割线
 print(next(g1))
 time.sleep(1)   #sleep一秒看清执行过程
 print(next(g1))
-</code></pre>
-<p>生成器有什么好处呢？就是不会一下子在内存中生成太多数据</p>
-<blockquote>
-<p>假如我想让工厂给学生做校服，生产2000000件衣服，我和工厂一说，工厂应该是先答应下来，然后再去生产，我可以一件一件的要，也可以根据学生一批一批的找工厂拿。而不能是一说要生产2000000件衣服，工厂就先去做生产2000000件衣服，等回来做好了，学生都毕业了。。。</p>
-</blockquote>
-<pre><code>#初识生成器二
+</code></pre><p>生成器有什么好处呢？就是不会一下子在内存中生成太多数据</p><blockquote><p>假如我想让工厂给学生做校服，生产2000000件衣服，我和工厂一说，工厂应该是先答应下来，然后再去生产，我可以一件一件的要，也可以根据学生一批一批的找工厂拿。而不能是一说要生产2000000件衣服，工厂就先去做生产2000000件衣服，等回来做好了，学生都毕业了。。。</p></blockquote><pre><code>#初识生成器二
 
 def produce():
     &quot;&quot;&quot;生产衣服&quot;&quot;&quot;
@@ -695,10 +127,7 @@ for i in product_g:         #要一批衣服，比如5件
 
 #到这里我们找工厂拿了8件衣服，我一共让我的生产函数(也就是produce生成器函数)生产2000000件衣服。
 #剩下的还有很多衣服，我们可以一直拿，也可以放着等想拿的时候再拿
-</code></pre>
-<h4 id="div-style-background-beige-color-000-更多应用-div"><a class="header-anchor" href="#div-style-background-beige-color-000-更多应用-div">☞</a><div style="background:beige; color:#000">更多应用</div></h4>
-<p><font face="宋体" color="#FF8000">生成器监听文件输入的例子</font></p>
-<pre><code>import time
+</code></pre><h4 id="div-style-background-beige-color-000-更多应用-div"><a class="header-anchor" href="#div-style-background-beige-color-000-更多应用-div">☞</a><div style="background:beige;color:#000">更多应用</div></h4><p><font face="宋体" color="#FF8000">生成器监听文件输入的例子</font></p><pre><code>import time
 
 def tail(filename):
     f = open(filename)
@@ -713,9 +142,7 @@ def tail(filename):
 tail_g = tail('tmp')
 for line in tail_g:
     print(line)
-</code></pre>
-<h4 id="div-style-background-beige-color-000-send-div"><a class="header-anchor" href="#div-style-background-beige-color-000-send-div">☞</a><div style="background:beige; color:#000">send</div></h4>
-<pre><code>def generator():
+</code></pre><h4 id="div-style-background-beige-color-000-send-div"><a class="header-anchor" href="#div-style-background-beige-color-000-send-div">☞</a><div style="background:beige;color:#000">send</div></h4><pre><code>def generator():
     print(123)
     content = yield 1
     print('=======',content)
@@ -733,9 +160,7 @@ print('***',ret)
 #使用send的注意事项
     # 第一次使用生成器的时候 是用next获取下一个值
     # 最后一个yield不能接受外部的值
-</code></pre>
-<p><font face="宋体" color="#FF8000">计算移动平均值</font>(1)</p>
-<pre><code>def averager():
+</code></pre><p><font face="宋体" color="#FF8000">计算移动平均值</font>(1)</p><pre><code>def averager():
     total = 0.0
     count = 0
     average = None
@@ -750,9 +175,7 @@ next(g_avg)
 print(g_avg.send(10))
 print(g_avg.send(30))
 print(g_avg.send(5))
-</code></pre>
-<p>计算移动平均值(2)_<font face="宋体" color="#FF8000">预激协程的装饰器</font></p>
-<pre><code>def init(func):  #在调用被装饰生成器函数的时候首先用next激活生成器
+</code></pre><p>计算移动平均值(2)_<font face="宋体" color="#FF8000">预激协程的装饰器</font></p><pre><code>def init(func):  #在调用被装饰生成器函数的时候首先用next激活生成器
     def inner(*args,**kwargs):
         g = func(*args,**kwargs)
         next(g)
@@ -776,9 +199,7 @@ g_avg = averager()
 print(g_avg.send(10))
 print(g_avg.send(30))
 print(g_avg.send(5))
-</code></pre>
-<h4 id="div-style-background-beige-color-000-yield-from-div"><a class="header-anchor" href="#div-style-background-beige-color-000-yield-from-div">☞</a><div style="background:beige; color:#000">yield from</div></h4>
-<pre><code>def gen1():
+</code></pre><h4 id="div-style-background-beige-color-000-yield-from-div"><a class="header-anchor" href="#div-style-background-beige-color-000-yield-from-div">☞</a><div style="background:beige;color:#000">yield from</div></h4><pre><code>def gen1():
     for c in 'AB':
         yield c
     for i in range(3):
@@ -791,9 +212,7 @@ def gen2():
     yield from range(3)
 
 print(list(gen2()))
-</code></pre>
-<h3 id="div-style-background-pink-color-000-列表推导式和生成器表达式-div"><a class="header-anchor" href="#div-style-background-pink-color-000-列表推导式和生成器表达式-div">☞</a><div style="background:pink; color:#000">列表推导式和生成器表达式</div></h3>
-<pre><code>egg_list=['鸡蛋%s' %i for i in range(10)] #列表解析
+</code></pre><h3 id="div-style-background-pink-color-000-列表推导式和生成器表达式-div"><a class="header-anchor" href="#div-style-background-pink-color-000-列表推导式和生成器表达式-div">☞</a><div style="background:pink;color:#000">列表推导式和生成器表达式</div></h3><pre><code>egg_list=['鸡蛋%s' %i for i in range(10)] #列表解析
 
 laomuji=('鸡蛋%s' %i for i in range(10))#生成器表达式
 
@@ -801,633 +220,11 @@ print(laomuji)
 print(next(laomuji)) #next本质就是调用__next__
 print(laomuji.__next__())
 print(next(laomuji))
-</code></pre>
-<blockquote>
-<p>总结：</p>
-<p>1.把列表解析的[]换成()得到的就是生成器表达式</p>
-<p>2.列表解析与生成器表达式都是一种便利的编程方式，只不过生成器表达式更节省内存</p>
-<p>3.Python不但使用迭代器协议，让for循环变得更加通用。大部分内置函数，也是使用迭代器协议访问对象的。</p>
-</blockquote>
-<p>例如， sum函数是Python的内置函数，该函数使用迭代器协议访问对象，而生成器实现了迭代器协议，</p>
-<p>所以，我们可以直接这样计算一系列值的和：</p>
-<p><code>sum(x ** 2 for x in range(4))</code></p>
-<p>而不用多此一举的先构造一个列表：</p>
-<p><code>sum([x ** 2 for x in range(4)])</code></p>
-<h2 id="div-style-background-87ceeb-color-000-三-小结-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-三-小结-div">☞</a><div style="background:#87CEEB; color:#000">三、小结</div></h2>
-<blockquote>
-<p><font face="宋体" color="#FF8000">可迭代对象：</font></p>
-<p>拥有<code>__iter__</code>方法</p>
-<p>特点：惰性运算,例如:<code>range(),str,list,tuple,dict,set</code></p>
-</blockquote>
-<blockquote>
-<p><font face="宋体" color="#FF8000">迭代器Iterator：</font></p>
-<p>拥有<code>__iter__</code>方法和<code>__next__</code>方法</p>
-</blockquote>
-<blockquote>
-<p><font face="宋体" color="#FF8000">生成器Generator：</font></p>
-<p>本质：迭代器，所以拥有<code>__iter__</code>方法和<code>__next__</code>方法</p>
-<p>特点：惰性运算,开发者自定义</p>
-</blockquote>
-<p><font face="宋体" color="red">使用生成器的优点：</font></p>
-<p>1.<font face="宋体" color="skyblue">延迟计算，一次返回一个结果。也就是说，它不会一次生成所有的结果，这对于大数据量处理，将会非常有用。</font></p>
-<pre class=" language-language-python"><code class="language-language-python"> #列表解析
+</code></pre><blockquote><p>总结：</p><p>1.把列表解析的[]换成()得到的就是生成器表达式</p><p>2.列表解析与生成器表达式都是一种便利的编程方式，只不过生成器表达式更节省内存</p><p>3.Python不但使用迭代器协议，让for循环变得更加通用。大部分内置函数，也是使用迭代器协议访问对象的。</p></blockquote><p>例如， sum函数是Python的内置函数，该函数使用迭代器协议访问对象，而生成器实现了迭代器协议，</p><p>所以，我们可以直接这样计算一系列值的和：</p><p><code>sum(x ** 2 for x in range(4))</code></p><p>而不用多此一举的先构造一个列表：</p><p><code>sum([x ** 2 for x in range(4)])</code></p><h2 id="div-style-background-87ceeb-color-000-三-小结-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-三-小结-div">☞</a><div style="background:#87ceeb;color:#000">三、小结</div></h2><blockquote><p><font face="宋体" color="#FF8000">可迭代对象：</font></p><p>拥有<code>__iter__</code>方法</p><p>特点：惰性运算,例如:<code>range(),str,list,tuple,dict,set</code></p></blockquote><blockquote><p><font face="宋体" color="#FF8000">迭代器Iterator：</font></p><p>拥有<code>__iter__</code>方法和<code>__next__</code>方法</p></blockquote><blockquote><p><font face="宋体" color="#FF8000">生成器Generator：</font></p><p>本质：迭代器，所以拥有<code>__iter__</code>方法和<code>__next__</code>方法</p><p>特点：惰性运算,开发者自定义</p></blockquote><p><font face="宋体" color="red">使用生成器的优点：</font></p><p>1.<font face="宋体" color="skyblue">延迟计算，一次返回一个结果。也就是说，它不会一次生成所有的结果，这对于大数据量处理，将会非常有用。</font></p><pre class="language-language-python"><code class="language-language-python"> #列表解析
 sum([i for i in range(100000000)])#内存占用大,机器容易卡死
  #生成器表达式
 sum(i for i in range(100000000))#几乎不占内存
-</code></pre>
-<p>2.<font face="宋体" color="skyblue">提高代码可读性</font></p>
-
-            </div>
-            <hr>
-
-            
-            <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.88rem;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
-            
-
-            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-            <div class="reprint">
-                <p>
-                    <span class="reprint-tip">
-                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
-                    </span>
-                    <a href="https://qvchuang.top" class="b-link-green">My blog</a>
-                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/archives/7c18a91b.html" class="b-link-green">Python3-迭代器与生成器</a>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-        <style>
-    .valine-card {
-        margin: 1.5rem auto;
-    }
-
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-
-    #vcomments input[type=text],
-    #vcomments input[type=email],
-    #vcomments input[type=url],
-    #vcomments textarea {
-        box-sizing: border-box;
-    }
-
-    #vcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #vcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #vcomments a {
-        padding: 0 2px;
-        color: #42b983;
-        font-weight: 500;
-        text-decoration: underline;
-    }
-
-    #vcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #vcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #vcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #vcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #vcomments ul li {
-        list-style-type: disc;
-    }
-
-    #vcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #vcomments table, th, td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #vcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #vcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #vcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #vcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #vcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #vcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #vcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #vcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #vcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #vcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #vcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #vcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #vcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #vcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #vcomments dfn {
-        font-style: italic;
-    }
-
-    #vcomments small {
-        font-size: 85%;
-    }
-
-    #vcomments cite {
-        font-style: normal;
-    }
-
-    #vcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    .v .vlist .vcard {
-    padding-top: 2.5rem;
-    position: relative;
-    display: block;
-    }
-    
-</style>
-
-<div class="card valine-card" data-aos="fade-up">
-    <div id="vcomments" class="card-content"></div>
-</div>
-
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
-<script>
-    new Valine({
-        el: '#vcomments',
-        appId: 'XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz',
-        appKey: 'YRX2P1IpmmU9KyhgmvwEXm2Q',
-        notify: 'false' === 'true',
-        verify: 'false' === 'true',
-        visitor: 'true' === 'true',
-        avatar: 'robohash',
-        pageSize: '10',
-        lang: 'zh-cn',
-        placeholder: '瞎白话一下'
-    });
-</script>
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/archives/b2fd9b25.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Python3-内置函数和匿名函数">
-                        
-                        <span class="card-title">Python3-内置函数和匿名函数</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-					<div class="summary">
-					
-					  内置函数和匿名函数
-					
-					</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-16
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/archives/7af05b52.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Python3-装饰器函数">
-                        
-                        <span class="card-title">Python3-装饰器函数</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-					<div class="summary">
-					  
-					      装饰器函数
-					  
-					</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python3/" target="_blank">
-                        <span class="chip bg-color">python3</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-</div>
-
-
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('500')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: My blog<br />'
-            + '作者: qvchuang<br />'
-            + '链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
+</code></pre><p>2.<font face="宋体" color="skyblue">提高代码可读性</font></p></div><hr><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.88rem}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"> <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fa fa-close"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"> <img src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"> <img src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div></div><script src="/libs/share/js/social-share.min.js"></script><div class="reprint"><p><span class="reprint-tip"><i class="fa fa-exclamation-circle"></i> &nbsp;&nbsp;转载请注明:</span> <a href="https://qvchuang.top" class="b-link-green">My blog</a><i class="fa fa-angle-right fa-lg fa-fw text-color"></i> <a href="/archives/7c18a91b.html" class="b-link-green">Python3-迭代器与生成器</a></p></div></div></div><style>.valine-card{margin:1.5rem auto}.valine-card .card-content{padding:20px 20px 5px 20px}#vcomments input[type=email],#vcomments input[type=text],#vcomments input[type=url],#vcomments textarea{box-sizing:border-box}#vcomments p{margin:2px 2px 10px;font-size:1.05rem;line-height:1.78rem}#vcomments blockquote p{text-indent:.2rem}#vcomments a{padding:0 2px;color:#42b983;font-weight:500;text-decoration:underline}#vcomments img{max-width:100%;height:auto;cursor:pointer}#vcomments ol li{list-style-type:decimal}#vcomments ol,ul{display:block;padding-left:2em;word-spacing:.05rem}#vcomments ul li,ol li{display:list-item;line-height:1.8rem;font-size:1rem}#vcomments ul li{list-style-type:disc}#vcomments ul ul li{list-style-type:circle}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}#vcomments table,td,th{border:0}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments h1{font-size:1.85rem;font-weight:700;line-height:2.2rem}#vcomments h2{font-size:1.65rem;font-weight:700;line-height:1.9rem}#vcomments h3{font-size:1.45rem;font-weight:700;line-height:1.7rem}#vcomments h4{font-size:1.25rem;font-weight:700;line-height:1.5rem}#vcomments h5{font-size:1.1rem;font-weight:700;line-height:1.4rem}#vcomments h6{font-size:1rem;line-height:1.3rem}#vcomments p{font-size:1rem;line-height:1.5rem}#vcomments hr{margin:12px 0;border:0;border-top:1px solid #ccc}#vcomments blockquote{margin:15px 0;border-left:5px solid #42b983;padding:1rem .8rem .3rem .8rem;color:#666;background-color:rgba(66,185,131,.1)}#vcomments pre{font-family:monospace,monospace;padding:1.2em;margin:.5em 0;background:#272822;overflow:auto;border-radius:.3em;tab-size:4}#vcomments code{font-family:monospace,monospace;padding:1px 3px;font-size:.92rem;color:#e96900;background-color:#f8f8f8;border-radius:2px}#vcomments pre code{font-family:monospace,monospace;padding:0;color:#e8eaf6;background-color:#272822}#vcomments pre[class*=language-]{padding:1.2em;margin:.5em 0}#vcomments code[class*=language-],pre[class*=language-]{color:#e8eaf6}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}#vcomments b,strong{font-weight:700}#vcomments dfn{font-style:italic}#vcomments small{font-size:85%}#vcomments cite{font-style:normal}#vcomments mark{background-color:#fcf8e3;padding:.2em}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}.v .vlist .vcard{padding-top:2.5rem;position:relative;display:block}</style><div class="card valine-card" data-aos="fade-up"><div id="vcomments" class="card-content"></div></div><script src="/libs/valine/av-min.js"></script><script src="/libs/valine/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",appKey:"YRX2P1IpmmU9KyhgmvwEXm2Q",notify:!1,verify:!1,visitor:!0,avatar:"robohash",pageSize:"10",lang:"zh-cn",placeholder:"瞎白话一下"})</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fa fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/archives/b2fd9b25.html"><div class="card-image"> <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Python3-内置函数和匿名函数"> <span class="card-title">Python3-内置函数和匿名函数</span></div></a><div class="card-content article-content"><div class="summary"> 内置函数和匿名函数</div><div class="publish-info"><span class="publish-date"><i class="fa fa-clock-o fa-fw icon-date"></i> 2018-12-16</span><span class="publish-author"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/python/" class="post-category" target="_blank">python</a></span></div></div><div class="card-action article-tags"> <a href="/tags/python3/" target="_blank"><span class="chip bg-color">python3</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color"> 下一篇&nbsp;<i class="fa fa-chevron-right"></i></div><div class="card"><a href="/archives/7af05b52.html"><div class="card-image"> <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Python3-装饰器函数"> <span class="card-title">Python3-装饰器函数</span></div></a><div class="card-content article-content"><div class="summary"> 装饰器函数</div><div class="publish-info"><span class="publish-date"><i class="fa fa-clock-o fa-fw icon-date"></i> 2018-12-02</span><span class="publish-author"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/python/" class="post-category" target="_blank">python</a></span></div></div><div class="card-action article-tags"> <a href="/tags/python3/" target="_blank"><span class="chip bg-color">python3</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){if(void 0!==window.getSelection){var n=window.getSelection();if(!((""+n).length<Number.parseInt("500"))){var t=document.getElementsByTagName("body")[0],o=document.createElement("div");o.style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"===n.getRangeAt(0).commonAncestorContainer.nodeName&&(o.innerHTML="<pre>"+o.innerHTML+"</pre>");var i=document.location.href;o.innerHTML+='<br />来源: My blog<br />作者: qvchuang<br />链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)}}})</script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fa fa-list"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
@@ -1500,135 +297,4 @@ sum(i for i in range(100000000))#几乎不占内存
         });
         
     });
-</script>
-    
-
-</main>
-
-
-<footer class="page-footer bg-color">
-    <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
-
-            
-                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">60.9k</span>
-            
-
-            
-			
-                <br>
-                
-                <span id="busuanzi_container_site_pv">
-                    <i class="fa fa-heart-o"></i>
-                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>
-                
-                
-                <span id="busuanzi_container_site_uv">
-                    <i class="fa fa-users"></i>
-                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-                </span>
-                
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/qvchuang/qvchuang.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fa fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:qvchuang@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fa fa-envelope-open"></i>
-    </a>
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1763834198" class="tooltipped" data-tooltip="QQ联系我: 1763834198" data-position="top" data-delay="50">
-        <i class="fa fa-qq"></i>
-    </a>
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fa fa-rss"></i>
-    </a>
-
-</div>
-
-        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date(); 
-    function createtime() { 
-        var grt= new Date("11/23/2018 20:00:00");//此处修改你的建站时间或者网站上线时间 
-        now.setTime(now.getTime()+250); 
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-    } 
-    setInterval("createtime()",250);
-</script>
-    </div>
-
-
-</footer>
-
-<div class="progress-bar"></div>
-
-
-<!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-$(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
-});
-</script>
-<!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-up"></i>
-    </a>
-</div>
-
-
-<script src="/libs/materialize/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-
-    <script src="/libs/others/clicklove.js"></script>
-
-
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-
-
-<script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
-
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
-</html>
+</script></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right"> 本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于 <a href="https://hexo.io/" target="_blank">Hexo</a> 的 <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建. &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp; <span class="white-color">60.9k</span><br><span id="busuanzi_container_site_pv"><i class="fa fa-heart-o"></i> 本站总访问量<span id="busuanzi_value_site_pv" class="white-color"></span></span><span id="busuanzi_container_site_uv"><i class="fa fa-users"></i> 次,&nbsp;访客数<span id="busuanzi_value_site_uv" class="white-color"></span> 人.</span></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/qvchuang/qvchuang.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fa fa-github"></i></a><a href="mailto:qvchuang@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fa fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1763834198" class="tooltipped" data-tooltip="QQ联系我: 1763834198" data-position="top" data-delay="50"><i class="fa fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fa fa-rss"></i></a></div> <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now=new Date;function createtime(){var n=new Date("11/23/2018 20:00:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fa fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script type="text/javascript">$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fa fa-angle-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script src="/libs/others/clicklove.js"></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script type="text/javascript">var st,OriginTitile=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)0<=(t=c[r].getBoundingClientRect()).top&&0<=t.left&&t.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n()},e.src=i}();var t}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this)</script></body></html>
