@@ -28,6 +28,11 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+    
 <link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
@@ -284,7 +289,7 @@
 
             <div class="description center-align">
                 
-                    Do what you want to do !
+                    <span id="jinrishici-sentence">正在加载今日诗词....</span>
                 
             </div>
         </div>
@@ -294,6 +299,8 @@
 // 每天切换 banner 图.  Switch banner image every day.
 $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
+
+
     </div>
 </div>
 
@@ -587,7 +594,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">60.9k</span>
+                <span class="white-color">61k</span>
             
 
             

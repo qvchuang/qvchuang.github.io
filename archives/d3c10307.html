@@ -30,6 +30,11 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+    
 <link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
@@ -438,14 +443,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2k
+                        2.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        10 分
                     </div>
                     
                 
@@ -730,6 +735,13 @@ layout: &quot;photo&quot;
 </code></pre>
 <p>这里的loading.gif我放在了<font color="red">/themes/matery/source</font>目录上</p>
 <p>这样就可以实现图片懒加载</p>
+<h4 id="div-style-background-dfecd5-color-000-增加动态诗词-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-增加动态诗词-div">☞</a><div style="background:#dfecd5; color:#000">增加动态诗词</div></h4>
+<p>我们采用<a href="https://www.jinrishici.com/" target="_blank" rel="noopener">今日诗词</a>的每日一句：</p>
+<p>首先在<font color="red">/themes/hexo-theme-matery/layout/_partial/head.ejs</font>增加代码：</p>
+<p><code>&lt;script src=&quot;https://sdk.jinrishici.com/v2/browser/jinrishici.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</code></p>
+<p>然后打开<font color="red">/themes/hexo-theme-matery/layout/_partial/bg-cover-content.ejs</font></p>
+<p>把<code>&lt;%= config.description %&gt;</code>改为<code>&lt;%- '&lt;span id=&quot;jinrishici-sentence&quot;&gt;正在加载今日诗词....&lt;/span&gt;' %&gt;</code></p>
+<p>如果要弃用动态诗词，直接改回原文件即可。</p>
 <h4 id="div-style-background-dfecd5-color-000-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-div">☞</a><div style="background:#dfecd5; color:#000"></div></h4>
 <p><font color="red">未完待续</font></p>
 
@@ -1399,7 +1411,7 @@ test
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">60.9k</span>
+                <span class="white-color">61k</span>
             
 
             
