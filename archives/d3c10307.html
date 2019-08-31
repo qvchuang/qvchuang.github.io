@@ -84,20 +84,29 @@
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/music" class="waves-effect waves-light">
+            
+            <i class="fa fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa fa-camera-retro"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/about" class="waves-effect waves-light">
             
             <i class="fa fa fa-smile-o"></i>
             
             <span>关于</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/photo" class="waves-effect waves-light">
-            
-            <i class="fa fa fa-camera-retro"></i>
-            
-            <span>相册</span>
         </a>
     </li>
     
@@ -172,20 +181,29 @@
         </li>
         
         <li>
+            <a href="/music" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa fa-camera-retro"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
             <a href="/about" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa fa-smile-o"></i>
                 
                 关于
-            </a>
-        </li>
-        
-        <li>
-            <a href="/photo" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa fa-camera-retro"></i>
-                
-                相册
             </a>
         </li>
         
@@ -443,7 +461,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.2k
+                        2.1k
                     </div>
                     
 
@@ -575,18 +593,18 @@ description: &quot;Oops～，你来到了没有知识的荒原！ :(&quot;
 </code></pre>
 <p><font color="red">注意粘贴的位置和空格要正确，这里的位置随你自己设置，你也可以把简历作为第一个card</font></p>
 <p>然后在/source/about/index.md下面写上你的简历了（就像写博客一样）</p>
-<h4 id="div-style-background-dfecd5-color-000-添加相册页面-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-添加相册页面-div">☞</a><div style="background:#dfecd5; color:#000">添加相册页面</div></h4>
-<p>步骤：在你的博客根目录<font color="red">source</font>里新建<font color="red">photo/index.md</font></p>
-<p>编辑你刚刚新建的页面文件<font color="red">/source/photo/index.md</font> ,至少需要以下内容：</p>
+<h4 id="div-style-background-dfecd5-color-000-添加视听页面-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-添加视听页面-div">☞</a><div style="background:#dfecd5; color:#000">添加视听页面</div></h4>
+<p>步骤：在你的博客根目录<font color="red">source</font>里新建<font color="red">music/index.md</font></p>
+<p>编辑你刚刚新建的页面文件<font color="red">/source/music/index.md</font> ,至少需要以下内容：</p>
 <pre><code>---
-title: 相册
+title: 视听
 date: 
-type: &quot;photo&quot;
-layout: &quot;photo&quot;
+type: &quot;music&quot;
+layout: &quot;music&quot;
 ---
 </code></pre>
-<p>然后在<font color="red">/themes/matery/layout/</font>目录下新建一个<font color="red">photo.ejs</font>文件，博主是把首页的我的梦想、音乐和关于我页面的我的相册内容剪切粘贴过来的，步骤如下：</p>
-<p>打开<font color="red">/themes/matery/layout/index.md</font>复制以下内容到<font color="red">photo.ejs</font>文件：</p>
+<p>然后在<font color="red">/themes/matery/layout/</font>目录下新建一个<font color="red">music.ejs</font>文件，博主是把首页的我的梦想、音乐、视频内容剪切粘贴过来的，步骤如下：</p>
+<p>打开<font color="red">/themes/matery/layout/index.md</font>复制以下内容到<font color="red">music.ejs</font>文件：</p>
 <pre><code>&lt;main class=&quot;content&quot;&gt;
 
     &lt;% if (page.current === 1) { %&gt;
@@ -617,7 +635,7 @@ layout: &quot;photo&quot;
 </code></pre>
 <p><strong>下面比较绕了：</strong></p>
 <p>上面步骤操作完之后：</p>
-<p>删除<font color="red">index.ejs</font>文件中的代码(我的梦想、音乐，可以根据自己爱好选择)如下：</p>
+<p>删除<font color="red">index.ejs</font>文件中的代码(我的梦想、音乐、视频，可以根据自己爱好选择)如下：</p>
 <pre><code>                    &lt;% if (theme.dream.enable) { %&gt;
                         &lt;%- partial('_widget/dream') %&gt;
                     &lt;% } %&gt;
@@ -625,18 +643,22 @@ layout: &quot;photo&quot;
                     &lt;% if (theme.music.enable &amp;&amp; site.data &amp;&amp; site.data.musics) { %&gt;
                         &lt;%- partial('_widget/music') %&gt;
                     &lt;% } %&gt;
+					
+                    &lt;% if (theme.video.enable) { %&gt;
+                        &lt;%- partial('_widget/video') %&gt;
+                    &lt;% } %&gt;
 </code></pre>
-<p>删除<font color="red">photo.ejs</font>文件中的代码（文章置顶）如下：</p>
+<p>删除<font color="red">music.ejs</font>文件中的代码（文章置顶）如下：</p>
 <pre><code>                    &lt;div id=&quot;recommend-sections&quot; class=&quot;recommend&quot;&gt;
                         &lt;%- partial('_widget/recommend') %&gt;
                     &lt;/div&gt;
 </code></pre>
-<p>下面再把<font color="red">about.ejs</font>文件中的代码（我的相册）剪切粘贴到<font color="red">photo.ejs</font>如下：</p>
-<pre><code>    &lt;% if (theme.myGallery &amp;&amp; theme.myGallery.enable) { %&gt;
-    &lt;%- partial('_widget/my-gallery') %&gt;
-    &lt;% } %&gt;
+<p>再在主题配置文件<code>menu</code>中增加</p>
+<pre><code>视听:
+    url: /music
+    icon: fa fa-music
 </code></pre>
-<h5 id="div-style-background-dfecf3-color-000-最后贴出修改后完整的photo-ejs文件代码-div"><a class="header-anchor" href="#div-style-background-dfecf3-color-000-最后贴出修改后完整的photo-ejs文件代码-div">☞</a><div style="background:#dfecf3; color:#000">最后贴出修改后完整的photo.ejs文件代码</div></h5>
+<h5 id="div-style-background-dfecf3-color-000-最后贴出修改后完整的music-ejs文件代码-div"><a class="header-anchor" href="#div-style-background-dfecf3-color-000-最后贴出修改后完整的music-ejs文件代码-div">☞</a><div style="background:#dfecf3; color:#000">最后贴出修改后完整的music.ejs文件代码</div></h5>
 <pre><code>&lt;%- partial('_partial/bg-cover') %&gt;
 
 &lt;main class=&quot;content&quot;&gt;
@@ -664,11 +686,6 @@ layout: &quot;photo&quot;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-
-    &lt;% if (theme.myGallery &amp;&amp; theme.myGallery.enable) { %&gt;
-    &lt;%- partial('_widget/my-gallery') %&gt;
-    &lt;% } %&gt;
-
 
 &lt;/main&gt;
 </code></pre>
@@ -1412,7 +1429,7 @@ layout: &quot;photo&quot;
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">61k</span>
+                <span class="white-color">60.9k</span>
             
 
             
