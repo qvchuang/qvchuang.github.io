@@ -32,6 +32,7 @@
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+
     
 <link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
@@ -319,6 +320,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </script>
 
 
+
     </div>
 </div>
 
@@ -376,40 +378,6 @@ $(function () {
 </script>
                     
 
-                    
-                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
-<div class="video-player">
-    
-    <div class="title center-align">
-        <i class="fa fa-video-camera"></i>&nbsp;&nbsp;精彩视频
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="dplayer" class="dplayer-video"></div>
-        </div>
-    </div>
-</div>
-
-<script src="/libs/dplayer/DPlayer.min.js"></script>
-<script>
-    $(function () {
-        new DPlayer({
-            container: document.getElementById('dplayer'),
-            autoplay: 'true' === 'true',
-            theme: '#42b983',
-            loop: 'false' === 'true',
-            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
-            preload: 'auto',
-            volume: Number('0.1'),
-            video: {
-                url: 'http://f.video.weibocdn.com/003b9OWIlx07wAkFkxja010412014iB50E010.mp4?label=mp4_720p&template=1280x720.24.0&trans_finger=3e5d616a0b846b231c063771e4afedd3&Expires=1567323794&ssig=hSrwAJcnkn&KID=unistore,video',
-                pic: '',
-                thumbnails: ''
-            }
-        });
-    });
-</script>
                     
 
                     <div id="recommend-sections" class="recommend">
@@ -548,7 +516,17 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
+<!-- 动态标签 -->
 <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
+<!-- 鼠标点击雪花特效 -->
+<script src="/js/xuehua.js"></script>
+<!-- 鼠标点击文字特效 -->
+<script src="/js/wenzi.js"></script>
+
+<!-- 雪花特效 -->
+<script src="/js/xuehuapiaoluo.js"></script>
+
 
 <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
