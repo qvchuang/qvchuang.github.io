@@ -34,7 +34,8 @@
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -372,7 +373,7 @@ $(function () {
         volume: Number('0.7'),
         listFolded: 'false' === 'true',
         listMaxHeight: '',
-        audio: JSON.parse('[{"name":"平凡之路","artist":"朴树","url":"http://music.163.com/song/media/outer/url?id=28815250.mp3","cover":"http://p2.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg?param=130y130"},{"name":"Counting Sheep","artist":"SAFIA","url":"http://music.163.com/song/media/outer/url?id=31081299.mp3","cover":"http://p2.music.126.net/MXzI7ExXb6ru3CeW_P1HSw==/7906588115831440.jpg?param=130y130"},{"name":"心如止水","artist":"Ice Paper","url":"http://music.163.com/song/media/outer/url?id=1349292048.mp3","cover":"http://p2.music.126.net/MLQl_7poLz2PTON6_JZZRQ==/109951163938219545.jpg?param=130y130"},{"name":"归去来兮","artist":"花粥","url":"http://music.163.com/song/media/outer/url?id=1357999894.mp3","cover":"http://p1.music.126.net/H6dt7IgvXNWhRM_w7XbcqQ==/109951163990575387.jpg?param=130y130"}]')
+        audio: JSON.parse('[{"name":"平凡之路","artist":"朴树","url":"http://music.163.com/song/media/outer/url?id=29750099.mp3","cover":"http://p2.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg?param=130y130"},{"name":"Counting Sheep","artist":"SAFIA","url":"http://music.163.com/song/media/outer/url?id=31081299.mp3","cover":"http://p2.music.126.net/MXzI7ExXb6ru3CeW_P1HSw==/7906588115831440.jpg?param=130y130"},{"name":"心如止水","artist":"Ice Paper","url":"http://music.163.com/song/media/outer/url?id=1349292048.mp3","cover":"http://p2.music.126.net/MLQl_7poLz2PTON6_JZZRQ==/109951163938219545.jpg?param=130y130"},{"name":"归去来兮","artist":"花粥","url":"http://music.163.com/song/media/outer/url?id=1357999894.mp3","cover":"http://p1.music.126.net/H6dt7IgvXNWhRM_w7XbcqQ==/109951163990575387.jpg?param=130y130"}]')
     });
 });
 </script>
@@ -527,6 +528,12 @@ $(function () {
 <!-- 雪花特效 -->
 <script src="/js/xuehuapiaoluo.js"></script>
 
+<!-- 天气 https://cj.weather.com.cn/plugin/pc -->
+<script type="text/javascript">
+WIDGET = {FID: 'UBsmdBLl0N'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
 <!-- 屏蔽网页源码（单纯的屏蔽鼠标右键和F12） -->
 <script type="text/javascript">
         window.onload = function(){
@@ -552,7 +559,6 @@ $(function () {
                 return false;
             }
         }
-
     </script>
 
 

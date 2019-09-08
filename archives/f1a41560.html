@@ -44,7 +44,8 @@ name1 =">
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -496,18 +497,18 @@ name1 =">
                 <p><a href="https://moetu.org/image/1lCaj" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pythona3f781c4df4745da.md.png" alt></a></p>
 <a id="more"></a>
 <h2 id="div-style-background-c3d7df-color-000-1-id-查询内存地址-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-1-id-查询内存地址-div">☞</a><div style="background:#c3d7df; color:#000">1、id  查询内存地址</div></h2>
-<pre class=" language-language-python"><code class="language-language-python">name = 'alex'
+<pre class="line-numbers language-language-python"><code class="language-language-python">name = 'alex'
 print(id(name))
 li = [1,2,3]
 print(id(li))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-style-background-c3d7df-color-000-2-is-判断的是内存地址-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-2-is-判断的是内存地址-div">☞</a><div style="background:#c3d7df; color:#000">2、is  判断的是内存地址</div></h2>
 <h3 id="font-face-宋体-color-ff8000-是比较值-is-是内存地址是否相同-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-是比较值-is-是内存地址是否相同-font">☞</a><font face="宋体" color="#FF8000">==  是比较值，is 是内存地址是否相同</font></h3>
-<pre class=" language-language-python"><code class="language-language-python">name1 = 'alex@'
+<pre class="line-numbers language-language-python"><code class="language-language-python">name1 = 'alex@'
 name2 = 'alex@'
 print(name1 == name2)---Ture
 print(name1 is name2)-----Ture
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-style-background-c3d7df-color-000-3-小数据池-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-3-小数据池-div">☞</a><div style="background:#c3d7df; color:#000">3、小数据池</div></h2>
 <p>Python中   int  与 str  存在小数据池，其他类型没有</p>
 <p>int 范围  -5 —256—指向一个内存地址</p>
@@ -532,9 +533,9 @@ print(name1 is name2)-----Ture
 <p>a : 0000 0001 8位</p>
 <p>中 : 0000 0101 0000 0001 16位</p>
 </blockquote>
-<pre class=" language-language-text"><code class="language-language-text">不同编码之间是不能互相识别对方的二进制,会报错,或者产生乱码.
+<pre class="line-numbers language-language-text"><code class="language-language-text">不同编码之间是不能互相识别对方的二进制,会报错,或者产生乱码.
 在你的字符串(文件),存储,传输时,必须使用非unicode的二进制(01010101).
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <p>py3:</p>
 <p>字符串:编码方式(在内存中的运行方式):默认都是unicode.</p>
@@ -560,20 +561,20 @@ print(name1 is name2)-----Ture
 </blockquote>
 <p><code>str &gt;&gt;&gt; byte</code></p>
 <p><strong>b = s.encode(‘utf-8’)</strong></p>
-<pre class=" language-language-python"><code class="language-language-python">s = 'alex'
+<pre class="line-numbers language-language-python"><code class="language-language-python">s = 'alex'
 b = s.encode('utf-8')
 b1 = s.encode('gbk')
 print(s,type(s))-----alex <class 'str'>
 print(b,type(b))-----b'alex' <class 'bytes'>
 print(b1,type(b1))--b'alex' <class 'bytes'>
-</class></class></class></code></pre>
-<pre class=" language-language-python"><code class="language-language-python">s = '中国'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></class></class></class></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">s = '中国'
 b = s.encode('utf-8')
 b1 = s.encode('gbk')
 print(s,type(s))
 print(b,type(b))------b'\xe4\xb8\xad\xe5\x9b\xbd' <class 'bytes'>
 print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' <class 'bytes'>
-</class></class></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></class></class></code></pre>
 
             </div>
             <hr>
@@ -1377,6 +1378,12 @@ $(function () {
 <!-- 雪花特效 -->
 <script src="/js/xuehuapiaoluo.js"></script>
 
+<!-- 天气 https://cj.weather.com.cn/plugin/pc -->
+<script type="text/javascript">
+WIDGET = {FID: 'UBsmdBLl0N'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
 <!-- 屏蔽网页源码（单纯的屏蔽鼠标右键和F12） -->
 <script type="text/javascript">
         window.onload = function(){
@@ -1402,7 +1409,6 @@ $(function () {
                 return false;
             }
         }
-
     </script>
 
 
