@@ -313,7 +313,18 @@
                 
                     <span id="jinrishici-sentence">正在加载今日诗词....</span>                    
                 
-                
+
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+                <script>
+                    var txt = document.getElementById("jinrishici-sentence").value
+                    var typed = new Typed("#jinrishici-sentence", {
+                        strings: [txt],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50
+                    });
+                </script>
 
             </div>
         </div>
