@@ -320,11 +320,7 @@
 <div class="container">
     <div class="photo-wrapper">
         <div class="waterfall" id="mygallery">
-            <a href="https://file.moetu.org/images/2019/01/19/fxhc4478ac9f7920ec2.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="https://file.moetu.org/images/2019/01/19/fxhc4478ac9f7920ec2.jpg" alt="https://file.moetu.org/images/2019/01/19/fxhc4478ac9f7920ec2.jpg">
-    </a><a href="2018/IMG_20180204_113302.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="2018/IMG_20180204_113302.jpg" alt="2018/IMG_20180204_113302.jpg">
-    </a><a href="2018/IMG_20180204_113442.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="2018/IMG_20180204_113442.jpg" alt="2018/IMG_20180204_113442.jpg">
-    </a><a href="2018/IMG_20180208_083336.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="2018/IMG_20180208_083336.jpg" alt="2018/IMG_20180208_083336.jpg">
-    </a>
+            <a href="https://raw.githubusercontent.com/picture/master/img/https://file.moetu.org/images/2019/01/19/fxhc4478ac9f7920ec2.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="https://raw.githubusercontent.com/picture/master/img/tiny_img/https://file.moetu.org/images/2019/01/19/fxhc4478ac9f7920ec2.jpg" alt="https://file.moetu.org/images/2019/01/19/fxhc4478ac9f7920ec2.jpg">    </a><a href="https://raw.githubusercontent.com/picture/master/img/2018/IMG_20180204_113302.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="https://raw.githubusercontent.com/picture/master/img/tiny_img/2018/IMG_20180204_113302.jpg" alt="2018/IMG_20180204_113302.jpg">    </a><a href="https://raw.githubusercontent.com/picture/master/img/2018/IMG_20180204_113442.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="https://raw.githubusercontent.com/picture/master/img/tiny_img/2018/IMG_20180204_113442.jpg" alt="2018/IMG_20180204_113442.jpg">    </a><a href="https://raw.githubusercontent.com/picture/master/img/2018/IMG_20180208_083336.jpg" class="photo-item" rel="example_group" data-fancybox="images">      <img src="https://raw.githubusercontent.com/picture/master/img/tiny_img/2018/IMG_20180208_083336.jpg" alt="2018/IMG_20180208_083336.jpg">    </a>
 
         </div>
     </div>
@@ -481,8 +477,20 @@ $(function () {
 <!-- 鼠标点击文字特效 -->
 <script src="/js/wenzi.js"></script>
 
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+}
+</script>
 <!-- 雪花特效 -->
-<script src="/js/xuehuapiaoluo.js"></script>
+<!-- <script src="/js/xuehuapiaoluo.js"></script> -->
+
+<!-- 背景动态彩带 -->
+<script src="/js/ribbon.min.js"></script>
+
+
 
 <!-- 樱花特效 -->
 <!-- <script src="/js/sakura.js"></script> -->
@@ -518,10 +526,17 @@ WIDGET = {FID: 'UBsmdBLl0N'}
                 return false;
             }
         }
-    </script>
+</script>
+
+
+<!--  html 预加载脚本  -->
+<script src="/js/instant.page.js" type="module"></script>
 
 
 
 
 <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
+
+
+
