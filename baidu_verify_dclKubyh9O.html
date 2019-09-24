@@ -37,7 +37,8 @@
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
-
+<!--  html 预加载脚本  -->
+<script src="/js/instant.page.js" type="module"></script>
 <body>
 
 <header class="navbar-fixed">
@@ -1225,8 +1226,7 @@ $(function () {
 </div>
 
 
-<!--  html 预加载脚本  -->
-<script src="/js/instant.page.js" type="module"></script>
+
 <script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
@@ -1248,11 +1248,33 @@ $(function () {
 <!-- 动态标签 -->
 <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
 
-<!-- 鼠标点击雪花特效 -->
-<script src="/js/xuehua.js"></script>
-<!-- 鼠标点击文字特效 -->
-<script src="/js/wenzi.js"></script>
 
+<!-- 鼠标点击雪花特效 -->
+<!-- <script src="/js/xuehua.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/xuehua.js"><\/script>');
+}
+</script>
+
+
+
+<!-- 鼠标点击文字特效 -->
+<!-- <script src="/js/wenzi.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/wenzi.js"><\/script>');
+}
+</script>
+
+
+
+<!-- 雪花特效 -->
+<!-- <script src="/js/xuehuapiaoluo.js"></script> -->
 <script type="text/javascript">
 //只在桌面版网页启用特效
 var windowWidth = $(window).width();
@@ -1260,8 +1282,7 @@ if (windowWidth > 768) {
     document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
 }
 </script>
-<!-- 雪花特效 -->
-<!-- <script src="/js/xuehuapiaoluo.js"></script> -->
+
 
 <!-- 背景动态彩带 -->
 <script src="/js/ribbon.min.js"></script>
@@ -1304,7 +1325,7 @@ WIDGET = {FID: 'UBsmdBLl0N'}
         }
 </script>
 
-
+<script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
 <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
 
