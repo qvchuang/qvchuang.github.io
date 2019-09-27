@@ -1665,22 +1665,22 @@ footer .copy-right {
 .top-scroll {
     display: none;
     position: fixed;
-    right: 35px;
-    bottom: 5px;
-    padding-top: 15px;
+    right: 40px;
+    bottom: 10px;
+    padding-top: 5px;
     margin-bottom: 0;
     z-index: 1000000000 !important;
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
-    width: 35px;
-    height: 35px;
+    background: linear-gradient(to bottom right, #716a6a 0%, #cac6c6 100%);
+    width: 30px;
+    height: 30px;
 }
 
 .top-scroll .btn-floating i {
-    line-height: 35px;
-    font-size: 1.5rem;
+    line-height: 30px;
+    font-size: 2.5rem;
 }
 
 
