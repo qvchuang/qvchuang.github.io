@@ -463,14 +463,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.1k
+                        2.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        11 分
                     </div>
                     
                 
@@ -761,7 +761,60 @@ layout: &quot;music&quot;
 <p>然后打开<font color="red">/themes/hexo-theme-matery/layout/_partial/bg-cover-content.ejs</font></p>
 <p>把<code>&lt;%= config.description %&gt;</code>改为<code>&lt;%- '&lt;span id=&quot;jinrishici-sentence&quot;&gt;正在加载今日诗词....&lt;/span&gt;' %&gt;</code></p>
 <p>如果要弃用动态诗词，直接改回原文件即可。</p>
-<h4 id="div-style-background-dfecd5-color-000-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-div">☞</a><div style="background:#dfecd5; color:#000"></div></h4>
+<h4 id="div-style-background-dfecd5-color-000-添加相册-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-添加相册-div">☞</a><div style="background:#dfecd5; color:#000">添加相册</div></h4>
+<p><a href="https://liyangzone.com/2019/07/22/hexo博客添加一级分类相册/" target="_blank" rel="noopener">参考教程</a></p>
+<p><a href="https://sunhwee.com/posts/1788dd4a.html" target="_blank" rel="noopener">相册图床</a> 可以参考此篇</p>
+<h4 id="div-style-background-dfecd5-color-000-增加天气插件-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-增加天气插件-div">☞</a><div style="background:#dfecd5; color:#000">增加天气插件</div></h4>
+<p>中国天气网：<a href="https://cj.weather.com.cn/plugin/pc" target="_blank" rel="noopener">https://cj.weather.com.cn/plugin/pc</a></p>
+<p>选择自定义插件—&gt;自定义样式——&gt;生成代码，然后会生成一段代码，复制粘贴到 themes/matery/layout/layout.ejs即可</p>
+<h4 id="div-style-background-dfecd5-color-000-网页特效分享-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-网页特效分享-div">☞</a><div style="background:#dfecd5; color:#000">网页特效分享</div></h4>
+<p><a href="https://qvchuang.top/js/xuehua.js">雪花特效</a></p>
+<p><a href="https://qvchuang.top/js/sakura.js">樱花特效</a></p>
+<p><a href="https://qvchuang.top/js/wenzi.js">鼠标点击文字特效</a></p>
+<p><a href="https://qvchuang.top/js/ribbon.min.js">背景动态彩带</a></p>
+<p>在 themes/matery/source/js 新建相应的js文件，复制粘贴，引入 themes/matery/layout/layout.ejs 即可</p>
+<p>示例：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth &gt; 768) {
+    document.write('&lt;script type=&quot;text/javascript&quot; src=&quot;/js/xuehuapiaoluo.js&quot;&gt;&lt;\/script&gt;');
+}
+&lt;/script&gt;
+</code></pre>
+<p>也可以直接引用 <code>&lt;script src=&quot;/js/xuehuapiaoluo.js&quot;&gt;&lt;/script&gt;</code></p>
+<h4 id="div-style-background-dfecd5-color-000-屏蔽网页源码-单纯的屏蔽鼠标右键和键盘事件-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-屏蔽网页源码-单纯的屏蔽鼠标右键和键盘事件-div">☞</a><div style="background:#dfecd5; color:#000">屏蔽网页源码（单纯的屏蔽鼠标右键和键盘事件）</div></h4>
+<p>在 themes/matery/layout/layout.ejs 添加如下代码</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+        window.onload = function(){
+            //屏蔽键盘事件
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) &amp;&amp; (e.shiftKey) &amp;&amp; (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) &amp;&amp; (e.keyCode == 121)){
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) &amp;&amp; (e.keyCode == 85)){
+                    return false;
+                }
+            };
+            //屏蔽鼠标右键
+            document.oncontextmenu = function (){
+                return false;
+            }
+        }
+&lt;/script&gt;
+</code></pre>
+<h4 id="div-style-background-dfecd5-color-000-添加tidio在线客服-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-添加tidio在线客服-div">☞</a><div style="background:#dfecd5; color:#000">添加Tidio在线客服</div></h4>
+<p><a href="https://www.zzshe.com/Blog/87.html" target="_blank" rel="noopener">参考教程</a></p>
+<h4 id="div-style-background-dfecd5-color-000-网站预加载js脚本-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-网站预加载js脚本-div">☞</a><div style="background:#dfecd5; color:#000">网站预加载js脚本</div></h4>
+<p><a href="https://sunhwee.com/posts/376fa98c.html" target="_blank" rel="noopener">尊重原创，点击查看</a></p>
 <p><font color="red">未完待续</font></p>
 
             </div>
@@ -1430,7 +1483,7 @@ layout: &quot;music&quot;
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">60.9k</span>
+                <span class="white-color">61.2k</span>
             
 
             

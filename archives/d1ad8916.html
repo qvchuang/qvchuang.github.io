@@ -469,14 +469,14 @@ ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        552
+                        469
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -502,66 +502,56 @@ ps：博主用12306分流抢票软件抢到了回家的票，但是开工的票�
 <p>ps：博主用<a href="https://www.12306bypass.com/" target="_blank" rel="noopener">12306分流</a>抢票软件抢到了回家的票，但是开工的票没抢到</p>
 <p>       于是便找到了大神的开源项目<a href="https://github.com/testerSunshine/12306" target="_blank" rel="noopener">购票小助手</a>折腾一番</p>
 </blockquote>
-<p style="FONT-FAMILY:楷体;FONT-WEIGHT: BOLD">下面是博主的折腾过程以及踩过的坑</p>
+<p style="FONT-FAMILY:楷体;FONT-WEIGHT: BOLD">下面是博主的折腾过程</p>
 <p><font face="宋体" color="#FF8000">12306购票小助手</font></p>
-<h4 id="div-style-background-c6e6e8-color-fff-python-版本支持-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-python-版本支持-div">☞</a><div style="background:#c6e6e8; color:#fff">python 版本支持</div></h4>
-<pre><code>2.7.10 - 2.7.15
-</code></pre>
-<h4 id="div-style-background-c6e6e8-color-fff-依赖库-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-依赖库-div">☞</a><div style="background:#c6e6e8; color:#fff">依赖库</div></h4>
+<p><strong>已有功能</strong></p>
+<ul>
+<li>[x] 自动打码</li>
+<li>[x] 自动登录</li>
+<li>[x] 准点预售和捡漏</li>
+<li>[x] 智能候补</li>
+<li>[x] 邮件通知</li>
+<li>[x] server酱通知</li>
+</ul>
+<h4 id="div-style-background-c6e6e8-color-fff-安装python-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-安装python-div">☞</a><div style="background:#c6e6e8; color:#fff">安装python</div></h4>
+<p>支持版本<code>3.6 - 3.7.4</code></p>
+<h4 id="div-style-background-c6e6e8-color-fff-安装selenium-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-安装selenium-div">☞</a><div style="background:#c6e6e8; color:#fff">安装selenium</div></h4>
+<p>cmd环境下，用 <code>pip install selenium</code> 安装</p>
+<p>原理：利用UI自动化工具selenium来登陆12306官网，获取账号登录框和密码输入框元素位置</p>
+<p>所以还需要谷歌浏览器和对应版本的<a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank" rel="noopener">浏览器驱动</a></p>
+<p>浏览器设置-关于可以查看浏览器版本</p>
+<h4 id="div-style-background-c6e6e8-color-fff-安装依赖库-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-安装依赖库-div">☞</a><div style="background:#c6e6e8; color:#fff">安装依赖库</div></h4>
 <blockquote>
-<p>依赖若快 (若快注册地址：<a href="http://www.ruokuai.com/login" target="_blank" rel="noopener">http://www.ruokuai.com/login</a>)</p>
 <p>项目依赖包 requirements.txt</p>
 <blockquote>
-<p>安装方法 pip install -r requirements.txt</p>
+<p>安装方法 <code>pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</code></p>
 </blockquote>
 </blockquote>
-<h4 id="div-style-background-c6e6e8-color-fff-项目使用说明-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-项目使用说明-div">☞</a><div style="background:#c6e6e8; color:#fff">项目使用说明</div></h4>
-<ul>
-<li>可以配置邮箱，可以配置可以不配置，配置邮箱的格式在yaml里面可以看到</li>
-<li>可以配置server酱提醒（推荐）， [配置教程] (<a href="https://www.jianshu.com/p/8d10b5b9c4e3" target="_blank" rel="noopener">https://www.jianshu.com/p/8d10b5b9c4e3</a>)</li>
-<li>提交订单验证码哪里依赖打码兔，所以如果是订票遇到验证码的时候，没有打码兔是过不了的，不推荐手动，手动太慢</li>
-<li>配置yaml文件的时候，需注意空格和遵循yaml语法格式</li>
-</ul>
 <h4 id="div-style-background-c6e6e8-color-fff-项目开始-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-项目开始-div">☞</a><div style="background:#c6e6e8; color:#fff">项目开始</div></h4>
 <ul>
-<li>修改 config/ticket_config.yaml 文件，按照提示更改自己想要的信息</li>
+<li>修改 根目录下 ticket_config.yaml 文件，按照提示更改自己想要的信息</li>
+</ul>
+<pre><code>注意:
+ COOKIE_TYPE = 1
+ # 如果COOKIE_TYPE=1，则需配置chromeDriver路径,下载地址http://chromedriver.storage.googleapis.com/index.html
+ # chromedriver配置版本只要和chrome的大版本匹配就行
+ CHROME_PATH = &quot;D:/python/chromedriver.exe&quot;
+ # 浏览器驱动目录
+</code></pre>
+<ul>
 <li>windows 打开 ide 或者 cmd 请用管理员身份执行 python <a href="http://run.py" target="_blank" rel="noopener">run.py</a></li>
 </ul>
 <h4 id="div-style-background-c6e6e8-color-fff-目录对应说明-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-目录对应说明-div">☞</a><div style="background:#c6e6e8; color:#fff">目录对应说明</div></h4>
 <pre class="line-numbers language-language-text"><code class="language-language-text">agency - cdn代理
 config - 项目配置
-damatuCode - 打码兔接口
+verify - 自动打码
 init - 项目主运行目录
+inter - 接口
 myException - 异常
-myUrllib - urllib库
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+myUrllib request网络请求库
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="div-style-background-c6e6e8-color-fff-思路图-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-思路图-div">☞</a><div style="background:#c6e6e8; color:#fff">思路图 </div></h4>
 <p><a href="https://moetu.org/image/LUtAe" target="_blank" rel="noopener"><img src="/loading.gif" data-original="https://moetu.fastmirror.org/images/2019/01/19/uml98f6c347365add6b.md.png" border="0"></a></p>
-<h4 id="div-style-background-c6e6e8-color-ff2-过程中遇到的坑-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-ff2-过程中遇到的坑-div">☞</a><div style="background:#c6e6e8; color:#ff2">过程中遇到的坑</div></h4>
-<blockquote>
-<p>1.无法安装依赖包requirements.txt</p>
-<blockquote>
-<p>解决方法： 将项目clone下来，进到根目录，直接 pip install -r requirements.txt</p>
-</blockquote>
-<p>2.python版本过高或过低</p>
-<blockquote>
-<p>解决方法：安装 2.7.10 - 2.7.15 版本的python</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>注意<a href="https://www.cnblogs.com/thunderLL/p/6643022.html" target="_blank" rel="noopener">Win10下python3和python2同时安装并解决pip共存问题</a></p>
-</blockquote>
-</blockquote>
-<p>3.运行提示扫码平台错误：快豆不足，请充值</p>
-<blockquote>
-<p>解决方法：登录<a href="http://www.ruokuai.com/login" target="_blank" rel="noopener">若快</a>充值快豆，用于自动识别扫码</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>不用充值太多，1元就可以用很久</p>
-</blockquote>
-</blockquote>
-</blockquote>
 <h4 id="div-style-background-c6e6e8-color-fff-运行项目-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-fff-运行项目-div">☞</a><div style="background:#c6e6e8; color:#fff">运行项目</div></h4>
 <pre><code>python run.py
 </code></pre>
@@ -1233,7 +1223,7 @@ myUrllib - urllib库
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">60.9k</span>
+                <span class="white-color">61.2k</span>
             
 
             
