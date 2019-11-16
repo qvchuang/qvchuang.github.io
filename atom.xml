@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qvchuang.top/"/>
-  <updated>2019-11-16T07:41:42.488Z</updated>
+  <updated>2019-11-16T09:19:24.094Z</updated>
   <id>https://qvchuang.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>完美解决github访问、下载速度慢</title>
+    <link href="https://qvchuang.top/archives/c1cb4331.html"/>
+    <id>https://qvchuang.top/archives/c1cb4331.html</id>
+    <published>2019-11-16T09:11:06.515Z</published>
+    <updated>2019-11-16T09:19:24.094Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://qvchuang.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>matery主题个性化定制</title>
@@ -69,7 +95,7 @@
     <link href="https://qvchuang.top/archives/d1ad8916.html"/>
     <id>https://qvchuang.top/archives/d1ad8916.html</id>
     <published>2019-01-10T08:47:05.000Z</published>
-    <updated>2019-11-16T08:10:57.928Z</updated>
+    <updated>2019-11-16T09:09:45.266Z</updated>
     
     <summary type="html">
     
@@ -401,26 +427,6 @@
     
     
       <category term="随笔" scheme="https://qvchuang.top/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql学习笔记(一)</title>
-    <link href="https://qvchuang.top/archives/68f5744.html"/>
-    <id>https://qvchuang.top/archives/68f5744.html</id>
-    <published>2018-07-29T07:56:44.000Z</published>
-    <updated>2019-08-24T17:23:04.006Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://moetu.org/image/1ldHz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://moetu.fastmirror.org/images/2018/11/19/mysql0311a32b9cd926bc.md.jpg&quot; alt&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="mysql" scheme="https://qvchuang.top/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="https://qvchuang.top/tags/mysql/"/>
     
   </entry>
   
