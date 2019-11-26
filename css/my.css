@@ -1,9 +1,3 @@
-/* Here is your custom css styles. */
-@font-face{
-    font-family: 'simkai';
-    src: url('../font/simkai.ttf');
-}
-
-body{
-    font-family: 'simkai';
-}
+/* build time:Tue Nov 26 2019 22:17:17 GMT+0800 (GMT+08:00)*/
+@font-face{font-family:simkai;src:url(../font/simkai.ttf)}body{font-family:simkai}
+/* rebuild by neat */
