@@ -559,14 +559,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.5k
+                        2.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        14 分
                     </div>
                     
                 
@@ -912,6 +912,135 @@ if (windowWidth &gt; 768) {
 <p><a href="https://www.zzshe.com/Blog/87.html" target="_blank" rel="noopener">参考教程</a></p>
 <h4 id="div-style-background-dfecd5-color-000-网站预加载js脚本-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-网站预加载js脚本-div">☞</a><div style="background:#dfecd5; color:#000">网站预加载js脚本</div></h4>
 <p><a href="https://sunhwee.com/posts/376fa98c.html" target="_blank" rel="noopener">尊重原创，点击查看</a></p>
+<h4 id="div-style-background-dfecd5-color-000-归档页自定义-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-归档页自定义-div">☞</a><div style="background:#dfecd5; color:#000">归档页自定义</div></h4>
+<p><strong>样式</strong></p>
+<p>添加到 <code>themes\hexo-theme-matery-master\source\my.css</code> 或者其他css随意</p>
+<pre><code>/*归档页自定义样式*/
+.archive-container{
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.archive:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.archive .articles {
+  border-left: 1px solid #dbdbdb;
+}
+
+.archive .article {
+  border-top: none;
+  margin-left: -1px;
+  padding: 0.4rem 1.5rem;
+  border-left: 2px solid transparent;
+}
+
+.archive .article:hover {
+  border-left-color: #0f9d58 ;
+}
+
+.archive .article time {
+  font-size: .9rem;
+  color: deeppink;
+  /* color: darkgray; */
+}
+
+.archive .article h6 {
+  margin: 0;
+}
+
+.archive .article h6 a {
+  line-height: 1.5;
+  color: inherit;
+  border-bottom: 1px dashed transparent;
+}
+
+.archive .article h6 a:hover {
+  border-bottom-color: #0f9d58;
+}
+
+
+.hbe-input-container{
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.hbe-input-container  .btn-decrypt{
+  display: inline-block;
+  vertical-align: top;
+  width: 120px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #3f90ff;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.about-cover {
+  height: 50vh;
+}
+.desc-content{
+  padding: 0 50px;
+}
+@media only screen and (max-width: 601px) {
+  .desc-content {
+    padding: 0 15px;
+  }
+}
+
+.v .vlist .vcard {
+  padding-top: 2.5em !important;
+}
+</code></pre>
+<p>修改<code>themes\hexo-theme-matery-master\layout\archive.ejs</code>为以下代码：</p>
+<pre><code>&lt;%- partial('_partial/bg-cover') %&gt;
+
+&lt;section class=&quot;section&quot;&gt;
+
+    &lt;%- partial('_widget/post-calendar') %&gt;
+
+    &lt;div class=&quot;container archive-container&quot;&gt;
+        &lt;% const groups = {};
+        const years = [];
+        page.posts.each(post =&gt; {
+            const year = post.date.year();
+            if (typeof(groups[year]) === 'undefined') {
+                groups[year] = [];
+                years.push(year);
+            }
+            groups[year].push(post);
+        });
+        years.sort((a, b) =&gt; b - a); %&gt;
+        &lt;% for (let year of years) { %&gt;
+            &lt;div class=&quot;archive&quot;&gt;
+                &lt;h4 class=&quot;archive-year&quot; id=&quot;&lt;%= year %&gt;&quot;&gt;&lt;%= year %&gt;&lt;/h4&gt;
+                &lt;div class=&quot;articles&quot;&gt;
+                    &lt;% for (let post of groups[year].sort((a, b) =&gt; b.date.diff(a.date))) { %&gt;
+                        &lt;div class=&quot;article content&gt;&quot;&gt;
+                            &lt;time class=&quot;is-text-small&quot; datetime=&quot;&lt;%= date_xml(post.date) %&gt;&quot; itemprop=&quot;datePublished&quot; &gt;
+                                &lt;%= date(post.date, 'MM-D') %&gt; &lt;/time&gt;
+                            &lt;h6 class=&quot;is-6&quot;&gt;&lt;a href=&quot;&lt;%= url_for(post.link ? post.link : post.path) %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt;&lt;/h6&gt;
+                        &lt;/div&gt;
+                    &lt;% } %&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;% } %&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+        &lt;% if (page.total &gt; 1) { %&gt;
+            &lt;%- partial('_partial/paging') %&gt;
+        &lt;% } %&gt;
+
+&lt;/section&gt;
+</code></pre>
 <p><font color="red">未完待续</font></p>
 
             </div>
@@ -1583,7 +1712,7 @@ if (windowWidth &gt; 768) {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">61.4k</span>
+                <span class="white-color">61.9k</span>
             
 
             
