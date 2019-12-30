@@ -30,6 +30,10 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
@@ -39,8 +43,7 @@
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -562,7 +565,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        910
+                        922
                     </div>
                     
 
@@ -617,22 +620,22 @@
 <p>不可变对象类型，没有被拷贝的说法，即便是用深拷贝，查看id的话也是一样的，如果对其重新赋值，也只是新创建一个对象，替换掉旧的而已。</p>
 <p>一句话就是，不可变类型，不管是深拷贝还是浅拷贝，地址值和拷贝后的值都是一样的。</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import copy  # 使用拷贝需要导入copy模块
+<pre><code class="language-python">import copy  # 使用拷贝需要导入copy模块
 
 a=(1,2,3)
-print("=====第一种=号浅拷贝=====")
+print(&quot;=====第一种=号浅拷贝=====&quot;)
 b=a
 print(a)
 print(b)
 print(id(a))
 print(id(b))
-print("=====另一种copy浅拷贝===")
+print(&quot;=====另一种copy浅拷贝===&quot;)
 b=copy.copy(a)
 print(a)
 print(b)
 print(id(a))
 print(id(b))
-print("=====深拷贝=====")
+print(&quot;=====深拷贝=====&quot;)
 b=copy.deepcopy(a)
 print(a)
 print(b)
@@ -654,29 +657,29 @@ print(id(b))
 (1, 2, 3)
 2814522335952
 2814522335952
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-b2bbbe-color-000-对于可变对象深浅拷贝-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-对于可变对象深浅拷贝-div">☞</a><div style="background:#b2bbbe; color:#000">对于可变对象深浅拷贝:</div></h2>
 <blockquote>
 <p>=浅拷贝：值相等，地址相等</p>
 <p>copy浅拷贝：值相等，地址不相等</p>
 <p>deepcopy深拷贝：值相等，地址不相等</p>
 </blockquote>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import copy  # 使用拷贝需要导入copy模块
+<pre><code class="language-python">import copy  # 使用拷贝需要导入copy模块
 
 a=[1,2,3]
-print("=====第一种=号浅拷贝=====")
+print(&quot;=====第一种=号浅拷贝=====&quot;)
 b=a
 print(a)
 print(b)
 print(id(a))
 print(id(b))
-print("=====另一种copy浅拷贝===")
+print(&quot;=====另一种copy浅拷贝===&quot;)
 b=copy.copy(a)
 print(a)
 print(b)
 print(id(a))
 print(id(b))
-print("=====深拷贝=====")
+print(&quot;=====深拷贝=====&quot;)
 b=copy.deepcopy(a)
 print(a)
 print(b)
@@ -698,7 +701,7 @@ print(id(b))
 [1, 2, 3]
 2007696321544
 2007696319560
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-b2bbbe-color-000-总结：-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-总结：-div">☞</a><div style="background:#b2bbbe; color:#000">总结：</div></h2>
 <blockquote>
 <p>1，深浅拷贝都是对源对象的复制，占用不同的内存空间。</p>
@@ -1391,7 +1394,7 @@ print(id(b))
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">61.9k</span>
+                <span class="white-color">62.8k</span>
             
 
             
@@ -1506,6 +1509,15 @@ $(function () {
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script>
+
+<!-- 代码高亮 -->
+<!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">   -->
+<!-- <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  -->
+<!-- <script >hljs.initHighlightingOnLoad();</script> -->
+<!-- 或者 本地 -->
+<script src="/js/highlight.pack.js"></script>
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
+<script>hljs.initHighlightingOnLoad();</script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

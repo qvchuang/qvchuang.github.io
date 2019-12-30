@@ -25,6 +25,10 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
@@ -34,8 +38,7 @@
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -456,18 +459,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/categories/测试/" title="测试: 6">
+                <a href="/categories/blog/" title="blog: 5">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #F5EEF8;">测试
-                        <span class="tag-length">6</span>
+                             chip-active " style="background-color: #F5EEF8;">blog
+                        <span class="tag-length">5</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/blog/" title="blog: 5">
+                <a href="/categories/测试/" title="测试: 6">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active " style="background-color: #D5F5E3;">blog
-                        <span class="tag-length">5</span>
+                             chip-default " style="background-color: #D5F5E3;">测试
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -739,7 +742,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">61.9k</span>
+                <span class="white-color">62.8k</span>
             
 
             
@@ -854,6 +857,15 @@ $(function () {
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script>
+
+<!-- 代码高亮 -->
+<!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">   -->
+<!-- <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  -->
+<!-- <script >hljs.initHighlightingOnLoad();</script> -->
+<!-- 或者 本地 -->
+<script src="/js/highlight.pack.js"></script>
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
+<script>hljs.initHighlightingOnLoad();</script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

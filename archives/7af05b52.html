@@ -49,6 +49,10 @@ def func1():
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
@@ -58,8 +62,7 @@ def func1():
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -581,7 +584,7 @@ def func1():
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        933
+                        934
                     </div>
                     
 
@@ -626,7 +629,7 @@ def func1():
 </ul>
 <h2 id="div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div"><a class="header-anchor" href="#div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div">☞</a><div id="01" style="background:#DEB887; color:#8A2BE2">装饰器的形成过程</div></h2>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-简单版-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-简单版-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——简单版</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import time
+<pre><code class="language-python">import time
 def func1():
     print('in func1')
 def timer(func):
@@ -637,27 +640,27 @@ def timer(func):
     return inner
 func1 = timer(func1)
 func1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-语法糖-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-语法糖-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——语法糖</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">import time
+<pre><code class="language-python">import time
 def timer(func):
     def inner():
         start = time.time()
         func()
         print(time.time() - start)
     return inner
-@timer   #==> func1 = timer(func1)
+@timer   #==&gt; func1 = timer(func1)
 def func1():
     print('in func1')
 func1()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <blockquote>
 <p>可以简单的总结一下：</p>
 <p>装饰器的本质：一个闭包函数</p>
 <p>装饰器的功能：在不修改原函数及其调用方式的情况下对原函数功能进行扩展</p>
 </blockquote>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——带参数的装饰器</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def timer(func):
+<pre><code class="language-python">def timer(func):
     def inner(a):
         start = time.time()
         func(a)
@@ -667,7 +670,7 @@ func1()
 def func1(a):
     print(a)
 func1(1)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="div-style-background-87ceeb-color-000-通用装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-通用装饰器-div">☞</a><div style="background:#87CEEB; color:#000">通用装饰器</div></h3>
 <pre><code>import time
 def timer(func):
@@ -690,14 +693,14 @@ def func2(a):
 func1('aaaaaa','bbbbbb')
 print(func2('aaaaaa'))
 </code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def wrapper(func):
+<pre><code class="language-python">def wrapper(func):
     def inner(*args,**kwargs):
         '''执行函数前操作'''
         ret = func(*args,**kwargs)
         '''执行函数后的操作'''
         return ret
     return inner
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——带返回值的装饰器</div></h3>
 <pre><code>import time
 def timer(func):
@@ -717,12 +720,12 @@ func2('aaaaaa')
 print(func2('aaaaaa'))
 </code></pre>
 <h3 id="div-style-background-87ceeb-color-000-查看函数信息的一些方法-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-查看函数信息的一些方法-div">☞</a><div style="background:#87CEEB; color:#000">查看函数信息的一些方法</div></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">def index():
+<pre><code class="language-python">def index():
     '''这是一个主页信息'''
     print('from index')
 print(index.__doc__)    #查看函数注释的方法
 print(index.__name__)   #查看函数名的方法
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-wraps-demo-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-wraps-demo-div">☞</a><div style="background:#87CEEB; color:#000"> 装饰器——wraps demo</div></h3>
 <pre><code>from functools import wraps
 
@@ -756,7 +759,7 @@ print(index.__name__)      #查看字符串格式的函数名
 <p>在不改变函数调用方式的基础上在函数的前、后添加功能。</p>
 </blockquote>
 <p><font face="宋体" color="#FF8000">装饰器的固定格式：</font></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #装饰器的固定格式
+<pre><code class="language-python"> #装饰器的固定格式
 def wrapper(f):    #装饰器函数，f是被装饰的函数
     def inner(*args,**kwargs):
         '''在被装饰函数之前要做的事'''
@@ -764,15 +767,15 @@ def wrapper(f):    #装饰器函数，f是被装饰的函数
         '''在被装饰函数之后要做的事'''
         return ret
     return inner
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python"> #装饰器的固定格式——wraps版
+</code></pre>
+<pre><code class="language-python"> #装饰器的固定格式——wraps版
 from functools import wraps
 def deco(func):
     @wraps(func) #加在最内层函数正上方
     def wrapper(*args,**kwargs):
         return func(*args,**kwargs)
     return wrapper
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div"><a class="header-anchor" href="#div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div">☞</a><div id="04" style="background:#DEB887; color:#8A2BE2">带参数的装饰器</div></h2>
 <pre><code>FLAGE = True
 def outer(flag):
@@ -1501,7 +1504,7 @@ f()</code></pre>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">61.9k</span>
+                <span class="white-color">62.8k</span>
             
 
             
@@ -1616,6 +1619,15 @@ $(function () {
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script>
+
+<!-- 代码高亮 -->
+<!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">   -->
+<!-- <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  -->
+<!-- <script >hljs.initHighlightingOnLoad();</script> -->
+<!-- 或者 本地 -->
+<script src="/js/highlight.pack.js"></script>
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
+<script>hljs.initHighlightingOnLoad();</script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

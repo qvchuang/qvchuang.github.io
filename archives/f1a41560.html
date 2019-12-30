@@ -35,6 +35,10 @@ name1 =">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
     </style>
 
     <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
@@ -44,8 +48,7 @@ name1 =">
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -567,7 +570,7 @@ name1 =">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        493
+                        513
                     </div>
                     
 
@@ -593,18 +596,18 @@ name1 =">
                 <p><a href="https://moetu.org/image/1lCaj" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pythona3f781c4df4745da.md.png" alt></a></p>
 <a id="more"></a>
 <h2 id="div-style-background-c3d7df-color-000-1-id-查询内存地址-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-1-id-查询内存地址-div">☞</a><div style="background:#c3d7df; color:#000">1、id  查询内存地址</div></h2>
-<pre class="line-numbers language-language-python"><code class="language-language-python">name = 'alex'
+<pre><code class="language-python">name = 'alex'
 print(id(name))
 li = [1,2,3]
 print(id(li))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-c3d7df-color-000-2-is-判断的是内存地址-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-2-is-判断的是内存地址-div">☞</a><div style="background:#c3d7df; color:#000">2、is  判断的是内存地址</div></h2>
 <h3 id="font-face-宋体-color-ff8000-是比较值-is-是内存地址是否相同-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-是比较值-is-是内存地址是否相同-font">☞</a><font face="宋体" color="#FF8000">==  是比较值，is 是内存地址是否相同</font></h3>
-<pre class="line-numbers language-language-python"><code class="language-language-python">name1 = 'alex@'
+<pre><code class="language-python">name1 = 'alex@'
 name2 = 'alex@'
 print(name1 == name2)---Ture
 print(name1 is name2)-----Ture
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="div-style-background-c3d7df-color-000-3-小数据池-div"><a class="header-anchor" href="#div-style-background-c3d7df-color-000-3-小数据池-div">☞</a><div style="background:#c3d7df; color:#000">3、小数据池</div></h2>
 <p>Python中   int  与 str  存在小数据池，其他类型没有</p>
 <p>int 范围  -5 —256—指向一个内存地址</p>
@@ -629,9 +632,9 @@ print(name1 is name2)-----Ture
 <p>a : 0000 0001 8位</p>
 <p>中 : 0000 0101 0000 0001 16位</p>
 </blockquote>
-<pre class="line-numbers language-language-text"><code class="language-language-text">不同编码之间是不能互相识别对方的二进制,会报错,或者产生乱码.
+<pre><code class="language-text">不同编码之间是不能互相识别对方的二进制,会报错,或者产生乱码.
 在你的字符串(文件),存储,传输时,必须使用非unicode的二进制(01010101).
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <blockquote>
 <p>py3:</p>
 <p>字符串:编码方式(在内存中的运行方式):默认都是unicode.</p>
@@ -657,20 +660,20 @@ print(name1 is name2)-----Ture
 </blockquote>
 <p><code>str &gt;&gt;&gt; byte</code></p>
 <p><strong>b = s.encode(‘utf-8’)</strong></p>
-<pre class="line-numbers language-language-python"><code class="language-language-python">s = 'alex'
+<pre><code class="language-python">s = 'alex'
 b = s.encode('utf-8')
 b1 = s.encode('gbk')
-print(s,type(s))-----alex <class 'str'>
-print(b,type(b))-----b'alex' <class 'bytes'>
-print(b1,type(b1))--b'alex' <class 'bytes'>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></class></class></class></code></pre>
-<pre class="line-numbers language-language-python"><code class="language-language-python">s = '中国'
+print(s,type(s))-----alex &lt;class 'str'&gt;
+print(b,type(b))-----b'alex' &lt;class 'bytes'&gt;
+print(b1,type(b1))--b'alex' &lt;class 'bytes'&gt;
+</code></pre>
+<pre><code class="language-python">s = '中国'
 b = s.encode('utf-8')
 b1 = s.encode('gbk')
 print(s,type(s))
-print(b,type(b))------b'\xe4\xb8\xad\xe5\x9b\xbd' <class 'bytes'>
-print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' <class 'bytes'>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></class></class></code></pre>
+print(b,type(b))------b'\xe4\xb8\xad\xe5\x9b\xbd' &lt;class 'bytes'&gt;
+print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' &lt;class 'bytes'&gt;
+</code></pre>
 
             </div>
             <hr>
@@ -1353,7 +1356,7 @@ print(b1,type(b1))----b'\xd6\xd0\xb9\xfa' <class 'bytes'>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">61.9k</span>
+                <span class="white-color">62.8k</span>
             
 
             
@@ -1468,6 +1471,15 @@ $(function () {
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script>
+
+<!-- 代码高亮 -->
+<!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">   -->
+<!-- <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  -->
+<!-- <script >hljs.initHighlightingOnLoad();</script> -->
+<!-- 或者 本地 -->
+<script src="/js/highlight.pack.js"></script>
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
+<script>hljs.initHighlightingOnLoad();</script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
