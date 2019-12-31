@@ -50,6 +50,9 @@
 
 <body>
 
+<!--  html 预加载脚本  -->
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/instant.page.js" type="module"></script>
+
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -1497,14 +1500,17 @@ $(function () {
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script>
 
-<!-- 代码高亮 -->
-<!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">   -->
-<!-- <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  -->
+<!-- 代码高亮 从CDN获取库-->
+<!-- <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script> -->
+<!-- <link href="http://cdn.bootcss.com/highlight.js/9.1.5/styles/monokai_sublime.min.css" rel="stylesheet">   -->
 <!-- <script >hljs.initHighlightingOnLoad();</script> -->
 <!-- 或者 本地 -->
 <script src="/js/highlight.pack.js"></script>
-<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
+<link type="text/css" href="/css/styles/github.css" rel="stylesheet">
+<!-- 代码行号 从CDN获取库-->
+<script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initLineNumbersOnLoad();</script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1518,12 +1524,10 @@ $(function () {
 
 
 <!--  html 预加载脚本  -->
-<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/instant.page.js" type="module"></script>
-
+<!-- <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/instant.page.js" type="module"></script> -->
 
 <!-- 动态标签 -->
 <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
-
 
 <!-- 鼠标跟随特效 -->
 <!-- <script src="/js/xuehua.js"></script> -->
@@ -1535,8 +1539,6 @@ if (windowWidth > 768) {
 }
 </script>
 
-
-
 <!-- 鼠标点击文字特效 -->
 <!-- <script src="/js/wenzi.js"></script> -->
 <script type="text/javascript">
@@ -1546,8 +1548,6 @@ if (windowWidth > 768) {
     document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/wenzi.js"><\/script>');
 }
 </script>
-
-
 
 <!-- 雪花特效 -->
 <!-- <script src="/js/xuehuapiaoluo.js"></script> -->
@@ -1559,11 +1559,8 @@ if (windowWidth > 768) {
 }
 </script>
 
-
 <!-- 背景动态彩带 -->
 <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/ribbon.min.js"></script>
-
-
 
 <!-- 樱花特效 -->
 <!-- <script src="/js/sakura.js"></script> -->
