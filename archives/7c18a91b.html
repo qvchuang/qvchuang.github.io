@@ -47,8 +47,8 @@ for i in [1,2,3,4]:
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-</head>
-
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
 
@@ -601,18 +601,18 @@ for i in [1,2,3,4]:
 <h3 id="div-style-background-pink-color-000-python中的for循环-div"><a class="header-anchor" href="#div-style-background-pink-color-000-python中的for循环-div">☞</a><div style="background:pink; color:#000">python中的for循环</div></h3>
 <p>要了解for循环是怎么回事儿，还是要从代码的角度出发。</p>
 <p>首先，对一个列表进行for循环。</p>
-<pre><code class="language-python">for i in [1,2,3,4]:  
+<pre class="line-numbers language-language-python"><code class="language-language-python">for i in [1,2,3,4]:  
     print(i)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>上面这段代码肯定是没有问题的，但是我们换一种情况，来循环一个数字1234试试</p>
-<pre><code class="language-python">for i in 1234
+<pre class="line-numbers language-language-python"><code class="language-language-python">for i in 1234
     print(i) 
 结果：
 Traceback (most recent call last):
-  File &quot;test.py&quot;, line 4, in &lt;module&gt;
+  File "test.py", line 4, in <module>
     for i in 1234:
 TypeError: 'int' object is not iterable
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></module></code></pre>
 <p>报错了！</p>
 <p>“TypeError: ‘int’ object is not iterable”</p>
 <p>说int类型不是一个<strong>iterable</strong>，那这个<strong>iterable</strong>是什么？</p>
@@ -648,11 +648,11 @@ print(isinstance(s,Iterable))
 <p>可以被迭代要满足的要求就叫做可迭代协议。</p>
 <p>可迭代协议的定义非常简单，就是内部实现了<code>__iter__</code>方法。</p>
 <p>接下来就来验证一下：</p>
-<pre><code class="language-python">print(dir([1,2]))
+<pre class="line-numbers language-language-python"><code class="language-language-python">print(dir([1,2]))
 print(dir((2,3)))
 print(dir({1:2}))
 print(dir({1,2}))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>结果:
 ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
@@ -703,7 +703,7 @@ print('***',iter_l.__next__())
 <p>这三个方法中，能让我们一个一个取值的神奇方法就是<code>__next__</code></p>
 <p>在for循环中，就是在内部调用了<code>__next__</code>方法才能取到一个一个的值。</p>
 <p>接下来就用迭代器的next方法来写一个不依赖for的遍历。</p>
-<pre><code class="language-python">l = [1,2,3,4]
+<pre class="line-numbers language-language-python"><code class="language-language-python">l = [1,2,3,4]
 l_iter = l.__iter__()
 item = l_iter.__next__()
 print(item)
@@ -715,11 +715,11 @@ item = l_iter.__next__()
 print(item)
 item = l_iter.__next__()
 print(item)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这是一段会报错的代码，如果我们一直取next取到迭代器里已经没有元素了，</p>
 <p>就会抛出一个异常StopIteration，告诉我们，列表中已经没有有效的元素了。</p>
 <p>这个时候，就要使用异常处理机制来把这个异常处理掉。</p>
-<pre><code class="language-python">l = [1,2,3,4]
+<pre class="line-numbers language-language-python"><code class="language-language-python">l = [1,2,3,4]
 l_iter = l.__iter__()
 while True:
     try:
@@ -727,7 +727,7 @@ while True:
         print(item)
     except StopIteration:
         break
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>现在就是使用while循环实现了原本for循环做的事情，这个<code>l.__iter__()</code>就是一个迭代器。</p>
 <p><strong>迭代器遵循迭代器协议：</strong><font face="宋体" color="#FF8000"><strong>必须拥有<code>__iter__</code>方法和<code>__next__</code>方法。</strong></font></p>
 <pre><code>print('__next__' in dir(range(12)))  #查看'__next__'是不是在range()方法执行之后内部是否有__next__
@@ -760,7 +760,7 @@ print(isinstance(range(100000000),Iterator))  #验证range执行之后得到的�
 <blockquote>
 <p>yield可以为我们从函数中返回值，但是yield又不同于return，return的执行意味着程序的结束，调用生成器函数不会得到返回的具体的值，而是得到一个可迭代的对象。每一次获取这个可迭代对象的值，就能推动函数的执行，获取新的返回值。直到函数执行结束。</p>
 </blockquote>
-<pre><code class="language-python">import time
+<pre class="line-numbers language-language-python"><code class="language-language-python">import time
 def genrator_fun1():
     a = 1
     print('现在定义了a变量')
@@ -774,7 +774,7 @@ print('-'*20)   #我是华丽的分割线
 print(next(g1))
 time.sleep(1)   #sleep一秒看清执行过程
 print(next(g1))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>生成器有什么好处呢？就是不会一下子在内存中生成太多数据</p>
 <blockquote>
 <p>假如我想让工厂给学生做校服，生产2000000件衣服，我和工厂一说，工厂应该是先答应下来，然后再去生产，我可以一件一件的要，也可以根据学生一批一批的找工厂拿。而不能是一说要生产2000000件衣服，工厂就先去做生产2000000件衣服，等回来做好了，学生都毕业了。。。</p>
@@ -934,11 +934,11 @@ print(next(laomuji))
 </blockquote>
 <p><font face="宋体" color="red">使用生成器的优点：</font></p>
 <p>1.<font face="宋体" color="skyblue">延迟计算，一次返回一个结果。也就是说，它不会一次生成所有的结果，这对于大数据量处理，将会非常有用。</font></p>
-<pre><code class="language-python"> #列表解析
+<pre class="line-numbers language-language-python"><code class="language-language-python"> #列表解析
 sum([i for i in range(100000000)])#内存占用大,机器容易卡死
  #生成器表达式
 sum(i for i in range(100000000))#几乎不占内存
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2.<font face="宋体" color="skyblue">提高代码可读性</font></p>
 
             </div>
@@ -1622,7 +1622,7 @@ sum(i for i in range(100000000))#几乎不占内存
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">62.8k</span>
+                <span class="white-color">61.9k</span>
             
 
             
@@ -1744,7 +1744,7 @@ $(function () {
 <!-- <script >hljs.initHighlightingOnLoad();</script> -->
 <!-- 或者 本地 -->
 <script src="/js/highlight.pack.js"></script>
-<link type="text/css" href="/css/styles/github.css" rel="stylesheet">
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
 <!-- 代码行号 从CDN获取库-->
 <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -1839,7 +1839,26 @@ WIDGET = {FID: 'UBsmdBLl0N'}
 <script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'https://qvchuang.top' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
 
 

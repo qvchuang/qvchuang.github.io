@@ -43,8 +43,8 @@
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-</head>
-
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
 
@@ -599,15 +599,15 @@
 <p>我们用python或其他语言编写的应用程序若想要把数据永久保存下来，必须要保存于硬盘中，这就涉及到应用程序要操作硬件，众所周知，应用程序是无法直接操作硬件的，这就用到了操作系统。操作系统把复杂的硬件操作封装成简单的接口给用户/应用程序使用，其中文件就是操作系统提供给应用程序来操作硬盘虚拟概念，用户或应用程序通过操作文件，可以将自己的数据永久保存下来。</p>
 </blockquote>
 <p>有了文件的概念，我们无需再去考虑操作硬盘的细节，只需要关注操作文件的流程：</p>
-<pre><code class="language-python"> #1. 打开文件，得到文件句柄并赋值给一个变量
+<pre class="line-numbers language-language-python"><code class="language-language-python"> #1. 打开文件，得到文件句柄并赋值给一个变量
 f=open('a.txt','r',encoding='utf-8') #默认打开模式就为r
  #2. 通过句柄对文件进行操作
 data=f.read()
  #3. 关闭文件
 f.close()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">关闭文件的注意事项：</font></p>
-<pre><code class="language-text">打开一个文件包含两部分资源：操作系统级打开的文件+应用程序的变量。在操作完毕一个文件时，必须把与该文件的这两部分资源一个不落地回收，回收方法为：
+<pre class="line-numbers language-language-text"><code class="language-language-text">打开一个文件包含两部分资源：操作系统级打开的文件+应用程序的变量。在操作完毕一个文件时，必须把与该文件的这两部分资源一个不落地回收，回收方法为：
 1、f.close() #回收操作系统级打开的文件
 2、del f #回收应用程序级的变量
 其中del f一定要发生在f.close()之后，否则就会导致操作系统打开的文件还没有关闭，白白占用资源，
@@ -618,20 +618,20 @@ with open('a.txt','w') as f:
 with open('a.txt','r') as read_f,open('b.txt','w') as write_f:
     data=read_f.read()
     write_f.write(data)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-style-background-b2bbbe-color-000-二-文件编码-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-二-文件编码-div">☞</a><div style="background:#b2bbbe; color:#000">二、文件编码</div></h2>
 <blockquote>
 <p>f=open(…)是由操作系统打开文件，那么如果我们没有为open指定编码，那么打开文件的默认编码很明显是操作系统说了算了，操作系统会用自己的默认编码去打开文件，在windows下是gbk，在linux下是utf-8。</p>
 </blockquote>
-<pre><code class="language-python"> #这就用到了上节课讲的字符编码的知识：若要保证不乱码，文件以什么方式存的，就要以什么方式打开。
+<pre class="line-numbers language-language-python"><code class="language-language-python"> #这就用到了上节课讲的字符编码的知识：若要保证不乱码，文件以什么方式存的，就要以什么方式打开。
 f=open('a.txt','r',encoding='utf-8')
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="div-style-background-b2bbbe-color-000-三-文件的打开模式-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-三-文件的打开模式-div">☞</a><div style="background:#b2bbbe; color:#000">三、文件的打开模式</div></h2>
-<pre><code class="language-python"> #1. 打开文件的模式有(默认为文本模式)：
+<pre class="line-numbers language-language-python"><code class="language-language-python"> #1. 打开文件的模式有(默认为文本模式)：
 r ，只读模式【默认模式，文件必须存在，不存在则抛出异常】
 w，只写模式【不可读；不存在则创建；存在则清空内容】
 a， 只追加写模式【不可读；不存在则创建；存在则只追加内容】
- #2. 对于非文本文件，我们只能使用b模式，&quot;b&quot;表示以字节的方式操作（而所有文件也都是以字节的形式存储的，使用这种模式无需考虑文本文件的字符编码、图片文件的jgp格式、视频文件的avi格式）
+ #2. 对于非文本文件，我们只能使用b模式，"b"表示以字节的方式操作（而所有文件也都是以字节的形式存储的，使用这种模式无需考虑文本文件的字符编码、图片文件的jgp格式、视频文件的avi格式）
 rb 
 wb
 ab
@@ -644,18 +644,18 @@ a+， 写读【可写，可读】
 r+b， 读写【可读，可写】
 w+b，写读【可写，可读】
 a+b， 写读【可写，可读】
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-style-background-b2bbbe-color-000-四-文件操作方法-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-四-文件操作方法-div">☞</a><div style="background:#b2bbbe; color:#000">四、文件操作方法</div></h2>
 <h3 id="div-style-background-fbeee2-color-000-常用操作方法-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-常用操作方法-div">☞</a><div style="background:#fbeee2; color:#000">常用操作方法</div></h3>
-<pre><code class="language-text">read（3）：
+<pre class="line-numbers language-language-text"><code class="language-language-text">read（3）：
 　　1. 文件打开方式为文本模式时，代表读取3个字符
 　　2. 文件打开方式为b模式时，代表读取3个字节
 其余的文件内光标移动都是以字节为单位的如：seek，tell，truncate
 注意：
 　　1. seek有三种移动方式0，1，2，其中1和2必须在b模式下进行，但无论哪种模式，都是以bytes为单位移动的
 　　2. truncate是截断文件，所以文件的打开方式必须可写，但是不能用w或w+等方式打开，因为那样直接清空文件了，所以truncate要在r+或a或a+等模式下测试效果。
-</code></pre>
-<pre><code class="language-python">f.read() #读取所有内容,光标移动到文件末尾
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">f.read() #读取所有内容,光标移动到文件末尾
 f.readline() #读取一行内容,光标移动到第二行首部
 f.readlines() #读取每一行内容,存放于列表中
 f.write('1111\n222\n') #针对文本模式的写,需要自己写换行符
@@ -669,7 +669,7 @@ f.seek(0,2)    移动到最末尾
 f.tell()
  #readable    #文件是否可读
 f.readable()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-style-background-b2bbbe-color-000-五-文件的修改-div"><a class="header-anchor" href="#div-style-background-b2bbbe-color-000-五-文件的修改-div">☞</a><div style="background:#b2bbbe; color:#000">五、文件的修改</div></h2>
 <blockquote>
 <p>文件的数据是存放于硬盘上的，因而只存在覆盖、不存在修改这么一说，我们平时看到的修改文件，都是模拟出来的效果，具体的说有两种实现方式：</p>
@@ -678,25 +678,25 @@ f.readable()
 <blockquote>
 <p>方式一：将硬盘存放的该文件的内容全部加载到内存，在内存中是可以修改的，修改完毕后，再由内存覆盖到硬盘（word，vim，nodpad++等编辑器）</p>
 </blockquote>
-<pre><code class="language-python">import os  # 调用系统模块
+<pre class="line-numbers language-language-python"><code class="language-language-python">import os  # 调用系统模块
 with open('a.txt') as read_f,open('.a.txt.swap','w') as write_f:
     data=read_f.read() #全部读入内存,如果文件很大,会很卡
     data=data.replace('alex','SB') #在内存中完成修改
     write_f.write(data) #一次性写入新文件
 os.remove('a.txt')  #删除原文件
 os.rename('.a.txt.swap','a.txt')   #将新建的文件重命名为原文件
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>方式二：将硬盘存放的该文件的内容一行一行地读入内存，修改完毕就写入新文件，最后用新文件覆盖源文件</p>
 </blockquote>
-<pre><code class="language-python">import os
+<pre class="line-numbers language-language-python"><code class="language-language-python">import os
 with open('a.txt') as read_f,open('.a.txt.swap','w') as write_f:
     for line in read_f:
         line=line.replace('alex','SB')
         write_f.write(line)
 os.remove('a.txt')
 os.rename('.a.txt.swap','a.txt') 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr>
@@ -1379,7 +1379,7 @@ os.rename('.a.txt.swap','a.txt')
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">62.8k</span>
+                <span class="white-color">61.9k</span>
             
 
             
@@ -1501,7 +1501,7 @@ $(function () {
 <!-- <script >hljs.initHighlightingOnLoad();</script> -->
 <!-- 或者 本地 -->
 <script src="/js/highlight.pack.js"></script>
-<link type="text/css" href="/css/styles/github.css" rel="stylesheet">
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
 <!-- 代码行号 从CDN获取库-->
 <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -1596,7 +1596,26 @@ WIDGET = {FID: 'UBsmdBLl0N'}
 <script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'https://qvchuang.top' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
 
 

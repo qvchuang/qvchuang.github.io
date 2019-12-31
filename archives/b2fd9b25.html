@@ -49,8 +49,8 @@ print">
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-</head>
-
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
 
@@ -607,30 +607,30 @@ print">
 <p><a href="https://moetu.org/image/LwUL8" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/31/a3a0ad7980452149aab3d95b52d6d4dac424d68f9b39db56.md.png" alt></a></p>
 <h3 id="div-style-background-c6e6e8-color-000-常用内置函数方法-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-000-常用内置函数方法-div">☞</a><div style="background:#c6e6e8; color:#000">常用内置函数方法</div></h3>
 <p><font face="宋体" color="#FF8000">1、print 输出</font></p>
-<pre><code class="language-python">print('666',end='')
+<pre class="line-numbers language-language-python"><code class="language-language-python">print('666',end='')
 print('666')
 print(1,2,3,4,5,sep='|')
 666666
 1|2|3|4|5
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">2、input 输入</font></p>
-<pre><code class="language-python">s = input(&quot;请输入内容 ： &quot;)  #输入的内容赋值给s变量
+<pre class="line-numbers language-language-python"><code class="language-language-python">s = input("请输入内容 ： ")  #输入的内容赋值给s变量
 print(s)  #输入什么打印什么。数据类型是str
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">3、type(o) 返回变量o的数据类型</font><br><br>
 <font face="宋体" color="#FF8000">4、dir–查找对象的所有方法</font></p>
 <p>dir() 默认查看全局空间内的属性，也接受一个参数，查看这个参数内的方法或变量</p>
-<pre><code class="language-python">print(dir(list))  #查看列表的内置方法
+<pre class="line-numbers language-language-python"><code class="language-language-python">print(dir(list))  #查看列表的内置方法
 print(dir(int))  #查看整数的内置方法
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">5、locals()获取执行本方法所在命名空间内的局部变量的字典</font></p>
 <p>     <font face="宋体" color="#FF8000">globals()获取全局变量的字典</font></p>
-<pre><code class="language-python">def func():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def func():
     name = 'alex'
     print(locals())
     print(globals())
 func()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">6、help（）----将你查询的对象所有信息都拿出来</font></p>
 <p>     <font face="宋体" color="#FF8000">help（list）–可以吧列表的所有用法信息都输出出来</font></p>
 <p><font face="宋体" color="#FF8000">7、abs（）----取绝对值</font></p>
@@ -649,14 +649,14 @@ ret = sum([1,2,3],10)
 print(ret)------   16
 </code></pre>
 <p><font face="宋体" color="#FF8000">8、callable---- 判断此变量是不是函数名</font></p>
-<pre><code class="language-python">def func():pass
+<pre class="line-numbers language-language-python"><code class="language-language-python">def func():pass
 print(callable(func))  #参数是函数名，可调用，返回True
 print(callable(123))   #参数是数字，不可调用，返回False
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">9、id(o) o是参数，返回一个变量的内存地址</font><br><br>
 <font face="宋体" color="#FF8000">10、hash()-----通过哈希表的规则,将对象转换成哈希值</font></p>
 <p>hash(o) o是参数，返回一个可hash变量的哈希值，不可hash的变量被hash之后会报错。</p>
-<pre><code class="language-python">t = (1,2,3)
+<pre class="line-numbers language-language-python"><code class="language-language-python">t = (1,2,3)
 l = [1,2,3]
 print(hash(t))  #可hash
 print(hash(l))  #会报错
@@ -664,13 +664,13 @@ print(hash(l))  #会报错
 结果：
 TypeError: unhashable type: 'list'
 '''
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>hash函数会根据一个内部的算法对当前可hash变量进行处理，返回一个int数字。</p>
 <p>*每一次执行程序，内容相同的变量hash值在这一次执行过程中不会发生改变。</p>
 <p><font face="宋体" color="#FF8000">11 、all（）----可迭代对象里面的所有的值转化成bool值如果都是True则,返回True</font></p>
-<pre><code class="language-python">print(all([1,2,3,0]))
+<pre class="line-numbers language-language-python"><code class="language-language-python">print(all([1,2,3,0]))
 False
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">12、十进制与二进制十六进制转化</font></p>
 <pre><code>十进制转化成二进制
 print(bin(100))--------------0b1100100
@@ -681,13 +681,13 @@ print(hex(33))--------------0x21
 </code></pre>
 <p><font face="宋体" color="#FF8000">13、float（）----数据类型中浮点</font></p>
 <p>有限小数,无线循环小数,不包含(无线不循环小数)</p>
-<pre><code class="language-python">print(1.35432,type(1.35432))
+<pre class="line-numbers language-language-python"><code class="language-language-python">print(1.35432,type(1.35432))
 print(float(3))
-1.35432 &lt;class 'float'&gt;
+1.35432 <class 'float'>
 3.0
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></class></code></pre>
 <p><font face="宋体" color="#FF8000">14、enumerate (iterable,start 起始值)   枚举</font></p>
-<pre><code class="language-python">l = ['手机','电话','充气娃娃',]
+<pre class="line-numbers language-language-python"><code class="language-language-python">l = ['手机','电话','充气娃娃',]
 for i in enumerate(l,1):
     print(i)
 (1, '手机')
@@ -699,20 +699,20 @@ for k,v in enumerate(l,1):
 1 手机
 2 电话
 3 充气娃娃
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">15、eval（） 有返回值 除去字符串两边的引号,返回里面的内容</font></p>
 <p>     <font face="宋体" color="#FF8000">exec（） 没有返回值 除去字符串两边的引号,执行里面的代码</font></p>
 <p><strong>两者区别：</strong></p>
-<pre><code class="language-python">s = &quot;{'name':'alex'}&quot;
-s1 = &quot;1+2+3+4&quot;
+<pre class="line-numbers language-language-python"><code class="language-language-python">s = "{'name':'alex'}"
+s1 = "1+2+3+4"
 print(eval(s),type(eval(s)))
 print(exec(s),type(exec(s)))
 print(eval(s1),type(eval(s1)))
- # {'name': 'alex'} &lt;class 'dict'&gt;
- # None &lt;class 'NoneType'&gt;
- # 10 &lt;class 'int'&gt;
-</code></pre>
-<pre><code class="language-python">code = '''for i in range(10):
+ # {'name': 'alex'} <class 'dict'>
+ # None <class 'nonetype'>
+ # 10 <class 'int'>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></class></class></class></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">code = '''for i in range(10):
     print(i)'''
 print(exec(code))
 0
@@ -726,23 +726,23 @@ print(exec(code))
 8
 9
 None
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">16、ord（） 输入字符返回Unicode对应的编码位置</font></p>
-<pre><code class="language-python">print(ord('a'))
+<pre class="line-numbers language-language-python"><code class="language-language-python">print(ord('a'))
 print(ord('b'))
 print(ord('中'))
 97
 98
 20013
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">17、chr（）输入编码位置返回Unicode对应的字符</font></p>
-<pre><code class="language-python">print(chr(97))
+<pre class="line-numbers language-language-python"><code class="language-language-python">print(chr(97))
 print(chr(20013))
 a
 中
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">18、max（）里面可以加函数，以函数规则返回最大值</font></p>
-<pre><code class="language-python">dic = {'k1':20,'k2':30,'k3':100}
+<pre class="line-numbers language-language-python"><code class="language-language-python">dic = {'k1':20,'k2':30,'k3':100}
 def func(x):
     return dic[x]
 l1 = max(dic,key=func,)
@@ -752,16 +752,16 @@ def func(x):
     return x
 l1 = max(dic,key=func,)
 print(l1)  #3
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font face="宋体" color="#FF8000">19、open()  打开一个文件，返回一个文件操作符(文件句柄)</font></p>
 <p>操作文件的模式有r,w,a,r+,w+,a+ 共6种</p>
 <p>每一种方式都可以用二进制的形式操作(rb,wb,ab,rb+,wb+,ab+)</p>
 <p>可以用encoding指定编码.</p>
 <p><font face="宋体" color="#FF8000">20、<code>__import__</code>导入一个模块</font></p>
-<pre><code class="language-python">import time
+<pre class="line-numbers language-language-python"><code class="language-language-python">import time
 os = __import__('os')
 print(os.path.abspath('.'))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="div-style-background-c6e6e8-color-000-重点掌握-div"><a class="header-anchor" href="#div-style-background-c6e6e8-color-000-重点掌握-div">☞</a><div style="background:#c6e6e8; color:#000">重点掌握</div></h3>
 <pre><code>其他：input,print,type,hash,open,import,dir
 
@@ -783,21 +783,21 @@ str类型代码执行：eval,exec
 <blockquote>
 <p>匿名函数：为了解决那些功能很简单的需求而设计的一句话函数</p>
 </blockquote>
-<pre><code class="language-python"> #这段代码
+<pre class="line-numbers language-language-python"><code class="language-language-python"> #这段代码
 def calc(n):
     return n**n
 print(calc(10)) 
  #换成匿名函数
 calc = lambda n:n**n
 print(calc(10))
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><a href="https://moetu.org/image/Lwlkl" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/12/31/59d8c4e43e4edf0eb3fbeb4e1519b50e7149c563b286427d.md.png" alt></a></p>
 <p>上面是对calc这个匿名函数的分析，下面给出了一个关于匿名函数格式的说明</p>
-<pre><code class="language-text">函数名 = lambda 参数 ：返回值
+<pre class="line-numbers language-language-text"><code class="language-language-text">函数名 = lambda 参数 ：返回值
  #参数可以有多个，用逗号隔开
  #匿名函数不管逻辑多复杂，只能写一行，且逻辑执行结束后的内容就是返回值
  #返回值和正常的函数一样可以是任意数据类型
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以看出，匿名函数并不是真的不能有名字</p>
 <p>匿名函数的调用和正常的调用也没有什么分别。 就是 函数名(参数) 就可以了～～～</p>
 
@@ -1482,7 +1482,7 @@ print(calc(10))
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">62.8k</span>
+                <span class="white-color">61.9k</span>
             
 
             
@@ -1604,7 +1604,7 @@ $(function () {
 <!-- <script >hljs.initHighlightingOnLoad();</script> -->
 <!-- 或者 本地 -->
 <script src="/js/highlight.pack.js"></script>
-<link type="text/css" href="/css/styles/github.css" rel="stylesheet">
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
 <!-- 代码行号 从CDN获取库-->
 <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -1699,7 +1699,26 @@ WIDGET = {FID: 'UBsmdBLl0N'}
 <script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'https://qvchuang.top' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
 
 

@@ -62,8 +62,8 @@ def func1():
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-</head>
-
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
 
@@ -587,7 +587,7 @@ def func1():
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        934
+                        933
                     </div>
                     
 
@@ -632,7 +632,7 @@ def func1():
 </ul>
 <h2 id="div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div"><a class="header-anchor" href="#div-id-01-style-background-deb887-color-8a2be2-装饰器的形成过程-div">☞</a><div id="01" style="background:#DEB887; color:#8A2BE2">装饰器的形成过程</div></h2>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-简单版-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-简单版-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——简单版</div></h3>
-<pre><code class="language-python">import time
+<pre class="line-numbers language-language-python"><code class="language-language-python">import time
 def func1():
     print('in func1')
 def timer(func):
@@ -643,27 +643,27 @@ def timer(func):
     return inner
 func1 = timer(func1)
 func1()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-语法糖-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-语法糖-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——语法糖</div></h3>
-<pre><code class="language-python">import time
+<pre class="line-numbers language-language-python"><code class="language-language-python">import time
 def timer(func):
     def inner():
         start = time.time()
         func()
         print(time.time() - start)
     return inner
-@timer   #==&gt; func1 = timer(func1)
+@timer   #==> func1 = timer(func1)
 def func1():
     print('in func1')
 func1()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>可以简单的总结一下：</p>
 <p>装饰器的本质：一个闭包函数</p>
 <p>装饰器的功能：在不修改原函数及其调用方式的情况下对原函数功能进行扩展</p>
 </blockquote>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带参数的装饰器-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——带参数的装饰器</div></h3>
-<pre><code class="language-python">def timer(func):
+<pre class="line-numbers language-language-python"><code class="language-language-python">def timer(func):
     def inner(a):
         start = time.time()
         func(a)
@@ -673,7 +673,7 @@ func1()
 def func1(a):
     print(a)
 func1(1)
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="div-style-background-87ceeb-color-000-通用装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-通用装饰器-div">☞</a><div style="background:#87CEEB; color:#000">通用装饰器</div></h3>
 <pre><code>import time
 def timer(func):
@@ -696,14 +696,14 @@ def func2(a):
 func1('aaaaaa','bbbbbb')
 print(func2('aaaaaa'))
 </code></pre>
-<pre><code class="language-python">def wrapper(func):
+<pre class="line-numbers language-language-python"><code class="language-language-python">def wrapper(func):
     def inner(*args,**kwargs):
         '''执行函数前操作'''
         ret = func(*args,**kwargs)
         '''执行函数后的操作'''
         return ret
     return inner
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-带返回值的装饰器-div">☞</a><div style="background:#87CEEB; color:#000">装饰器——带返回值的装饰器</div></h3>
 <pre><code>import time
 def timer(func):
@@ -723,12 +723,12 @@ func2('aaaaaa')
 print(func2('aaaaaa'))
 </code></pre>
 <h3 id="div-style-background-87ceeb-color-000-查看函数信息的一些方法-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-查看函数信息的一些方法-div">☞</a><div style="background:#87CEEB; color:#000">查看函数信息的一些方法</div></h3>
-<pre><code class="language-python">def index():
+<pre class="line-numbers language-language-python"><code class="language-language-python">def index():
     '''这是一个主页信息'''
     print('from index')
 print(index.__doc__)    #查看函数注释的方法
 print(index.__name__)   #查看函数名的方法
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="div-style-background-87ceeb-color-000-装饰器-wraps-demo-div"><a class="header-anchor" href="#div-style-background-87ceeb-color-000-装饰器-wraps-demo-div">☞</a><div style="background:#87CEEB; color:#000"> 装饰器——wraps demo</div></h3>
 <pre><code>from functools import wraps
 
@@ -762,7 +762,7 @@ print(index.__name__)      #查看字符串格式的函数名
 <p>在不改变函数调用方式的基础上在函数的前、后添加功能。</p>
 </blockquote>
 <p><font face="宋体" color="#FF8000">装饰器的固定格式：</font></p>
-<pre><code class="language-python"> #装饰器的固定格式
+<pre class="line-numbers language-language-python"><code class="language-language-python"> #装饰器的固定格式
 def wrapper(f):    #装饰器函数，f是被装饰的函数
     def inner(*args,**kwargs):
         '''在被装饰函数之前要做的事'''
@@ -770,15 +770,15 @@ def wrapper(f):    #装饰器函数，f是被装饰的函数
         '''在被装饰函数之后要做的事'''
         return ret
     return inner
-</code></pre>
-<pre><code class="language-python"> #装饰器的固定格式——wraps版
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python"> #装饰器的固定格式——wraps版
 from functools import wraps
 def deco(func):
     @wraps(func) #加在最内层函数正上方
     def wrapper(*args,**kwargs):
         return func(*args,**kwargs)
     return wrapper
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div"><a class="header-anchor" href="#div-id-04-style-background-deb887-color-8a2be2-带参数的装饰器-div">☞</a><div id="04" style="background:#DEB887; color:#8A2BE2">带参数的装饰器</div></h2>
 <pre><code>FLAGE = True
 def outer(flag):
@@ -1507,7 +1507,7 @@ f()</code></pre>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">62.8k</span>
+                <span class="white-color">61.9k</span>
             
 
             
@@ -1629,7 +1629,7 @@ $(function () {
 <!-- <script >hljs.initHighlightingOnLoad();</script> -->
 <!-- 或者 本地 -->
 <script src="/js/highlight.pack.js"></script>
-<link type="text/css" href="/css/styles/github.css" rel="stylesheet">
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
 <!-- 代码行号 从CDN获取库-->
 <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -1724,7 +1724,26 @@ WIDGET = {FID: 'UBsmdBLl0N'}
 <script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'https://qvchuang.top' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
 
 

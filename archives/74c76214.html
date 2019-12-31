@@ -48,8 +48,8 @@ APP测试要点梳理
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
     
-</head>
-
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
 
@@ -741,14 +741,14 @@ APP测试要点梳理
 <p style="font-family:微软雅黑;">3）App打开速度测试，速度是否可观</p>
 <p style="font-family:微软雅黑;">4）App页面间的切换是否流畅，逻辑是否正确</p>
 <p style="font-family:微软雅黑;">5）注册</p>
-<pre><code class="language-text">--同表单编辑页面
+<pre class="line-numbers language-language-text"><code class="language-language-text">--同表单编辑页面
 --用户名密码长度
 --注册后的提示页面
 --前台注册页面和后台的管理页面数据是否一致
 --注册后，在后台管理中页面提示
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p style="font-family:微软雅黑;">6）登录</p>
-<pre><code class="language-text">--使用合法的用户登录系统
+<pre class="line-numbers language-language-text"><code class="language-language-text">--使用合法的用户登录系统
 --系统是否允许多次非法的登陆，是否有次数限制
 --使用已经登陆的账号登陆系统是否正确处理
 --使用禁用的账号登陆系统是否正确处理
@@ -758,13 +758,13 @@ APP测试要点梳理
 --登陆后，页面中登陆信息
 --页面中有注销按钮
 --登陆超时的处理
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p style="font-family:微软雅黑;">7）注销</p>
-<pre><code class="language-text">--注销原模块，新的模块系统能否正确处理
+<pre class="line-numbers language-language-text"><code class="language-language-text">--注销原模块，新的模块系统能否正确处理
 --终止注销能否返回原模块，原用户
 --注销原用户，新用户系统能否正确处理
 --使用错误的账号、口令、无权限的被禁用的账号进行注销
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="div-style-background-dfecd5-color-000-2-4-2-应用的前后台切换-div"><a class="header-anchor" href="#div-style-background-dfecd5-color-000-2-4-2-应用的前后台切换-div">☞</a><div style="background:#dfecd5; color:#000">2.4.2 应用的前后台切换</div></h3>
 <p style="font-family:微软雅黑;">1) APP切换到后台，再回到app，检查是否停留在上一次操作界面</p>
 <p style="font-family:微软雅黑;">2) APP切换到后台，再回到app，检查功能及应用状态是否正常，IOS4和IOS5的版本的处理机制有的不一样</p>
@@ -827,18 +827,18 @@ APP测试要点梳理
 <h2 id="div-style-background-fbeee2-color-000-2-5-性能测试-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-2-5-性能测试-div">☞</a><div style="background:#fbeee2; color:#000">2.5 性能测试</div></h2>
 <p style="font-family:楷体;">评估App的时间和空间特性 ：</p>
 <p style="font-family:微软雅黑;">1)极限测试：在各种边界压力情况下，如电池、存储、网速等，验证App是否能正确响应</p>
-<pre><code class="language-python">--内存满时安装App
+<pre class="line-numbers language-language-python"><code class="language-language-python">--内存满时安装App
 --运行App时手机断电
 --运行App时断掉网络
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p style="font-family:微软雅黑;">2)响应能力测试：测试App中的各类操作是否满足用户响应时间要求 。（安装包放到云测上可以测试）</p>
-<pre><code class="language-python">--App安装、卸载的响应时间
+<pre class="line-numbers language-language-python"><code class="language-language-python">--App安装、卸载的响应时间
 --App各类功能性操作的影响时间
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p style="font-family:微软雅黑;">3)压力测试：反复/长期操作下、系统资源是否占用异常。（itestin）</p>
-<pre><code class="language-python">--App反复进行安装卸载，查看系统资源是否正常
+<pre class="line-numbers language-language-python"><code class="language-language-python">--App反复进行安装卸载，查看系统资源是否正常
 --其他功能反复进行操作，查看系统资源是否正常
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p style="font-family:微软雅黑;">4)性能评估：评估典型用户应用场景下，系统资源的使用情况。（Jmeter）</p>
 <h2 id="div-style-background-fbeee2-color-000-2-6-交叉事件测试-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-2-6-交叉事件测试-div">☞</a><div style="background:#fbeee2; color:#000">2.6 交叉事件测试</div></h2>
 <p style="font-family:楷体;">针对智能终端应用的服务等级划分方式及实时特性所提出的测试方法。</p>
@@ -859,10 +859,10 @@ APP测试要点梳理
 <p style="font-family:微软雅黑;">1）与本地及主流App是否兼容</p>
 <p style="font-family:微软雅黑;">2）基于开发环境和生产环境的不同，检验在各种网络连接下(WiFi、GSM、GPRS、EDGE、WCDMA、CDMA1x、CDMA2000、HSPDA等)，App的数据和运用是否正确</p>
 <p style="font-family:微软雅黑;">3）与各种设备是否兼容，若有跨系统支持则需要检验是否在各系统下，各种行为是否一致</p>
-<pre><code class="language-python">--不同操作系统的兼容性，是否适配
+<pre class="line-numbers language-language-python"><code class="language-language-python">--不同操作系统的兼容性，是否适配
 --不同手机屏幕分辨率的兼容性
 --不同手机品牌的兼容性
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="div-style-background-fbeee2-color-000-2-8-回归测试-div"><a class="header-anchor" href="#div-style-background-fbeee2-color-000-2-8-回归测试-div">☞</a><div style="background:#fbeee2; color:#000">2.8 回归测试</div></h2>
 <p style="font-family:微软雅黑;">1）Bug修复后且在新版本发布后需要进行回归测试</p>
 <p style="font-family:微软雅黑;">2）Bug修复后的回归测试在交付前、要进行全量用例的回归测试</p>
@@ -1609,7 +1609,7 @@ APP测试要点梳理
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">62.8k</span>
+                <span class="white-color">61.9k</span>
             
 
             
@@ -1731,7 +1731,7 @@ $(function () {
 <!-- <script >hljs.initHighlightingOnLoad();</script> -->
 <!-- 或者 本地 -->
 <script src="/js/highlight.pack.js"></script>
-<link type="text/css" href="/css/styles/github.css" rel="stylesheet">
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
 <!-- 代码行号 从CDN获取库-->
 <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -1826,7 +1826,26 @@ WIDGET = {FID: 'UBsmdBLl0N'}
 <script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'https://qvchuang.top' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
 
 
