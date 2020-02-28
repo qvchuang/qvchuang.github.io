@@ -1,12 +1,411 @@
-<!-- build time:Fri Feb 28 2020 20:07:52 GMT+0800 (GMT+08:00) --><!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="keywords" content="mysql学习笔记(二), My blog"><meta name="description" content="
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="mysql学习笔记(二), My blog">
+    <meta name="description" content="
 
 
 此学习笔记根据慕课网课程“与MYSQL的零距离接触”学习总结
 3.约束以及修改数据表
 ☞3-1 外键约束的要求解析
 外键约束：保证数据一致性、完整性，实现一对一或一对多关系。
-FOREIGN KEY (外键列名称) REFERENCE"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>mysql学习笔记(二) | My blog</title><link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/awesome/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><style type="text/css">code[class*=language-],pre[class*=language-]{white-space:pre!important}</style><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/jquery/jquery-2.2.0.min.js"></script><script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/logo1.png" class="logo-img" alt="LOGO"> <span class="logo-span">My blog</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fa fa-home"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa fa fa-line-chart"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa fa fa-calendar"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href class="waves-effect waves-light"><i class="fa fas fa-list"></i> <span>媒体</span> <i class="fa fa-chevron-down" aria-hidden="true"></i></a><ul class="sub-nav menus_item_child"><li><a href="/music"><i class="fa fa fa-music" style="margin-top:-20px"></i> <span>音乐</span></a></li><li><a href="/galleries"><i class="fa fa fa-camera-retro" style="margin-top:-20px"></i> <span>相册</span></a></li><li><a href="/others"><i class="fa fa fa-cloud-download" style="margin-top:-20px"></i> <span>others</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa fa fa-bicycle"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/lyb" class="waves-effect waves-light"><i class="fa fa fa-paper-plane-o"></i> <span>留言板</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa fa fa-share-alt"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fa fa-search" title="搜索"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/logo1.png" class="logo-img circle responsive-img"><div class="logo-name">My blog</div><div class="logo-desc">Do what you want to do !</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa fa-fw fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa fa-fw fa fa-line-chart"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa fa-fw fa fa-calendar"></i> 归档</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa fa-fw fas fa-list"></i> 媒体 <span class="m-icon"><i class="fa fa-chevron-right"></i></span></a><ul><li><a href="/music"><i class="fa fa fa-music" style="left:25px;position:absolute"></i> <span>音乐</span></a></li><li><a href="/galleries"><i class="fa fa fa-camera-retro" style="left:25px;position:absolute"></i> <span>相册</span></a></li><li><a href="/others"><i class="fa fa fa-cloud-download" style="left:25px;position:absolute"></i> <span>others</span></a></li></ul></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa fa-fw fa fa-bicycle"></i> 关于</a></li><li class="m-nav-item"><a href="/lyb" class="waves-effect waves-light"><i class="fa fa-fw fa fa-paper-plane-o"></i> 留言板</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa fa-fw fa fa-share-alt"></i> 友情链接</a></li><li><div class="divider"></div></li><li><a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank"><i class="fa fa-github-square fa-fw"></i>Fork Me</a></li></ul></div></div><style>.nav-transparent .github-corner{display:none!important}.github-corner{position:absolute;z-index:10;top:0;right:0;border:0;transform:scale(1.1)}.github-corner svg{color:#F062A7;fill:#fff;height:64px;width:64px}.github-corner:hover .octo-arm{animation:a .56s ease-in-out}.github-corner .octo-arm{animation:none}@keyframes a{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}</style><a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a></nav></header><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+FOREIGN KEY (外键列名称) REFERENCE">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>mysql学习笔记(二) | My blog</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/logo1.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">My blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- 支持二级菜单特性 -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-line-chart"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-calendar"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+              <a href class="waves-effect waves-light">
+                
+                  <i class="fa fas fa-list"></i>
+                
+                <span>媒体</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/music">
+                    
+                      <i class="fa fa fa-music" style="margin-top: -20px;"></i>
+                    
+                    <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/galleries">
+                    
+                      <i class="fa fa fa-camera-retro" style="margin-top: -20px;"></i>
+                    
+                    <span>相册</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/others">
+                    
+                      <i class="fa fa fa-cloud-download" style="margin-top: -20px;"></i>
+                    
+                    <span>others</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-bicycle"></i>
+              
+              <span>关于</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/lyb" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-paper-plane-o"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-share-alt"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/logo1.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">My blog</div>
+        <div class="logo-desc">
+            
+            Do what you want to do !
+            
+        </div>
+    </div>
+
+    
+
+
+
+	<!-- 支持二级菜单特性 -->
+	<ul class="menu-list mobile-menu-list">
+	    
+	        <li class="m-nav-item">
+	                
+	                    <a href="/" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa-home"></i>
+	                        
+	                        首页
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/categories" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-line-chart"></i>
+	                        
+	                        分类
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/archives" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-calendar"></i>
+	                        
+	                        归档
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="javascript:;">
+	                            
+	                            <i class="fa fa-fw fas fa-list"></i>
+	                            
+	                            媒体
+	                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+	                    </a>
+	                <ul>
+	                  
+	                    <li> 
+	                      <a href="/music">
+	                           
+	                            <i class="fa fa fa-music" style="left: 25px; position: absolute;"></i>
+	                       
+	                       <span>音乐</span>
+	                      </a>
+	                    </li>
+	                  
+	                    <li> 
+	                      <a href="/galleries">
+	                           
+	                            <i class="fa fa fa-camera-retro" style="left: 25px; position: absolute;"></i>
+	                       
+	                       <span>相册</span>
+	                      </a>
+	                    </li>
+	                  
+	                    <li> 
+	                      <a href="/others">
+	                           
+	                            <i class="fa fa fa-cloud-download" style="left: 25px; position: absolute;"></i>
+	                       
+	                       <span>others</span>
+	                      </a>
+	                    </li>
+	                   
+	                </ul>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/about" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-bicycle"></i>
+	                        
+	                        关于
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/lyb" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-paper-plane-o"></i>
+	                        
+	                        留言板
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/friends" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-share-alt"></i>
+	                        
+	                        友情链接
+	                    </a>
+	              
+	            </li>
+	        
+
+	        
+	        <li><div class="divider"></div></li>
+	        <li>
+	            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+	                <i class="fa fa-github-square fa-fw"></i>Fork Me
+	            </a>
+	        </li>
+	      
+	</ul>
+
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #F062A7;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
@@ -14,29 +413,261 @@ FOREIGN KEY (外键列名称) REFERENCE"><meta http-equiv="X-UA-Compatible" cont
                 location.href = '/';
             }
         }
-    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url(https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/25.jpg)"><div class="container"><div class="row"><div class="col s12 m12 l12"><div class="brand"><div class="description center-align post-title">mysql学习笔记(二)</div></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:20px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/mysql/" target="_blank"><span class="chip bg-color">mysql</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/mysql/" class="post-category" target="_blank">mysql</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp; 2018-08-05</div><div class="info-break-policy"><i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp; 1.1k</div><div class="info-break-policy"><i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp; 4 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp; <span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><p><a href="https://moetu.org/image/1ldHz" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/mysql0311a32b9cd926bc.md.jpg" alt></a></p><a id="more"></a><hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结<h1>3.约束以及修改数据表</h1><h2 id="3-1-外键约束的要求解析"><a class="header-anchor" href="#3-1-外键约束的要求解析">☞</a>3-1 外键约束的要求解析</h2><p>外键约束：保证数据一致性、完整性，实现一对一或一对多关系。</p><pre><code>FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称)；
-</code></pre><blockquote><p>外键约束的要求：</p><ol><li>父表和子表必须使用相同的存储引擎，而且禁止使用临时表</li><li>数据表的存储引擎只能为InnoDB。</li><li>外键列和参照列必须具有相似的数据类型。其中数字的长度或是否有符号位必须相同；而字符的长度则可以不同。</li><li>外键列和参照列必须创建索引。如果外键列不存在索引的话，MySQL将自动创建索引。</li></ol></blockquote><pre><code>显示索引：SHOW INDEXES FROM 表名；
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/25.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        mysql学习笔记(二)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/mysql/" target="_blank">
+                                <span class="chip bg-color">mysql</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                mysql
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-08-05
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.1k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        4 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href="https://moetu.org/image/1ldHz" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/mysql0311a32b9cd926bc.md.jpg" alt></a></p>
+<a id="more"></a>
+<hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
+此学习笔记根据慕课网课程<font size="3" color="red">“与MYSQL的零距离接触”</font>学习总结
+<h1>3.约束以及修改数据表</h1>
+<h2 id="3-1-外键约束的要求解析"><a class="header-anchor" href="#3-1-外键约束的要求解析">☞</a>3-1 外键约束的要求解析</h2>
+<p>外键约束：保证数据一致性、完整性，实现一对一或一对多关系。</p>
+<pre><code>FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称)；
+</code></pre>
+<blockquote>
+<p>外键约束的要求：</p>
+<ol>
+<li>父表和子表必须使用相同的存储引擎，而且禁止使用临时表</li>
+<li>数据表的存储引擎只能为InnoDB。</li>
+<li>外键列和参照列必须具有相似的数据类型。其中数字的长度或是否有符号位必须相同；而字符的长度则可以不同。</li>
+<li>外键列和参照列必须创建索引。如果外键列不存在索引的话，MySQL将自动创建索引。</li>
+</ol>
+</blockquote>
+<pre><code>显示索引：SHOW INDEXES FROM 表名；
     或者：SHOW INDEXES FROM 表名\G；（以网格的形式来呈现）
 删除索引：ALEER TABLE tbl_name DROP INDEX 索引名称;
-</code></pre><h2 id="3-2-外键约束的参照操作"><a class="header-anchor" href="#3-2-外键约束的参照操作">☞</a>3-2 外键约束的参照操作</h2><p>1.CASCADE 从父表删除或更新且自动删除或更新子表中匹配的行</p><p>2.SET NULL<br>从父表删除或更新行，并设置子表中的外键列为NULL。如果使用该选项，必须保证子列表没有指定NOT NULL</p><p>3.RESTRICT 拒绝对父表的删除或更新操作</p><p><a href="http://4.NO" target="_blank" rel="noopener">4.NO</a> ACTION 标准SQL的关键字，在MySQL中与RESTRICT相同。</p><p>语法结构：<code>FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称) ON DELETE CASCADE；</code></p><pre><code>mysql&gt; CREATE TABLE users1(
+</code></pre>
+<h2 id="3-2-外键约束的参照操作"><a class="header-anchor" href="#3-2-外键约束的参照操作">☞</a>3-2 外键约束的参照操作</h2>
+<p>1.CASCADE     从父表删除或更新且自动删除或更新子表中匹配的行</p>
+<p>2.SET NULL<br>
+从父表删除或更新行，并设置子表中的外键列为NULL。如果使用该选项，必须保证子列表没有指定NOT NULL</p>
+<p>3.RESTRICT      拒绝对父表的删除或更新操作</p>
+<p><a href="http://4.NO" target="_blank" rel="noopener">4.NO</a> ACTION    标准SQL的关键字，在MySQL中与RESTRICT相同。</p>
+<p>语法结构：<code>FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称) ON DELETE CASCADE；</code></p>
+<pre><code>mysql&gt; CREATE TABLE users1(
 -&gt; id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 -&gt; username VARCHAR(10) NOT NULL,
 -&gt; pid SMALLINT UNSIGNED,
 -&gt; FOREIGN KEY (pid) REFERENCES provinces (id) ON DELETE CASCADE
 -&gt; );
 Query OK, 0 rows affected (0.53 sec)
-</code></pre><h2 id="3-3-表级约束与列级约束"><a class="header-anchor" href="#3-3-表级约束与列级约束">☞</a>3-3 表级约束与列级约束</h2><blockquote><p>对一个数据列建立的约束，称为列级约束。</p><p>对多个数据列建立的约束，称为表级约束。</p><p>列级约束既可以在列定义时声明，也可以在定义后声明。</p><p>表级约束只能在列定义后声明。</p></blockquote><h2 id="3-4-添加-删除列"><a class="header-anchor" href="#3-4-添加-删除列">☞</a>3-4 添加/删除列</h2><p>添加单列：</p><pre><code>ALTER TABLE tbl_name ADD col_name column_definition FIRST | AFTER col_name;
+</code></pre>
+<h2 id="3-3-表级约束与列级约束"><a class="header-anchor" href="#3-3-表级约束与列级约束">☞</a>3-3 表级约束与列级约束</h2>
+<blockquote>
+<p>对一个数据列建立的约束，称为列级约束。</p>
+<p>对多个数据列建立的约束，称为表级约束。</p>
+<p>列级约束既可以在列定义时声明，也可以在定义后声明。</p>
+<p>表级约束只能在列定义后声明。</p>
+</blockquote>
+<h2 id="3-4-添加-删除列"><a class="header-anchor" href="#3-4-添加-删除列">☞</a>3-4 添加/删除列</h2>
+<p>添加单列：</p>
+<pre><code>ALTER TABLE tbl_name ADD col_name column_definition FIRST | AFTER col_name;
 ALTER TABLE 表名称 ADD 列名称 列定义 FIRST | AFTER 列名称;
-</code></pre><blockquote><p>FIRST将新添加的这一列置于所有列最前面</p><p>AFTER col_name 将新添加的列置于你指定列的后方</p><p>如果省略FIRST | AFTER col_name，则置于所有列之后</p></blockquote><p>添加多列：</p><pre><code>ALTER TABLE tbl_name ADD [COLUMN] (col_name column_definition,
+</code></pre>
+<blockquote>
+<p>FIRST将新添加的这一列置于所有列最前面</p>
+<p>AFTER col_name 将新添加的列置于你指定列的后方</p>
+<p>如果省略FIRST | AFTER col_name，则置于所有列之后</p>
+</blockquote>
+<p>添加多列：</p>
+<pre><code>ALTER TABLE tbl_name ADD [COLUMN] (col_name column_definition,
                                    ……
                                   );
-</code></pre><p>添加多列时不能指定位置关系，只能在原来数据列的下方。</p><hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1"><p>删除单列：</p><pre><code>ALTER TABLE tbl_name DROP col_name;
-</code></pre><p>删除多列：</p><pre><code>ALTER TABLE tbl_name DROP col_name1,DROP col_name2;
-</code></pre><h2 id="3-5-添加-删除约束-注：col-name-列名称"><a class="header-anchor" href="#3-5-添加-删除约束-注：col-name-列名称">☞</a>3-5 添加/删除约束 (注：col_name:列名称)</h2><p>添加/删除主键约束：</p><pre><code>ALTER TABLE tbl_name ADD PRIMARY KEY (col_name);
+</code></pre>
+<p>添加多列时不能指定位置关系，只能在原来数据列的下方。</p>
+<hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
+<p>删除单列：</p>
+<pre><code>ALTER TABLE tbl_name DROP col_name;
+</code></pre>
+<p>删除多列：</p>
+<pre><code>ALTER TABLE tbl_name DROP col_name1,DROP col_name2;
+</code></pre>
+<h2 id="3-5-添加-删除约束-注：col-name-列名称"><a class="header-anchor" href="#3-5-添加-删除约束-注：col-name-列名称">☞</a>3-5 添加/删除约束 (注：col_name:列名称)</h2>
+<p>添加/删除主键约束：</p>
+<pre><code>ALTER TABLE tbl_name ADD PRIMARY KEY (col_name);
 ALTER TABLE tbl_name DROP PRIMARY KEY;
-</code></pre><p>添加/删除唯一约束：</p><pre><code>ALTER TABLE tbl_name ADD UNIQUE (col_name);
+</code></pre>
+<p>添加/删除唯一约束：</p>
+<pre><code>ALTER TABLE tbl_name ADD UNIQUE (col_name);
 ALEER TABLE tbl_name DROP INDEX 索引名称;  (也可以用于删除其他索引)
-</code></pre><p>添加/删除外键约束：</p><pre><code>ALTER TABLE tbl_name ADD FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称);
+</code></pre>
+<p>添加/删除外键约束：</p>
+<pre><code>ALTER TABLE tbl_name ADD FOREIGN KEY (外键列名称) REFERENCES 父表(参照列名称);
 ALTER TABLE tbl_name DROP FOREIGN KEY 约束名称； （外键约束名称通过SHOW CREATE TABLE tbl_name 查看）
 
 例如：| users2 | CREATE TABLE `users2` (
@@ -48,15 +679,637 @@ ALTER TABLE tbl_name DROP FOREIGN KEY 约束名称； （外键约束名称通�
   CONSTRAINT `users2_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `provinces` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
 mysql&gt; ALTER TABLE users2 DROP FOREIGN KEY users2_ibfk_1;
-</code></pre><p>添加/删除默认约束：</p><pre><code>ALTER TABLE tbl_name ALTER col_name SET DEFAULT 默认值;
+</code></pre>
+<p>添加/删除默认约束：</p>
+<pre><code>ALTER TABLE tbl_name ALTER col_name SET DEFAULT 默认值;
 ALTER TABLE tbl_name ALTER col_name DROP DEFAULT;
-</code></pre><h2 id="3-6-修改列定义和更名数据表"><a class="header-anchor" href="#3-6-修改列定义和更名数据表">☞</a>3-6 修改列定义和更名数据表</h2><p>修改列定义：</p><pre><code>ALTER TABLE tbl_name MODIFY col_name column_definition FIEST | AFTER col_name;
+</code></pre>
+<h2 id="3-6-修改列定义和更名数据表"><a class="header-anchor" href="#3-6-修改列定义和更名数据表">☞</a>3-6 修改列定义和更名数据表</h2>
+<p>修改列定义：</p>
+<pre><code>ALTER TABLE tbl_name MODIFY col_name column_definition FIEST | AFTER col_name;
 ALTER TABLE 表名称 MODIFY列名称 列定义 FIRST | AFTER 列名称;
-</code></pre><p>修改列名称：（除了修改列定义还可以修改列名称）</p><pre><code>ALTER TABLE tbl_name CHANGE old_col_name new_col_name column_definition FIRST | AFTER col_name;
+</code></pre>
+<p>修改列名称：（除了修改列定义还可以修改列名称）</p>
+<pre><code>ALTER TABLE tbl_name CHANGE old_col_name new_col_name column_definition FIRST | AFTER col_name;
 ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AFTER col_name;
-</code></pre><p>数据表更名：</p><p>方法1：</p><pre><code>ALTER TABLE tbl_name RENAME new_tbl_name;
-</code></pre><p>方法2：</p><pre><code>RENAME TABLE tbl_name TO new_tbl_name;
-</code></pre><hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1"><h2 id="总结"><a class="header-anchor" href="#总结">☞</a>总结</h2><p><strong>约束：</strong></p><table border="0" bgcolor="#f8c387"><tr><td>按功能划为</td><td>NOT NULL（非空约束）</td></tr><tr><td></td><td>PRIMARY KEY（主键约束）</td></tr><tr><td></td><td>UNIQUE KEY（唯一约束）</td></tr><tr><td></td><td>DEFAULT（默认约束）</td></tr><tr><td></td><td>FOREIGN KEY（外键约束）</td></tr></table><table border="0" bgcolor="#f8c387"><tr><td>按数据列的数目划为</td><td>表级约束</td></tr><tr><td></td><td>列级约束</td></tr></table><blockquote><p>修改数据表：</p><p>针对字段的操作：添加/删除字段、修改列定义、修改列名称等</p><p>针对约束的操作：添加/删除各种约束</p><p>针对数据表的操作：数据表更名（两种方式）</p></blockquote><hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3"><p><font size="10px" color="#00ff00">未完待续。。。</font></p></div><hr><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.88rem}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22AB38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019FE8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fa fa-close"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div></div><script src="/libs/share/js/social-share.min.js"></script><div class="reprint"><p><span class="reprint-tip"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明: </span><a href="https://qvchuang.top" class="b-link-green">My blog</a> <i class="fa fa-angle-right fa-lg fa-fw text-color"></i> <a href="/archives/a9becc26.html" class="b-link-green">mysql学习笔记(二)</a></p></div></div></div><style>.valine-card{margin:1.5rem auto}.valine-card .card-content{padding:20px 20px 5px 20px}#vcomments input[type=email],#vcomments input[type=text],#vcomments input[type=url],textarea{box-sizing:border-box}#vcomments textarea{background:url(/medias/comment_bg.png) 100% 100% no-repeat}#vcomments p{margin:2px 2px 10px;font-size:1.05rem;line-height:1.78rem}#vcomments blockquote p{text-indent:.2rem}#vcomments a{padding:0 2px;color:#42b983;font-weight:500;text-decoration:underline}#vcomments img{max-width:100%;height:auto;cursor:pointer}#vcomments ol li{list-style-type:decimal}#vcomments ol,ul{display:block;padding-left:2em;word-spacing:.05rem}#vcomments ul li,ol li{display:list-item;line-height:1.8rem;font-size:1rem}#vcomments ul li{list-style-type:disc}#vcomments ul ul li{list-style-type:circle}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}#vcomments table,td,th{border:0}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments h1{font-size:1.85rem;font-weight:700;line-height:2.2rem}#vcomments h2{font-size:1.65rem;font-weight:700;line-height:1.9rem}#vcomments h3{font-size:1.45rem;font-weight:700;line-height:1.7rem}#vcomments h4{font-size:1.25rem;font-weight:700;line-height:1.5rem}#vcomments h5{font-size:1.1rem;font-weight:700;line-height:1.4rem}#vcomments h6{font-size:1rem;line-height:1.3rem}#vcomments p{font-size:1rem;line-height:1.5rem}#vcomments hr{margin:12px 0;border:0;border-top:1px solid #ccc}#vcomments blockquote{margin:15px 0;border-left:5px solid #42b983;padding:1rem .8rem .3rem .8rem;color:#666;background-color:rgba(66,185,131,.1)}#vcomments pre{font-family:monospace,monospace;padding:1.2em;margin:.5em 0;background:#272822;overflow:auto;border-radius:.3em;tab-size:4}#vcomments code{font-family:monospace,monospace;padding:1px 3px;font-size:.92rem;color:#e96900;background-color:#f8f8f8;border-radius:2px}#vcomments pre code{font-family:monospace,monospace;padding:0;color:#e8eaf6;background-color:#272822}#vcomments pre[class*=language-]{padding:1.2em;margin:.5em 0}#vcomments code[class*=language-],pre[class*=language-]{color:#e8eaf6}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}#vcomments b,strong{font-weight:700}#vcomments dfn{font-style:italic}#vcomments small{font-size:85%}#vcomments cite{font-style:normal}#vcomments mark{background-color:#fcf8e3;padding:.2em}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}.v .vlist .vcard{padding-top:2.5rem;position:relative;display:block}</style><div class="card valine-card" data-aos="fade-up"><div id="vcomments" class="card-content"></div></div><script src="/libs/valine/av-min.js"></script><script src="https://unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz",appKey:"YRX2P1IpmmU9KyhgmvwEXm2Q",notify:!1,verify:!1,visitor:!0,avatar:"robohash",pageSize:"10",lang:"zh-cn",placeholder:"瞎白话一下"})</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fa fa-chevron-left"></i>&nbsp;上一篇</div><div class="card"><a href="/archives/d74dec0d.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/25.jpg" class="responsive-img" alt="mysql学习笔记(三)"> <span class="card-title">mysql学习笔记(三)</span></div></a><div class="card-content article-content"><div class="summary">初涉mysql</div><div class="publish-info"><span class="publish-date"><i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-12 </span><span class="publish-author"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/mysql/" class="post-category" target="_blank">mysql</a></span></div></div><div class="card-action article-tags"><a href="/tags/mysql/" target="_blank"><span class="chip bg-color">mysql</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fa fa-chevron-right"></i></div><div class="card"><a href="/archives/4643a402.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="心烦的时候，就这样安慰自己"> <span class="card-title">心烦的时候，就这样安慰自己</span></div></a><div class="card-content article-content"><div class="summary">学会安慰自己</div><div class="publish-info"><span class="publish-date"><i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-01 </span><span class="publish-author"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/随笔/" class="post-category" target="_blank">随笔</a></span></div></div><div class="card-action article-tags"><a href="/tags/随笔/" target="_blank"><span class="chip bg-color">随笔</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){if("undefined"!=typeof window.getSelection){var n=window.getSelection();if(!((""+n).length<Number.parseInt("500"))){var t=document.getElementsByTagName("body")[0],o=document.createElement("div");o.style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"===n.getRangeAt(0).commonAncestorContainer.nodeName&&(o.innerHTML="<pre>"+o.innerHTML+"</pre>");var i=document.location.href;o.innerHTML+='<br />来源: My blog<br />作者: qvchuang<br />链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)}}})</script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fa fa-list"></i></a></div><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+</code></pre>
+<p>数据表更名：</p>
+<p>方法1：</p>
+<pre><code>ALTER TABLE tbl_name RENAME new_tbl_name;
+</code></pre>
+<p>方法2：</p>
+<pre><code>RENAME TABLE tbl_name TO new_tbl_name;
+</code></pre>
+<hr style="border:1 dashed #987cb9" width="100%" color="#987cb9" size="1">
+<h2 id="总结"><a class="header-anchor" href="#总结">☞</a>总结</h2>
+<p><strong>约束：</strong></p>
+<table border="0" bgcolor="#f8c387"><tr><td>按功能划为</td><td>NOT NULL（非空约束）</td></tr><tr><td></td><td>PRIMARY KEY（主键约束）</td></tr><tr><td></td><td>UNIQUE KEY（唯一约束）</td></tr><tr><td></td><td>DEFAULT（默认约束）</td></tr><tr><td></td><td>FOREIGN KEY（外键约束）</td></tr></table>
+<table border="0" bgcolor="#f8c387"><tr><td>按数据列的数目划为</td><td>表级约束</td></tr><tr><td></td><td>列级约束</td></tr></table>
+<blockquote>
+<p>修改数据表：</p>
+<p>针对字段的操作：添加/删除字段、修改列定义、修改列名称等</p>
+<p>针对约束的操作：添加/删除各种约束</p>
+<p>针对数据表的操作：数据表更名（两种方式）</p>
+</blockquote>
+<hr style="border:3 double #987cb9" width="100%" color="#987cb9" size="3">
+<p><font size="10px" color="#00ff00">未完待续。。。</font></p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://qvchuang.top" class="b-link-green">My blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/archives/a9becc26.html" class="b-link-green">mysql学习笔记(二)</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    textarea{
+    	box-sizing: border-box;
+    }
+    #vcomments textarea {
+        
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v .vlist .vcard {
+    padding-top: 2.5rem;
+    position: relative;
+    display: block;
+    }
+    
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz',
+        appKey: 'YRX2P1IpmmU9KyhgmvwEXm2Q',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'robohash',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '瞎白话一下'
+    });
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/archives/d74dec0d.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/25.jpg" class="responsive-img" alt="mysql学习笔记(三)">
+                        
+                        <span class="card-title">mysql学习笔记(三)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+					<div class="summary">
+					
+					  初涉mysql
+					
+					</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/archives/4643a402.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="心烦的时候，就这样安慰自己">
+                        
+                        <span class="card-title">心烦的时候，就这样安慰自己</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+					<div class="summary">
+					  
+					      学会安慰自己
+					  
+					</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/随笔/" class="post-category" target="_blank">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/随笔/" target="_blank">
+                        <span class="chip bg-color">随笔</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('500')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: My blog<br />'
+            + '作者: qvchuang<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -127,4 +1380,243 @@ ALTER TABLE tbl_name CHANGE 旧的列名称 新的类名称 列定义 FIRST | AF
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right"><script type="text/javascript">var cnzz_protocol="https:"==document.location.protocol?"https://":"http://";document.write(unescape("%3Cspan id='cnzz_stat_icon_1278054618'%3E%3C/span%3E%3Cscript src='"+cnzz_protocol+"s9.cnzz.com/z_stat.php%3Fid%3D1278054618%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"))</script>&nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp; <span class="white-color">62.6k</span><br><span id="busuanzi_container_site_pv"><i class="fa fa-heart-o"></i> 本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span> </span><span id="busuanzi_container_site_uv"><i class="fa fa-users"></i> 次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.</span><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/qvchuang/qvchuang.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fa fa-github"></i> </a><a href="mailto:qvchuang@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fa fa-envelope-open"></i> </a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1763834198" class="tooltipped" data-tooltip="QQ联系我: 1763834198" data-position="top" data-delay="50"><i class="fa fa-qq"></i> </a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fa fa-rss"></i></a></div><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>function createtime(){var n=new Date("11/23/2018 20:00:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}var now=new Date;setInterval("createtime()",250)</script></div><script>var xlm_wid="15483",xlm_url="https://www.xianliao.me/"</script><script type="text/javascript" charset="UTF-8" src="https://www.xianliao.me/embed.js"></script></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script type="text/javascript">$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fa fa-angle-up"></i></a></div><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/materialize/materialize.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/masonry/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/aos/aos.js"></script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/scrollprogress/scrollProgress.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script><script src="/js/highlight.pack.js"></script><link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet"><script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script><script>hljs.initHighlightingOnLoad()</script><script>hljs.initLineNumbersOnLoad()</script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/others/clicklove.js"></script><script async src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/others/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/instant.page.js" type="module"></script><script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script><script type="text/javascript">var windowWidth=$(window).width();windowWidth>768&&document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/xingxing.js"><\/script>')</script><script type="text/javascript">var windowWidth=$(window).width();windowWidth>768&&document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/wenzi.js"><\/script>')</script><script type="text/javascript">var windowWidth=$(window).width();windowWidth>768&&document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/xuehuapiaoluo.js"><\/script>')</script><script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/ribbon.min.js"></script><script type="text/javascript">WIDGET={FID:"UBsmdBLl0N"}</script><script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script><script type="text/javascript">window.onload=function(){document.onkeydown=function(){var e=window.event||arguments[0];return 123!=e.keyCode&&((!e.ctrlKey||!e.shiftKey||73!=e.keyCode)&&((!e.shiftKey||121!=e.keyCode)&&((!e.ctrlKey||85!=e.keyCode)&&void 0)))},document.oncontextmenu=function(){return!1}}</script><script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script><script>!function(t){function n(){for(var n=0;n<e.length;n++)i=e[n],0<=(o=i.getBoundingClientRect()).top&&0<=o.left&&o.top<=(t.innerHeight||document.documentElement.clientHeight)&&function(){var t,i,o,c,r=e[n];t=r,i=function(){e=e.filter(function(t){return r!==t})},o=new Image,c=t.getAttribute("data-original"),o.onload=function(){t.src=c,i&&i()},o.src=c}();var i,o}var e=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));n(),t.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(n,t)})}(this)</script></body></html><!-- rebuild by neat -->
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278054618'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/z_stat.php%3Fid%3D1278054618%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">62.6k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+
+            <br>
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/qvchuang/qvchuang.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:qvchuang@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1763834198" class="tooltipped" data-tooltip="QQ联系我: 1763834198" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+</div>
+
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("11/23/2018 20:00:00");//此处修改你的建站时间或者网站上线时间 
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+            setInterval("createtime()",250);
+        </script>
+
+    </div>
+
+    <script>
+    var xlm_wid='15483';
+    var xlm_url='https://www.xianliao.me/';
+	</script>
+	<script type="text/javascript" charset="UTF-8" src="https://www.xianliao.me/embed.js"></script>
+
+
+
+
+
+</footer>
+
+<div class="progress-bar"></div>
+
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/materialize/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/aos/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script>
+
+<!-- 代码高亮 从CDN获取库-->
+<!-- <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script> -->
+<!-- <link href="http://cdn.bootcss.com/highlight.js/9.1.5/styles/monokai_sublime.min.css" rel="stylesheet">   -->
+<!-- <script >hljs.initHighlightingOnLoad();</script> -->
+<!-- 或者 本地 -->
+<script src="/js/highlight.pack.js"></script>
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
+<!-- 代码行号 从CDN获取库-->
+<script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initLineNumbersOnLoad();</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/others/clicklove.js"></script>
+
+
+    <script async src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<!--  html 预加载脚本  -->
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/instant.page.js" type="module"></script>
+
+<!-- 动态标签 -->
+<script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
+<!-- 鼠标跟随特效 -->
+<!-- <script src="/js/xuehua.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/xingxing.js"><\/script>');
+}
+</script>
+
+<!-- 鼠标点击文字特效 -->
+<!-- <script src="/js/wenzi.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/wenzi.js"><\/script>');
+}
+</script>
+
+<!-- 雪花特效 -->
+<!-- <script src="/js/xuehuapiaoluo.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/xuehuapiaoluo.js"><\/script>');
+}
+</script>
+
+<!-- 背景动态彩带 -->
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/ribbon.min.js"></script>
+
+<!-- 樱花特效 -->
+<!-- <script src="/js/sakura.js"></script> -->
+
+<!-- 天气 https://cj.weather.com.cn/plugin/pc -->
+<script type="text/javascript">
+WIDGET = {FID: 'UBsmdBLl0N'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<!-- 屏蔽网页源码（单纯的屏蔽鼠标右键和键盘事件） -->
+<script type="text/javascript">
+        window.onload = function(){
+            //屏蔽键盘事件
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) && (e.keyCode == 121)){
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    return false;
+                }
+            };
+            //屏蔽鼠标右键
+            document.oncontextmenu = function (){
+                return false;
+            }
+        }
+</script>
+
+<script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
+
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
+
+
+

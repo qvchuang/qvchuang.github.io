@@ -1,0 +1,2342 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python3基础·一, My blog">
+    <meta name="description" content="
+
+一、python介绍
+☞1.python的出生与应用
+python的创始人为吉多·范罗苏姆（Guido van Rossum）。
+1989年的圣诞节期间，吉多·范罗苏姆（中文名字：龟叔）
+为了在阿姆斯特丹打发时间，决心开发一个新的脚本解">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python3基础·一 | My blog</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://www.imooc.com/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/logo1.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">My blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- 支持二级菜单特性 -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-line-chart"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-calendar"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+              <a href class="waves-effect waves-light">
+                
+                  <i class="fa fas fa-list"></i>
+                
+                <span>媒体</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/music">
+                    
+                      <i class="fa fa fa-music" style="margin-top: -20px;"></i>
+                    
+                    <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/galleries">
+                    
+                      <i class="fa fa fa-camera-retro" style="margin-top: -20px;"></i>
+                    
+                    <span>相册</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/others">
+                    
+                      <i class="fa fa fa-cloud-download" style="margin-top: -20px;"></i>
+                    
+                    <span>others</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-bicycle"></i>
+              
+              <span>关于</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/lyb" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-paper-plane-o"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item">
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa fa-share-alt"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/logo1.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">My blog</div>
+        <div class="logo-desc">
+            
+            Do what you want to do !
+            
+        </div>
+    </div>
+
+    
+
+
+
+	<!-- 支持二级菜单特性 -->
+	<ul class="menu-list mobile-menu-list">
+	    
+	        <li class="m-nav-item">
+	                
+	                    <a href="/" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa-home"></i>
+	                        
+	                        首页
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/categories" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-line-chart"></i>
+	                        
+	                        分类
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/archives" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-calendar"></i>
+	                        
+	                        归档
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="javascript:;">
+	                            
+	                            <i class="fa fa-fw fas fa-list"></i>
+	                            
+	                            媒体
+	                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+	                    </a>
+	                <ul>
+	                  
+	                    <li> 
+	                      <a href="/music">
+	                           
+	                            <i class="fa fa fa-music" style="left: 25px; position: absolute;"></i>
+	                       
+	                       <span>音乐</span>
+	                      </a>
+	                    </li>
+	                  
+	                    <li> 
+	                      <a href="/galleries">
+	                           
+	                            <i class="fa fa fa-camera-retro" style="left: 25px; position: absolute;"></i>
+	                       
+	                       <span>相册</span>
+	                      </a>
+	                    </li>
+	                  
+	                    <li> 
+	                      <a href="/others">
+	                           
+	                            <i class="fa fa fa-cloud-download" style="left: 25px; position: absolute;"></i>
+	                       
+	                       <span>others</span>
+	                      </a>
+	                    </li>
+	                   
+	                </ul>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/about" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-bicycle"></i>
+	                        
+	                        关于
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/lyb" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-paper-plane-o"></i>
+	                        
+	                        留言板
+	                    </a>
+	              
+	            </li>
+	        
+	        <li class="m-nav-item">
+	                
+	                    <a href="/friends" class="waves-effect waves-light">
+	                        
+	                        <i class="fa fa-fw fa fa-share-alt"></i>
+	                        
+	                        友情链接
+	                    </a>
+	              
+	            </li>
+	        
+
+	        
+	        <li><div class="divider"></div></li>
+	        <li>
+	            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+	                <i class="fa fa-github-square fa-fw"></i>Fork Me
+	            </a>
+	        </li>
+	      
+	</ul>
+
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #F062A7;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/5.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Python3基础·一
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python3/" target="_blank">
+                                <span class="chip bg-color">python3</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-11-12
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        9.2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        35 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href="https://moetu.org/image/1fXs2" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/23/python01cea4b673e37441ae.md.jpg" alt></a></p>
+<a id="more"></a>
+<h1><div style="background:#83cbac; color:#000">一、python介绍</div></h1>
+<h2 id="font-face-宋体-color-ff8000-1-python的出生与应用-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-1-python的出生与应用-font">☞</a><font face="宋体" color="#FF8000">1.python的出生与应用</font></h2>
+<p>python的创始人为吉多·范罗苏姆（Guido van Rossum）。</p>
+<p>1989年的圣诞节期间，吉多·范罗苏姆（中文名字：龟叔）</p>
+<p>为了在阿姆斯特丹打发时间，决心开发一个新的脚本解释程序，作为ABC语言的一种继承。</p>
+<p><a href="https://moetu.org/image/1lh7R" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/828fe06f7cef16d3288944dc851dedb8e95c4f52b02d583e.th.png" alt></a></p>
+<p>2017年7月的TIOBE排行榜，Python已经占据第四的位置</p>
+<p>Python崇尚优美、清晰、简单，是一个优秀并广泛使用的语言。</p>
+<p><a href="https://moetu.org/image/1lgO9" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pythone56b0e764328468c.md.png" alt></a></p>
+<p>由上图可见，Python整体呈上升趋势，反映出Python应用越来越广泛并且也逐渐得到业内的认可！！！</p>
+<p>Python可以应用于众多领域，如：数据分析、组件集成、网络服务、图像处理、数值计算和科学计算等众多领域。</p>
+<p>目前业内几乎所有大中型互联网企业都在使用Python，</p>
+<p>如：Youtube、Dropbox、BT、Quora（中国知乎）、豆瓣、知乎、</p>
+<p>Google、Yahoo!、Facebook、NASA、百度、腾讯、汽车之家、美团等。</p>
+<p><strong><div style="background:#E0F8F7; color:#000">目前Python主要应用领域：</div></strong></p>
+<blockquote>
+<p>1.WEB开发——最火的Python web框架Django, 支持异步高并发的Tornado框架，短小精悍的flask,bottle, Django官方的标语把Django定义为the framework for perfectionist with deadlines(大意是一个为完全主义者开发的高效率web框架)</p>
+</blockquote>
+<blockquote>
+<p>2.网络编程——支持高并发的Twisted网络框架， py3引入的asyncio使异步编程变的非常简单</p>
+</blockquote>
+<blockquote>
+<p>3.爬虫——爬虫领域，Python几乎是霸主地位，Scrapy\Request\BeautifuSoap\urllib等，想爬啥就爬啥</p>
+</blockquote>
+<blockquote>
+<p>4.云计算——目前最火最知名的云计算框架就是OpenStack,Python现在的火，很大一部分就是因为云计算</p>
+</blockquote>
+<blockquote>
+<p>5.人工智能——谁会成为AI 和大数据时代的第一开发语言？这本已是一个不需要争论的问题。如果说三年前，Matlab、Scala、R、Java 和 Python还各有机会，局面尚且不清楚，那么三年之后，趋势已经非常明确了，特别是前两天 Facebook 开源了 PyTorch 之后，Python 作为 AI 时代头牌语言的位置基本确立，未来的悬念仅仅是谁能坐稳第二把交椅。</p>
+</blockquote>
+<blockquote>
+<p>6.自动化运维——问问中国的每个运维人员，运维人员必须会的语言是什么？10个人相信会给你一个相同的答案，它的名字叫Python</p>
+</blockquote>
+<blockquote>
+<p>7.金融分析——我个人之前在金融行业，10年的时候，我们公司写的好多分析程序、高频交易软件就是用的Python,到目前,Python是金融分析、量化交易领域里用的最多的语言</p>
+</blockquote>
+<blockquote>
+<p>8.科学运算—— 你知道么,97年开始，NASA就在大量使用Python在进行各种复杂的科学运算，随着NumPy, SciPy, Matplotlib, Enthought librarys等众多程序库的开发，使的Python越来越适合于做科学计算、绘制高质量的2D和3D图像。和科学计算领域最流行的商业软件Matlab相比，Python是一门通用的程序设计语言，比Matlab所采用的脚本语言的应用范围更广泛</p>
+</blockquote>
+<blockquote>
+<p>9.游戏开发——在网络游戏开发中Python也有很多应用。相比Lua or C++,Python 比 Lua 有更高阶的抽象能力，可以用更少的代码描述游戏业务逻辑，与 Lua 相比，Python 更适合作为一种 Host 语言，即程序的入口点是在 Python 那一端会比较好，然后用 C/C++ 在非常必要的时候写一些扩展。Python 非常适合编写 1 万行以上的项目，而且能够很好地把网游项目的规模控制在 10 万行代码以内。另外据我所知，知名的游戏&lt;文明&gt;<br>
+就是用Python写的</p>
+</blockquote>
+<p><strong><div style="background:#E0F8F7; color:#000">Python在一些公司的应用：</div></strong></p>
+<ul>
+<li>
+<p>谷歌：Google App Engine 、<a href="http://code.google.com" target="_blank" rel="noopener">code.google.com</a> 、Google earth 、谷歌爬虫、Google广告等项目都在大量使用Python开发</p>
+</li>
+<li>
+<p>CIA: 美国中情局网站就是用Python开发的</p>
+</li>
+<li>
+<p>NASA: 美国航天局(NASA)大量使用Python进行数据分析和运算</p>
+</li>
+<li>
+<p>YouTube:世界上最大的视频网站YouTube就是用Python开发的</p>
+</li>
+<li>
+<p>Dropbox:美国最大的在线云存储网站，全部用Python实现，每天网站处理10亿个文件的上传和下载</p>
+</li>
+<li>
+<p>Instagram:美国最大的图片分享社交网站，每天超过3千万张照片被分享，全部用python开发</p>
+</li>
+<li>
+<p>Facebook:大量的基础库均通过Python实现的</p>
+</li>
+<li>
+<p>Redhat: 世界上最流行的Linux发行版本中的yum包管理工具就是用python开发的</p>
+</li>
+<li>
+<p>豆瓣: 公司几乎所有的业务均是通过Python开发的</p>
+</li>
+<li>
+<p>知乎: 国内最大的问答社区，通过Python开发(国外Quora)</p>
+</li>
+<li>
+<p>春雨医生：国内知名的在线医疗网站是用Python开发的</p>
+</li>
+<li>
+<p>除上面之外，还有搜狐、金山、腾讯、盛大、网易、百度、阿里、淘宝 、土豆、新浪、果壳等公司都在使用Python完成各种各样的任务。</p>
+</li>
+</ul>
+<p><strong><div style="background:#E0F8F7; color:#000">Python的发展史：</div></strong></p>
+<pre><code>1989年，Guido开始写Python语言的编译器。
+
+1991年，第一个Python编译器诞生。它是用C语言实现的，并能够调用C语言的库文件。从一出生，Python已经具有了：类，函数，
+异常处理，包含表和词典在内的核心数据类型，以及模块为基础的拓展系统。
+
+Granddaddy of Python web frameworks, Zope 1 was released in 1999
+
+Python 1.0 - January 1994 增加了 lambda, map, filter and reduce
+
+Python 2.0 - October 16, 2000，加入了内存回收机制，构成了现在Python语言框架的基础
+
+Python 2.4 - November 30, 2004, 同年目前最流行的WEB框架Django 诞生
+
+Python 2.5 - September 19, 2006
+
+Python 2.6 - October 1, 2008
+
+Python 2.7 - July 3, 2010
+
+In November 2014, it was announced that Python 2.7 would be supported until 2020, and reaffirmed that
+ there would be no 2.8 release as users were expected to move to Python 3.4+ as soon as possible
+
+Python 3.0 - December 3, 2008 (这里要解释清楚 为什么08年就出3.0，2010年反而又推出了2.7？是因为3.0不向下兼容
+2.0，导致大家都拒绝升级3.0，无奈官方只能推出2.7过渡版本)
+
+Python 3.1 - June 27, 2009
+
+Python 3.2 - February 20, 2011
+
+Python 3.3 - September 29, 2012
+
+Python 3.4 - March 16, 2014
+
+Python 3.5 - September 13, 2015
+
+Python 3.6 - 2016-12-23 发布python3.6.0版
+</code></pre>
+<h2 id="font-face-宋体-color-ff8000-2-python是什么编程语言-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-python是什么编程语言-font">☞</a><font face="宋体" color="#FF8000">2.python是什么编程语言</font></h2>
+<p>编程语言主要从以下几个角度为进行分类:</p>
+<p>编译型和解释型、静态语言和动态语言、强类型定义语言和弱类型定义语言，</p>
+<p>每个分类代表什么意思呢，我们一起来看一下。</p>
+<h3 id="font-face-微软雅黑-2-1-编译型与解释型-font"><a class="header-anchor" href="#font-face-微软雅黑-2-1-编译型与解释型-font">☞</a><font face="微软雅黑">2.1 编译型与解释型</font></h3>
+<ul>
+<li>
+<p>编译器是把源程序的每一条语句都编译成机器语言,并保存成二进制文件,这样运行时计算机可以直接以机器语言来运行此程序,速度很快</p>
+</li>
+<li>
+<p>而解释器则是只在执行程序时,才一条一条的解释成机器语言给计算机来执行,所以运行速度是不如编译后的程序运行的快的</p>
+</li>
+</ul>
+<p>    这是因为计算机不能直接认识并执行我们写的语句,它只能认识机器语言(是二进制的形式)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/00195c82e37b47f7744.png" alt></p>
+<p><a href="https://moetu.org/image/1lE8S" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/00266b5209b8a050881.md.png" alt></a></p>
+<p><strong>编译型</strong></p>
+<blockquote>
+<p>优点：编译器一般会有预编译的过程对代码进行优化。因为编译只做一次，运行时不需要编译，所以编译型语言的程序执行效率高。可以脱离语言环境独立运行。<br>
+缺点：编译之后如果需要修改就需要整个模块重新编译。编译的时候根据对应的运行环境生成机器码，不同的操作系统之间移植就会有问题，需要根据运行的操作系统环境编译不同的可执行文件。</p>
+</blockquote>
+<p><strong>解释型</strong></p>
+<blockquote>
+<p>优点：有良好的平台兼容性，在任何环境中都可以运行，前提是安装了解释器（虚拟机）。灵活，修改代码的时候直接修改就可以，可以快速部署，不用停机维护。</p>
+</blockquote>
+<p>缺点：每次运行的时候都要解释一遍，性能上不如编译型语言。</p>
+<h3 id="font-face-微软雅黑-2-2-动态语言和静态语言-font"><a class="header-anchor" href="#font-face-微软雅黑-2-2-动态语言和静态语言-font">☞</a><font face="微软雅黑">2.2 动态语言和静态语言</font></h3>
+<p>通常我们所说的动态语言、静态语言是指动态类型语言和静态类型语言</p>
+<ol>
+<li>
+<p>动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，也就是说，在用动态类型的语言编程时，永远也不用给任何变量指定数据类型，该语言会在你第一次赋值给变量时，在内部将数据类型记录下来。Python和Ruby就是一种典型的动态类型语言，其他的各种脚本语言如VBScript也多少属于动态类型语言。</p>
+</li>
+<li>
+<p>静态类型语言：静态类型语言与动态类型语言刚好相反，它的数据类型是在编译其间检查的，也就是说在写程序时要声明所有变量的数据类型，C/C++是静态类型语言的典型代表，其他的静态类型语言还有C#、JAVA等。</p>
+</li>
+</ol>
+<h3 id="font-face-微软雅黑-2-3-强类型定义语言和弱类型定义语言-font"><a class="header-anchor" href="#font-face-微软雅黑-2-3-强类型定义语言和弱类型定义语言-font">☞</a><font face="微软雅黑">2.3 强类型定义语言和弱类型定义语言</font></h3>
+<ol>
+<li>
+<p>强类型定义语言：强制数据类型定义的语言。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。举个例子：如果你定义了一个整型变量a,那么程序根本不可能将a当作字符串类型处理。强类型定义语言是类型安全的语言。</p>
+</li>
+<li>
+<p>弱类型定义语言：数据类型可以被忽略的语言。它与强类型定义语言相反, 一个变量可以赋不同数据类型的值。</p>
+</li>
+</ol>
+<blockquote>
+<p>强类型定义语言在速度上可能略逊色于弱类型定义语言，但是强类型定义语言带来的严谨性能够有效的避免许多错误。另外，“这门语言是不是动态语言”与“这门语言是否类型安全”之间是完全没有联系的！</p>
+</blockquote>
+<p>例如：Python是动态语言，是强类型定义语言（类型安全的语言）; VBScript是动态语言，是弱类型定义语言（类型不安全的语言）; JAVA是静态语言，是强类型定义语言（类型安全的语言）。</p>
+<p>通过上面这些介绍，我们可以得出，python是一门动态解释性的强类型定义语言。</p>
+<h2 id="font-face-宋体-color-ff8000-3-python的优缺点-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-3-python的优缺点-font">☞</a><font face="宋体" color="#FF8000">3.python的优缺点</font></h2>
+<p><code>先看优点:</code></p>
+<ol>
+<li>
+<p>Python的定位是“优雅”、“明确”、“简单”，所以Python程序看上去总是简单易懂，初学者学Python，不但入门容易，而且将来深入下去，可以编写那些非常非常复杂的程序。</p>
+</li>
+<li>
+<p>开发效率非常高，Python有非常强大的第三方库，基本上你想通过计算机实现任何功能，Python官方库里都有相应的模块进行支持，直接下载调用后，在基础库的基础上再进行开发，大大降低开发周期，避免重复造轮子。</p>
+</li>
+<li>
+<p>高级语言————当你用Python语言编写程序的时候，你无需考虑诸如如何管理你的程序使用的内存一类的底层细节。</p>
+</li>
+<li>
+<p>可移植性————由于它的开源本质，Python已经被移植在许多平台上（经过改动使它能够工 作在不同平台上）。如果你小心地避免使用依赖于系统的特性，那么你的所有Python程序无需修改就几乎可以在市场上所有的系统平台上运行。</p>
+</li>
+<li>
+<p>可扩展性————如果你需要你的一段关键代码运行得更快或者希望某些算法不公开，你可以把你的部分程序用C或C++编写，然后在你的Python程序中使用它们。</p>
+</li>
+<li>
+<p>可嵌入性————你可以把Python嵌入你的C/C++程序，从而向你的程序用户提供脚本功能</p>
+</li>
+</ol>
+<p><code>再看缺点:</code></p>
+<ol>
+<li>
+<p>速度慢，Python 的运行速度相比C语言确实慢很多，跟JAVA相比也要慢一些，因此这也是很多所谓的大牛不屑于使用Python的主要原因，但其实这里所指的运行速度慢在大多数情况下用户是无法直接感知到的，必须借助测试工具才能体现出来，比如你用C运一个程序花了0.01s,用Python是0.1s,这样C语言直接比Python快了10倍,算是非常夸张了，但是你是无法直接通过肉眼感知的，因为一个正常人所能感知的时间最小单位是0.15-0.4s左右，哈哈。其实在大多数情况下Python已经完全可以满足你对程序速度的要求，除非你要写对速度要求极高的搜索引擎等，这种情况下，当然还是建议你用C去实现的。</p>
+</li>
+<li>
+<p>代码不能加密，因为PYTHON是解释性语言，它的源码都是以名文形式存放的，不过我不认为这算是一个缺点，如果你的项目要求源代码必须是加密的，那你一开始就不应该用Python来去实现。</p>
+</li>
+<li>
+<p>线程不能利用多CPU问题，这是Python被人诟病最多的一个缺点，GIL即全局解释器锁（Global Interpreter Lock），是计算机程序设计语言解释器用于同步线程的工具，使得任何时刻仅有一个线程在执行，Python的线程是操作系统的原生线程。在Linux上为pthread，在Windows上为Win thread，完全由操作系统调度线程的执行。一个python解释器进程内有一条主线程，以及多条用户程序的执行线程。即使在多核CPU平台上，由于GIL的存在，所以禁止多线程的并行执行。关于这个问题的折衷解决方法，我们在以后线程和进程章节里再进行详细探讨。</p>
+</li>
+</ol>
+<blockquote>
+<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。</p>
+</blockquote>
+<p>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
+<h2 id="font-face-宋体-color-ff8000-4-python的种类-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-4-python的种类-font">☞</a><font face="宋体" color="#FF8000">4.python的种类</font></h2>
+<pre><code>CPython
+
+当我们从Python官方网站下载并安装好Python 3.6后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。
+
+CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。
+
+IPython
+
+IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。
+
+CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。
+
+PyPy
+
+PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。
+
+绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。
+
+Jython
+
+Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。
+
+IronPython
+
+IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。
+</code></pre>
+<p>小结：</p>
+<p>Python的解释器很多，但使用最广泛的还是CPython。</p>
+<p>如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，</p>
+<p>而是通过网络调用来交互，确保各程序之间的独立性。</p>
+<h1><div style="background:#83cbac; color:#000">二、python基础初识</div></h1>
+<blockquote>
+<p>ps：python安装</p>
+<p>打开官网<a href="https://www.python.org/" target="_blank" rel="noopener">https://www.python.org/</a>Download</p>
+</blockquote>
+<p>测试安装是否成功：</p>
+<p>windows --&gt; 运行 --&gt; 输入cmd ，然后回车，弹出cmd程序，输入python,如果能进入交互环境 ，代表安装成功。</p>
+<hr>
+<h2 id="font-face-宋体-color-ff8000-1-第一个python程序-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-1-第一个python程序-font">☞</a><font face="宋体" color="#FF8000">1.第一个python程序</font></h2>
+<h3 id="font-face-微软雅黑-1-1文件执行-font"><a class="header-anchor" href="#font-face-微软雅黑-1-1文件执行-font">☞</a><font face="微软雅黑">1.1文件执行</font></h3>
+<ol>
+<li>用notepad++创建一个文件，输入以下代码</li>
+<li><code>print(&quot;Hello World!&quot;)</code></li>
+<li><a href="http://xn--HelloWorld-xx2p90nw98b.py" target="_blank" rel="noopener">保存为HelloWorld.py</a> , 注意要强调.py后缀名的作用</li>
+<li>进入cmd命令行，执行python <a href="http://HelloWorld.py" target="_blank" rel="noopener">HelloWorld.py</a>, 看结果 （注意要解释文件名前面加python 的原因是要把代码交给python解释器去解释执行）</li>
+</ol>
+<h3 id="font-face-微软雅黑-1-2交互器执行-font"><a class="header-anchor" href="#font-face-微软雅黑-1-2交互器执行-font">☞</a><font face="微软雅黑">1.2交互器执行</font></h3>
+<p>演示在python交互器下 ，输出hello world ！</p>
+<p>要强调python交互器是主要用来对代码进行调试用的</p>
+<h2 id="font-face-宋体-color-ff8000-2-注释-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-2-注释-font">☞</a><font face="宋体" color="#FF8000">2.注释</font></h2>
+<p>当行注释：# 被注释内容</p>
+<p>多行注释：’’‘被注释内容’’’，或者&quot;&quot;“被注释内容”&quot;&quot;</p>
+<blockquote>
+<p>代码注释原则:</p>
+<p>不用全部加注释，只需要在自己觉得重要或不好理解的部分加注释即可<br>
+注释可以用中文或英文，但绝对不要拼音噢</p>
+</blockquote>
+<h2 id="font-face-宋体-color-ff8000-3-变量-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-3-变量-font">☞</a><font face="宋体" color="#FF8000">3.变量</font></h2>
+<p>变量是什么？  变量：把程序运行的中间结果临时的存在内存里，以便后续的代码调用。</p>
+<h3 id="font-face-微软雅黑-3-1变量声明-font"><a class="header-anchor" href="#font-face-微软雅黑-3-1变量声明-font">☞</a><font face="微软雅黑">3.1变量声明</font></h3>
+<pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+	  
+name = &quot;taibai&quot; 
+</code></pre>
+<p>上述代码声明了一个变量，变量名为： name，变量name的值为：“taibai”</p>
+<p>变量的作用：昵称，其代指内存里某个地址中保存的内容</p>
+<p><a href="https://moetu.org/image/1lNRA" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/275dbc681bd95950dff1d0f3426c87ff036ae1ac56fe026a.png" alt></a></p>
+<h3 id="font-face-宋体-3-2变量定义的规则：-font"><a class="header-anchor" href="#font-face-宋体-3-2变量定义的规则：-font">☞</a><font face="宋体">3.2变量定义的规则：</font></h3>
+<ul>
+<li>变量名只能是 字母、数字或下划线的任意组合</li>
+<li>变量名的第一个字符不能是数字</li>
+<li>以下关键字不能声明为变量名<br>
+[‘and’, ‘as’, ‘assert’, ‘break’, ‘class’, ‘continue’, ‘def’, ‘del’, ‘elif’, ‘else’, ‘except’, ‘exec’, ‘finally’, ‘for’, ‘from’, ‘global’, ‘if’, ‘import’, ‘in’, ‘is’, ‘lambda’, ‘not’, ‘or’, ‘pass’, ‘print’, ‘raise’, ‘return’, ‘try’, ‘while’, ‘with’, ‘yield’]</li>
+<li>变量的定义要具有可描述性。</li>
+</ul>
+<h3 id="font-face-宋体-3-3推荐定义方式：-font"><a class="header-anchor" href="#font-face-宋体-3-3推荐定义方式：-font">☞</a><font face="宋体">3.3推荐定义方式：</font></h3>
+<pre class="line-numbers language-language-python"><code class="language-language-python">#驼峰体
+
+AgeOfOldboy = 56
+
+NumberOfStudents = 80
+
+#下划线
+
+age_of_oldboy = 56
+
+number_of_students = 80
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>ps:定义变量不好的方式举例</p>
+<p>变量名为中文、拼音</p>
+<p>变量名过长</p>
+<p>变量名词不达意</p>
+<p>你觉得哪种更清晰，我想你肯定会先第2种,第一种AgeOfOldboy咋一看以为是AngelaBaby</p>
+</blockquote>
+<h3 id="font-face-宋体-3-4变量的赋值：-font"><a class="header-anchor" href="#font-face-宋体-3-4变量的赋值：-font">☞</a><font face="宋体">3.4变量的赋值：</font></h3>
+<pre class="line-numbers language-language-python"><code class="language-language-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+name1 = "wupeiqi"
+name2 = "alex"
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="font-face-微软雅黑-3-5常量：-font"><a class="header-anchor" href="#font-face-微软雅黑-3-5常量：-font">☞</a><font face="微软雅黑">3.5常量：</font></h3>
+<p>常量即指不变的量，如pai 3.141592653…, 或在程序运行过程中不会改变的量</p>
+<blockquote>
+<p>举例，假如老男孩老师的年龄会变，那这就是个变量，但在一些情况下，他的年龄不会变了，那就是常量。在Python中没有一个专门的语法代表常量，程序员约定俗成用变量名全部大写代表常量</p>
+</blockquote>
+<p><code>AGE_OF_OLDBOY = 56</code></p>
+<p>在c语言中有专门的常量定义语法，const int count = 60;一旦定义为常量，更改即会报错</p>
+<h2 id="font-face-宋体-color-ff8000-4-程序交互-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-4-程序交互-font">☞</a><font face="宋体" color="#FF8000">4.程序交互</font></h2>
+<pre class="line-numbers language-language-python"><code class="language-language-python"># 将用户输入的内容赋值给 name 变量
+name = input("请输入用户名：")
+  
+# 打印输入的内容
+print(name)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行脚本就会发现，程序会等待你输入姓名后再往下继续走。</p>
+<p>可以让用户输入多个信息，如下:</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">name = input("What is your name?")
+age = input("How old are you?")
+hometown = input("Where is your hometown?")
+print("Hello ",name , "your are ", age , "years old, you came from",hometown)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行输出:</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">What is your name?Alex Li
+How old are you?22
+Where is your hometown?ShanDong
+Hello Alex Li your are 22 years old, you came from ShanDong
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="font-face-宋体-color-ff8000-5-基础数据类型-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-5-基础数据类型-font">☞</a><font face="宋体" color="#FF8000">5.基础数据类型</font></h2>
+<p><font face="宋体" color="skyblue">什么是数据类型？</font></p>
+<blockquote>
+<p>我们人类可以很容易的分清数字与字符的区别，但是计算机并不能呀，计算机虽然很强大，但从某种角度上看又很傻，除非你明确的告诉它，1是数字，“汉”是文字，否则它是分不清1和‘汉’的区别的，因此，在每个编程语言里都会有一个叫数据类型的东东，其实就是对常用的各种数据类型进行了明确的划分，你想让计算机进行数值运算，你就传数字给它，你想让他处理文字，就传字符串类型给他。Python中常用的数据类型有多种，今天我们暂只讲3种， 数字、字符串、布尔类型</p>
+</blockquote>
+<h3 id="font-face-楷书-5-1整数类型-int-font"><a class="header-anchor" href="#font-face-楷书-5-1整数类型-int-font">☞</a><font face="楷书">5.1整数类型（int）</font></h3>
+<p>int（整型）</p>
+<p>在32位机器上，整数的位数为32位，取值范围为-2<strong>31～2</strong>31-1，即-2147483648～2147483647</p>
+<p>在64位系统上，整数的位数为64位，取值范围为-2<strong>63～2</strong>63-1，即-9223372036854775808～9223372036854775807</p>
+<p>long（长整型）</p>
+<p>跟C语言不同，Python的长整数没有指定位宽，即：Python没有限制长整数数值的大小，但实际上由于机器内存有限，我们使用的长整数数值不可能无限大。</p>
+<p>注意，自从Python2.2起，如果整数发生溢出，Python会自动将整数数据转换为长整数，所以如今在长整数数据后面不加字母L也不会导致严重后果了。</p>
+<blockquote>
+<p>注意：在Python3里不再有long类型了，全都是<strong>int</strong></p>
+</blockquote>
+<pre><code>&gt;&gt;&gt; a= 2**64
+&gt;&gt;&gt; type(a) #type()是查看数据类型的方法
+&lt;type 'long'&gt;
+&gt;&gt;&gt; b = 2**60
+&gt;&gt;&gt; type(b)
+&lt;type 'int'&gt;
+</code></pre>
+<p>除了int和long之外， 其实还有float浮点型, 复数型</p>
+<h3 id="font-face-楷书-5-2字符串类型-str-font"><a class="header-anchor" href="#font-face-楷书-5-2字符串类型-str-font">☞</a><font face="楷书">5.2字符串类型（str）</font></h3>
+<pre><code>&gt;&gt;&gt; name = &quot;Alex Li&quot; #双引号
+&gt;&gt;&gt; age = &quot;22&quot;       #只要加引号就是字符串
+&gt;&gt;&gt; age2 = 22          #int
+&gt;&gt;&gt; 
+&gt;&gt;&gt; msg = '''My name is taibai, I am 22 years old!'''  #我擦，3个引号也可以
+&gt;&gt;&gt; 
+&gt;&gt;&gt; hometown = 'ShanDong'   #单引号也可以
+</code></pre>
+<p>那单引号、双引号、多引号有什么区别呢？</p>
+<p>让我大声告诉你，单双引号木有任何区别，只有下面这种情况 你需要考虑单双的配合</p>
+<p><code>msg = &quot;My name is Alex , I'm 22 years old!&quot;</code></p>
+<p>多引号什么作用呢？作用就是多行字符串必须用多引号</p>
+<pre class="line-numbers language-language-ptyhon"><code class="language-language-ptyhon">msg = '''
+今天我想写首小诗，
+歌颂我的同桌，
+你看他那乌黑的短发，
+好像一只炸毛鸡。
+'''
+print(msg)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>字符串拼接</p>
+<p>数字可以进行加减乘除等运算，字符串呢？让我大声告诉你，也能？what ?是的，但只能进行&quot;相加&quot;和&quot;相乘&quot;运算。</p>
+<pre><code>&gt;&gt;&gt; name
+‘Eva_J'
+&gt;&gt;&gt; age
+’18’
+&gt;&gt;&gt;
+&gt;&gt;&gt; name + age #相加其实就是简单拼接
+'Eva_J18’
+&gt;&gt;&gt;
+&gt;&gt;&gt; name * 10 #相乘其实就是复制自己多少次，再拼接在一起
+'Eva_JEva_JEva_JEva_JEva_JEva_JEva_JEva_JEva_JEva_J'
+</code></pre>
+<p>注意，字符串的拼接只能是双方都是字符串，不能跟数字或其它类型拼接</p>
+<pre><code>&gt;&gt;&gt; type(name),type(age2)
+(&lt;type 'str'&gt;, &lt;type 'int'&gt;)
+&gt;&gt;&gt;
+&gt;&gt;&gt; name
+'Alex Li'
+&gt;&gt;&gt; age2
+&gt;&gt;&gt; name + age2
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: cannot concatenate 'str' and 'int' objects #错误提示数字 和 字符 不能拼接
+</code></pre>
+<h3 id="font-face-楷书-5-3布尔值-true-false-font"><a class="header-anchor" href="#font-face-楷书-5-3布尔值-true-false-font">☞</a><font face="楷书">5.3布尔值（True，False）</font></h3>
+<p><code>布尔类型很简单，就两个值 ，一个True(真)，一个False(假), 主要用记逻辑判断</code></p>
+<p>但其实你们并不明白对么？ let me explain</p>
+<p>我现在有2个值 ， a=3, b=5 , 我说a&gt;b你说成立么? 我们当然知道不成立，但问题是计算机怎么去描述这成不成立呢？</p>
+<p>或者说a&lt; b是成立，计算机怎么描述这是成立呢？</p>
+<p>没错，答案就是，用布尔类型</p>
+<pre><code>&gt;&gt;&gt; a=3
+&gt;&gt;&gt; b=5
+&gt;&gt;&gt;
+&gt;&gt;&gt; a &gt; b #不成立就是False,即假
+False
+&gt;&gt;&gt;
+&gt;&gt;&gt; a &lt; b #成立就是True, 即真
+True
+</code></pre>
+<p>计算机为什么要描述这种条件呢？因为接下来就可以根据条件结果来干不同的事情啦呀！比如</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if a > b
+    print(a is bigger than b )
+ 
+else
+    print(a is smaller than b )
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面是伪代码，但是不是意味着， 计算机就可以根据判断结果不同，来执行不同的动作啦？</p>
+<p><code>除了上面讲过的3种数据类型之外， 后面我们还会讲到如列表 、字典、集合等，越往后面学就越发现计算机好nb呀!</code></p>
+<h3 id="font-face-楷书-5-4格式化输出-font"><a class="header-anchor" href="#font-face-楷书-5-4格式化输出-font">☞</a><font face="楷书">5.4格式化输出</font></h3>
+<p>现有一练习需求，问用户的姓名、年龄、工作、爱好 ，然后打印成以下格式</p>
+<pre><code>------------ info of Eva_J -----------
+Name : Eva_J
+Age : 18
+job : Teacher
+------------- end -----------------
+</code></pre>
+<p>你怎么实现呢？你会发现，用字符拼接的方式还难实现这种格式的输出，所以一起来学一下新姿势</p>
+<p>只需要把要打印的格式先准备好， 由于里面的 一些信息是需要用户输入的，你没办法预设知道，</p>
+<p>因此可以先放置个占位符，再把字符串里的占位符与外部的变量做个映射关系就好啦</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">name = input("Name:")
+age = input("Age:")
+job = input("Job:")
+hobbie = input("Hobbie:")
+ 
+info = '''
+------------ info of %s ----------- #这里的每个%s就是一个占位符，本行的代表 后面拓号里的 name
+Name : %s #代表 name
+Age : %s #代表 age
+job : %s #代表 job
+Hobbie: %s #代表 hobbie
+------------- end -----------------
+''' %(name,name,age,job,hobbie) # 这行的 % 号就是 把前面的字符串 与拓号 后面的 变量 关联起来
+ 
+print(info)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>%s就是代表字符串占位符，除此之外，还有%d,是数字占位符， 如果把上面的age后面的换成%d，就代表你必须只能输入数字啦</p>
+<p>age: %d</p>
+<p>我们运行一下，但是发现出错了。。。</p>
+<p>说%d需要一个数字，而不是str, what? 我们明明输入的是数字呀，22，22呀。</p>
+<p>不用担心 ，不要相信你的眼睛，我们调试一下，看看输入的到底是不是数字呢？</p>
+<p>怎么看呢？查看数据类型的方法是什么来着？type()</p>
+<pre><code>name = input(&quot;Name:&quot;)
+age = input(&quot;Age:&quot;)
+print(type(age))
+执行输出是
+
+Name:Alex
+Age:22
+&lt;class 'str'&gt; #怎么会是str
+Job:IT
+....
+</code></pre>
+<p>让我大声告诉你，input接收的所有输入默认都是字符串格式！</p>
+<p>要想程序不出错，那怎么办呢？简单，你可以把str转成int</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">age = int( input("Age:") )
+print(type(age))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>肯定没问题了。相反，能不能把字符串转成数字呢？必然可以，str( yourStr )</p>
+<p>问题：现在有这么行代码</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">msg = "我是%s,年龄%d,目前学习进度为80%"%('金鑫',18)
+print(msg)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样会报错的，因为在格式化输出里，你出现%默认为就是占位符的%</p>
+<p>但是我想在上面一条语句中最后的80%就是表示80%而不是占位符，怎么办？</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">msg = "我是%s,年龄%d,目前学习进度为80%%"%('金鑫',18)
+print(msg)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样就可以了，第一个%是对第二个%的转译，告诉Python解释器这只是一个单纯的%，而不是占位符。</p>
+<h3 id="font-face-楷书-5-5基本运算符-font"><a class="header-anchor" href="#font-face-楷书-5-5基本运算符-font">☞</a><font face="楷书">5.5基本运算符</font></h3>
+<p><font face="宋体" color="red">运算符</font></p>
+<p>计算机可以进行的运算有很多种，可不只加减乘除这么简单，运算按种类可分为算数运算、比较运算、逻辑运算、<br>赋值运算、成员运算、身份运算、位运算，今天我们暂只学习算数运算、比较运算、逻辑运算、赋值运算</p>
+<p><font face="宋体" color="skyblue">算数运算</font></p>
+<p>以下假设变量：a=10，b=20</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/c82afe0b022a56801a2ac091f3547ded9aae6b4bcad00aec.png" alt></p>
+<p><font face="宋体" color="skyblue">比较运算</font></p>
+<p>以下假设变量：a=10，b=20</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/2c23e5f0f47c5d581dd2004e87d9c712406b1b2d9ad0dfb7.png" alt></p>
+<p><font face="宋体" color="skyblue">赋值运算</font></p>
+<p>以下假设变量：a=10，b=20</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/920d4ff31197cdd21da76a7a0e2d8cc5d9e49ba79641f856.png" alt></p>
+<p><font face="宋体" color="skyblue">逻辑运算</font></p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/5b167027967e06b363eede1fd322e0432ca71dcbbcf3223e.png" alt></p>
+<p>针对逻辑运算的进一步研究：</p>
+<p>例题：判断下列逻辑语句的True，False。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">3 > 4 or 4 < 3 and 1 == 1
+1 < 2 and 3 < 4 or 1 > 2 
+2 > 1 and 3 < 4 or 4 > 5 and 2 < 1
+1 > 2 and 3 < 4 or 4 > 5 and 2 > 1 or 9 < 8
+1 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6
+not 2 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>
+<p>在没有()的情况下not 优先级高于 and，and优先级高于or，<br>即优先级关系为( )>not>and>or，同一优先级从左往右计算。</p>
+</li>
+<li>
+<p> x or y , x为真，值就是x，x为假，值是y；<br>x and y, x为真，值是y,x为假，值是x。</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/e04d94ccf8fafdb3b10434c9823b7ba5282b25bb5660808c.png" alt></p>
+<p>成员运算：</p>
+<p>除了以上的一些运算符之外，Python还支持成员运算符，测试实例中包含了一系列的成员，包括字符串，列表或元组。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/9666948c16e50c2783107913a995f5cd62da96594eae19b7.png" alt></p>
+<p>Python运算符优先级</p>
+<p>以下表格列出了从最高到最低优先级的所有运算符：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/4ef7c14f1cb6d9b497e769e22b16516ab21987287c02d69b.png" alt></p>
+<h3 id="font-face-楷书-5-6流程控制之if-else-font"><a class="header-anchor" href="#font-face-楷书-5-6流程控制之if-else-font">☞</a><font face="楷书">5.6流程控制之if…else</font></h3>
+<p>假如把写程序比做走路，那我们到现在为止，一直走的都是直路，还没遇到过分叉口，想象现实中，你遇到了分叉口，</p>
+<p>然后你决定往哪拐必然是有所动机的。你要判断那条岔路是你真正要走的路，如果我们想让程序也能处理这样的判断怎么办？</p>
+<p>很简单，只需要在程序里预设一些条件判断语句，满足哪个条件，就走哪条岔路。这个过程就叫流程控制。</p>
+<p><code>if...else 语句</code></p>
+<p><font face="宋体" color="skyblue">单分支</font></p>
+<p>if 条件:</p>
+<p>满足条件后要执行的代码</p>
+<p><font face="宋体" color="skyblue">双分支</font></p>
+<p>if 条件:</p>
+<p>满足条件执行代码</p>
+<p>else:</p>
+<p>if条件不满足就走这段</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">AgeOfOldboy = 48
+ 
+if AgeOfOldboy > 50 :
+    print("Too old, time to retire..")
+else:
+    print("还能折腾几年!")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font face="宋体" color="skyblue">缩进</font></p>
+<p><code>这里必须要插入这个缩进的知识点</code></p>
+<p>你会发现，上面的if代码里，每个条件的下一行都缩进了4个空格，这是为什么呢？</p>
+<p>这就是Python的一大特色，强制缩进，目的是为了让程序知道，每段代码依赖哪个条件，</p>
+<p>如果不通过缩进来区分，程序怎么会知道，当你的条件成立后，去执行哪些代码呢？</p>
+<p>在其它的语言里，大多通过{}来确定代码块，比如C,C++,Java,Javascript都是这样，</p>
+<p>看一个JavaScript代码的例子</p>
+<pre class="line-numbers language-language-javascript"><code class="language-language-javascript">var age = 56
+if ( age < 50){
+    console.log("还能折腾")
+    console.log('可以执行多行代码')
+}else{
+    console.log('太老了')
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在有{}来区分代码块的情况下，缩进的作用就只剩下让代码变的整洁了。</p>
+<p>Python是门超级简洁的语言，发明者定是觉得用{}太丑了，所以索性直接不用它，</p>
+<p>那怎么能区分代码块呢？答案就是强制缩进。</p>
+<p><font face="宋体" color="green">Python的缩进有以下几个原则:</font></p>
+<ul>
+<li>
+<p>顶级代码必须顶行写，即如果一行代码本身不依赖于任何条件，那它必须不能进行任何缩进</p>
+</li>
+<li>
+<p>同一级别的代码，缩进必须一致</p>
+</li>
+<li>
+<p>官方建议缩进用4个空格，当然你也可以用2个，如果你想被人笑话的话。</p>
+</li>
+</ul>
+<p><font face="宋体" color="skyblue">多分支</font></p>
+<p>回到流程控制上来，if…else …可以有多个分支条件</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if 条件:
+    满足条件执行代码
+elif 条件:
+    上面的条件不满足就走这个
+elif 条件:
+    上面的条件不满足就走这个
+elif 条件:
+    上面的条件不满足就走这个
+else:
+    上面所有的条件不满足就走这段
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>写个猜年龄的游戏吧</p>
+<p>age_of_oldboy = 48</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">guess = int(input(">>:"))
+ 
+if guess > age_of_oldboy :
+    print("猜的太大了，往小里试试...")
+ 
+elif guess < age_of_oldboy :
+    print("猜的太小了，往大里试试...")
+ 
+else:
+    print("恭喜你，猜对了...")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的例子，根据你输入的值不同，会最多得到3种不同的结果</p>
+<blockquote>
+<p>再来个匹配成绩的小程序吧，成绩有ABCDE5个等级，与分数的对应关系如下</p>
+<p>A    90-100</p>
+<p>B    80-89</p>
+<p>C    60-79</p>
+<p>D    40-59</p>
+<p>E    0-39</p>
+<p>要求用户输入0-100的数字后，你能正确打印他的对应成绩</p>
+</blockquote>
+<p>score = int(input(“输入分数:”))</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if score > 100:
+    print("我擦，最高分才100...")
+elif score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+elif score >= 60:
+    print("C")
+elif score >= 40:
+    print("D")
+else:
+    print("太笨了...E")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>这里有个问题，就是当我输入95的时候 ，它打印的结果是A,但是95 明明也大于第二个条件elif score &gt;=80:呀, 为什么不打印B呢？这是因为代&gt;码是从上到下依次判断，只要满足一个，就不会再往下走啦，这一点一定要清楚呀！</p>
+</blockquote>
+<h3 id="font-face-楷书-5-7流程控制之-while循环-font"><a class="header-anchor" href="#font-face-楷书-5-7流程控制之-while循环-font">☞</a><font face="楷书">5.7流程控制之–while循环</font></h3>
+<p>我们已经学会用if … else 来猜年龄的游戏啦，但是只能猜一次就中的机率太小了，</p>
+<p>如果我想给玩家3次机会呢？</p>
+<p>就是程序启动后，玩家最多可以试3次，这个怎么弄呢？你总不会想着把代码复制3次吧。。。。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">age_of_oldboy = 48 
+guess = int(input(">>:"))
+ 
+if guess > age_of_oldboy :
+    print("猜的太大了，往小里试试...")
+ 
+elif guess < age_of_oldboy :
+    print("猜的太小了，往大里试试...")
+ 
+else:
+    print("恭喜你，猜对了...")
+ 
+#第2次
+guess = int(input(">>:"))
+ 
+if guess > age_of_oldboy :
+    print("猜的太大了，往小里试试...")
+ 
+elif guess < age_of_oldboy :
+    print("猜的太小了，往大里试试...")
+ 
+else:
+    print("恭喜你，猜对了...")
+ 
+#第3次
+guess = int(input(">>:"))
+ 
+if guess > age_of_oldboy :
+    print("猜的太大了，往小里试试...")
+ 
+elif guess < age_of_oldboy :
+    print("猜的太小了，往大里试试...")
+ 
+else:
+    print("恭喜你，猜对了...")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>即使是小白的你，也觉得的<strong>太low了</strong>是不是，以后要修改功能还得修改3次，</p>
+<p>因此记住，写重复的代码是程序员最不耻的行为。</p>
+<p>那么如何做到不用写重复代码又能让程序重复一段代码多次呢？</p>
+<p>循环语句就派上用场啦</p>
+<p><font face="宋体" color="skyblue">语法</font></p>
+<p>基本循环</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">while 条件:
+ 
+# 循环体
+
+# 如果条件为真，那么循环体则执行
+# 如果条件为假，那么循环体不执行
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>while 指 当其后面的条件 成立 ，就执行while下面的代码</p>
+<p><code>写个让程序从0打印到100的程序 ，每循环一次，+1</code></p>
+<pre><code>count = 0
+while count &lt;= 100 : #只要count&lt;=100就不断执行下面的代码
+    print(&quot;loop &quot;, count )
+    count +=1 #每执行一次，就把count+1，要不然就变成死循环啦，因为        count一直是0
+
+输出	
+loop 0
+loop 1
+loop 2
+loop 3
+....
+loop 98
+loop 99
+loop 100
+</code></pre>
+<p>如果我想实现打印1到100的偶数怎么办呢？</p>
+<p>那就得先搞清，怎么判断一个数字是偶数(能被2整除的就是偶数), 怎么判断能否被2整除？</p>
+<p>简单，除完2没有余数就是啦。这里要用到取模算运算符了</p>
+<pre><code>&gt;&gt;&gt; 10%2
+&gt;&gt;&gt; 8%2 #无余数，是偶数
+&gt;&gt;&gt; 7%2 #有余数，是奇数
+放到我们的循环程序里
+
+count = 0
+while count &lt;= 100 : #只要count&lt;=100就不断执行下面的代码 
+    if count % 2 == 0: #是偶数
+        print(&quot;loop &quot;, count)
+ 
+    count +=1 #每执行一次，就把count+1，要不然就变成死循环啦，因为count一直是0
+
+输出	
+loop 0
+loop 2
+loop 4
+loop 6
+....
+loop 96
+loop 98
+loop 100
+</code></pre>
+<p><font face="宋体" color="skyblue">死循环</font></p>
+<p>有一种循环叫死循环，一经触发，就运行个天荒地老、海枯石烂。</p>
+<p>while 是只要后边条件成立(也就是条件结果为真)就一直执行，怎么让条件一直成立呢？</p>
+<pre><code>count = 0
+while True: #True本身就是真呀
+    print(&quot;你是风儿我是沙,缠缠绵绵到天涯...&quot;,count)
+    count +=1
+</code></pre>
+<p><font face="宋体" color="skyblue">循环中止语句 </font></p>
+<p>如果在循环的过程中，因为某些原因，你不想继续循环了，怎么把它中止掉呢？这就用到break 或 continue 语句</p>
+<ul>
+<li>
+<p>break用于完全结束一个循环，跳出循环体执行循环后面的语句</p>
+</li>
+<li>
+<p>continue和break有点类似，区别在于continue只是终止本次循环，接着还执行后面的循环，break则完全终止循环</p>
+</li>
+</ul>
+<hr>
+<pre><code>count = 0
+while count &lt;= 100 : #只要count&lt;=100就不断执行下面的代码
+    print(&quot;loop &quot;, count)
+    if count == 5:
+        break
+    count +=1 #每执行一次，就把count+1，要不然就变成死循环啦，因为count一直是0
+ 
+print(&quot;-----out of while loop ------&quot;)
+
+输出
+
+loop 0
+loop 1
+loop 2
+loop 3
+loop 4
+loop 5
+-----out of while loop ------  
+
+break
+</code></pre>
+<hr>
+<pre class="line-numbers language-language-python"><code class="language-language-python">count = 0
+while count <= 100 : count +="1" if> 5 and count < 95: #只要count在6-94之间，就不走下面的    print语句，直接进入下一次loop
+        continue
+    print("loop ", count)
+ 
+print("-----out of while loop ------")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></code></pre>
+<pre><code>输出	
+loop 1
+loop 2
+loop 3
+loop 4
+loop 5
+loop 95
+loop 96
+loop 97
+loop 98
+loop 99
+loop 100
+loop 101
+-----out of while loop ------   
+
+continue
+</code></pre>
+<p><font face="宋体" color="green">while … else … </font></p>
+<p>与其它语言else 一般只与if 搭配不同，在Python 中还有个while …else 语句</p>
+<p>while 后面的else 作用是指，当while 循环正常执行完，中间没有被break 中止的话，就会执行else后面的语句</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">count = 0
+while count <= 5 : count +="1" print("loop",count) else: print("循环正常执行完啦") print("-----out of while loop ------") <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></code></pre>
+<pre><code>输出	
+Loop 1
+Loop 2
+Loop 3
+Loop 4
+Loop 5
+Loop 6
+循环正常执行完啦
+-----out of while loop ------
+</code></pre>
+<p>如果执行过程中被break啦，就不会执行else的语句啦</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">count = 0
+while count <= 5 : 　　count +="1" 　　if count="=" 3:break 　　　　print("loop",count) else: print("循环正常执行完啦") print("-----out of while loop ------") <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></code></pre>
+<pre><code>输出	
+Loop 1
+Loop 2
+-----out of while loop ------
+</code></pre>
+<h1><div style="background:#83cbac; color:#000">三、开发工具</div></h1>
+<blockquote>
+<p>到现在为止，我们也是写过代码的人啦，但你有没有发现，每次写代码要新建文件、写完保存时还要选择存放地点，执行时还要切换到命令行调用&gt;python解释器，好麻烦呀，能否一气呵成，让我简单的写代码？此时开发工具IDE上场啦，一个好的IDE能帮你大大提升开发效率。</p>
+<p>很多语言都有比较流行的开发工具，比如JAVA 的Eclipse, C#,C++的VisualStudio, Python的是啥呢？ Pycharm，最好的Python 开发IDE</p>
+</blockquote>
+<h2 id="font-face-宋体-color-ff8000-安装-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-安装-font">☞</a><font face="宋体" color="#FF8000">安装</font></h2>
+<p>下载地址：<a href="https://www.jetbrains.com/pycharm/download" target="_blank" rel="noopener">https://www.jetbrains.com/pycharm/download </a></p>
+<p>选择Professional 专业版</p>
+<p><a href="https://moetu.org/image/1lt7E" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pycharm1f359edf18cf84ac.md.png" alt></a></p>
+<h2 id="font-face-宋体-color-ff8000-破解-font"><a class="header-anchor" href="#font-face-宋体-color-ff8000-破解-font">☞</a><font face="宋体" color="#FF8000">破解</font></h2>
+<p>1.下载crack激活包，通过截获截止时间骗过pycharm; 下载地址：<a href="https://pan.baidu.com/s/1smpmI9R" target="_blank" rel="noopener">https://pan.baidu.com/s/1smpmI9R</a></p>
+<p>将下载的文件放入PyCharm安装bin目录下:</p>
+<p><a href="https://moetu.org/image/1lIQ5" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pycharm598472abbffcaad5.md.jpg" alt></a></p>
+<p>2.在pycharm.exe.vmoptions ，pycharm64.exe.vmoptions两文件里加入</p>
+<p>-javaagent:D:\Program Files\JetBrains\PyCharm 2017.3.3\bin\JetbrainsCrack-2.6.10-release-enc.jar</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pycharm1514c53f8d34ea843.jpg" alt></p>
+<p><font face="宋体" color="red">你自己目录位置</font></p>
+<p>3.如果已有注册码无须填写，没用可以登录<a href="http://idea.lanyus.com/" target="_blank" rel="noopener">http://idea.lanyus.com/</a></p>
+<p>点击获得注册码————复制</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pycharmee7ccbce7b43ed29.png" alt></p>
+<p>4.启动pycharm————粘贴激活码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/loading.gif" data-original="https://moetu.fastmirror.org/images/2018/11/19/pycharm2fc6b800377e3d23b.jpg" alt></p>
+<p>5.<a href="https://edu.51cto.com/course/9043.html" target="_blank" rel="noopener">pycharm设置教程</a></p>
+<p>6.<a href="http://www.easycolor.cc/" target="_blank" rel="noopener">pycharm代码配色方案</a></p>
+<hr>
+<p><strong><font size="6" face="宋体" color="#645822">ok!大功告成，开启python之旅吧！</font></strong></p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://moetu.fastmirror.org/images/2018/11/20/8e61abcaa96542014f4171222fa9fbb9a5535dff5edc1367.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://moetu.fastmirror.org/images/2018/11/20/c65b5da23b6319b0da40a965f6c360290ea74aead11c7e04.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://qvchuang.top" class="b-link-green">My blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/archives/8cf2b228.html" class="b-link-green">Python3基础·一</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    textarea{
+    	box-sizing: border-box;
+    }
+    #vcomments textarea {
+        
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v .vlist .vcard {
+    padding-top: 2.5rem;
+    position: relative;
+    display: block;
+    }
+    
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'XNi4yPWgD78qQChlhC6vngEz-gzGzoHsz',
+        appKey: 'YRX2P1IpmmU9KyhgmvwEXm2Q',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'robohash',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '瞎白话一下'
+    });
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/archives/b7729c81.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="Python3基础·二">
+                        
+                        <span class="card-title">Python3基础·二</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+					<div class="summary">
+					
+					  初涉Python
+					
+					</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python3/" target="_blank">
+                        <span class="chip bg-color">python3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/archives/92147245.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="GitHub Pages自定义域名开启HTTPS">
+                        
+                        <span class="card-title">GitHub Pages自定义域名开启HTTPS</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+					<div class="summary">
+					  
+					      自定义域名开启HTTPS
+					  
+					</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/blog/" class="post-category" target="_blank">
+                                    blog
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('500')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: My blog<br />'
+            + '作者: qvchuang<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278054618'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/z_stat.php%3Fid%3D1278054618%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">62.6k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+
+            <br>
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/qvchuang/qvchuang.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:qvchuang@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1763834198" class="tooltipped" data-tooltip="QQ联系我: 1763834198" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+</div>
+
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("11/23/2018 20:00:00");//此处修改你的建站时间或者网站上线时间 
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+            setInterval("createtime()",250);
+        </script>
+
+    </div>
+
+    <script>
+    var xlm_wid='15483';
+    var xlm_url='https://www.xianliao.me/';
+	</script>
+	<script type="text/javascript" charset="UTF-8" src="https://www.xianliao.me/embed.js"></script>
+
+
+
+
+
+</footer>
+
+<div class="progress-bar"></div>
+
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/materialize/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/aos/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/matery.js"></script>
+
+<!-- 代码高亮 从CDN获取库-->
+<!-- <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script> -->
+<!-- <link href="http://cdn.bootcss.com/highlight.js/9.1.5/styles/monokai_sublime.min.css" rel="stylesheet">   -->
+<!-- <script >hljs.initHighlightingOnLoad();</script> -->
+<!-- 或者 本地 -->
+<script src="/js/highlight.pack.js"></script>
+<link type="text/css" href="/css/styles/monokai-sublime.css" rel="stylesheet">
+<!-- 代码行号 从CDN获取库-->
+<script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initLineNumbersOnLoad();</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/others/clicklove.js"></script>
+
+
+    <script async src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<!--  html 预加载脚本  -->
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/instant.page.js" type="module"></script>
+
+<!-- 动态标签 -->
+<script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
+<!-- 鼠标跟随特效 -->
+<!-- <script src="/js/xuehua.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/xingxing.js"><\/script>');
+}
+</script>
+
+<!-- 鼠标点击文字特效 -->
+<!-- <script src="/js/wenzi.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/wenzi.js"><\/script>');
+}
+</script>
+
+<!-- 雪花特效 -->
+<!-- <script src="/js/xuehuapiaoluo.js"></script> -->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/xuehuapiaoluo.js"><\/script>');
+}
+</script>
+
+<!-- 背景动态彩带 -->
+<script src="https://cdn.jsdelivr.net/gh/qvchuang/qvchuang.github.io/js/ribbon.min.js"></script>
+
+<!-- 樱花特效 -->
+<!-- <script src="/js/sakura.js"></script> -->
+
+<!-- 天气 https://cj.weather.com.cn/plugin/pc -->
+<script type="text/javascript">
+WIDGET = {FID: 'UBsmdBLl0N'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<!-- 屏蔽网页源码（单纯的屏蔽鼠标右键和键盘事件） -->
+<script type="text/javascript">
+        window.onload = function(){
+            //屏蔽键盘事件
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) && (e.keyCode == 121)){
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    return false;
+                }
+            };
+            //屏蔽鼠标右键
+            document.oncontextmenu = function (){
+                return false;
+            }
+        }
+</script>
+
+<script src="//code.tidio.co/blhel3fnu9j6cuys9nupvmavr5mioatv.js"></script>
+
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
+
+
+
